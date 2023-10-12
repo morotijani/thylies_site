@@ -18,7 +18,7 @@
     <meta name="author" content="Codescandy">
     <title>Sign in - Thylies</title>
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
     <link rel="stylesheet" href="<?= PROOT; ?>assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= PROOT; ?>assets/css/theme.min.css">

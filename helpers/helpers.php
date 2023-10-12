@@ -158,7 +158,7 @@ function send_email($name, $to, $subject, $body) {
         $fn = $name;
         $to = $to;
         $from = MAIL_MAIL;
-        $from_name = 'Inqoins Inc.';
+        $from_name = 'Thylies Enterprise.';
         $subject = $subject;
         $body = $body;
 

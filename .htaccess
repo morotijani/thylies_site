@@ -5,8 +5,8 @@ RewriteRule ^auth/send/([0-9a-zA-Z]+)$ auth/send.php?reseted-password=$1 [NC,L]
 
 RewriteRule ^pmiqn/users/([0-9a-zA-Z]+)$ pmiqn/users.php?view=$1 [NC,L]
 
-
-#RewriteRule ^verified/([0-9a-zA-Z]+)$ verified.php?vericode=$1 [NC,L]
+# Verify user email
+RewriteRule ^auth/verified/([0-9a-zA-Z]+)$ auth/verified.php?vericode=$1 [NC,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 

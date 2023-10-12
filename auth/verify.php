@@ -5,12 +5,12 @@
 require_once ('../connection/conn.php');
 
 if (user_is_logged_in()) {
-    redirect(PROOT . 'shop/index');
+    redirect(PROOT . 'user/index');
 }
 
-$email = ((isset($_POST['email']))?sanitize($_POST['email']):'');
+$email = ((isset($_POST['email'])) ? sanitize($_POST['email']):'');
 $email = trim($email);
-$password = ((isset($_POST['password']))?sanitize($_POST['password']):'');
+$password = ((isset($_POST['password'])) ? sanitize($_POST['password']):'');
 $password = trim($password);
 $hashed = password_hash($password, PASSWORD_BCRYPT);
 $errors = '';
@@ -37,7 +37,7 @@ if (isset($_POST['submit_login'])) {
         foreach ($statement->fetchAll() as $row) {
             if ($row['user_trash'] == 0) {
                 if ($row['user_verified'] != 1) {
-                    redirect(PROOT.'shop/resend-vericode');
+                    redirect(PROOT . 'auth/resend-vericode');
                 } else {
                     if (!password_verify($password, $row['user_password'])) {
                         $errors = 'User cannot be found.';
@@ -73,7 +73,7 @@ if (isset($_POST['submit_login'])) {
     <meta name="author" content="Codescandy">
     <title>Verify Email - Thylies</title>
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
     <link rel="stylesheet" href="<?= PROOT; ?>assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= PROOT; ?>assets/css/theme.min.css">
