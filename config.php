@@ -18,3 +18,6 @@
 	// recaptcha
 	define('RECAPTCHA_SITE_KEY', '6LfnThkmAAAAAMOlDVEpEEoqTU_pEh-rIcsIPG5Q');
 	define('RECAPTCHA_SECRET_KEY', '6LfnThkmAAAAAAgkrWyPG93I0E94l0GsBOCd2rO_');
+
+	// PAYSTACK
+	define('TEST_PUBLIC_KEY', 'sk_test_ef2739b489fea9d2138879b5e54941d1431b5001');
