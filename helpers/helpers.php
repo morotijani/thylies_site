@@ -288,8 +288,8 @@ function check_payment_of_registration_fee($user_id) {
 	$sql = "
 		SELECT * FROM thylies_user_registration_transaction
 		INNER JOIN thylies_user 
-		ON thylies_user.id = thylies_user_registration_transaction.user_id 
-		WHERE thylies_user.id = ? 
+		ON thylies_user.user_id = thylies_user_registration_transaction.user_id 
+		WHERE thylies_user.user_id = ? 
 		LIMIT 1
 	";
 	$statement = $conn->prepare($sql);
@@ -301,12 +301,12 @@ function check_payment_of_registration_fee($user_id) {
 		// code...
 		if ($row[0]['status'] = 1) {
 			// code...
-			redirect(PROOT . 'users/index');
+			return true;
 		} else {
-			redirect(PROOT . 'auth/pay-registration');
+			return false;
 		}
 	} else {
-		redirect(PROOT . 'auth/pay-registration');
+		return false;
 	}
 }
 
