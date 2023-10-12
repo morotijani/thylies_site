@@ -268,7 +268,7 @@ function userLogin($user_id) {
 	}
 }
 
-function user_is_logged_in(){
+function user_is_logged_in() {
 	if (isset($_SESSION['THUser']) && $_SESSION['THUser'] > 0) {
 		return true;
 	}
@@ -279,6 +279,35 @@ function user_is_logged_in(){
 function user_login_redirect($url = 'login') {
 	$_SESSION['flash_error'] = '<div class="text-center" id="temporary" style="margin-top: 60px;">You must be logged in to access that page.</div>';
 	header('Location: '.$url);
+}
+
+// Check if you has paid registration fee
+function check_payment_of_registration_fee($user_id) {
+	global $conn;
+
+	$sql = "
+		SELECT * FROM thylies_user_registration_transaction
+		INNER JOIN thylies_user 
+		ON thylies_user.id = thylies_user_registration_transaction.user_id 
+		WHERE thylies_user.id = ? 
+		LIMIT 1
+	";
+	$statement = $conn->prepare($sql);
+	$statement->execute([$user_id]);
+	$result = $statement->rowCount();
+	$row = $statement->fetchAll();
+
+	if ($result > 0) {
+		// code...
+		if ($row[0]['status'] = 1) {
+			// code...
+			redirect(PROOT . 'users/index');
+		} else {
+			redirect(PROOT . 'auth/pay-registration');
+		}
+	} else {
+		redirect(PROOT . 'auth/pay-registration');
+	}
 }
 
 
@@ -322,11 +351,7 @@ function send_vericode($email) {
       	}
     }
     return $success;
- }
-
-
-
-
+}
 
 
 
