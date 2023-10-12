@@ -1,12 +1,9 @@
 <?php
-    require_once ('../db_connection/conn.php');
-    $nav = 0;
-    include ('inc/header-topnav.inc.php');
+    require_once ('../connection/conn.php');
 
-
-if (user_is_logged_in()) {
-    redirec(PROOT . 'shop/index');
-}
+    if (user_is_logged_in()) {
+        redirec(PROOT . 'user/index');
+    }
 
 ?>
 
@@ -38,7 +35,7 @@ if (user_is_logged_in()) {
                                     <input class="form-control bg-light" type="password" id="repeat_password" name="repeat_password" placeholder="Repeat password" />
                                 </div>
                                 <div class="mb-3 d-grid">
-                                    <button class="g-recaptcha btn btn-dark mt-3" data-sitekey="<?= RECAPTCHA_SITE_KEY_PUBLIC; ?>" data-callback='submit_signup' data-action='submit' type="submit" name="submit_login" id="submit_login">sign up</button>
+                                    <button class="g-recaptcha btn btn-dark mt-3" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_signup' data-action='submit' type="submit" name="submit_login" id="submit_login">sign up</button>
                                 </div>
                                 <br><br>
                                 <a href="<?= PROOT; ?>shop/login" class="text-dark text-decoration-underline">Already have an account.</a>
@@ -51,5 +48,4 @@ if (user_is_logged_in()) {
     </section>
 
 
-<?php $follow = 0; include ('inc/footer.inc.php'); ?>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>

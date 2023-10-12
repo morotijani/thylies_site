@@ -100,7 +100,7 @@ if (isset($_POST['submit_login'])) {
                     </a>
 
                     <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
-                        <form>
+                        <form method="POST">
                             <h1 class="mb-1 text-center h3">Welcome</h1>
                             <p class="mb-4 text-center">Sign in using your thylies credentials.</p>
                             <?= $errors; ?>
