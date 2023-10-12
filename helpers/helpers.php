@@ -248,59 +248,82 @@ function password_security_checks($password) {
 
 
 
-// Sessions For User login
+// Sessions For login
 function userLogin($user_id) {
-	$_SESSION['IQuser'] = $user_id;
-	$_SESSION['last_login_timestamp'] = time();
+	$_SESSION['THUser'] = $user_id;
 	global $conn;
 	$data = array(
 		':user_last_login' => date("Y-m-d H:i:s"),
 		':user_id' => (int)$user_id
 	);
 	$query = "
-		UPDATE inqoins_user 
+		UPDATE thylies_user 
 		SET user_last_login = :user_last_login 
-		WHERE user_id = :user_id
-	";
+		WHERE user_id = :user_id";
 	$statement = $conn->prepare($query);
 	$result = $statement->execute($data);
 	if (isset($result)) {
-		$userQ = $conn->query("SELECT * FROM inqoins_user INNER JOIN inqoins_user_details ON inqoins_user.user_id = inqoins_user_details.user_id WHERE inqoins_user.user_id = $user_id LIMIT 1")->fetchAll();
-		$name = ucwords($userQ[0]['user_fname'] . ' ' . $userQ[0]['user_lname'] . ' ' . $userQ[0]['user_nname']);
-        $subject = 'Login Notification.';
-
-        $access_token = IPINFO_KEY;
-		$client = new IPinfo($access_token);
-        $ip = $client->getDetails();
-        $ip_address = $ip->ip;
-
-        $body = "
-            <h3>You signed into your account.</h3>
-            <p>Sup {$name}!</p>
-            <p>We want to let you know that on " . date("Y-m-d H:i:s A") . ", this ip  " . $ip_address . " accessed your Inqoins account.</p>
-            <p>Please change your password if you didn't start it and get in touch with us right away at <a href='mailto:contact@inqoins.io'>contact@inqoins.io</a></p>
-            <p><a href='" . PROOT . "auth/recover-password'>Change password</a></p>
-            <p><small>Inqoins Inc.</small></p>
-        ";
-        if ($userQ[0]['user_pin'] != NULL) {
-        	$subject = 'An attempt at logging in.';
-        	$body = "
-        		<h3>There was an attempt to log into your account,</h3>
-	            <p>Hi {$name}!</p>
-	            <p>There has been an attempt to get into your Inqoins account, and we want to let you know about it.</p>
-	            <p>Please change your password if you didn't start it and get in touch with us right away at <a href='mailto:contact@inqoins.io'>contact@inqoins.io</a></p>
-	            <p><a href='" . PROOT . "auth/recover-password'>Change password</a></p>
-	            <p><small>Inqoins Inc.</small></p>
-        	";
-        	send_email($name, $userQ[0]['user_email'], $subject, $body);
-			redirect(PROOT . 'auth/verify-2fa');
-        } else {
-        	send_email($name, $userQ[0]['user_email'], $subject, $body);
-        	redirect(PROOT . 'app');
-        }
-        
+		$_SESSION['flash_success'] = '<div class="text-center" id="temporary">You are now logged in!</div>';
+		redirect(PROOT . 'shop/index');
 	}
 }
+
+function user_is_logged_in(){
+	if (isset($_SESSION['THUser']) && $_SESSION['THUser'] > 0) {
+		return true;
+	}
+	return false;
+}
+
+// Redirect admin if !logged in
+function user_login_redirect($url = 'login') {
+	$_SESSION['flash_error'] = '<div class="text-center" id="temporary" style="margin-top: 60px;">You must be logged in to access that page.</div>';
+	header('Location: '.$url);
+}
+
+
+function send_vericode($email) {
+	global $conn;
+    $success = false;
+    $user = findUserByEmail($email);
+
+    if($user) {
+      	$vericode = md5(time());
+      	$sql = "
+      		UPDATE thylies_user 
+      		SET user_vericode = :user_vericode 
+      		WHERE user_id = :user_id
+      	";
+      	$statement = $conn->prepare($sql);
+      	$result = $statement->execute([
+      		':user_vericode' => $vericode,
+      		':user_id' => $user['user_id']
+      	]);
+      	if ($result) {
+        	$fn = ucwords($user['user_fullname']);
+        	$to = $email;
+         	$subject = "Please Verify Your Account";
+			$body = "
+				<h3>
+					{$fn},</h3>
+					<p>
+						Thank you for regestering. Please verify your account by clicking 
+          				<a href=\"http://sites.local/mifo/verify/{$vericode}\" target=\"_blank\">here</a>.
+        		</p>
+			";
+
+			$mail = send_email($fn, $to, $subject, $body);
+			if ($mail) {
+				$success = 'Message has been sent';
+			} else {
+			    return "Message could not be sent.";
+			    //return "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+			}
+      	}
+    }
+    return $success;
+ }
+
 
 // check if user is loggged in.
 function user_is_logged_in() {

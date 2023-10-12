@@ -37,9 +37,9 @@ if ($_POST) {
     } else {
         foreach ($statement->fetchAll() as $row) {
             if ($row['user_trash'] == 0) {
-                if ($row['user_verified'] != 1) {
-                    redirect(PROOT.'shop/resend-vericode');
-                } else {
+                // if ($row['user_verified'] != 1) {
+                //     redirect(PROOT.'shop/resend-vericode');
+                // } else {
                     if (!password_verify($password, $row['user_password'])) {
                         $errors = '<div class="alert alert-secondary" role="alert">User cannot be found.</div>';
                     } else {
@@ -50,7 +50,7 @@ if ($_POST) {
                             userLogin($user_id);
                         }
                     }
-                }
+                // }
             } else {
                 $errors = '<div class="alert alert-secondary" role="alert">User account Terminated.</div>';
             }
