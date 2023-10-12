@@ -79,7 +79,7 @@
                                 </select>
                             </div>
                             <div class="d-grid">
-                                <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_signup' data-action='submit' type="submit" name="submit_login" id="submit_login">Register</button>
+                                <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_signup' data-action='submit' type="submit" name="submit_signup" id="submit_signup">Register</button>
                             </div>
                             <div class="d-xxl-flex justify-content-between mt-4 ">
                                 <p class="text-muted font-14 mb-0">

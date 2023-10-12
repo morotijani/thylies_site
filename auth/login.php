@@ -16,7 +16,7 @@ $password = trim($password);
 $hashed = password_hash($password, PASSWORD_BCRYPT);
 $errors = '';
 
-if (isset($_POST['submit_login'])) {
+if ($_POST) {
     if (empty($_POST['email']) || empty($_POST['password'])) {
         $errors = '<div class="alert alert-secondary" role="alert">You must provide email and password</div>';
     }
@@ -100,7 +100,7 @@ if (isset($_POST['submit_login'])) {
                     </a>
 
                     <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
-                        <form method="POST">
+                        <form method="POST" id="loginForm">
                             <h1 class="mb-1 text-center h3">Welcome</h1>
                             <p class="mb-4 text-center">Sign in using your thylies credentials.</p>
                             <?= $errors; ?>
@@ -116,9 +116,7 @@ if (isset($_POST['submit_login'])) {
                                     required="">
                             </div>
                             <div class="d-grid">
-                                <button class="btn btn-warning" name="submit_login" type="submit">
-                                    Sign in
-                                </button>
+                                <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_signup' data-action='submit' type="submit" name="submit_login" id="submit_login">Sign in</button>
                             </div>
                             <div class="d-xxl-flex justify-content-between mt-4 ">
                                 <p class="text-muted font-14 mb-0">
@@ -143,14 +141,18 @@ if (isset($_POST['submit_login'])) {
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="<?= PROOT; ?>assets/js/jquery.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/jquery.slimscroll.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 
+    <script>
+        function submit_signup(token) {
+            $('#loginForm').submit();
+        }
+    </script>
 </body>
-
 </html>

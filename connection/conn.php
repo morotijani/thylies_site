@@ -48,6 +48,7 @@
 
 	require_once($_SERVER['DOCUMENT_ROOT'].'/thylies_site/config.php');
  	require_once(BASEURL.'helpers/helpers.php');
+ 	require_once(BASEURL.'helpers/functions.php');
 
  	// USER LOGIN
  	if (isset($_SESSION['IQuser'])) {

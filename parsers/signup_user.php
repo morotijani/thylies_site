@@ -42,14 +42,15 @@
 			if ($mail_result) {
 
 				$data = [
+					':user_unique_id'		=> guidv4(),
 					':user_fullname'		=> $fullname,
 					':user_email'			=> $email,
 					':user_password'		=> $password_hash,
-					':user_gender'		=> $user_gender
+					':user_gender'			=> $gender
 				];
 				$query = "
-					INSERT INTO thylies_user (user_fullname, user_email, user_password, user_gender ) 
-					VALUES (:user_fullname, :user_email, :user_password, :user_gender ); 
+					INSERT INTO thylies_user (user_unique_id, user_fullname, user_email, user_password, user_gender) 
+					VALUES (:user_unique_id, :user_fullname, :user_email, :user_password, :user_gender); 
 				";
 				$statement = $conn->prepare($query);
 				$result = $statement->execute($data);

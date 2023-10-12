@@ -2,9 +2,7 @@
 
 // USER SIGNIN
 
-require_once ('../db_connection/conn.php');
-$nav = 0;
-include ('inc/header-topnav.inc.php');
+require_once ('../connection/conn.php');
 
 if (user_is_logged_in()) {
     redirect(PROOT . 'shop/index');
@@ -63,39 +61,56 @@ if (isset($_POST['submit_login'])) {
 
 ?>
 
-    <!-- BREADCRUMB -->
-    <nav class="py-5">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sign in Page - Coach">
+    <meta name="keywords" content="">
+    <meta name="author" content="Codescandy">
+    <title>Verify Email - Thylies</title>
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/favicon.ico">
+
+    <link rel="stylesheet" href="<?= PROOT; ?>assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?= PROOT; ?>assets/css/theme.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8S4MT3EYG');
+    </script>
+</head>
+<body class="bg-light">
+
+    <div class="d-flex align-items-center position-relative vh-100">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
+            <div class="row g-0">
+                <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-top-3 space-lg-0">
+                    <a href="<?= PROOT; ?>" class="mb-4 d-flex justify-content-center">
+                        <img src="<?= PROOT; ?>assets/media/logo/logo.jpg" alt="logo">
+                    </a>
 
-                    <!-- Breadcrumb -->
-                    <ol class="breadcrumb mb-0 fs-xs text-gray-400">
-                        <li class="breadcrumb-item">
-                            <a class="text-gray-400" href="<?= PROOT; ?>shop/index">Account</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            Verify
-                        </li>
-                    </ol>
-
+                    <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
+                        <h1 class="mb-1 text-center h3">VERIFY YOUR EMAIL.</h1>
+                        <p class="mb-4 text-center">A verification link has been sent to your email account. Please check your <b>spam folder</b> if not found in your <b>inbox</b> to verify your Thylies account.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
-    
-        <!-- hero -->
-    <section class="pt-7 pb-12">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-8">
-                    <h2>MIFO.</h2>
-                    <h3>VERIFY YOUR EMAIL.</h3>
-                    <h5 class="text-secondary">A verification link has been sent to your email account. Please check your <b>spam folder</b> if not found in your <b>inbox</b> to verify your Gary Pie account.</h5>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
+    <script src="<?= PROOT; ?>assets/js/jquery.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/jquery.slimscroll.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
 
-<?php $follow = 0; include ('inc/footer.inc.php'); ?>
+</body>
+</html>

@@ -1,9 +1,9 @@
 <?php
 // PHPMAILER CONFIG 
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\SMTP;
-// use PHPMailer\PHPMailer\Exception;
-// require BASEURL . 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require BASEURL . 'vendor/autoload.php';
 
 // // IP INFO
 // use ipinfo\ipinfo\IPinfo;
