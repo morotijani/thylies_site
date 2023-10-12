@@ -13,10 +13,21 @@
     <meta name="author" content="Codescandy">
     <title>Error Page - Thylies</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu" />
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Patrick+Hand&family=Young+Serif&display=swap" rel="stylesheet">
+
  	<link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/favicon.ico">
 
     <link rel="stylesheet" href="<?= PROOT; ?>assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= PROOT; ?>assets/css/theme.min.css">
+    <style>
+    	* {
+    		font-family: Gaegu;
+    	}
+    </style>
 
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
@@ -39,7 +50,7 @@
                         Sorry, we couldn’t find the page you were looking for. Go ahead and try the button at the bottom
                         to find your way!
                     </p>
-                    <a href="<?= PROOT; ?>" class="btn btn-primary">Back to saftey</a>
+                    <a href="<?= PROOT; ?>" class="btn btn-warning">Back to saftey</a>
                 </div>
                 <div class="offset-lg-1 col-lg-7 col-12 text-center">
                     <img src="<?= PROOT; ?>assets/media/404.png" alt="" class="img-fluid">
