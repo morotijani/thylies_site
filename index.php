@@ -730,5 +730,4 @@
 <script src="<?= PROOT; ?>assets/plyr.min.js"></script>
 
 </body>
-
 </html>
