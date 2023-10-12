@@ -404,19 +404,16 @@
           <div class="col-xl-6 col-md-12 col-lg-6 col-12">
             <!--image-->
             <div class="mb-5 mb-xl-0">
-              <img src="../assets/images/yoga/about.jpg" alt="about" class="img-fluid w-100 rounded-3">
+              <img src="<?= PROOT; ?>assets/media/bg-2.jpg" alt="about" class="img-fluid w-100 rounded-3">
             </div>
           </div>
           <div class="col-xl-5 offset-xl-1 col-md-12 col-lg-6 col-12">
             <div>
               <!--content-->
-              <span class="text-secondary text-uppercase fw-bold">About Sarah Blais</span>
+              <span class="text-secondary text-uppercase fw-bold">Thylies . Associate</span>
               <h2 class="fw-bold mt-5">I work via a holistic approach with an <span class="text-bottom-line">emphasis
                   on:</span></h2>
-              <p class="mb-5">Our yoga retreats are designed specifically for beginners. Private Yoga and Holistic
-                Wellness,
-                Mentoring, and Services.
-                Personalized guidance, resources, and support.</p>
+              <p class="mb-5">Do you want to become an associate team member, retailer, salesperson, or executive? Find out how to land an associate position, including the skills you'll need, the education you should pursue, and the ways to advance your career.</p>
               <!--list-->
               <ul class="list-unstyled mb-5">
                 <li class="mb-2">
@@ -452,7 +449,7 @@
               </ul>
               <!--list-->
               <!--button-->
-              <a href="#" class="btn btn-outline-secondary">Meet Personal Trainer</a>
+              <a href="#" class="btn btn-outline-secondary">Become an Associate</a>
             </div>
           </div>
         </div>
@@ -467,7 +464,7 @@
           <div class="col-xl-12 col-md-12 col-12">
             <div class="mb-5">
               <!--heading-->
-              <h3 class="fw-bold">My Videos</h3>
+              <h3 class="fw-bold">Our Gallery</h3>
             </div>
           </div>
         </div>
@@ -521,174 +518,15 @@
           <div class="col-xl-12 col-md-12 col-12">
             <!--button-->
             <div class="mt-5">
-              <a href="#" class="btn btn-outline-secondary">Watch my videos series</a>
+              <a href="<?= PROOT; ?>gallery" class="btn btn-outline-secondary">Explore our gallery</a>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!--video-->
-    <!--join now-->
-    <section class="py-lg-10 py-6 bg-light">
-      <div class="container">
-        <!--row-->
-        <div class="row">
-          <div class="col-xl-6 offset-xl-3 col-md-12 col-12">
-            <div class="text-center  mb-lg-9 mb-5">
-              <!--content-->
-              <h2 class="fw-bold mb-3">Join Now & <span class="text-bottom-line"> Start Free</span>
-                7
-                days</h2>
-              <p class="mb-0">We are so glad you are here. There’s a plan for every type of a need - choose the one that
-                fits your needs best. Both plans auto-renew so be sure to make any changes 7 days before the end of your
-                subscription cycle.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-10 offset-xl-1 col-md-12  col-12">
-            <div class="row">
-              <div class="col-xl-6 col-md-12 col-lg-6 col-12">
-                <!--card-->
-                <div class="card  mb-5 mb-lg-0">
-                  <!--card-body-->
-                  <div class="card-body p-5">
-                    <!--content-->
-                    <span class="text-uppercase text-dark">Monthly</span>
-                    <div class="d-flex align-items-center mt-5">
-                      <h2>$12.99/mo</h2><span class="ms-1">(USD)</span>
-                    </div>
-                    <p class="mb-0">Charges you every month and you can cancel anytime you want.</p>
-                    <!--list-->
-                    <ul class="list-unstyled mt-4">
-                      <li class="mb-2">
-                        <!--icon-->
-                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">New videos every week</span>
-                      </li>
-                      <li class="mb-2">
-                        <span>
-                          <!--icon-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">Premium Courses</span>
-                      </li>
-                      <li class="mb-2">
-                        <span>
-                          <!--icon-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">Online YouTube Courses</span>
-                      </li>
-                      <li class="mb-2">
-                        <span>
-                          <!--icon-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">Exclusive Classes and Guest Instructors</span>
-                      </li>
-                    </ul>
-                    <!--button-->
-                    <div class="mt-5 d-grid">
-                      <a href="#" class="btn btn-outline-secondary">Free 7 Days Trial</a>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-xl-6 col-md-12 col-lg-6 col-12">
-                <!--card-->
-                <div class="card">
-                  <!--card body-->
-                  <div class="card-body p-5">
-                    <!--content-->
-                    <span class="text-uppercase text-dark">Annual</span>
-                    <div class="d-flex align-items-center mt-5">
-                      <h2>$129.99/year</h2><span class="ms-1">(USD)</span>
-                    </div>
-                    <p class="mb-0">Charges you once a year and saves you money.</p>
-                    <!--list-->
-                    <ul class="list-unstyled mt-4">
-                      <li class="mb-2">
-                        <span>
-                          <!--icon-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">All the same content as the monthly plan</span>
-                      </li>
-                      <li class="mb-2">
-                        <span>
-                          <!--icon-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">Save $25 a year compared monthly plan</span>
-                      </li>
-                      <li class="mb-2">
-                        <span>
-                          <!--icon-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">Online YouTube Courses</span>
-                      </li>
-                      <li class="mb-2">
-                        <span>
-                          <!--icon-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">Personal Training </span>
-                      </li>
-                      <li class="mb-2">
-                        <span>
-                          <!--icon-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                            <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                          </svg></span>
-                        <span class="ms-1">Premium Courses</span>
-                      </li>
-                    </ul>
-                    <!--button-->
-                    <div class="mt-5 d-grid">
-                      <a href="#" class="btn btn-secondary">Start Trial 7 Days</a>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--join mow-->
     <!--the blog-->
-    <section class="py-lg-10 py-6">
+    <section class="py-lg-10 py-6 bg-light">
       <div class="container">
         <!--row-->
         <div class="row">
