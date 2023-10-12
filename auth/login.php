@@ -6,12 +6,12 @@ require_once ('../connection/conn.php');
 $nav = 0;
 
 if (user_is_logged_in()) {
-    redirect(PROOT . 'shop/index');
+    redirect(PROOT . 'user/index');
 }
 
-$email = ((isset($_POST['email']))?sanitize($_POST['email']):'');
+$email = ((isset($_POST['email'])) ? sanitize($_POST['email']):'');
 $email = trim($email);
-$password = ((isset($_POST['password']))?sanitize($_POST['password']):'');
+$password = ((isset($_POST['password'])) ? sanitize($_POST['password']):'');
 $password = trim($password);
 $hashed = password_hash($password, PASSWORD_BCRYPT);
 $errors = '';
@@ -22,7 +22,7 @@ if (isset($_POST['submit_login'])) {
     }
 
     $query = "
-        SELECT * FROM mifo_user 
+        SELECT * FROM thylies_user 
         WHERE user_email = :user_email 
         LIMIT 1
     ";
@@ -61,43 +61,6 @@ if (isset($_POST['submit_login'])) {
 
 
 ?>
-
-    <!-- <section class="py-0">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 px-0">
-                    <div class="sticky-top vh-lg-100 py-9">
-                        <div class="bg-holder" style="background-image:url(../assets/media/bg-2.jpg);" data-zanim-trigger="scroll" data-zanim-lg='{"animation":"zoom-out-slide-right","delay":0.4}'></div>
-                    </div>
-                </div>
-                <div class="col-lg-6 py-6">
-                    <div class="row h-100 align-items-center justify-content-center">
-                        <div class="col-sm-8 col-md-6 col-lg-10 col-xl-8" data-zanim-xs='{"delay":0.5,"animation":"slide-right"}' data-zanim-trigger="scroll">
-                            <h3 class="display-4 fs-2"><span class="fs-4">MIFO</span>. <br>LOGIN</h3>
-                            <h6 class="text-secondary mt-3">A Brand That Is Here To Take You Through A Journey Of Historic Culture And Unique Way Of Life.</h6>
-                            <form class="mt-5" method="POST" action="login.php" id="loginForm">
-                                <?= $errors; ?>
-                                <div class="mb-3">
-                                    <input class="form-control bg-light" type="email" id="email" name="email" placeholder="Email" />
-                                </div>
-                                <div class="mb-0">
-                                    <input class="form-control bg-light" type="password" id="password" name="password" placeholder="Password" />
-                                </div>
-                                <div class="mb-3 d-grid">
-                                    <button class="btn btn-dark mt-3" type="submit" name="submit_login" id="submit_login">sign in</button>
-                                </div>
-                                <br><br>
-                                <a href="<?= PROOT; ?>shop/forgot-password" class="text-dark text-decoration-underline">I have forgotten my password.</a> <br>
-                                <a href="<?= PROOT; ?>shop/signup" class="text-dark text-decoration-underline">Creat an account.</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -140,28 +103,29 @@ if (isset($_POST['submit_login'])) {
                         <form>
                             <h1 class="mb-1 text-center h3">Welcome</h1>
                             <p class="mb-4 text-center">Sign in using your thylies credentials.</p>
+                            <?= $errors; ?>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email<span class="text-danger">*</span> </label>
-                                <input type="email" id="email" class="form-control " placeholder="Email address"
-                                    required="">
+                                <input type="email" id="email" class="form-control" name="email" placeholder="Email address"
+                                    required="" autocomplete="off">
                             </div>
                             <div class="mb-3 mb-4">
                                 <label for="password" class="form-label">Password<span
                                         class="text-danger">*</span></label>
-                                <input type="password" id="password" class="form-control" placeholder="Password"
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password"
                                     required="">
                             </div>
                             <div class="d-grid">
-                                <button class="btn btn-warning" type="submit">
+                                <button class="btn btn-warning" name="submit_login" type="submit">
                                     Sign in
                                 </button>
                             </div>
                             <div class="d-xxl-flex justify-content-between mt-4 ">
                                 <p class="text-muted font-14 mb-0">
-                                    Don't have an account yet? <a href="signup-cover.html">Sign up</a>
+                                    Don't have an account yet? <a href="<?= PROOT; ?>auth/join">Sign up</a>
                                 </p>
                                 <p class="font-14 mb-0">
-                                    <a href="password-reset-cover.html">Forget Password</a>
+                                    <a href="<?= PROOT; ?>auth/forgot-password">Forget Password</a>
                                 </p>
                             </div>
                         </form>
@@ -169,10 +133,10 @@ if (isset($_POST['submit_login'])) {
                     <div class="mt-3 nav-footer-links">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Privacy Policy </a>
+                                <a class="nav-link active" href="<?= PROOT; ?>privacy-policy">Privacy Policy </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Terms & Conditions</a>
+                                <a class="nav-link" href="<?= PROOT; ?>terms">Terms & Conditions</a>
                             </li>
                         </ul>
                     </div>
