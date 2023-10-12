@@ -2,25 +2,29 @@
 
 // USER forget password
 
-require_once ('../db_connection/conn.php');
-$nav = 0;
-include ('inc/header-topnav.inc.php');
+require_once ('../connection/conn.php');
 
-if (user_is_logged_in()) {
-    redirect(PROOT . 'index');
-}
+    if (user_is_logged_in()) {
+        redirect(PROOT . 'user/index');
+    }
 
     $errors = '';
     if($_POST) {
         $email = sanitize($_POST['email']);
+
         //validation
         if(empty($email)) {
             $errors = '<div class="alert alert-secondary" role="alert">Email is required.</div>';
         }
 
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // code...
+            $errors = '<div class="alert alert-secondary" role="alert">Invalid email.</div>';
+        }
+
         if(empty($errors)) {
             $sql = "
-                SELECT * FROM mifo_user 
+                SELECT * FROM thylies_user 
                 WHERE user_email = :user_email 
                 AND user_verified = :user_verified
                 AND user_trash = :user_trash
@@ -53,7 +57,7 @@ if (user_is_logged_in()) {
                 $mail_result = send_email($name, $to, $subject, $body);
                 if ($mail_result) {
                     $query = "
-                        INSERT INTO mifo_user_password_resets (password_reset_created_at, password_reset_user_id, password_reset_verify) 
+                        INSERT INTO thylies_user_password_resets (password_reset_created_at, password_reset_user_id, password_reset_verify) 
                         VALUES (:password_reset_created_at, :password_reset_user_id, :password_reset_verify);
                     ";
                     $statement = $conn->prepare($query);
@@ -67,7 +71,7 @@ if (user_is_logged_in()) {
                     if (isset($result)) {
                        // code...
                        $_SESSION['password_reset_user_id'] = $user_id;
-                        redirect(PROOT . 'mifo/reset-verify');
+                        redirect(PROOT . 'auth/reset-verify');
                     }   
                 } else {
                     //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -83,53 +87,88 @@ if (user_is_logged_in()) {
 
 ?>
 
-    <!-- BREADCRUMB -->
-    <nav class="py-5">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sign in Page - Coach">
+    <meta name="keywords" content="">
+    <meta name="author" content="Codescandy">
+    <title>Sign in - Thylies</title>
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
+
+    <link rel="stylesheet" href="<?= PROOT; ?>assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?= PROOT; ?>assets/css/theme.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8S4MT3EYG');
+    </script>
+</head>
+<body class="bg-light">
+
+    <div class="d-flex align-items-center position-relative vh-100">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <ol class="breadcrumb mb-0 fs-xs text-gray-400">
-                        <li class="breadcrumb-item">
-                            <a class="text-gray-400" href="<?= PROOT; ?>shop/index">Shop</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            Login
-                        </li>
-                    </ol>
+            <div class="row g-0">
+                <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-top-3 space-lg-0">
+                    <a href="<?= PROOT; ?>" class="mb-4 d-flex justify-content-center">
+                        <img src="<?= PROOT; ?>assets/media/logo/logo.jpg" alt="logo">
+                    </a>
+
+                    <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
+                        <form method="POST" id="forgotPasswordForm">
+                            <h1 class="mb-1 text-center h3">Thylies</h1>
+                            <p class="mb-4 text-center">Reset Your Password.</p>
+                            <?= $errors; ?>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email<span class="text-danger">*</span> </label>
+                                <input type="email" id="email" class="form-control" name="email" placeholder="Email address"
+                                    required="" autocomplete="off">
+                            </div>
+                            <div class="d-grid">
+                                <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_forgotpassword' data-action='submit' type="submit" name="submit_login" id="submit_login">Recover Password</button>
+                            </div>
+                            <div class="d-xxl-flex justify-content-between mt-4">
+                                <p class="font-14 mb-0">
+                                    <a href="<?= PROOT; ?>">Cancel</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="mt-3 nav-footer-links">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="<?= PROOT; ?>privacy-policy">Privacy Policy </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= PROOT; ?>terms">Terms & Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
-    
-    <!-- CONTENT -->
-    <section class="pt-7 pb-12">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Heading -->
-                    <h3 class="text-center">MIFO.</h3>
-                    <h4 class="mb-6 text-center">Reset Your Password.</h4>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8">
-                    <!-- Form -->
-                    <form method="POST">
-                        <?= $errors; ?>
-                        <!-- Email -->
-                        <div class="form-group mb-4">
-                            <label class="visually-hidden" for="email">
-                                Your Email *
-                            </label>
-                            <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" required>
-                        </div>
-                         <a href="<?= PROOT; ?>shop/login" class="btn btn-secondary">Cancel</a>
-                        <button type="submit" class="btn btn-outline-dark">Recover Password</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
+    <script src="<?= PROOT; ?>assets/js/jquery.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/jquery.slimscroll.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 
-<?php $follow = 0; include ('inc/footer.inc.php'); ?>
+    <script>
+        function submit_forgotpassword(token) {
+            $('#forgotPasswordForm').submit();
+        }
+    </script>
+</body>
+</html>

@@ -1,12 +1,10 @@
 <?php 
 
-	// USER SIGNOUT PAGE
+	// USER SIGN OUT PAGE
 
-    require_once ("../db_connection/conn.php");
+    require_once ("../connection/conn.php");
 
-    unset($_SESSION['MFUser']);
+    unset($_SESSION['THUser']);
 
-	redirect(PROOT . 'shop/index');
+	redirect(PROOT . 'auth/login');
 
-	
-?>

@@ -325,13 +325,6 @@ function send_vericode($email) {
  }
 
 
-// check if user is loggged in.
-function user_is_logged_in() {
-	if (isset($_SESSION['IQuser']) && $_SESSION['IQuser'] > 0) {
-		return true;
-	}
-	return false;
-}
 
 
 
