@@ -264,7 +264,7 @@ function userLogin($user_id) {
 	$result = $statement->execute($data);
 	if (isset($result)) {
 		$_SESSION['flash_success'] = '<div class="text-center" id="temporary">You are now logged in!</div>';
-		redirect(PROOT . 'shop/index');
+		redirect(PROOT . 'user/index');
 	}
 }
 
@@ -308,7 +308,7 @@ function send_vericode($email) {
 					{$fn},</h3>
 					<p>
 						Thank you for regestering. Please verify your account by clicking 
-          				<a href=\"http://sites.local/mifo/verify/{$vericode}\" target=\"_blank\">here</a>.
+          				<a href=\"http://sites.local/thylies_site/auth/verify/{$vericode}\" target=\"_blank\">here</a>.
         		</p>
 			";
 
@@ -331,30 +331,6 @@ function user_is_logged_in() {
 		return true;
 	}
 	return false;
-}
-
-// check if user has pin
-function user_have_set_pin() {
-	if (isset($_SESSION['ihp']) && $_SESSION['ihp'] > 0) {
-		return true;
-	}
-	return false;
-}
-
-// Redirect admin if !logged in
-function user_login_redirect($url = PROOT . 'auth/login') {
-	$_SESSION['flash_error'] = '<div class="text-center" id="temporary" style="margin-top: 60px;">You must be logged in to access that page.</div>';
-	header('Location: '.$url);
-}
-
-// LOG USER OUT AFTER !% MINS OF IDLENESS
-function automaticallyLogUserOut() {
-	// 900 = 15 * 60 
-	// if ((time() - $_SESSION['last_login_timestamp']) > 900) {  
-    //     $_SESSION['flash_error'] = 'You have been logout because, you have been idle for sometime.';
-    //     redirect(PROOT . 'account/out');
-    // } 
-    return true;
 }
 
 
