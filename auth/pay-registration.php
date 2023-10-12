@@ -1,13 +1,16 @@
 <?php 
 
-// RESET VERIFY EMAIL PAGE
+    // PAY FOR REGISTRATION PAGE
 
-require_once ('../connection/conn.php');
+    require_once ('../connection/conn.php');
 
-if (user_is_logged_in()) {
-    redirect(PROOT . 'user/index');
-}
-
+    if (user_is_logged_in()) {
+        if (check_payment_of_registration_fee($user_id)) {
+            redirect(PROOT . 'user/index');
+        }
+    } else {
+        redirect(PROOT . 'auth/logout');
+    }
 
 ?>
 
@@ -21,7 +24,7 @@ if (user_is_logged_in()) {
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Sign in - Thylies</title>
+    <title>Pay Registration - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
@@ -49,24 +52,17 @@ if (user_is_logged_in()) {
                     </a>
 
                      <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
-                        <form method="POST" id="forgotPasswordForm">
-                            <h1 class="mb-1 text-center h3">Please Enter Your 6 digit code.</h1>
-                            <p class="mb-4 text-center">A 6 digit code has been sent to your email address.</p>
-                            <?= $errors; ?>
-                            <div class="mb-3">
-                                <label for="code" class="form-label">6 Digit Verification Code<span class="text-danger">*</span> </label>
-                                <input type="text" id="code" class="form-control" name="code" placeholder="Verify" required="" autocomplete="off">
+                        <form id="paymentForm">
+                            <h1 class="mb-1 text-center h3">Payment for registration.</h1>
+                            <p class="mb-4 text-center">Any registered student is pay the amount of GHS101.00 access the platform.</p>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-lg btn-warning" onclick="payWithPaystack()"> Pay GHS101.00 </button>
                             </div>
-                            <div class="d-grid">
-                                <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_forgotpassword' data-action='submit' type="submit" name="submit_login" id="submit_login">Verify</button>
-                                <a href="<?= PROOT; ?>auth/login" >Cancel</a>
-                            </div>
+
                             <div class="d-xxl-flex justify-content-between mt-4">
-                                 <p class="text-muted font-14 mb-0">
-                                    Resend Code? <a href="<?= PROOT; ?>auth/forgot-password">Try Again</a>
-                                </p>
                                 <p class="font-14 mb-0">
-                                    <a href="<?= PROOT; ?>auth/login">Login</a>
+                                    <a href="<?= PROOT; ?>auth/login">Cancel</a>
                                 </p>
                             </div>
                         </form>
@@ -86,12 +82,6 @@ if (user_is_logged_in()) {
         </div>
     </div>
 
-<?php 
-	} else {
-		redirect(PROOT . 'auth/forgot-password');
-	} 
-?>
-
 
     <script src="<?= PROOT; ?>assets/js/jquery.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
@@ -99,9 +89,49 @@ if (user_is_logged_in()) {
     <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <script>
-        function submit_forgotpassword(token) {
-            $('#forgotPasswordForm').submit();
+        const paymentForm = document.getElementById('paymentForm');
+        paymentForm.addEventListener("submit", payWithPaystack, false);
+
+        function payWithPaystack(e) {
+            e.preventDefault();
+
+            let handler = PaystackPop.setup({
+                key: '<?= PAYSTACK_TEST_PUBLIC_KEY; ?>',
+                email: '<?= $user_data['user_email']; ?>',
+                amount: 101 * 100,
+                currency: 'GHS',
+                channels: ['card', 'bank', 'ussd', 'qr', 'mobile_money', 'bank_transfer'],
+                ref: 'THY'+Math.floor((Math.random() * 1000000000) + 1),
+                // label: "Optional string that replaces customer email",
+                metadata: {
+                    "user_id": '<?= $user_data['user_unique_id']; ?>',
+                    "user_name" : '<?= $user_data['user_fullname']; ?>',
+                    "user_gender" : '<?= $user_data['user_gender']; ?>'
+                },
+                onClose: function() {
+                    alert('Window closed.');
+                },
+                callback: function(response){
+                    let message = 'Payment complete! Reference: ' + response.reference;
+                    alert(message);
+
+                    $.ajax ({
+                        url: '<?= PROOT; ?>parsers/pay.register.php',
+                        method : 'POST',
+                        data: { 
+                            reference : response.reference
+                        },
+                        success : function(data) {
+                            if (data == '') {
+                                window.location = '<?= PROOT; ?>auth/registration-paid';
+                            }
+                        }
+                    });
+                }
+            });
+            handler.openIframe();
         }
     </script>
 </body>

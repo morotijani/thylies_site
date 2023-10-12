@@ -298,9 +298,7 @@ function check_payment_of_registration_fee($user_id) {
 	$row = $statement->fetchAll();
 
 	if ($result > 0) {
-		// code...
 		if ($row[0]['status'] = 1) {
-			// code...
 			return true;
 		} else {
 			return false;
