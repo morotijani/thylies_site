@@ -51,7 +51,7 @@
  	require_once(BASEURL.'helpers/functions.php');
 
 
-// USER LOGIN
+	// USER LOGIN
  	if (isset($_SESSION['THUser'])) {
  		$user_id = $_SESSION['THUser'];
  		$data = array(
