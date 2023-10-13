@@ -71,7 +71,7 @@
                     <li class="nav-item">
                         <a href=" <?= PROOT; ?>user/apply-student-in-business" class="nav-link">Student in Business</a>
                     </li>
-                    <?php if ($user_data['gender'] == 'Female'): ?>
+                    <?php if ($user_data['user_gender'] == 'Female'): ?>
                     <li class="nav-item">
                         <a href=" <?= PROOT; ?>user/apply-sanitary-welfare" class="nav-link">Sanitary Welfare</a>
                     </li>
@@ -100,7 +100,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="<?= PROOT; ?>auth/logot">
+                                <a class="dropdown-item" href="<?= PROOT; ?>auth/logout">
                                     Logout
                                 </a>
                             </li>
