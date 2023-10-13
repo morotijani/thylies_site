@@ -16,7 +16,7 @@
 		$result = $statement->execute([$reference, $user_id, 1, $createdAt]);
 
 		if (isset($result)) {
-			$_SESSION['pay_id'] = $conn->lastInsertId();
+			$_SESSION['pay_id'] = $reference;
 			echo '';
 		}
 	}
