@@ -1,8 +1,10 @@
 <?php 
     require_once ("connection/conn.php");
     $title = 'Home - ';
-    $navbar_default = 'navbar-light';
+    //$navbar_default = 'navbar-light';
     $navbar = 'navbar-dark navbar-default fixed-top';
+
+    require ('inc/header.inc.php');
 ?>
 
         <!-- hero section -->

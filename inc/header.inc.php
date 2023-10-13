@@ -80,12 +80,15 @@
                         <a href=" <?= PROOT; ?>countact-us" class="nav-link">Contact</a>
                     </li>
                 </ul>
-                <div class="ms-auto d-none d-lg-block ">
-                    <a href=" <?= PROOT; ?>auth/login" class="btn btn-outline-warning btn-sm ">Login</a>
-                    <a href=" <?= PROOT; ?>donate" class="btn btn-secondary btn-sm">Donate</a>
+                <div class="ms-auto">
+                    <?php if (user_is_logged_in()): ?>
+                        <a href=" <?= PROOT; ?>auth/login" class="btn btn-sm ">Welcome <?= $user_data['first']; ?>!</a>
+                    <?php else: ?>
+                        <a href=" <?= PROOT; ?>auth/login" class="btn btn-outline-warning btn-sm ">Login</a>
+                        <a href=" <?= PROOT; ?>donate" class="btn btn-secondary btn-sm">Donate</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </nav>
-    
     <main>

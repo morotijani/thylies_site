@@ -5,6 +5,16 @@
     $navbar = 'navbar-light';
 
     include ('inc/header.inc.php');
+
+
+    $sql = "
+        SELECT * FROM thylies_scholarship 
+        ORDER BY student_name ASC
+    ";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $count_row = $statement->rowCount();
+    $rows = $statement->fetchAll();
 ?>
         <section class="py-lg-13 py-6">
             <div class="container">
@@ -33,24 +43,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                               <td class="align-middle">
-                                                  e5BZptmrBl
-                                               </td>
-                                               <td class="align-middle">2021-12-07</td>
-                                               <td class="align-middle">American Express ending in 1234</td>
-                                               <td class="align-middle"><a href="#"><i class="fe fe-download"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                               <td class="align-middle">
-                                                  4aS1taQR4F
-                                               </td>
-                                               <td class="align-middle">2021-11-07</td>
-                                               <td class="align-middle">American Express ending in 1234</td>
-                                               <td class="align-middle"><a href="#"><i class="fe fe-download"></i></a></td>
-                                            </tr>
+                                            <?php if ($count_row > 0): ?>
+                                            <?php $i = 1; foreach ($rows as $row): ?>
+                                                <tr>
+                                                    <td><?= $i; ?></td>
+                                                   <td class="align-middle">
+                                                      <?= $row['scholarship_id']; ?>
+                                                   </td>
+                                                   <td class="align-middle"><?= ucwords($row['student_name']); ?></td>
+                                                   <td class="align-middle"><?= pretty_date($row['createdAt']); ?></td>
+                                                   <td class="align-middle"><a href="<?= PROOT; ?>scholarship-list/<?= $row['scholarship_id']; ?>">view status</a></td>
+                                                </tr>
+                                            <?php $i++; endforeach; ?>
+                                            <?php else: ?>
+                                                <tr>
+                                                    <td colspan="5">No data found.</td>
+                                                </tr>
+                                            <?php endif ?>
                                          </tbody>
                                     </table>
                                 </div>
