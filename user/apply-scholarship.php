@@ -10,9 +10,19 @@
         redirect(PROOT . 'auth/logout');
     }
 
-    if (is_array(apllied_scholarship($user_id))) {
+    if (is_array(applied_scholarship($user_id))) {
         redirect(PROOT . 'user/scholarship-status');
     }
+
+    $SQL = "
+        SELECT * FROM thylies_scholarship 
+        WHERE user_id = ? 
+        LIMIT 1
+    ";
+    $statement = $conn->prepare($SQL);
+    $statement->execute([$user_id]);
+    $apply_row = $statement->fetchAll();
+    $count_apply = $statement->rowCount();
 
     $title = 'Apply Scholarship - ';
     include ("inc/user.header.inc.php");
@@ -53,10 +63,12 @@
     if ($_POST) {
         // code...
         $sql = "
-            INSERT INTO `thylies_scholarship`(`user_id`, `scholarship_id`, `student_name`, `student_dob`, `student_age`, `student_place_of_birth`, `student_place_of_residence`, `student_with_parent`, `student_family_size`, `father_name`, `father_age`, `father_occupation`, `mother_name`, `mother_age`, `mother_occupation`, `parent_alive`, `parent_deceased`, `wpys_fees`, `program_name`, `year_of_study`, `index_number`, `self_description`, `professional_dream`, `limitation`, `referee_name`, `relation_nature`, `referee_occupation`, `referee_contact`, `referee_address`, `referee_email`, `createdAt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            UPDATE `thylies_scholarship` 
+            SET `scholarship_id` = ?, `student_name` = ?, `student_dob` = ?, `student_age` = ?, `student_place_of_birth` = ?, `student_place_of_residence` = ?, `student_with_parent` = ?, `student_family_size` = ?, `father_name` = ?, `father_age` = ?, `father_occupation` = ?, `mother_name` = ?, `mother_age` = ?, `mother_occupation` = ?, `parent_alive` = ?, `parent_deceased` = ?, `wpys_fees` = ?, `program_name` = ?, `year_of_study` = ?, `index_number` = ?, `self_description` = ?, `professional_dream` = ?, `limitation` = ?, `referee_name` = ?, `relation_nature` = ?, `referee_occupation` = ?, `referee_contact` = ?, `referee_address` = ?, `referee_email` = ?, `submitted` = ?, `createdAt` = ?
+            WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$user_id, $scholarship_id, $student_name, $student_dob, $student_age, $student_place_of_birth, $student_place_of_residence, $student_with_parent, $student_family_size, $father_name, $father_age, $father_occupation, $mother_name, $mother_age, $mother_occupation, $parent_alive, $parent_deceased, $wpys_fees, $program_name, $year_of_study, $index_number, $self_description, $professional_dream, $limitation, $referee_name, $relation_nature, $referee_occupation, $referee_contact, $referee_address, $referee_email, $createdAt]);
+        $result = $statement->execute([$scholarship_id, $student_name, $student_dob, $student_age, $student_place_of_birth, $student_place_of_residence, $student_with_parent, $student_family_size, $father_name, $father_age, $father_occupation, $mother_name, $mother_age, $mother_occupation, $parent_alive, $parent_deceased, $wpys_fees, $program_name, $year_of_study, $index_number, $self_description, $professional_dream, $limitation, $referee_name, $relation_nature, $referee_occupation, $referee_contact, $referee_address, $referee_email, 1, $createdAt, $user_id]);
         if (isset($result)) {
             $subject = "Thylies Scholarhip Application.";
             $body = "
@@ -75,7 +87,7 @@
 
             $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);
             if ($mail_result) {
-                echo 'did it';
+                redirect(PROOT . 'user/scholarship-status');
             }
         } else {
 
@@ -96,26 +108,25 @@
 							<div class="d-lg-flex align-items-center justify-content-between">
 								<div class="d-flex align-items-center mb-4 mb-lg-0">
                                     <span id="upload_profile">
-									   <img src="<?= PROOT; ?>assets/media/svg/friendly-ghost.svg" id="img-uploaded" class="avatar-xl rounded-circle " alt="">
+									   <img src="<?= PROOT; ?>assets/media/<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'scholarship/' .$apply_row[0]['student_picture']  : 'svg/friendly-ghost.svg'); ?>" class="avatar-xl rounded-circle " alt="">
                                     </span>
 									<div class="ms-3">
 										<h4 class="mb-0">Your passport picture</h4>
 										<p class=" mb-0 font-14">
-											PNG or JPG no bigger than 800px wide and tall.
+											PNG or JPG or JPEG no bigger than 800px wide and tall.
 										</p>
 									</div>
 								</div>
 								<div>
 
-									<label for="passport" class="btn btn-primary btn-sm">Upload Photo</label>
+									<label for="passport" class="btn btn-primary btn-sm <?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-none' : 'd-block'); ?>">Upload Photo</label>
                                     <input type="file" name="passport" id="passport" hidden>
-                                    <input type="hidden" name="passport_value" id="passport_value">
-									<a href="#" class="btn btn-light btn-sm ">Delete Photo</a>
+									<a href="javascript:;" id="<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? $apply_row[0]['student_picture'] : ''); ?>" class="change-passport-picture btn btn-light btn-sm <?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-block' : 'd-none'); ?>">Delete Photo</a>
 								</div>
 							</div>
 							<hr class="my-5">
 
-							<div>
+							<div class="<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-block' : 'd-none'); ?>">
 								<!-- form -->
 								<form class="row" method="POST" id="scholarshipForm">
 									<div class="col-12 col-md-12">
@@ -134,15 +145,15 @@
 										<input type="number" min="1" id="student_age" class="form-control" required <?= $student_age; ?>>
 									</div>
 									<div class="mb-3 col-12 col-md-6">
-										<label class="form-label" for="student_place_of_birth">Place of Birth</label>
+										<label class="form-label" for="student_place_of_birth">Place of Birth<span class="text-danger">*</span></label>
 										<input type="text" id="student_place_of_birth" name="student_place_of_birth" class="form-control" placeholder="Your place of birth" required <?= $student_place_of_birth; ?>>
 									</div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="student_place_of_residence">Place of Residence</label>
+                                        <label class="form-label" for="student_place_of_residence">Place of Residence<span class="text-danger">*</span></label>
                                         <input type="text" id="student_place_of_residence" name="student_place_of_residence" class="form-control" placeholder="Your lace of residence" required <?= $student_place_of_residence; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="student_with_parent">Do you live with your parents?</label>
+                                        <label class="form-label" for="student_with_parent">Do you live with your parents?<span class="text-danger">*</span></label>
                                         <select type="text" id="student_with_parent" name="student_with_parent" class="form-control" required>
                                             <option value=""></option>
                                             <option <?= (isset($_POST['student_with_parent']) && $_POST['student_with_parent'] == 'Yes' ? 'selected' : ''); ?> value="Yes">Yes</option>
@@ -150,35 +161,35 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="student_family_size">Size of Family</label>
+                                        <label class="form-label" for="student_family_size">Size of Family<span class="text-danger">*</span></label>
                                         <input type="text" id="student_family_size" name="student_family_size" class="form-control" placeholder="What is the size of your family?" required <?= $student_family_size; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="father_name">Father's Name</label>
+                                        <label class="form-label" for="father_name">Father's Name<span class="text-danger">*</span></label>
                                         <input type="text" id="father_name" name="father_name" class="form-control"  placeholder="Enter your father's full name here" required <?= $father_name; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="father_age">Father's Age</label>
+                                        <label class="form-label" for="father_age">Father's Age<span class="text-danger">*</span></label>
                                         <input type="number" min="1" id="father_age" name="father_age" class="form-control" required <?= $father_age; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="father_occupation">Father's Occupation</label>
+                                        <label class="form-label" for="father_occupation">Father's Occupation<span class="text-danger">*</span></label>
                                         <input type="text" id="father_occupation" name="father_occupation" class="form-control" placeholder="Enter your father's occupation here" required <?= $father_occupation; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="mother_name">Mother's Name</label>
+                                        <label class="form-label" for="mother_name">Mother's Name<span class="text-danger">*</span></label>
                                         <input type="text" id="mother_name" name="mother_name" class="form-control" placeholder="Enter your mother's full name here" required <?= $mother_name; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="mother_age">Mother's Age</label>
+                                        <label class="form-label" for="mother_age">Mother's Age<span class="text-danger">*</span></label>
                                         <input type="number" min="1" id="mother_age" name="mother_age" class="form-control" required <?= $mother_age; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="mother_occupation">Mother's Occupation</label>
+                                        <label class="form-label" for="mother_occupation">Mother's Occupation<span class="text-danger">*</span></label>
                                         <input type="text" id="mother_occupation" name="mother_occupation" class="form-control" placeholder="Enter your mother's occupation here" required <?= $mother_occupation; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="parent_alive">Are both parent alive?</label>
+                                        <label class="form-label" for="parent_alive">Are both parent alive?<span class="text-danger">*</span></label>
                                         <select type="text" id="parent_alive" name="parent_alive" class="form-control" required>
                                             <option value=""></option>
                                             <option <?= (isset($_POST['parent_alive']) && $_POST['parent_alive'] == 'Yes' ? 'selected' : ''); ?> value="Yes">Yes</option>
@@ -190,7 +201,7 @@
                                         <input type="text" id="parent_deceased" name="parent_deceased" class="form-control" required <?= $parent_deceased; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="wpys_fees">Who paid your last school fees?</label>
+                                        <label class="form-label" for="wpys_fees">Who paid your last school fees?<span class="text-danger">*</span></label>
                                         <input type="text" id="wpys_fees" name="wpys_fees" class="form-control" required <?= $wpys_fees; ?>>
                                     </div>
 
@@ -199,27 +210,27 @@
 										<h4 class="mb-3 mt-3">Academic Information</h4>
 									</div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="program_name">Name of Program offered</label>
+                                        <label class="form-label" for="program_name">Name of Program offered<span class="text-danger">*</span></label>
                                         <input type="text" id="program_name" name="program_name" class="form-control" required <?= $program_name; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-4">
-                                        <label class="form-label" for="year_of_study">Year of Studies</label>
+                                        <label class="form-label" for="year_of_study">Year of Studies<span class="text-danger">*</span></label>
                                         <input type="text" id="year_of_study" name="year_of_study" class="form-control" required <?= $year_of_study; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-8">
-                                        <label class="form-label" for="index_number">Index Number</label>
+                                        <label class="form-label" for="index_number">Index Number<span class="text-danger">*</span></label>
                                         <input type="text" id="index_number" name="index_number" class="form-control" required <?= $index_number; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="self_description">How would you describe yourself?</label>
+                                        <label class="form-label" for="self_description">How would you describe yourself?<span class="text-danger">*</span></label>
                                         <textarea name="self_description" id="self_description" cols="30" rows="10" class="form-control" required><?= $self_description; ?></textarea>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="professional_dream">What is your professional dream?</label>
+                                        <label class="form-label" for="professional_dream">What is your professional dream?<span class="text-danger">*</span></label>
                                         <input type="text" id="professional_dream" name="professional_dream" class="form-control" required <?= $professional_dream; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="limitation">What is your limitation in your life as a student?</label>
+                                        <label class="form-label" for="limitation">What is your limitation in your life as a student?<span class="text-danger">*</span></label>
                                         <input type="text" id="limitation" name="limitation" class="form-control" required <?= $limitation; ?>>
                                     </div>
 
@@ -227,23 +238,23 @@
                                         <h4 class="mb-3 mt-3">Referee Information</h4>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="referee_name">Name of Referee</label>
+                                        <label class="form-label" for="referee_name">Name of Referee<span class="text-danger">*</span></label>
                                         <input type="text" id="referee_name" name="referee_name" class="form-control" required <?= $referee_name; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="relation_nature">Nature of relation to Applicant</label>
+                                        <label class="form-label" for="relation_nature">Nature of relation to Applicant<span class="text-danger">*</span></label>
                                         <input type="text" id="relation_nature" name="relation_nature" class="form-control" required <?= $relation_nature; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="referee_occupation">Occupation of Referee</label>
+                                        <label class="form-label" for="referee_occupation">Occupation of Referee<span class="text-danger">*</span></label>
                                         <input type="text" id="referee_occupation" name="referee_occupation" class="form-control" required <?= $referee_occupation; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-6">
-                                        <label class="form-label" for="referee_contact">Contact of Referee</label>
+                                        <label class="form-label" for="referee_contact">Contact of Referee<span class="text-danger">*</span></label>
                                         <input type="text" id="referee_contact" name="referee_contact" class="form-control" required <?= $referee_contact; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="referee_address">Address of Referee</label>
+                                        <label class="form-label" for="referee_address">Address of Referee<span class="text-danger">*</span></label>
                                         <input type="text" id="referee_address" name="referee_address" class="form-control" required <?= $referee_address; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
@@ -252,8 +263,24 @@
                                     </div>
 
 									<div class="col-12">
-                                        <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_schorlarship_form' data-action='submit' type="submit">Submit</button>
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#scholarshipModalCenter">Submit</button>
 									</div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="scholarshipModalCenter" tabindex="-1" role="dialog" aria-labelledby="scholarshipModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    Make sure your details you are to send is accurate before clicking on the proceed button.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_schorlarship_form' data-action='submit' type="submit">Proceed</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
 								</form>
 							</div>
 						</div>
@@ -266,14 +293,9 @@
     <?php include ('../inc/footer.inc.php'); ?>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
-        function submit_schorlarship_form(token) {
-            var passport = $('#passport_value').val();
 
-            if (passport != '') {
-                $('#scholarshipForm').submit();
-            } else {
-                alert('Upload your Passport Picture.');
-            }
+        function submit_schorlarship_form(token) {
+            $('#scholarshipForm').submit();
         }
 
         $(document).ready(function() {
@@ -311,35 +333,27 @@
                         cache: false,
                         processData: false,
                         beforeSend: function() {
-                            $("#upload_profile").html("<div class='text-success font-weight-bolder'>Uploading member image ...</div>");
+                            $("#upload_profile").html("<div class='text-success font-weight-bolder'>Uploading passport picture ...</div>");
                         },
                         success: function(data) {
-                            $('#img-uploaded').remove();
-                            $("#upload_profile").html(data);
-                            $("#passport_value").html('in');
-                            // $('#passport').css('visibility', 'hidden');
+                            location.reload();
                         }
                     });
                 }
             });
 
             // DELETE TEMPORARY UPLOADED IMAGE
-            $(document).on('click', '.removeImg', function() {
+            $(document).on('click', '.change-passport-picture', function() {
                 var tempuploded_file_id = $(this).attr('id');
 
                 $.ajax ({
-                    url: "<?= PROOT; ?>parsers/delete.temporary.uploaded.php",
+                    url: "<?= PROOT; ?>parsers/delete.uploaded.picture.php",
                     method: "POST",
                     data:{
                         tempuploded_file_id : tempuploded_file_id
                     },
                     success: function(data) {
-                        $('#removeTempuploadedFile').remove();
-                        $('#passport').css('visibility', 'visible');
-                        $('#passport').val('');
-
-                        $('#news_media').css('visibility', 'visible');
-                        $('#news_media').val('');
+                        location.reload();
                     }
                 });
             });

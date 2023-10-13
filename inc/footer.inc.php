@@ -83,7 +83,7 @@
 
     <!-- Theme JS -->
     <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
-    <script src="<?= PROOT; ?>assets/plyr.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/plyr.min.js"></script>
 
 </body>
 </html>

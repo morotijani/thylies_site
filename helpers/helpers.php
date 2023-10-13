@@ -309,16 +309,17 @@ function check_payment_of_registration_fee($user_id) {
 }
 
 // Check if user already apply for scholarship
-function apllied_scholarship($user_id) {
+function applied_scholarship($user_id) {
 	global $conn;
 
 	$sql = "
 		SELECT * FROM thylies_scholarship 
 		WHERE user_id = ? 
+		AND submitted = ?
 		LIMIT 1
 	";
 	$statement = $conn->prepare($sql);
-	$statement->execute([$user_id]);
+	$statement->execute([$user_id, 1]);
 	$count_row = $statement->rowCount();
 	$row = $statement->fetchAll();
 

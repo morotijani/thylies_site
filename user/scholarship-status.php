@@ -13,11 +13,11 @@
     $title = 'Scholarship Status - ';
     include ("inc/user.header.inc.php");
 
-    if (!is_array(apllied_scholarship($user_id))) {
+    if (!is_array(applied_scholarship($user_id))) {
         // code...
         redirect(PROOT . 'user/apply-scholarship');
     } else {
-    	$row = apllied_scholarship($user_id);
+    	$row = applied_scholarship($user_id);
 
     	$status = '';
     	$status_class = '';
