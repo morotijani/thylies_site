@@ -11,7 +11,6 @@
     }
 
     if (is_array(apllied_scholarship($user_id))) {
-        // code...
         redirect(PROOT . 'user/scholarship-status');
     }
 
@@ -96,8 +95,9 @@
 						<div class="card-body p-4">
 							<div class="d-lg-flex align-items-center justify-content-between">
 								<div class="d-flex align-items-center mb-4 mb-lg-0">
-									<img src="../assets/images/avatar-1.png" id="img-uploaded"
-										class="avatar-xl rounded-circle " alt="">
+                                    <span id="upload_profile">
+									   <img src="<?= PROOT; ?>assets/media/svg/friendly-ghost.svg" id="img-uploaded" class="avatar-xl rounded-circle " alt="">
+                                    </span>
 									<div class="ms-3">
 										<h4 class="mb-0">Your passport picture</h4>
 										<p class=" mb-0 font-14">
@@ -106,8 +106,10 @@
 									</div>
 								</div>
 								<div>
-									<a href="#" class="btn btn-primary btn-sm">Upload Photo</a>
 
+									<label for="passport" class="btn btn-primary btn-sm">Upload Photo</label>
+                                    <input type="file" name="passport" id="passport" hidden>
+                                    <input type="hidden" name="passport_value" id="passport_value">
 									<a href="#" class="btn btn-light btn-sm ">Delete Photo</a>
 								</div>
 							</div>
@@ -115,7 +117,7 @@
 
 							<div>
 								<!-- form -->
-								<form class="row" method="POST">
+								<form class="row" method="POST" id="scholarshipForm">
 									<div class="col-12 col-md-12">
 										<h4 class="mb-3">Bio Data</h4>
 									</div>
@@ -250,9 +252,7 @@
                                     </div>
 
 									<div class="col-12">
-										<button class="btn btn-warning" type="submit">
-											Submit
-										</button>
+                                        <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_schorlarship_form' data-action='submit' type="submit">Submit</button>
 									</div>
 								</form>
 							</div>
@@ -263,4 +263,85 @@
 		</div>
 	</div>
 
-<?php include ('../inc/footer.inc.php'); ?>
+    <?php include ('../inc/footer.inc.php'); ?>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function submit_schorlarship_form(token) {
+            var passport = $('#passport_value').val();
+
+            if (passport != '') {
+                $('#scholarshipForm').submit();
+            } else {
+                alert('Upload your Passport Picture.');
+            }
+        }
+
+        $(document).ready(function() {
+            
+
+            // Fade out messages
+            $("#temporary").fadeOut(5000);
+
+            // Upload IMAGE Temporary
+            $(document).on('change','#passport', function() {
+
+                var property = document.getElementById("passport").files[0];
+                var image_name = property.name;
+
+                var image_extension = image_name.split(".").pop().toLowerCase();
+                if (jQuery.inArray(image_extension, ['jpeg', 'png', 'jpg']) == -1) {
+                    alert("The file extension must be .jpg, .png, .jpeg");
+                    $('#passport').val('');
+                    return false;
+                }
+
+                var image_size = property.size;
+                if (image_size > 15000000) {
+                    alert('The file size must be under 15MB');
+                    return false;
+                } else {
+
+                    var form_data = new FormData();
+                    form_data.append("passport", property);
+                    $.ajax({
+                        url: "<?= PROOT; ?>parsers/upload.scholarship.passport.picture.php",
+                        method: "POST",
+                        data: form_data,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        beforeSend: function() {
+                            $("#upload_profile").html("<div class='text-success font-weight-bolder'>Uploading member image ...</div>");
+                        },
+                        success: function(data) {
+                            $('#img-uploaded').remove();
+                            $("#upload_profile").html(data);
+                            $("#passport_value").html('in');
+                            // $('#passport').css('visibility', 'hidden');
+                        }
+                    });
+                }
+            });
+
+            // DELETE TEMPORARY UPLOADED IMAGE
+            $(document).on('click', '.removeImg', function() {
+                var tempuploded_file_id = $(this).attr('id');
+
+                $.ajax ({
+                    url: "<?= PROOT; ?>parsers/delete.temporary.uploaded.php",
+                    method: "POST",
+                    data:{
+                        tempuploded_file_id : tempuploded_file_id
+                    },
+                    success: function(data) {
+                        $('#removeTempuploadedFile').remove();
+                        $('#passport').css('visibility', 'visible');
+                        $('#passport').val('');
+
+                        $('#news_media').css('visibility', 'visible');
+                        $('#news_media').val('');
+                    }
+                });
+            });
+        });
+    </script>

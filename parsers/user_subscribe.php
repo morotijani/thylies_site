@@ -1,7 +1,7 @@
 <?php 
 	// SUBSCRIBE 
 	
-	require_once $_SERVER['DOCUMENT_ROOT'] . "/mifo/db_connection/conn.php";
+	require_once $_SERVER['DOCUMENT_ROOT'] . "/thylies_site/db_connection/conn.php";
 
 	if (isset($_POST['email'])) {
 		$email = sanitize($_POST['email']);
