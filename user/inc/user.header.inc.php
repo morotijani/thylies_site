@@ -63,17 +63,19 @@
                         <a href="<?= PROOT; ?>" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href=" <?= PROOT; ?>scholarships" class="nav-link">Scholarships</a>
+                        <a href=" <?= PROOT; ?>user/apply-scholarship" class="nav-link">Scholarship</a>
                     </li>
                     <li class="nav-item">
-                        <a href=" <?= PROOT; ?>sanitary-welfare" class="nav-link">Scholarship List</a>
+                        <a href=" <?= PROOT; ?>scholarship-list" class="nav-link">Scholarship List</a>
                     </li>
                     <li class="nav-item">
-                        <a href=" <?= PROOT; ?>student-in-business" class="nav-link">Student in Business</a>
+                        <a href=" <?= PROOT; ?>user/apply-student-in-business" class="nav-link">Student in Business</a>
                     </li>
+                    <?php if ($user_data['gender'] == 'Female'): ?>
                     <li class="nav-item">
-                        <a href=" <?= PROOT; ?>countact-us" class="nav-link">Contact</a>
+                        <a href=" <?= PROOT; ?>user/apply-sanitary-welfare" class="nav-link">Sanitary Welfare</a>
                     </li>
+                    <?php endif; ?>
                 </ul>
                 <div class="header">
                     <li class="nav-item dropdown">

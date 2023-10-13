@@ -1,6 +1,7 @@
 <?php 
 
     require_once ("../connection/conn.php");
+
     if (user_is_logged_in()) {
         if (!check_payment_of_registration_fee($user_id)) {
             redirect(PROOT . 'auth/pay-registration');
@@ -9,9 +10,15 @@
         redirect(PROOT . 'auth/logout');
     }
 
+    if (is_array(apllied_scholarship($user_id))) {
+        // code...
+        redirect(PROOT . 'user/scholarship-status');
+    }
+
     $title = 'Apply Scholarship - ';
     include ("inc/user.header.inc.php");
 
+    //
     $post = (isset($_POST) ? cleanPost($_POST) : '');
     $scholarship_id = guidv4();
     $student_name = (isset($post['student_name']) && $post['student_name'] != '') ? $post['student_name'] : '';
@@ -47,13 +54,30 @@
     if ($_POST) {
         // code...
         $sql = "
-            INSERT INTO `thylies_scholarship`(`scholarship_id`, `student_name`, `student_dob`, `student_age`, `student_place_of_birth`, `student_place_of_residence`, `student_with_parent`, `student_family_size`, `father_name`, `father_age`, `father_occupation`, `mother_name`, `mother_age`, `mother_occupation`, `parent_alive`, `parent_deceased`, `wpys_fees`, `program_name`, `year_of_study`, `index_number`, `self_description`, `professional_dream`, `limitation`, `referee_name`, `relation_nature`, `referee_occupation`, `referee_contact`, `referee_address`, `referee_email`, `createdAt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO `thylies_scholarship`(`user_id`, `scholarship_id`, `student_name`, `student_dob`, `student_age`, `student_place_of_birth`, `student_place_of_residence`, `student_with_parent`, `student_family_size`, `father_name`, `father_age`, `father_occupation`, `mother_name`, `mother_age`, `mother_occupation`, `parent_alive`, `parent_deceased`, `wpys_fees`, `program_name`, `year_of_study`, `index_number`, `self_description`, `professional_dream`, `limitation`, `referee_name`, `relation_nature`, `referee_occupation`, `referee_contact`, `referee_address`, `referee_email`, `createdAt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$scholarship_id, $student_name, $student_dob, $student_age, $student_place_of_birth, $student_place_of_residence, $student_with_parent, $student_family_size, $father_name, $father_age, $father_occupation, $mother_name, $mother_age, $mother_occupation, $parent_alive, $parent_deceased, $wpys_fees, $program_name, $year_of_study, $index_number, $self_description, $professional_dream, $limitation, $referee_name, $relation_nature, $referee_occupation, $referee_contact, $referee_address, $referee_email, $createdAt]);
+        $result = $statement->execute([$user_id, $scholarship_id, $student_name, $student_dob, $student_age, $student_place_of_birth, $student_place_of_residence, $student_with_parent, $student_family_size, $father_name, $father_age, $father_occupation, $mother_name, $mother_age, $mother_occupation, $parent_alive, $parent_deceased, $wpys_fees, $program_name, $year_of_study, $index_number, $self_description, $professional_dream, $limitation, $referee_name, $relation_nature, $referee_occupation, $referee_contact, $referee_address, $referee_email, $createdAt]);
         if (isset($result)) {
-            // code...
-            echo 'did it';
+            $subject = "Thylies Scholarhip Application.";
+            $body = "
+                <h3>
+                    {$student_name},</h3>
+                    <p>
+                        Thank you for applying for the Thylies scholarship program. Please your scholarhip identity code is:
+                        <br><h3>{$scholarship_id}</h3>
+                    </p>
+                    We will get in touch with you soon.
+                    <br>
+                    <br>
+                    Best Regards,<br>
+                    Thylies Enterprise.
+            ";
+
+            $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);
+            if ($mail_result) {
+                echo 'did it';
+            }
         } else {
 
         }
