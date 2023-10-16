@@ -9,7 +9,7 @@ RewriteRule ^pmiqn/users/([0-9a-zA-Z]+)$ pmiqn/users.php?view=$1 [NC,L]
 RewriteRule ^auth/verified/([0-9a-zA-Z]+)$ auth/verified.php?vericode=$1 [NC,L]
 
 #scholarship-list
-RewriteRule ^scholarship-list/([0-9a-zA-Z]+)$ scholarship-list.php?reseted-password=$1 [NC,L]
+RewriteRule ^scholarship-list/([0-9a-zA-Z-]+)$ scholarship-list.php?scholarship=$1 [NC,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 

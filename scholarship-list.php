@@ -6,25 +6,33 @@
 
     include ('inc/header.inc.php');
 
+    if (isset($_GET['scholarship'])) {
+        $id = sanitize($_GET['scholarship']);
+        echo $id;
+
+        // check if user already exist in users database
+        
+    }
+
 
 
     // FETCH ALL STUDENT WHO HAS GAIN SCHOLARSHIP
     $sql = "
         SELECT * FROM thylies_scholarship 
-        WHERE status = 
+        WHERE status = ?
         ORDER BY student_name ASC
     ";
     if (isset($_GET['q'])) {
         $string = sanitize($_GET['q']);
         $sql = "
             SELECT * FROM thylies_scholarship 
-            LIKE scholarship_id = 
-            OR student_name = 
-            WHERE status = 
+            WHERE scholarship_id LIKE '%{$string}%'
+            OR student_name LIKE '%{$string}%'
+            AND status = ?
         ";
     }
     $statement = $conn->prepare($sql);
-    $statement->execute();
+    $statement->execute([1]);
     $count_row = $statement->rowCount();
     $rows = $statement->fetchAll();
 ?>
@@ -34,6 +42,8 @@
                     <div class="col-md-8">
                         <div class="card rounded-3 mb-4 ">
                             <div class="card-header bg-white p-4 border-bottom-0">
+                                <?php if (isset($_GET['scholarship'])): ?>
+                                <?php else: ?>
                                <h3 class="mb-0 h4">Scholarship List <?= date('Y'); ?></h3>
                                <br>
                                <div class="d-inline">
@@ -60,6 +70,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php if (isset($_GET['q'])): ?>
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="px-3 text-muted small">Search result for '<?= $string; ?>'</p>
+                                                    <p class="px-3 text-muted small"><a href="<?= PROOT; ?>scholarship-list"><< go back</a></p>
+                                                    
+                                                </div>
+                                            <?php endif ?>
+
                                             <?php if ($count_row > 0): ?>
                                             <?php $i = 1; foreach ($rows as $row): ?>
                                                 <tr>
@@ -81,6 +99,7 @@
                                     </table>
                                 </div>
                             </div>
+                            <?php endif ?>
                         </div>
                     </div>
                 </div>
