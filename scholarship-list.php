@@ -7,10 +7,22 @@
     include ('inc/header.inc.php');
 
 
+
+    // FETCH ALL STUDENT WHO HAS GAIN SCHOLARSHIP
     $sql = "
         SELECT * FROM thylies_scholarship 
+        WHERE status = 
         ORDER BY student_name ASC
     ";
+    if (isset($_GET['q'])) {
+        $string = sanitize($_GET['q']);
+        $sql = "
+            SELECT * FROM thylies_scholarship 
+            LIKE scholarship_id = 
+            OR student_name = 
+            WHERE status = 
+        ";
+    }
     $statement = $conn->prepare($sql);
     $statement->execute();
     $count_row = $statement->rowCount();
@@ -25,12 +37,12 @@
                                <h3 class="mb-0 h4">Scholarship List <?= date('Y'); ?></h3>
                                <br>
                                <div class="d-inline">
-                                    <form action="" class="row">
+                                    <form action="" class="row" method="GET">
                                         <div class="mb-3 mb-2 mb-lg-0 col-lg-10 col-md-10 col-12">
-                                            <input type="text" class="form-control" placeholder="search with name, scholarship id ...">
+                                            <input type="text" name="q" class="form-control" placeholder="search with name, scholarship id ..." required>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-12">
-                                            <button class="btn btn-warning" type="submit">Search</button>
+                                            <button class="btn btn-warning">Search</button>
                                         </div>
                                    </form>
                                </div>
