@@ -25,8 +25,13 @@
                                <h3 class="mb-0 h4">Scholarship List <?= date('Y'); ?></h3>
                                <br>
                                <div class="d-inline">
-                                   <form action="">
-                                       <input type="text" class="form-control" placeholder="search ..">
+                                    <form action="" class="row">
+                                        <div class="mb-3 mb-2 mb-lg-0 col-lg-10 col-md-10 col-12">
+                                            <input type="text" class="form-control" placeholder="search with name, scholarship id ...">
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <button class="btn btn-warning" type="submit">Search</button>
+                                        </div>
                                    </form>
                                </div>
                             </div>

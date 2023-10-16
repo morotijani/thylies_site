@@ -25,8 +25,8 @@
                             Maecenas molestie sagittis tellus et venenatis. In suscipit tortor eget ante semper
                             suscipit. Mauris dictum elementum diam in laoreet.
                         </p>
-                        <a href="scholarship" class="btn btn-warning btn-lg">Scholarship</a>
-                        <a href="sanitary-welfare" class="btn btn-outline-warning ms-lg-1 mt-2 mt-lg-0">Sanitary Welfare</a>
+                        <a href="<?= PROOT; ?>scholarship-list" class="btn btn-warning btn-lg">Scholarship List <?= date('Y'); ?></a>
+                        <a href="sanitary-welfare" class="btn btn-outline-warning btn-lg ms-lg-1 mt-2 mt-lg-0">Sanitary Welfare</a>
                     </div>
                 </div>
             </div>
