@@ -20,6 +20,11 @@
 
         if ($count_row > 0) {
             // code...
+            // retrieve user image
+            $profile = 'svg/friendly-ghost.svg';
+            if ($row[0]["student_picture"] != '') {
+                $profile = 'scholarship/' . $row[0]["student_picture"];
+            }
         } else {
             $_SESSION['flash_error'] = 'Unknown scholarship info provided';
             redirect(PROOT . 'admin/Scholarship/index');   
@@ -76,11 +81,11 @@
                         <p class="text-sm text-muted">View and Manage details of student who applied for scholarship.</p>
                     </div>
                     <div class="d-flex align-items-center mb-4">
-                        <a href="#" class="avatar avatar-lg bg-warning rounded-circle text-white">
-                            <img alt="..." src="/img/logos/clever-primary-sm.svg">
+                        <a href="<?= PROOT . 'assets/media/' . $profile; ?>" target="_blank" class="avatar avatar-lg bg-warning rounded-circle text-white">
+                            <img alt="..." src="<?= PROOT . 'assets/media/' . $profile; ?>">
                         </a>
                         <div class="ms-5">
-                            <button for="file-upload" class="btn btn-sm btn-neutral"><span>Grant</span></button>
+                            <button for="file-upload" class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#grantModal"><span>Grant</span></button>
                             <a href="#" class="btn d-inline-flex btn-sm btn-neutral ms-2 text-danger">
                                 <span class="pe-2">
                                     <i class="bi bi-person-slash"></i> 
@@ -301,4 +306,43 @@
         </div>
     </main>
 	
+
+    <!-- Grant Modal -->
+    <div class="modal fade" id="grantModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="grantModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon icon-shape rounded-3 bg-soft-primary text-primary text-lg me-4"><i class="bi bi-globe"></i></div>
+                    <div>
+                        <h5 class="mb-1">Grant</h5>
+                        <small class="d-block text-xs text-muted">Accept and grant <b><?= ucwords($row[0]['student_name']); ?></b> the scholarship</small>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="me-n2" data-bs-dismiss="modal" style="cursor: pointer;">
+                            <i class="bi bi-x-lg me-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <div>
+                            <p class="text-sm">Percentage <span class="font-bold text-heading">%</span></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-group input-group-inline">
+                            <input type="number" min="20" class="form-control" placeholder="%">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="me-auto">
+                        <a href="#" class="text-sm font-semibold"><i class="bi bi-x me-2"></i>Cancel</a>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-neutral" data-bs-dismiss="modal">Close</button> 
+                    <button type="button" class="btn btn-sm btn-success">Grant</button></div>
+            </div>
+        </div>
+    </div>
+
 <?php include ('../includes/footer.php'); ?>
