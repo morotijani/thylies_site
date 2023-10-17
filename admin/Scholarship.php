@@ -66,7 +66,7 @@
                     <div class="d-flex gap-3">
                         <div class="input-group input-group-sm input-group-inline">
                             <span class="input-group-text pe-2"><i class="bi bi-search"></i> </span>
-                            <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                            <input type="text" class="form-control" id="search" placeholder="Search" aria-label="Search">
                         </div>
                         <div>
                             <button type="button" class="btn btn-sm px-3 btn-neutral d-flex align-items-center">
@@ -84,78 +84,41 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header border-bottom d-flex align-items-center">
-                        <h5 class="me-auto">All projects</h5>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-hover table-nowrap">
-                            <thead class="table-light">
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Created Date</th>
-                                    <th scope="col">Index Number</th>
-                                    <th scope="col">School</th>
-                                    <th scope="col">Status</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if ($count_row > 0): ?>
-                                    <?php foreach ($rows as $row): ?>
-                                    <tr>
-                                        <td>
-                                            <img alt="..." src="/img/social/airbnb.svg" class="avatar avatar-sm rounded-circle me-2"> 
-                                            <a class="text-heading font-semibold" href="#">Website Redesign</a>
-                                        </td>
-                                        <td>23-01-2022</td>
-                                        <td>
-                                            <span class="badge badge-lg badge-dot"><i class="bg-warning"></i>In progress</span>
-                                        </td>
-                                        <td>
-                                            <div class="avatar-group">
-                                                <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
-                                                    <img alt="..." src="/img/people/img-1.jpg"> 
-                                                </a>
-                                                <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
-                                                    <img alt="..." src="/img/people/img-3.jpg"> 
-                                                </a>
-                                                <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
-                                                    <img alt="..." src="/img/people/img-4.jpg">
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="me-2">38%</span>
-                                                <div>
-                                                    <div class="progress" style="width:100px">
-                                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-end">
-                                            <a href="#" class="btn btn-sm btn-neutral">View</a> 
-                                            <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach ?>
-                                <?php else: ?>
-                                    <tr>
-                                        <td colspan="5">No data found</td>
-                                    </tr>
-                                <?php endif; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer border-0 py-5">
-                        <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
-                    </div>
+                    <div id="load-content"></div>
+                    
                 </div>
             </div>
         </div>
     </main>
 	
 <?php include ('includes/footer.php'); ?>
+
+<script>
+    
+    // SEARCH AND PAGINATION FOR CONTESTANTS
+    function load_data(page, query = '') {
+        $.ajax({
+            url : "<?= PROOT; ?>/parsers/get.scholarship.list.php",
+            method : "POST",
+            data : {
+                page : page, 
+                query : query
+            },
+            success : function(data) {
+                $("#load-content").html(data);
+            }
+        });
+    }
+
+    load_data(1);
+    $('#search').keyup(function() {
+        var query = $('#search').val();
+        load_data(1, query);
+    });
+
+    $(document).on('click', '.page-link-go', function() {
+        var page = $(this).data('page_number');
+        var query = $('#search').val();
+        load_data(page, query);
+    });
+</script>
