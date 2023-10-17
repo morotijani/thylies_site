@@ -18,17 +18,24 @@
             $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($inputFileNamePath);
             $data = $spreadsheet->getActiveSheet()->toArray();
 
-            // dnd($data);
+            //dnd($data);
 
             $count = "0";
             foreach($data as $row) {
                 if ($count > 0) {
-                	
-                	$pALive = 'Yes';
+
+                	$pALive = '';
                 	if ($row['13'] == 'Y') {
                 		$pALive = 'Yes';
-                	} else if if ($row['13'] == 'N') {
+                	} else if ($row['13'] == 'N') {
                 		$pALive = 'No';
+                	}
+
+                	$withParent = '';
+                	if ($row['5'] == 'Y') {
+                		$withParent = 'Yes';
+                	} else if ($row['13'] == 'N') {
+                		$withParent = 'No';
                 	}
 
                     $scholarship_id = guidv4();
@@ -37,7 +44,7 @@
                     $student_age = $row['2'];
                     $student_place_of_birth = $row['3'];
                     $student_place_of_residence = $row['4'];
-                    $student_with_parent = $row['5'];
+                    $student_with_parent = $withParent;
                     $student_family_size = $row['6'];
                     $father_name = $row['7'];
                     $father_age = $row['8'];
