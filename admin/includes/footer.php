@@ -2,6 +2,6 @@
 			</main>
 		</div>
 	</div>
-	<script src="dist/js/main.js"></script>
+	<script src="<?= PROOT; ?>admin/dist/js/main.js"></script>
 </body>
 </html>

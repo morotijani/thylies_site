@@ -38,14 +38,39 @@
 										</ul>
 									</div>
 								</li>
-								<li class="nav-item"><a class="nav-link" href="#sidebar-tasks" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-tasks"><i class="bi bi-kanban"></i> Tasks</a>
-									<div class="collapse" id="sidebar-tasks">
+								<li class="nav-item"><a class="nav-link" href="#sidebar-scholarship" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-scholarship">
+									<i class="bi bi-building"></i> Scholarship</a>
+									<div class="collapse" id="sidebar-scholarship">
 										<ul class="nav nav-sm flex-column">
-											<li class="nav-item"><a href="/pages/tasks/overview.html" class="nav-link">Overview</a></li>
+											<li class="nav-item"><a href="/pages/tasks/overview.html" class="nav-link">Import data</a></li>
 											<li class="nav-item"><a href="/pages/tasks/list-view.html" class="nav-link">List View</a></li>
-											<li class="nav-item"><a href="/pages/tasks/list-view-aside.html" class="nav-link">List View w/ Details</a></li>
-											<li class="nav-item"><a href="/pages/tasks/board-view.html" class="nav-link">Board View</a></li>
-											<li class="nav-item"><a href="/pages/tasks/create-task.html" class="nav-link">Create Task</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="#sidebar-sanitary" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-sanitary">
+									<i class="bi bi-person-standing-dress"></i> Sanitary Welfare</a>
+									<div class="collapse" id="sidebar-sanitary">
+										<ul class="nav nav-sm flex-column">
+											<li class="nav-item"><a href="/pages/tasks/overview.html" class="nav-link">Import data</a></li>
+											<li class="nav-item"><a href="/pages/tasks/list-view.html" class="nav-link">List View</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="#sidebar-business" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-business">
+									<i class="bi bi-duffle-fill"></i> Student in Business</a>
+									<div class="collapse" id="sidebar-business">
+										<ul class="nav nav-sm flex-column">
+											<li class="nav-item"><a href="/pages/tasks/overview.html" class="nav-link">Import data</a></li>
+											<li class="nav-item"><a href="/pages/tasks/list-view.html" class="nav-link">List View</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="#sidebar-associate" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-associate">
+									<i class="bi bi-person-lines-fill"></i> Associate</a>
+									<div class="collapse" id="sidebar-associate">
+										<ul class="nav nav-sm flex-column">
+											<li class="nav-item"><a href="/pages/tasks/overview.html" class="nav-link">Import data</a></li>
+											<li class="nav-item"><a href="/pages/tasks/list-view.html" class="nav-link">List View</a></li>
 										</ul>
 									</div>
 								</li>
