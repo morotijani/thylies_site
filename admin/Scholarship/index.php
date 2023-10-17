@@ -24,7 +24,7 @@
 				<div class="row align-items-center">
 					<div class="col-sm col-12">
 						<h1 class="h2 ls-tight">
-							<span class="d-inline-block me-3">😎</span>Scholarhip, List view
+							<span class="d-inline-block me-3">😎</span>Scholarship, List view
 						</h1>
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
@@ -68,9 +68,9 @@
                                 <span class="text-xs text-primary">Data</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="<?= PROOT; ?>admin/Scholarhip-paid" class="dropdown-item">XLSX </a>
-                                <a href="<?= PROOT; ?>admin/Scholarhip-paid" class="dropdown-item">XLS </a>
-                                <a href="<?= PROOT; ?>admin/Scholarhip-not-paid" class="dropdown-item">CSV </a>
+                                <a href="<?= PROOT; ?>admin/Scholarship/export/all/xlsx" class="dropdown-item">XLSX </a>
+                                <a href="<?= PROOT; ?>admin/Scholarship/export/all/xls" class="dropdown-item">XLS </a>
+                                <a href="<?= PROOT; ?>admin/Scholarship/export/all/csv" class="dropdown-item">CSV </a>
                             </div>
                         </div>
                     </div>

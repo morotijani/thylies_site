@@ -1,8 +1,12 @@
 RewriteEngine on
 
+#verify user
 RewriteRule ^auth/verify-email/([0-9a-zA-Z]+)$ auth/verify-email.php?vericode=$1 [NC,L]
+
+#verify reseted-password
 RewriteRule ^auth/send/([0-9a-zA-Z]+)$ auth/send.php?reseted-password=$1 [NC,L]
 
+#view user details
 RewriteRule ^pmiqn/users/([0-9a-zA-Z]+)$ pmiqn/users.php?view=$1 [NC,L]
 
 # Verify user email
@@ -10,6 +14,13 @@ RewriteRule ^auth/verified/([0-9a-zA-Z]+)$ auth/verified.php?vericode=$1 [NC,L]
 
 #scholarship-list
 RewriteRule ^scholarship-list/([0-9a-zA-Z-]+)$ scholarship-list.php?scholarship=$1 [NC,L]
+
+#
+RewriteRule ^admin/Scholarship/export/([0-9a-zA-Z]+)$ admin/Scholarship/export.php?data=$1 [NC,L]
+RewriteRule ^admin/Scholarship/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/Scholarship/export.php?data=$1&type=$2 [NC,L]
+
+RewriteRule ^.in/blog/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([0-9]+)$ .in/blog.php?type=$1&status=$2&id=$3 [NC,L]
+RewriteRule ^.in/blog/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([0-9]+)/([0-9]+)$ .in/blog.php?type=$1&status=$2&id=$3&featured=$4 [NC,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 
