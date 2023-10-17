@@ -66,6 +66,7 @@ $output = '
 if ($total_data > 0) {
 	$i = 1;
 	foreach ($result as $row) {
+		
 		$profile = 'svg/friendly-ghost.svg';
 		if ($row["student_picture"] != '') {
 			$profile = 'scholarship/' . $row["student_picture"];
@@ -88,19 +89,8 @@ if ($total_data > 0) {
 		}    else if ($percentage >= 80) {
 			$percentage = $row['percentage'];
 			$percentageColor = 'success';
-		} 
-		// $option = '';
-		// $optionStatus = '';
-		// if ($row["session"] == 0) {
-		// 	$option = '
-		// 		<span class="badge badge-dark"><a href="contestants.php?deletecontestant='.$row["cont_id"].'&del='.(($row["del_cont"] == 'yes')?'no':'yes').'" class="text-danger"><span data-feather="trash"></span></a></span>&nbsp;
-        //         <span class="badge badge-dark"><a href="contestants.php?editcontestant='.$row["cont_id"].'" class="text-success"><span data-feather="edit-3"></span></a></span>
-		// 	';
-		// } else if ($row["session"] == 1) {
-		// 	$optionStatus = '<span class="badge badge-dark text-warning">running ...</span>';
-		// } else if ($row["session"] == 2) {
-		// 	$optionStatus = '<span class="badge badge-dark text-info">ended</span>';
-		// }
+		}
+
 		$output .= '
 			<tr>
                 <td>
