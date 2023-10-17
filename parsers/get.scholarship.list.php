@@ -66,6 +66,29 @@ $output = '
 if ($total_data > 0) {
 	$i = 1;
 	foreach ($result as $row) {
+		$profile = 'svg/friendly-ghost.svg';
+		if ($row["student_picture"] != '') {
+			$profile = 'scholarship/' . $row["student_picture"];
+		}
+
+		$percentage = '0%';
+		$percentageColor = 'default';
+		if ($row['percentage'] >= 15) {
+			$percentage = $row['percentage'];
+			$percentageColor = 'danger';
+		} else if ($percentage >= 25) {
+			$percentage = $row['percentage'];
+			$percentageColor = 'warning';
+		}  else if ($percentage <= 40) {
+			$percentage = $row['percentage'];
+			$percentageColor = 'info';
+		}   else if ($percentage >= 60) {
+			$percentage = $row['percentage'];
+			$percentageColor = 'primary';
+		}    else if ($percentage >= 80) {
+			$percentage = $row['percentage'];
+			$percentageColor = 'success';
+		} 
 		// $option = '';
 		// $optionStatus = '';
 		// if ($row["session"] == 0) {
@@ -81,8 +104,8 @@ if ($total_data > 0) {
 		$output .= '
 			<tr>
                 <td>
-                    <img alt="..." src="/img/social/airbnb.svg" class="avatar avatar-sm rounded-circle me-2"> 
-                    <a class="text-heading font-semibold" href=" ' . PROOT . 'admin/Scholarship-view/' . $row["scholarship_id"] . ' ">' . ucwords($row["student_name"]) . '</a>
+                    <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
+                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/Scholarship-view/' . $row["scholarship_id"] . ' ">' . ucwords($row["student_name"]) . '</a>
                 </td>
                 <td>' . $row["student_dob"] . '</td>
                 <td>
@@ -91,16 +114,16 @@ if ($total_data > 0) {
                 <td>' . $row["school_name"] . '</td>
                 <td>
                     <div class="d-flex align-items-center">
-                        <span class="me-2">38%</span>
+                        <span class="me-2">' . $percentage . '%</span>
                         <div>
                             <div class="progress" style="width:100px">
-                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%"></div>
+                                <div class="progress-bar bg-' . $percentageColor . '" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:' . $percentage . '%"></div>
                             </div>
                         </div>
                     </div>
                 </td>
                 <td class="text-end">
-                    <a href="#" class="btn btn-sm btn-neutral">View</a> 
+                    <a href="' . PROOT . 'admin/Scholarship-view/' . $row["scholarship_id"] . '" class="btn btn-sm btn-neutral">View</a> 
                     <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                         <i class="bi bi-trash"></i>
                     </button>

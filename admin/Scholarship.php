@@ -85,7 +85,6 @@
                 </div>
                 <div class="card">
                     <div id="load-content"></div>
-                    
                 </div>
             </div>
         </div>
@@ -95,7 +94,7 @@
 
 <script>
     
-    // SEARCH AND PAGINATION FOR CONTESTANTS
+    // SEARCH AND PAGINATION FOR LIST
     function load_data(page, query = '') {
         $.ajax({
             url : "<?= PROOT; ?>/parsers/get.scholarship.list.php",
