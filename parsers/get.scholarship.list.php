@@ -46,6 +46,15 @@ $count_filter = $statement->rowCount();
 $output = ' 
 	<div class="card-header border-bottom d-flex align-items-center">
         <h5 class="me-auto">All list ' . $total_data . '</h5>
+        <div class="dropdown">
+        	<a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        		<i class="bi bi-three-dots-vertical"></i>
+        	</a>
+        	<div class="dropdown-menu">
+	        	<a href="' . PROOT . 'admin/Scholarhip-paid" class="dropdown-item">Paid </a>
+	        	<a href="' . PROOT . 'admin/Scholarhip-not-paid" class="dropdown-item">Not Paid </a>
+	        </div>
+	    </div>
     </div>
 
     <div class="table-responsive">
@@ -66,12 +75,14 @@ $output = '
 if ($total_data > 0) {
 	$i = 1;
 	foreach ($result as $row) {
-		
+
+		// retrieve user image
 		$profile = 'svg/friendly-ghost.svg';
 		if ($row["student_picture"] != '') {
 			$profile = 'scholarship/' . $row["student_picture"];
 		}
 
+		// get each percentage gain by users
 		$percentage = '0%';
 		$percentageColor = 'default';
 		if ($row['percentage'] >= 15) {
@@ -91,6 +102,13 @@ if ($total_data > 0) {
 			$percentageColor = 'success';
 		}
 
+		// use percentage gian to find user who has made transaction
+		$paid = 'warning';
+		if ($row['percentage'] > 0) {
+			$paid = 'success';
+		}
+
+
 		$output .= '
 			<tr>
                 <td>
@@ -99,7 +117,7 @@ if ($total_data > 0) {
                 </td>
                 <td>' . $row["student_dob"] . '</td>
                 <td>
-                    <span class="badge badge-lg badge-dot"><i class="bg-warning"></i>' . $row["index_number"] . '</span>
+                    <span class="badge badge-lg badge-dot"><i class="bg-' . $paid . '"></i>' . $row["index_number"] . '</span>
                 </td>
                 <td>' . $row["school_name"] . '</td>
                 <td>
