@@ -1,0 +1,147 @@
+[1mdiff --git a/admin/Scholarship.php b/admin/Scholarship.php[m
+[1mindex baba056..841abb0 100644[m
+[1m--- a/admin/Scholarship.php[m
+[1m+++ b/admin/Scholarship.php[m
+[36m@@ -5,6 +5,15 @@[m
+ 	include ('includes/left.side.bar.php');[m
+ 	include ('includes/top.nav.bar.php');[m
+ [m
+[32m+[m[32m    //[m
+[32m+[m[32m    $sql = "[m
+[32m+[m[32m        SELECT * FROM thylies_scholarship[m[41m [m
+[32m+[m[32m        ORDER BY createdAt DESC[m
+[32m+[m[32m    ";[m
+[32m+[m[32m    $statement = $conn->prepare($sql);[m
+[32m+[m[32m    $statement->execute();[m
+[32m+[m[32m    $rows = $statement->fetchAll();[m
+[32m+[m[32m    $count_row = $statement->rowCount();[m
+ 	[m
+ ?>[m
+ [m
+[36m@@ -57,37 +66,96 @@[m
+                     <div class="d-flex gap-3">[m
+                         <div class="input-group input-group-sm input-group-inline">[m
+                             <span class="input-group-text pe-2"><i class="bi bi-search"></i> </span>[m
+[31m-                            <input type="text" class="form-control" placeholder="Search" aria-label="Search"></div>[m
+[31m-                            <div>[m
+[31m-                                <button type="button" class="btn btn-sm px-3 btn-neutral d-flex align-items-center">[m
+[31m-                                    <i class="bi bi-funnel me-2"></i> [m
+[31m-                                    <span>Filters</span> [m
+[31m-                                    <span class="vr opacity-20 mx-3"></span> [m
+[31m-                                    <span class="text-xs text-primary">2</span>[m
+[31m-                                </button>[m
+[31m-                            </div>[m
+[32m+[m[32m                            <input type="text" class="form-control" placeholder="Search" aria-label="Search">[m
+                         </div>[m
+[31m-                        <div class="btn-group">[m
+[31m-                            <a href="#" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a> [m
+[31m-                            <a href="#" class="btn btn-sm btn-neutral">Private</a> [m
+[31m-                            <a href="#" class="btn btn-sm btn-neutral">Shared files</a>[m
+[32m+[m[32m                        <div>[m
+[32m+[m[32m                            <button type="button" class="btn btn-sm px-3 btn-neutral d-flex align-items-center">[m
+[32m+[m[32m                                <i class="bi bi-funnel me-2"></i>[m[41m [m
+[32m+[m[32m                                <span>Filters</span>[m[41m [m
+[32m+[m[32m                                <span class="vr opacity-20 mx-3"></span>[m[41m [m
+[32m+[m[32m                                <span class="text-xs text-primary">2</span>[m
+[32m+[m[32m                            </button>[m
+                         </div>[m
+                     </div>[m
+[31m-                    <div class="card">[m
+[31m-                        <div class="card-header border-bottom d-flex align-items-center">[m
+[31m-                            <h5 class="me-auto">All projects</h5>[m
+[31m-                            <div class="dropdown">[m
+[31m-                                <a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">[m
+[31m-                                    <i class="bi bi-three-dots-vertical"></i>[m
+[31m-                                </a>[m
+[31m-                                <div class="dropdown-menu">[m
+[31m-                                    <a href="#!" class="dropdown-item">Action </a>[m
+[31m-                                    <a href="#!" class="dropdown-item">Another action </a>[m
+[31m-                                    <a href="#!" class="dropdown-item">Something else here</a>[m
+[31m-                                </div>[m
+[31m-                            </div>[m
+[31m-                        </div>[m
+[31m-                        <div class="table-responsive">[m
+[31m-                            <table class="table table-hover table-nowrap"><thead class="table-light"><tr><th scope="col">Name</th><th scope="col">Due Date</th><th scope="col">Status</th><th scope="col">Team</th><th scope="col">Completion</th><th></th></tr></thead><tbody><tr><td><img alt="..." src="/img/social/airbnb.svg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#">Website Redesign</a></td><td>23-01-2022</td><td><span class="badge badge-lg badge-dot"><i class="bg-warning"></i>In progress</span></td><td><div class="avatar-group"><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-1.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-3.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-4.jpg"></a></div></td><td><div class="d-flex align-items-center"><span class="me-2">38%</span><div><div class="progress" style="width:100px"><div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%"></div></div></div></div></td><td class="text-end"><a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"><i class="bi bi-trash"></i></button></td></tr><tr><td><img alt="..." src="/img/social/amazon.svg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#">E-commerce App</a></td><td>23-01-2022</td><td><span class="badge badge-lg badge-dot"><i class="bg-success"></i>Done</span></td><td><div class="avatar-group"><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-1.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-3.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-4.jpg"></a></div></td><td><div class="d-flex align-items-center"><span class="me-2">83%</span><div><div class="progress" style="width:100px"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:83%"></div></div></div></div></td><td class="text-end"><a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"><i class="bi bi-trash"></i></button></td></tr><tr><td><img alt="..." src="/img/social/bootstrap.svg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#">Learning Platform</a></td><td>23-01-2022</td><td><span class="badge badge-lg badge-dot"><i class="bg-danger"></i>Project at risk</span></td><td><div class="avatar-group"><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-1.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-3.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-4.jpg"></a></div></td><td><div class="d-flex align-items-center"><span class="me-2">4%</span><div><div class="progress" style="width:100px"><div class="progress-bar bg-danger" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100" style="width:4%"></div></div></div></div></td><td class="text-end"><a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"><i class="bi bi-trash"></i></button></td></tr><tr><td><img alt="..." src="/img/social/dribbble.svg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#">Design Portfolio</a></td><td>23-01-2022</td><td><span class="badge badge-lg badge-dot"><i class="bg-warning"></i>In progress</span></td><td><div class="avatar-group"><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-1.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-3.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-4.jpg"></a></div></td><td><div class="d-flex align-items-center"><span class="me-2">10%</span><div><div class="progress" style="width:100px"><div class="progress-bar bg-primary" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%"></div></div></div></div></td><td class="text-end"><a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"><i class="bi bi-trash"></i></button></td></tr><tr><td><img alt="..." src="/img/social/spotify.svg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#">Our team's playlist</a></td><td>23-01-2022</td><td><span class="badge badge-lg badge-dot"><i class="bg-warning"></i>In progress</span></td><td><div class="avatar-group"><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-1.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-3.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-4.jpg"></a></div></td><td><div class="d-flex align-items-center"><span class="me-2">83%</span><div><div class="progress" style="width:100px"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:83%"></div></div></div></div></td><td class="text-end"><a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"><i class="bi bi-trash"></i></button></td></tr><tr><td><img alt="..." src="/img/social/uber.svg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#">Uber native app</a></td><td>23-01-2022</td><td><span class="badge badge-lg badge-dot"><i class="bg-secondary"></i>Not started</span></td><td><div class="avatar-group"><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-1.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-3.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-4.jpg"></a></div></td><td><div class="d-flex align-items-center"><span class="me-2">4%</span><div><div class="progress" style="width:100px"><div class="progress-bar bg-danger" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100" style="width:4%"></div></div></div></div></td><td class="text-end"><a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"><i class="bi bi-trash"></i></button></td></tr><tr><td><img alt="..." src="/img/social/codepen.svg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#">Code Examples for Devs</a></td><td>23-01-2022</td><td><span class="badge badge-lg badge-dot"><i class="bg-danger"></i>Project at risk</span></td><td><div class="avatar-group"><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-1.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-3.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-4.jpg"></a></div></td><td><div class="d-flex align-items-center"><span class="me-2">38%</span><div><div class="progress" style="width:100px"><div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%"></div></div></div></div></td><td class="text-end"><a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"><i class="bi bi-trash"></i></button></td></tr><tr><td><img alt="..." src="/img/social/slack.svg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#">Community Channel</a></td><td>23-01-2022</td><td><span class="badge badge-lg badge-dot"><i class="bg-danger"></i>Project at risk</span></td><td><div class="avatar-group"><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-1.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-3.jpg"> </a><a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card"><img alt="..." src="/img/people/img-4.jpg"></a></div></td><td><div class="d-flex align-items-center"><span class="me-2">74%</span><div><div class="progress" style="width:100px"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width:74%"></div></div></div></div></td><td class="text-end"><a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"><i class="bi bi-trash"></i></button></td></tr></tbody></table></div><div class="card-footer border-0 py-5"><span class="text-muted text-sm">Showing 10 items out of 250 results found</span></div></div></div></div></main>[m
+[32m+[m[32m                    <div class="btn-group">[m
+[32m+[m[32m                        <a href="#" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a>[m[41m [m
+[32m+[m[32m                        <a href="<?= PROOT; ?>admin/Scholarship/trash" class="btn btn-sm btn-neutral">Trash</a>[m[41m [m
+[32m+[m[32m                        <a href="<?= PROOT; ?>admin/Scholarship/rejected" class="btn btn-sm btn-neutral">Rejected</a>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <div class="card">[m
+[32m+[m[32m                    <div class="card-header border-bottom d-flex align-items-center">[m
+[32m+[m[32m                        <h5 class="me-auto">All projects</h5>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="table-responsive">[m
+[32m+[m[32m                        <table class="table table-hover table-nowrap">[m
+[32m+[m[32m                            <thead class="table-light">[m
+[32m+[m[32m                                <tr>[m
+[32m+[m[32m                                    <th scope="col">Name</th>[m
+[32m+[m[32m                                    <th scope="col">Created Date</th>[m
+[32m+[m[32m                                    <th scope="col">Index Number</th>[m
+[32m+[m[32m                                    <th scope="col">School</th>[m
+[32m+[m[32m                                    <th scope="col">Status</th>[m
+[32m+[m[32m                                    <th></th>[m
+[32m+[m[32m                                </tr>[m
+[32m+[m[32m                            </thead>[m
+[32m+[m[32m                            <tbody>[m
+[32m+[m[32m                                <?php if ($count_row > 0): ?>[m
+[32m+[m[32m                                    <?php foreach ($rows as $row): ?>[m
+[32m+[m[32m                                    <tr>[m
+[32m+[m[32m                                        <td>[m
+[32m+[m[32m                                            <img alt="..." src="/img/social/airbnb.svg" class="avatar avatar-sm rounded-circle me-2">[m[41m [m
+[32m+[m[32m                                            <a class="text-heading font-semibold" href="#">Website Redesign</a>[m
+[32m+[m[32m                                        </td>[m
+[32m+[m[32m                                        <td>23-01-2022</td>[m
+[32m+[m[32m                                        <td>[m
+[32m+[m[32m                                            <span class="badge badge-lg badge-dot"><i class="bg-warning"></i>In progress</span>[m
+[32m+[m[32m                                        </td>[m
+[32m+[m[32m                                        <td>[m
+[32m+[m[32m                                            <div class="avatar-group">[m
+[32m+[m[32m                                                <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">[m
+[32m+[m[32m                                                    <img alt="..." src="/img/people/img-1.jpg">[m[41m [m
+[32m+[m[32m                                                </a>[m
+[32m+[m[32m                                                <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">[m
+[32m+[m[32m                                                    <img alt="..." src="/img/people/img-3.jpg">[m[41m [m
+[32m+[m[32m                                                </a>[m
+[32m+[m[32m                                                <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">[m
+[32m+[m[32m                                                    <img alt="..." src="/img/people/img-4.jpg">[m
+[32m+[m[32m                                                </a>[m
+[32m+[m[32m                                            </div>[m
+[32m+[m[32m                                        </td>[m
+[32m+[m[32m                                        <td>[m
+[32m+[m[32m                                            <div class="d-flex align-items-center">[m
+[32m+[m[32m                                                <span class="me-2">38%</span>[m
+[32m+[m[32m                                                <div>[m
+[32m+[m[32m                                                    <div class="progress" style="width:100px">[m
+[32m+[m[32m                                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%"></div>[m
+[32m+[m[32m                                                    </div>[m
+[32m+[m[32m                                                </div>[m
+[32m+[m[32m                                            </div>[m
+[32m+[m[32m                                        </td>[m
+[32m+[m[32m                                        <td class="text-end">[m
+[32m+[m[32m                                            <a href="#" class="btn btn-sm btn-neutral">View</a>[m[41m [m
+[32m+[m[32m                                            <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">[m
+[32m+[m[32m                                                <i class="bi bi-trash"></i>[m
+[32m+[m[32m                                            </button>[m
+[32m+[m[32m                                        </td>[m
+[32m+[m[32m                                    </tr>[m
+[32m+[m[32m                                    <?php endforeach ?>[m
+[32m+[m[32m                                <?php else: ?>[m
+[32m+[m[32m                                    <tr>[m
+[32m+[m[32m                                        <td colspan="5">No data found</td>[m
+[32m+[m[32m                                    </tr>[m
+[32m+[m[32m                                <?php endif; ?>[m
+[32m+[m[32m                            </tbody>[m
+[32m+[m[32m                        </table>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="card-footer border-0 py-5">[m
+[32m+[m[32m                        <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </main>[m
+ 	[m
+ <?php include ('includes/footer.php'); ?>[m
+\ No newline at end of file[m
