@@ -10,6 +10,7 @@
 
 		$fullname = sanitize($_POST['user_fullname']);
 		$email = sanitize($_POST['user_email']);
+		$index_number = sanitize($_POST['user_index_number']);
 		$password = sanitize($_POST['user_password']);
 		$password_hash = password_hash($password, PASSWORD_BCRYPT);
 		$gender = sanitize($_POST['user_gender']);
@@ -45,12 +46,13 @@
 					':user_unique_id'		=> guidv4(),
 					':user_fullname'		=> $fullname,
 					':user_email'			=> $email,
+					':user_index_number'	=> $index_number,
 					':user_password'		=> $password_hash,
 					':user_gender'			=> $gender
 				];
 				$query = "
-					INSERT INTO thylies_user (user_unique_id, user_fullname, user_email, user_password, user_gender) 
-					VALUES (:user_unique_id, :user_fullname, :user_email, :user_password, :user_gender); 
+					INSERT INTO thylies_user (user_unique_id, user_fullname, user_email, user_index_number, user_password, user_gender) 
+					VALUES (:user_unique_id, :user_fullname, :user_email, :user_index_number, :user_password, :user_gender); 
 				";
 				$statement = $conn->prepare($query);
 				$result = $statement->execute($data);

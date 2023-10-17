@@ -16,7 +16,7 @@
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Sign in - Thylies</title>
+    <title>Sign up - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
@@ -48,7 +48,7 @@
                     <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
                         <form id="signupForm">
                             <h1 class="mb-1 text-center h3">Register an Account</h1>
-                            <p class="mb-4 text-center">Sign in using your thylies credentials.</p>
+                            <p class="mb-4 text-center">Benefit from Thylies Ghana by registering with us.</p>
                             <span id="signup_errors"></span>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Full name<span class="text-danger">*</span> </label>
@@ -58,6 +58,11 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email<span class="text-danger">*</span> </label>
                                 <input type="email" id="user_email" class="form-control" name="user_email" placeholder="Email address"
+                                    required="" autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <label for="user_index_number" class="form-label">Student ID<span class="text-danger">*</span> </label>
+                                <input type="email" id="user_index_number" class="form-control" name="user_index_number" placeholder="Index number"
                                     required="" autocomplete="off">
                             </div>
                             <div class="mb-3 mb-4">
@@ -154,12 +159,13 @@
             var data = $('#signupForm').serialize();
             var user_fullname = $('#user_fullname').val();
             var user_email = $('#user_email').val();
+            var user_index_number = $('#user_index_number').val();
             var user_password = $('#user_password').val();
             var repeat_password = $('#repeat_password').val();
             var user_gender = $("#user_gender :selected").text();
             var error = '';
 
-            if (user_fullname == '' || user_email == '' || user_password == '' || repeat_password == '' || user_fullname == '' || user_gender == '') {
+            if (user_fullname == '' || user_email == '' || user_index_number == '' || user_password == '' || repeat_password == '' || user_fullname == '' || user_gender == '') {
                 error += '<div class="alert alert-secondary" role="alert">Fill all empty fields</div>';
                 $('#signup_errors').html(error);
                 return false;

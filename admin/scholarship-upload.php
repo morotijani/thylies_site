@@ -41,13 +41,13 @@
 	<main class="py-6 bg-surface-secondary">
 		<div class="container-fluid">
 			<div>
-				<form action="code.php" method="POST" enctype="multipart/form-data">
+				<form action="./../parsers/import.scholarship-list" method="POST" enctype="multipart/form-data">
 					<div class="d-flex flex-column flex-sm-row justify-content-between gap-3">
 						<div class="input-group input-group-lg input-group-inline">
 							<span class="input-group-text pe-2"><i class="bi bi-file-text"></i> </span>
 							<input type="file" class="form-control form-control-lg" name="import_file">
 						</div>
-						<buton type="submit" class="btn btn-lg btn-warning text-nowrap">Import</button>
+						<buton type="submit" name="submit_scholarship_import" class="btn btn-lg btn-warning text-nowrap">Import</button>
 					</div>
 				</form>
 			</div>

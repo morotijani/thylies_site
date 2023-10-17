@@ -5,6 +5,10 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 require BASEURL . 'vendor/autoload.php';
 
+//
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 // // IP INFO
 // use ipinfo\ipinfo\IPinfo;
 
