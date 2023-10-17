@@ -8,6 +8,8 @@ require BASEURL . 'vendor/autoload.php';
 //
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Writer\Xls;
+use PhpOffice\PhpSpreadsheet\Writer\Csv;
 
 // // IP INFO
 // use ipinfo\ipinfo\IPinfo;

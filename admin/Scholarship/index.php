@@ -1,9 +1,9 @@
 <?php 
-	require ('./../connection/conn.php');
+	require_once $_SERVER['DOCUMENT_ROOT'] . "/thylies_site/connection/conn.php";
 
-	include ('includes/header.php');
-	include ('includes/left.side.bar.php');
-	include ('includes/top.nav.bar.php');
+	include ('../includes/header.php');
+	include ('../includes/left.side.bar.php');
+	include ('../includes/top.nav.bar.php');
 
     //
     $sql = "
@@ -41,26 +41,18 @@
 					</div>
 				</div>
 				<ul class="nav nav-tabs overflow-x border-0">
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship-import" class="nav-link">Import Data</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/import" class="nav-link">Import Data</a></li>
 					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship" class="nav-link active">View all</a></li>
 					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/rejected" class="nav-link">Rejected</a></li>
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/accepted" class="nav-link">Accpted</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/gained" class="nav-link">Gained</a></li>
 				</ul>
 			</div>
 		</div>
 	</header>
 
-	<main class="py-6 bg-surface-secondary">
-		<div class="container-fluid">
-			<?= $flash; ?>
-			<div>
-				
-			</div>
-		</div>
-	</main>
-
     <main class="py-6 bg-surface-secondary">
         <div class="container-fluid">
+			<?= $flash; ?>
             <div class="vstack gap-4">
                 <div class="d-flex flex-column flex-md-row gap-3 justify-content-between">
                     <div class="d-flex gap-3">
@@ -68,13 +60,18 @@
                             <span class="input-group-text pe-2"><i class="bi bi-search"></i> </span>
                             <input type="text" class="form-control" id="search" placeholder="Search" aria-label="Search">
                         </div>
-                        <div>
-                            <button type="button" class="btn btn-sm px-3 btn-neutral d-flex align-items-center">
-                                <i class="bi bi-funnel me-2"></i> 
-                                <span>Filters</span> 
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-sm px-3 btn-neutral d-flex align-items-center" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bi bi-clipboard-data-fill me-2"></i> 
+                                <span>Export</span> 
                                 <span class="vr opacity-20 mx-3"></span> 
-                                <span class="text-xs text-primary">2</span>
+                                <span class="text-xs text-primary">Data</span>
                             </button>
+                            <div class="dropdown-menu">
+                                <a href="<?= PROOT; ?>admin/Scholarhip-paid" class="dropdown-item">XLSX </a>
+                                <a href="<?= PROOT; ?>admin/Scholarhip-paid" class="dropdown-item">XLS </a>
+                                <a href="<?= PROOT; ?>admin/Scholarhip-not-paid" class="dropdown-item">CSV </a>
+                            </div>
                         </div>
                     </div>
                     <div class="btn-group">
@@ -90,7 +87,7 @@
         </div>
     </main>
 	
-<?php include ('includes/footer.php'); ?>
+<?php include ('../includes/footer.php'); ?>
 
 <script>
     

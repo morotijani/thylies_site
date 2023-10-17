@@ -51,8 +51,9 @@
 									<i class="bi bi-person-standing-dress"></i> Sanitary Welfare</a>
 									<div class="collapse" id="sidebar-sanitary">
 										<ul class="nav nav-sm flex-column">
-											<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship-import" class="nav-link">Import data</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/import" class="nav-link">Import data</a></li>
 											<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship" class="nav-link">List View</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/trash" class="nav-link">Trash</a></li>
 										</ul>
 									</div>
 								</li>
