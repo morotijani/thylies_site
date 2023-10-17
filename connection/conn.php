@@ -110,27 +110,23 @@
 
 
  	// Display on Messages on Errors And Success
- 	// if (isset($_SESSION['flash_success'])) {
- 	//  	echo '<div id="temporary"><p class="text-center text-white bg-success">'.$_SESSION['flash_success'].'</p></div>';
- 	//  	unset($_SESSION['flash_success']);
- 	// }
-
- 	// if (isset($_SESSION['flash_error'])) {
- 	//  	echo '<divid="temporary"><p class="text-center bg-danger text-white">'.$_SESSION['flash_error'].'</p></div>';
- 	//  	unset($_SESSION['flash_error']);
- 	// }
-
  	$flash = '';
  	if (isset($_SESSION['flash_success'])) {
- 	 	$flash = '<div class="bg-success" id="temporary"><p class="text-center text-white">'.$_SESSION['flash_success'].'</p></div>';
+ 	 	$flash = '
+				<div class="alert alert-success my-2" role="alert" id="temporary">
+				  	' . $_SESSION['flash_success'] . '
+				</div>
+ 	 		';
  	 	unset($_SESSION['flash_success']);
  	}
 
  	if (isset($_SESSION['flash_error'])) {
- 	 	$flash = '<div class="bg-danger" id="temporary"><p class="text-center text-white">'.$_SESSION['flash_error'].'</p></div>';
+ 	 	$flash = '
+				<div class="alert alert-danger my-2" role="alert" id="temporary">
+				  	' . $_SESSION['flash_error'] . '
+				</div>
+ 	 		';
  	 	unset($_SESSION['flash_error']);
  	}
 
 
-
-?>
