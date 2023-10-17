@@ -131,7 +131,7 @@ if ($total_data > 0) {
                     </div>
                 </td>
                 <td class="text-end">
-                    <a href="' . PROOT . 'admin/Scholarship-view/' . $row["scholarship_id"] . '" class="btn btn-sm btn-neutral">View</a> 
+                    <a href="' . PROOT . 'admin/Scholarship/view/' . $row["scholarship_id"] . '" class="btn btn-sm btn-neutral">View</a> 
                     <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                         <i class="bi bi-trash"></i>
                     </button>

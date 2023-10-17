@@ -5,7 +5,7 @@
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
     use PhpOffice\PhpSpreadsheet\Writer\Xls;
     use PhpOffice\PhpSpreadsheet\Writer\Csv;
-    
+
     if (isset($_GET['data']) && !empty($_GET['type'])) {
         $data = sanitize($_GET['data']);
         $FileExtType = sanitize($_GET['type']);
@@ -108,7 +108,8 @@
             // $writer->save($NewFileName);
             header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attactment; filename="' . urlencode($NewFileName) . '"');
-            $result = $writer->save('php://output');
+            $writer->save('php://output');
+            redirect(PROOT . 'admin/Scholarship/index');
 
         } else {
             $_SESSION['flash_error'] = "No Record Found";
