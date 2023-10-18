@@ -209,40 +209,43 @@
                         <h4 class="mb-1">School</h4>
                         <p class="text-sm text-muted">Academic information.</p>
                     </div>
-                    <div class="list-group-item d-flex align-items-center">
-                        <div class="flex-fill">
-                            <a href="javascript:;" class="d-block h6 font-semibold mb-1">Name of Program offered</a>
-                            <span class="d-block text-sm text-muted"><?= ucwords($row[0]['school_name']); ?></span>
+
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Name of Program offered</a>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['school_name']); ?></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-group-item d-flex align-items-center">
-                        <div class="flex-fill">
-                            <a href="javascript:;" class="d-block h6 font-semibold mb-1">Year of Studies</a>
-                            <span class="d-block text-sm text-muted"><?= $row[0]['parent_deceased']; ?></span>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Year of Studies</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['parent_deceased']; ?></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-group-item d-flex align-items-center">
-                        <div class="flex-fill">
-                            <a href="javascript:;" class="d-block h6 font-semibold mb-1">Index Number</a>
-                            <span class="d-block text-sm text-muted"><?= ucwords($row[0]['index_number']); ?></span>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Index Number</a>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['index_number']); ?></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-group-item d-flex align-items-center">
-                        <div class="flex-fill">
-                            <a href="javascript:;" class="d-block h6 font-semibold mb-1">How would you describe yourself?</a>
-                            <span class="d-block text-sm text-muted"><?= $row[0]['self_description']; ?></span>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">How would you describe yourself?</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['self_description']; ?></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-group-item d-flex align-items-center">
-                        <div class="flex-fill">
-                            <a href="javascript:;" class="d-block h6 font-semibold mb-1">What is your professional dream?</a>
-                            <span class="d-block text-sm text-muted"><?= $row[0]['professional_dream']; ?></span>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">What is your professional dream?</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['professional_dream']; ?></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-group-item d-flex align-items-center">
-                        <div class="flex-fill">
-                            <a href="javascript:;" class="d-block h6 font-semibold mb-1">What is your limitation in your life as a student?</a>
-                            <span class="d-block text-sm text-muted"><?= $row[0]['limitation']; ?></span>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">What is your limitation in your life as a student?</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['limitation']; ?></span>
+                            </div>
                         </div>
                     </div>
                 </div>
