@@ -51,8 +51,8 @@ $output = '
         		<i class="bi bi-three-dots-vertical"></i>
         	</a>
         	<div class="dropdown-menu">
-	        	<a href="' . PROOT . 'admin/Scholarhip-paid" class="dropdown-item">Paid </a>
-	        	<a href="' . PROOT . 'admin/Scholarhip-not-paid" class="dropdown-item">Not Paid </a>
+	        	<a href="' . PROOT . 'admin/Scholarhip/paid" class="dropdown-item">Paid </a>
+	        	<a href="' . PROOT . 'admin/Scholarhip/not-paid" class="dropdown-item">Not Paid </a>
 	        </div>
 	    </div>
     </div>
