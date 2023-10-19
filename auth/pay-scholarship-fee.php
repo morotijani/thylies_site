@@ -27,7 +27,9 @@
         $statement = $conn->prepare($sql);
         $statement->execute([$id, 1, 0]);
         $row = $statement->fetchAll();
-        if ($statement->rowCount() > 0) {
+        $count_row = $statement->rowCount();
+        if ($count_row > 0) {
+
         }
     }
 
@@ -42,7 +44,7 @@
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Pay Registration - Thylies</title>
+    <title>Pay Scholarship Fees - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
@@ -71,8 +73,8 @@
 
                      <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
                         <form id="paymentForm">
-                            <h1 class="mb-1 text-center h3">Payment for registration.</h1>
-                            <p class="mb-4 text-center">Any registered student is pay the amount of GHS101.00 access the platform.</p>
+                            <h1 class="mb-3 text-center h3">Scholarship percentage status.</h1>
+                            <p class="mb-4 text-center">Hello <b><?= ucwords($row[0]["student_name"]); ?></b> you have been granted a percentage of <b class="text-success"><?= $row[0]['percentage']; ?>%</b>. You are to pay the sum of GHS101.00 to access and download your receipt.</p>
                             
                             <div class="text-center">
                                 <button type="submit" class="btn btn-lg btn-warning" onclick="payWithPaystack()"> Pay GHS101.00 </button>
@@ -80,7 +82,7 @@
 
                             <div class="d-xxl-flex justify-content-between mt-4">
                                 <p class="font-14 mb-0">
-                                    <a href="<?= PROOT; ?>auth/login">Cancel</a>
+                                    <a href="<?= PROOT; ?>scholarship-list">Go back</a>
                                 </p>
                             </div>
                         </form>
