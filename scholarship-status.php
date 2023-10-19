@@ -2,9 +2,6 @@
     require_once ("connection/conn.php");
 
     $title = 'Scholarhip Status - ';
-    $navbar = 'navbar-light';
-
-    include ('inc/header.inc.php');
 
     if (isset($_GET['scholarship'])) {
         $id = sanitize($_GET['scholarship']);
@@ -48,17 +45,86 @@
 
             if ($sub_count) {
                 // code...
+                $picture = 'svg/friendly-ghost.svg';
+                if ($row[0]["student_picture"] != '') {
+                    $picture = 'scholarship/' . $row[0]["student_picture"];
+                }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-    <section class="py-lg-13 py-6">
-        <div class="container">
-            <p class="mb-0">
-                ID: <h2><?= $row[0]['scholarship_id']; ?></h2>
-                Status: <h2 class="text-<?= $status_class; ?>"><?= $status; ?></h2>
-                <br><br><a href="<?= PROOT; ?>scholarship-list">view all list.</a>
-            </p>
-        </div>
-    </section>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content=">Yoga Coach - Bootstrap 5 Personal Website Template">
+    <meta name="keywords" content=">Yoga Coach, Personal website template">
+    <meta name="author" content="Codescandy">
+    <title><?= $title; ?> Thylies</title>
+    <link rel="stylesheet" href="<?= PROOT; ?>assets/css/plyr.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu" />
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Patrick+Hand&family=Young+Serif&display=swap" rel="stylesheet">
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
+
+    <link rel="stylesheet" href="<?= PROOT; ?>assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?= PROOT; ?>assets/css/theme.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8S4MT3EYG');
+    </script>
+</head>
+<body>
+    <main>
+        <section class="py-lg-13 py-6">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <div class="badge bg-<?= $status_class; ?>-soft"><?= $status; ?></div>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="btn-like">
+                                        <i class="fe fe-heart"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="shop-single.html"><img src="<?= PROOT . 'assets/media/' . $picture; ?>" alt="book" class="mt-3 img-fluid"></a>
+                                <div class="mt-3">
+                                    <a href="shop-single.html">
+                                        <h4 class="mb-1"><?= ucwords($row[0]['student_name']); ?></h4>
+                                    </a>
+                                    <p class="font-12 mb-2"><?= $row[0]["index_number"]; ?></p>
+                                    <div class="text-dark me-2"><span class="text-muted">Scholarship ID: </span><?= $row[0]["scholarship_id"]; ?></div>
+                                    <div class="text-dark me-2"><span class="text-muted">Transaction ID: </span><?= $sub_row[0]["transaction_id"] ?></div>
+                                    <div class="text-dark me-2"><span class="text-muted">Date: </span><?= $row[0]["createdAt"] ?></div>
+                                    <a href="#" class="btn btn-outline-primary btn-sm mt-3">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">
+                    <a href="<?= PROOT; ?>scholarship-list">view all list.</a>
+                </p>
+            </div>
+        </section>
+    </main>
 
 <?php
             } else {
@@ -70,4 +136,14 @@
                 
     }
 ?>
-<?php include ('inc/footer.inc.php'); ?>
+    <script src="<?= PROOT; ?>assets/js/jquery.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/jquery.slimscroll.min.js"></script>
+
+
+
+    <!-- Theme JS -->
+    <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/plyr.min.js"></script>
+</body>
+</html>
