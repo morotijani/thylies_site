@@ -78,6 +78,10 @@
                             <h1 class="mb-3 text-center h3">Scholarship percentage status.</h1>
                             <p class="mb-4 text-center">Hello <b><?= ucwords($row[0]["student_name"]); ?></b> you have been granted a percentage of <b class="text-success"><?= $row[0]['percentage']; ?>%</b>. You are to pay the sum of GHS101.00 to access and download your receipt.</p>
                             
+                            <div class="mb-4">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Enter email here.." class="form-control" value="<?= (user_is_logged_in() ? $user_data["user_email"] : '') ?>" required>
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-lg btn-warning" onclick="payWithPaystack()"> Pay GHS101.00 </button>
                             </div>
@@ -121,7 +125,7 @@
 
             let handler = PaystackPop.setup({
                 key: '<?= PAYSTACK_TEST_PUBLIC_KEY; ?>',
-                email: 'testmetj@gmail.com',
+                email: $('#email').val(),
                 amount: 101 * 100,
                 currency: 'GHS',
                 channels: ['card', 'bank', 'ussd', 'qr', 'mobile_money', 'bank_transfer'],
@@ -150,13 +154,19 @@
                         },
                         success : function(data) {
                             if (data == '') {
-                                window.location = '<?= PROOT; ?>auth/scholarship-fee-paid';
+                                window.location = '<?= PROOT; ?>auth/paid-scholarship-fee';
                             }
                         }
                     });
                 }
             });
-            handler.openIframe();
+
+            if ($('#email').val() == '') {
+                $('#email').focus();
+                return false;
+            } else {
+                handler.openIframe();
+            }
         }
     </script>
 </body>

@@ -16,6 +16,7 @@
 
 		if ($count_result > 0) {
 			// code...
+			if ($conn->query("SELECT * FROM thylies_scholarship WHERE scholarship_id = '".$row[0]['scholarship_id']."' AND user_email = NULL OR user_email = "" LIMIT 1 ")->rowCount() > 0) {}
 		
 ?>
 <!DOCTYPE html>
