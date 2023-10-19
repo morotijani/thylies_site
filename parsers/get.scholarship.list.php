@@ -85,19 +85,28 @@ if ($total_data > 0) {
 		// get each percentage gain by users
 		$percentage = '0%';
 		$percentageColor = 'default';
+		
 		if ($row['percentage'] >= 15) {
 			$percentage = $row['percentage'];
 			$percentageColor = 'danger';
-		} else if ($percentage >= 25) {
+		} 
+
+		if ($percentage >= 25) {
 			$percentage = $row['percentage'];
 			$percentageColor = 'warning';
-		}  else if ($percentage <= 40) {
+		}  
+
+		if ($percentage <= 40) {
 			$percentage = $row['percentage'];
 			$percentageColor = 'info';
-		}   else if ($percentage >= 60) {
+		}   
+
+		if ($percentage >= 60) {
 			$percentage = $row['percentage'];
 			$percentageColor = 'primary';
-		}    else if ($percentage >= 80) {
+		}    
+
+		if ($percentage >= 80) {
 			$percentage = $row['percentage'];
 			$percentageColor = 'success';
 		}

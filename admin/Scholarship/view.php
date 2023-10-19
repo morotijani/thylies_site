@@ -25,6 +25,27 @@
             if ($row[0]["student_picture"] != '') {
                 $profile = 'scholarship/' . $row[0]["student_picture"];
             }
+
+            // Grant
+            if (isset($_POST['percentage'])) {
+                $percentage = sanitize((int)$_POST['percentage']);
+
+                $percentageQuery = "
+                    UPDATE thylies_scholarship 
+                    SET percentage = ? 
+                    WHERE scholarship_id = ?
+                ";
+                $statement = $conn->prepare($percentageQuery);
+                $result = $statement->execute([$percentage, $scholarship_id]);
+                if (isset($result)) {
+                    // code...
+                    $_SESSION['flash_success'] = $percentage . "% has been granted to " . $row[0]['student_name'];
+                    redirect(PROOT . 'admin/Scholarship/view/' . $scholarship_id);
+                } else {
+                    $_SESSION['flash_error'] = 'Something went wrong.';
+                    redirect(PROOT . 'admin/Scholarship/view/' . $scholarship_id);
+                }
+            }
         } else {
             $_SESSION['flash_error'] = 'Unknown scholarship info provided';
             redirect(PROOT . 'admin/Scholarship/index');   
@@ -326,24 +347,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-body">
-                    <div class="d-flex align-items-center mb-5">
+                <form action="" method="POST">
+                    <div class="modal-body">
+                        <div class="d-flex align-items-center mb-5">
+                            <div>
+                                <p class="text-sm">Percentage <span class="font-bold text-heading">%</span></p>
+                            </div>
+                        </div>
                         <div>
-                            <p class="text-sm">Percentage <span class="font-bold text-heading">%</span></p>
+                            <div class="input-group input-group-inline">
+                                <input type="number" min="0" name="percentage" class="form-control" placeholder="%" value="<?= $row[0]["percentage"]; ?>">
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="input-group input-group-inline">
-                            <input type="number" min="20" class="form-control" placeholder="%">
+                    <div class="modal-footer">
+                        <div class="me-auto">
+                            <a href="#" class="text-sm font-semibold"><i class="bi bi-x me-2"></i>Cancel</a>
                         </div>
+                        <button type="button" class="btn btn-sm btn-neutral" data-bs-dismiss="modal">Close</button> 
+                        <button type="submit" class="btn btn-sm btn-success">Grant</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="me-auto">
-                        <a href="#" class="text-sm font-semibold"><i class="bi bi-x me-2"></i>Cancel</a>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-neutral" data-bs-dismiss="modal">Close</button> 
-                    <button type="button" class="btn btn-sm btn-success">Grant</button></div>
+                </form>
             </div>
         </div>
     </div>
