@@ -62,8 +62,28 @@
                     <li class="nav-item">
                         <a href="<?= PROOT; ?>" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a href=" <?= PROOT; ?>user/apply-scholarship" class="nav-link">Scholarship</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menu-3" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                             Scholarship
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-arrow  dropdown-menu-xl-start " aria-labelledby="menu-3">
+                            <li>
+                                <a class="dropdown-item" href="<?= PROOT; ?>scholarship-list">
+                                    <?= date('Y'); ?> List
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="<?= PROOT; ?>user/apply-scholarship">
+                                    Form
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="<?= PROOT; ?>user/scholarship-history">
+                                    History
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href=" <?= PROOT; ?>scholarship-list" class="nav-link">Scholarship List</a>

@@ -315,26 +315,26 @@ function check_payment_of_registration_fee($user_id) {
 }
 
 // Check if user already apply for scholarship
-function applied_scholarship($user_id) {
-	global $conn;
+// function applied_scholarship($user_id) {
+// 	global $conn;
 
-	$sql = "
-		SELECT * FROM thylies_scholarship 
-		WHERE user_id = ? 
-		AND submitted = ?
-		LIMIT 1
-	";
-	$statement = $conn->prepare($sql);
-	$statement->execute([$user_id, 1]);
-	$count_row = $statement->rowCount();
-	$row = $statement->fetchAll();
+// 	$sql = "
+// 		SELECT * FROM thylies_scholarship 
+// 		WHERE user_id = ? 
+// 		AND submitted = ?
+// 		LIMIT 1
+// 	";
+// 	$statement = $conn->prepare($sql);
+// 	$statement->execute([$user_id, 1]);
+// 	$count_row = $statement->rowCount();
+// 	$row = $statement->fetchAll();
 
-	if ($count_row > 0) {
-		return $row;
-	} else {
-		return false;
-	}
-}
+// 	if ($count_row > 0) {
+// 		return $row;
+// 	} else {
+// 		return false;
+// 	}
+// }
 
 
 function send_vericode($email) {
