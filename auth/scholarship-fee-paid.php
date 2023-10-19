@@ -50,8 +50,9 @@
         <div class="container">
         	<div class="row justify-content-center">
         		<div class="col-md-5">
-				<a href="javascript:;">
-		    		<dotlottie-player src="https://lottie.host/bedb2e95-773d-4fa6-9ae6-275178405aa6/yFmN8pcjyo.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+					<a href="javascript:;">
+		    			<dotlottie-player src="https://lottie.host/bedb2e95-773d-4fa6-9ae6-275178405aa6/yFmN8pcjyo.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+		    		</a>
 					<div class="p-4 bg-white border rounded-bottom">
 						<a href="javascript:;">
 						  	<h3 class="mb-3 h4">Thylies</h3>
@@ -81,3 +82,6 @@
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/jquery.slimscroll.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
+
+</body>
+</html>
