@@ -82,7 +82,7 @@
                                            <td class="align-middle"><?= ucwords($row['school_name']); ?></td>
                                            <td class="align-middle"><?= $row['index_number']; ?></td>
                                            <td class="align-middle"><?= pretty_date($row['createdAt']); ?></td>
-                                           <td class="align-middle"><a href="<?= PROOT; ?>scholarship-status/<?= $row['scholarship_id']; ?>">view status</a></td>
+                                           <td class="align-middle"><a href="<?= PROOT; ?>auth/auth-scholarship-status/<?= $row['scholarship_id']; ?>">view status</a></td>
                                         </tr>
                                     <?php $i++; endforeach; ?>
                                     <?php else: ?>

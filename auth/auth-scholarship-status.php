@@ -9,15 +9,15 @@ $nav = 0;
 //     redirect(PROOT . 'user/index');
 // }
 
+// 
+$authScholarship = issetElse($_SESSION, 'auth-scholarship', 0);
+if ($authScholarship != 0 && !empty($authScholarship)) {
+    redirect(PROOT . 'auth/pay-scholarship-fee/' . $authScholarship);
+}
+
 if (isset($_GET['scholarship'])) {
     $id = sanitize($_GET['scholarship']);
 
-
-    // 
-    $authScholarship = issetElse($_SESSION, 'auth-scholarship', 0);
-    if ($authScholarship != 0 && !empty($authScholarship)) {
-        redirect(PROOT . 'auth/pay-scholarship-fee/' . $id);
-    }
 
     $index_number = ((isset($_POST['index_number'])) ? sanitize($_POST['index_number']):'');
     $dob = ((isset($_POST['dob'])) ? sanitize($_POST['dob']):'');
@@ -29,17 +29,18 @@ if (isset($_GET['scholarship'])) {
         }
 
         $query = "
-            SELECT * FROM thylies_user 
+            SELECT * FROM thylies_scholarship 
             WHERE index_number = ? 
             AND student_dob = ? 
+            AND scholarship_id = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($query);
-        $statement->execute(array($index_number, $dob));
+        $statement->execute(array($index_number, $dob, $id));
         if ($statement->rowCount() < 1) {
             $errors = '<div class="alert alert-secondary" role="alert">Unknown student.</div>';
         } else {
-            $_SESSION['auth-scholarship'] = $id
+            $_SESSION['auth-scholarship'] = $id;
             redirect(PROOT . 'scholarship-status');
         }
 
@@ -87,7 +88,7 @@ if (isset($_GET['scholarship'])) {
 
                     <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
                         <form method="POST" id="loginForm">
-                            <h1 class="mb-1 text-center h3">Auth</h1>
+                            <h1 class="mb-1 text-center h3">Authenticate</h1>
                             <p class="mb-4 text-center">Provide the below details to access your scholarship status.</p>
                             <?= $errors; ?>
                             <div class="mb-3">
@@ -96,18 +97,18 @@ if (isset($_GET['scholarship'])) {
                                     required="" autocomplete="off">
                             </div>
                             <div class="mb-3 mb-4">
-                                <label for="dob" class="form-label">Password<span class="text-danger">*</span></label>
+                                <label for="dob" class="form-label">Date of Birth<span class="text-danger">*</span></label>
                                 <input type="date" id="dob" name="dob" class="form-control" placeholder="Password" required=>
                             </div>
                             <div class="d-grid">
-                                <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_signup' data-action='submit' type="submit" name="submit_login" id="submit_login">Sign in</button>
+                                <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_signup' data-action='submit' type="submit" name="submit_login" id="submit_login">Check status</button>
                             </div>
                             <div class="d-xxl-flex justify-content-between mt-4 ">
                                 <p class="text-muted font-14 mb-0">
                                     Don't have an account yet? <a href="<?= PROOT; ?>auth/join">Sign up</a>
                                 </p>
                                 <p class="font-14 mb-0">
-                                    <a href="<?= PROOT; ?>auth/forgot-password">Forget Password</a>
+                                    <a href="<?= PROOT; ?>auth/login">Sign in</a>
                                 </p>
                             </div>
                         </form>
@@ -144,6 +145,5 @@ if (isset($_GET['scholarship'])) {
 <?php 
     } else {
         redirect(PROOT . 'scholarship-list');
-    }
- ?>
+    } ?>
 

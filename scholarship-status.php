@@ -46,7 +46,9 @@
             $sub_count = $statement->rowCount();
 
             if ($sub_count) {
-                // code...
+                // 
+                unset($_SESSION['auth-scholarship']);
+
                 $picture = 'svg/friendly-ghost.svg';
                 if ($row[0]["student_picture"] != '') {
                     $picture = 'scholarship/' . $row[0]["student_picture"];
@@ -128,7 +130,7 @@
         }
                 
     } else {
-        redirect(PROOT . 'auth/auth-scholarship-status/' . $authScholarship);
+        redirect(PROOT . 'scholarship-list');
     }
 ?>
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
