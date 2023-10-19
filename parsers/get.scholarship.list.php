@@ -85,7 +85,7 @@ if ($total_data > 0) {
 		// get each percentage gain by users
 		$percentage = '0%';
 		$percentageColor = 'default';
-		
+
 		if ($row['percentage'] >= 15) {
 			$percentage = $row['percentage'];
 			$percentageColor = 'danger';
@@ -111,9 +111,10 @@ if ($total_data > 0) {
 			$percentageColor = 'success';
 		}
 
-		// use percentage gian to find user who has made transaction
+		// user who has paid for gian scholarship
 		$paid = 'warning';
-		if ($row['percentage'] > 0) {
+		$scholarship_id = $row["scholarship_id"];
+		if ($conn->query("SELECT * FROM thylies_scholarship_transaction WHERE scholarship_id = '".$scholarship_id."' ")->rowCount() > 0) {
 			$paid = 'success';
 		}
 

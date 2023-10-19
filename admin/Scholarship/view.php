@@ -32,11 +32,11 @@
 
                 $percentageQuery = "
                     UPDATE thylies_scholarship 
-                    SET percentage = ? 
+                    SET status = ?, percentage = ? 
                     WHERE scholarship_id = ?
                 ";
                 $statement = $conn->prepare($percentageQuery);
-                $result = $statement->execute([$percentage, $scholarship_id]);
+                $result = $statement->execute([(($percentage <= 0) ? 0 : 1), $percentage, $scholarship_id]);
                 if (isset($result)) {
                     // code...
                     $_SESSION['flash_success'] = $percentage . "% has been granted to " . $row[0]['student_name'];

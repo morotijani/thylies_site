@@ -12,8 +12,8 @@ RewriteRule ^admin/Users/view([0-9a-zA-Z]+)$ admin/Users/view.php?view=$1 [NC,L]
 # Verify user email
 RewriteRule ^auth/verified/([0-9a-zA-Z]+)$ auth/verified.php?vericode=$1 [NC,L]
 
-#scholarship-list
-RewriteRule ^scholarship-list/([0-9a-zA-Z-]+)$ scholarship-list.php?scholarship=$1 [NC,L]
+#scholarship-status
+RewriteRule ^scholarship-status/([0-9a-zA-Z-]+)$ scholarship-status.php?scholarship=$1 [NC,L]
 
 
 # export scholarship data
