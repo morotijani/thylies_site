@@ -93,7 +93,7 @@
                     <div class="col-md-7">
 
                         <div class="card mb-4">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div>
                                         <div class="badge bg-<?= $status_class; ?>-soft"><?= $status; ?></div>
@@ -104,7 +104,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <a href="shop-single.html"><img src="<?= PROOT . 'assets/media/' . $picture; ?>" alt="book" class="mt-3 img-fluid"></a>
+                                <a href="javascript:;" class="mx-auto"><img src="<?= PROOT . 'assets/media/' . $picture; ?>" alt="book" class="mt-3 img-fluid" style="width: 300px !important; height: 300px !important;"></a>
                                 <div class="mt-3">
                                     <a href="shop-single.html">
                                         <h4 class="mb-1"><?= ucwords($row[0]['student_name']); ?></h4>
@@ -114,14 +114,14 @@
                                     <div class="text-dark me-2"><span class="text-muted">Transaction ID: </span><?= $sub_row[0]["transaction_id"] ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Date: </span><?= $row[0]["createdAt"] ?></div>
                                     <a href="#" class="btn btn-outline-primary btn-sm mt-3">Download</a>
+                                    <br>
+                                    <br>
+                                    <a href="<?= PROOT; ?>scholarship-list">view all list.</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <p class="mb-0">
-                    <a href="<?= PROOT; ?>scholarship-list">view all list.</a>
-                </p>
             </div>
         </section>
     </main>
