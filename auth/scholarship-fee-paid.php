@@ -5,17 +5,17 @@
 	$payId = issetElse($_SESSION, 'pay_id', 0);
 	if ($payId != 0 && !empty($payId)) {
 		$sql = "
-			SELECT * FROM thylies_user_registration_transaction 
+			SELECT * FROM thylies_scholarship_transaction 
 			WHERE transaction_id = ? 
 			LIMIT 1
 		";
 		$statement = $conn->prepare($sql);
 		$statement->execute([$payId]);
 		$count_result = $statement->rowCount();
+		$row = $statement->fetchAll();
 
 		if ($count_result > 0) {
 			// code...
-			unset($_SESSION['pay_id']);
 		
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Paid Registration - Thylies</title>
+    <title>Paid Scholarship Form - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
@@ -57,7 +57,8 @@
 						  	<h3 class="mb-3 h4">Thylies</h3>
 						</a>
 						<p>Your account has been successfully been funded.</p>
-						<a href="<?= PROOT; ?>user/index" class="btn-primary-link">Access full platform</a>
+						<p>Transaction Id: <b><?= $payId; ?></b></p>
+						<a href="<?= PROOT; ?>scholarship-status/<?= $row[0]['scholarship_id']; ?>" class="btn-primary-link">Access and download reciept</a>
 					</div>
         		</div>
         	</div>
@@ -67,12 +68,10 @@
 
 <?php
 		} else {
-			unset($_SESSION['pay_id']);
-			redirect(PROOT . 'auth/login');
+			redirect(PROOT . 'scholarship-list');
 		}
 	} else {
-		unset($_SESSION['pay_id']);
-		redirect(PROOT . 'auth/login');
+		redirect(PROOT . 'scholarship-list');
 	}
 	
 ?>

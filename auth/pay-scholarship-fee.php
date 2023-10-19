@@ -107,7 +107,7 @@
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/jquery.slimscroll.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=<?= RECAPTCHA_SITE_KEY; ?>"></script>
 
     <script src="https://js.paystack.co/v1/inline.js"></script>
     <script>
@@ -119,16 +119,18 @@
 
             let handler = PaystackPop.setup({
                 key: '<?= PAYSTACK_TEST_PUBLIC_KEY; ?>',
-                email: '<?= $user_data['user_email']; ?>',
+                email: 'testmetj@gmail.com',
                 amount: 101 * 100,
                 currency: 'GHS',
                 channels: ['card', 'bank', 'ussd', 'qr', 'mobile_money', 'bank_transfer'],
                 ref: 'THY'+Math.floor((Math.random() * 1000000000) + 1),
                 // label: "Optional string that replaces customer email",
                 metadata: {
-                    "user_id": '<?= $user_data['user_unique_id']; ?>',
-                    "user_name" : '<?= $user_data['user_fullname']; ?>',
-                    "user_gender" : '<?= $user_data['user_gender']; ?>'
+                    "scholarship_id": '<?= $row[0]['scholarship_id']; ?>',
+                    "student_name" : '<?= $row[0]['student_name']; ?>',
+                    "percentage_gained" : '<?= $row[0]['percentage']; ?>',
+                    "school" : '<?= $row[0]['school_name']; ?>',
+                    "index_number" : '<?= $row[0]['index_number']; ?>'
                 },
                 onClose: function() {
                     alert('Window closed.');
@@ -138,14 +140,15 @@
                     alert(message);
 
                     $.ajax ({
-                        url: '<?= PROOT; ?>parsers/pay.register.php',
+                        url: '<?= PROOT; ?>parsers/pay.scholarship.php',
                         method : 'POST',
                         data: { 
-                            reference : response.reference
+                            reference : response.reference, 
+                            scholarship_id : '<?= $id; ?>'
                         },
                         success : function(data) {
                             if (data == '') {
-                                window.location = '<?= PROOT; ?>auth/registration-paid';
+                                window.location = '<?= PROOT; ?>auth/scholarship-fee-paid';
                             }
                         }
                     });
