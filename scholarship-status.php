@@ -91,35 +91,26 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7">
-
-                        <div class="card mb-4">
+                        <div class="card mb-4" id="reciept">
                             <div class="card-body text-center">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div>
                                         <div class="badge bg-<?= $status_class; ?>-soft"><?= $status; ?></div>
                                     </div>
-                                    <div>
-                                        <a href="#" class="btn-like">
-                                        <i class="fe fe-heart"></i>
-                                        </a>
-                                    </div>
                                 </div>
                                 <a href="javascript:;" class="mx-auto"><img src="<?= PROOT . 'assets/media/' . $picture; ?>" alt="book" class="mt-3 img-fluid" style="width: 300px !important; height: 300px !important;"></a>
                                 <div class="mt-3">
-                                    <a href="shop-single.html">
+                                    <a href="javascript:;">
                                         <h4 class="mb-1"><?= ucwords($row[0]['student_name']); ?></h4>
                                     </a>
                                     <p class="font-12 mb-2"><?= $row[0]["index_number"]; ?></p>
                                     <div class="text-dark me-2"><span class="text-muted">Scholarship ID: </span><?= $row[0]["scholarship_id"]; ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Transaction ID: </span><?= $sub_row[0]["transaction_id"] ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Date: </span><?= $row[0]["createdAt"] ?></div>
-                                    <a href="#" class="btn btn-outline-primary btn-sm mt-3">Download</a>
-                                    <br>
-                                    <br>
-                                    <a href="<?= PROOT; ?>scholarship-list">view all list.</a>
                                 </div>
                             </div>
                         </div>
+                        <a href="javascript:;" class="btn btn-outline-primary btn-sm mt-3" id="download">Download</a>
                     </div>
                 </div>
             </div>
@@ -136,14 +127,31 @@
                 
     }
 ?>
-    <script src="<?= PROOT; ?>assets/js/jquery.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/jquery.slimscroll.min.js"></script>
-
-
 
     <!-- Theme JS -->
     <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
     <script src="<?= PROOT; ?>assets/js/plyr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("download")
+                .addEventListener("click", () => {
+                    const reciept = this.document.getElementById("reciept");
+                    // console.log(reciept);
+                    // console.log(window);
+                    var opt = {
+                        margin: 1,
+                        filename: 'scholarship-<?= $sub_row[0]['transaction_id']; ?>.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { scale: 2 },
+                        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                    };
+                    html2pdf().from(reciept).set(opt).save();
+                })
+        }
+    </script>
 </body>
 </html>
