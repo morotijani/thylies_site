@@ -24,16 +24,18 @@ if ($_POST) {
     $query = "
         SELECT * FROM thylies_user 
         WHERE user_email = :user_email 
+        OR user_index_number = :user_index_number
         LIMIT 1
     ";
     $statement = $conn->prepare($query);
     $statement->execute(
         array(
-            ':user_email' => $email
+            ':user_email'       => $email,
+            ':user_index_number' => $email
         )
     );
     if ($statement->rowCount() < 1) {
-        $errors = '<div class="alert alert-secondary" role="alert">That email does\'nt exist in our database.</div>';
+        $errors = '<div class="alert alert-secondary" role="alert">That email or index number does\'nt exist in our database.</div>';
     } else {
         foreach ($statement->fetchAll() as $row) {
             if ($row['user_trash'] == 0) {
@@ -105,8 +107,8 @@ if ($_POST) {
                             <p class="mb-4 text-center">Sign in using your thylies credentials.</p>
                             <?= $errors; ?>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email<span class="text-danger">*</span> </label>
-                                <input type="email" id="email" class="form-control" name="email" placeholder="Email address"
+                                <label for="email" class="form-label">Email / Index number<span class="text-danger">*</span> </label>
+                                <input type="text" id="email" class="form-control" name="email" placeholder="Enter either index number or email address"
                                     required="" autocomplete="off">
                             </div>
                             <div class="mb-3 mb-4">
