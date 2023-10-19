@@ -11,6 +11,25 @@
     // } else {
     //     redirect(PROOT . 'auth/logout');
     // }
+    
+
+    if (isset($_GET['scholarship'])) {
+        $id = sanitize($_GET['scholarship']);
+
+        // check if id exist in scholarship table
+        $sql = "
+            SELECT * FROM thylies_scholarship 
+            WHERE scholarship_id = ? 
+            AND status = ? AND 
+            percentage > ? 
+            LIMIT 1
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$id, 1, 0]);
+        $row = $statement->fetchAll();
+        if ($statement->rowCount() > 0) {
+        }
+    }
 
 ?>
 

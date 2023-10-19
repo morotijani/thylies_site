@@ -1,7 +1,7 @@
 <?php 
     require_once ("connection/conn.php");
 
-    $title = 'Scholarhip List - ';
+    $title = 'Scholarhip Status - ';
     $navbar = 'navbar-light';
 
     include ('inc/header.inc.php');
@@ -39,13 +39,13 @@
 
     <section class="py-lg-13 py-6">
         <div class="container">
-            we good
+            download receipt
         </div>
     </section>
 
 <?php
             } else {
-                redirect(PROOT . 'auth/pay-registration');
+                redirect(PROOT . 'auth/pay-scholarship-fee/' . $id);
             }
         } else {
             redirect(PROOT . 'scholarship-list');
