@@ -18,6 +18,9 @@ RewriteRule ^scholarship-status/([0-9a-zA-Z-]+)$ scholarship-status.php?scholars
 #pay registraton
 RewriteRule ^auth/pay-scholarship-fee/([0-9a-zA-Z-]+)$ auth/pay-scholarship-fee.php?scholarship=$1 [NC,L]
 
+#authenticate scholarship status
+RewriteRule ^auth/auth-scholarship-status/([0-9a-zA-Z-]+)$ auth/auth-scholarship-status.php?scholarship=$1 [NC,L]
+
 
 # export scholarship data
 RewriteRule ^admin/Scholarship/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/Scholarship/export.php?data=$1&type=$2 [NC,L]
@@ -34,7 +37,7 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 
 RewriteRule ^(.*)$ $1.php
 
-RewriteCond $1 !^(media|helpers|account|auth|admin|fonts|assests|dist|controller|connection|robots\.txt)
+RewriteCond $1 !^(media|helpers|account|auth|admin|fonts|assets|dist|controller|connection|robots\.txt)
 
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 

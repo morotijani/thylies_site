@@ -12,7 +12,12 @@
     //     redirect(PROOT . 'auth/logout');
     // }
     
-
+    //  
+    $authScholarship = issetElse($_SESSION, 'auth-scholarship', 0);
+    if ($authScholarship == 0 && empty($authScholarship)) {
+        redirect(PROOT . 'auth/auth-scholarship-status/' . $id);
+    }
+    
     if (isset($_GET['scholarship'])) {
         $id = sanitize($_GET['scholarship']);
 
@@ -30,7 +35,7 @@
         $count_row = $statement->rowCount();
         if ($count_row > 0) {
             if ($conn->query("SELECT * FROM thylies_scholarship_transaction WHERE scholarship_id = '" . $id . "' AND status = 1")->rowCount() > 0) {
-                redirect(PROOT . 'scholarship-status/' . $id);
+                redirect(PROOT . 'scholarship-status');
             }
         }
     }

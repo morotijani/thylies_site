@@ -3,8 +3,10 @@
 
     $title = 'Scholarhip Status - ';
 
-    if (isset($_GET['scholarship'])) {
-        $id = sanitize($_GET['scholarship']);
+    //  
+    $authScholarship = issetElse($_SESSION, 'auth-scholarship', 0);
+    if ($authScholarship != 0 && !empty($authScholarship)) {
+        $id = sanitize($authScholarship);
 
         // check if id exist in scholarship table
         $sql = "
@@ -119,12 +121,14 @@
 
 <?php
             } else {
-                redirect(PROOT . 'auth/pay-scholarship-fee/' . $id);
+                redirect(PROOT . 'auth/auth-scholarship-status/' . $authScholarship);
             }
         } else {
             redirect(PROOT . 'scholarship-list');
         }
                 
+    } else {
+        redirect(PROOT . 'auth/auth-scholarship-status/' . $authScholarship);
     }
 ?>
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
