@@ -150,6 +150,7 @@
                         method : 'POST',
                         data: { 
                             reference : response.reference, 
+                            email : $('#email').val(), 
                             scholarship_id : '<?= $id; ?>'
                         },
                         success : function(data) {
