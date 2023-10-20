@@ -25,7 +25,7 @@
             redirect(PROOT . 'admin/Scholarship/view/' . $id);
         }
     }
-    
+
     if (isset($_GET['sid']) && !empty($_GET['sid'])) {
         $scholarship_id = sanitize($_GET['sid']);
         
@@ -116,12 +116,36 @@
         <div class="container-fluid max-w-screen-md vstack gap-6">
 			<?= $flash; ?>
 
-            <div class="card bg-secondary">
+            <div class="card">
                 <div class="card-body pb-0">
-                    <div class="mb-4">
-                        <h4 class="mb-1">Scholarship details</h4>
-                        <p class="text-sm text-muted">View and Manage details of student who applied for scholarship.</p>
+                    <div class="d-flex align-items-center justify-content-between mb-5">
+                        <div class="flex-1">
+                            <h6 class="h5 font-semibold mb-1">Scholarship details</h6>
+                            <p class="text-sm text-muted">View and Manage details of student who applied for scholarship.</p>
+                        </div>
+                        <div class="ms-auto">
+                            <div class="d-flex align-items-center mt-5 mb-3 lh-none text-heading d-block display-5 ls-tight mb-0">
+                                <span><?= $row[0]['percentage']; ?></span> 
+                                <span class="font-semibold text-2xl align-self-start mt-1 mt-sm-1 me-1">%</span> 
+                            </div>
+                        </div>
                     </div>
+
+                    <?php if ($row[0]['status'] == 2): ?>
+                    <div class="alert alert-danger mb-4" role="alert">
+                        Applicat denied scholarship!
+                    </div>
+                    <?php else: ?>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <span class="text-sm text-muted font-semibold text-heading d-block"><?= $row[0]['percentage']; ?> percent</span> 
+                        <span class="text-sm text-muted font-semibold d-block"><?= (100 - $row[0]['percentage']); ?> percent left</span>
+                    </div>
+                    <div class="progress progress-sm shadow-none mb-6">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width:<?= $row[0]['percentage']; ?>%" aria-valuenow="<?= $row[0]['percentage']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <?php endif ?>
+
+
                     <div class="d-flex align-items-center mb-4">
                         <a href="<?= PROOT . 'assets/media/' . $profile; ?>" target="_blank" class="avatar avatar-lg bg-warning rounded-circle text-white">
                             <img alt="..." src="<?= PROOT . 'assets/media/' . $profile; ?>">
