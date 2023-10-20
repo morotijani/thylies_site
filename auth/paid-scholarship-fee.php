@@ -16,6 +16,7 @@
 
 		if ($count_result > 0) {
 			// code...
+			$_SESSION['auth-scholarship'] = $row[0]['scholarship_id'];
 		
 ?>
 <!DOCTYPE html>
@@ -59,7 +60,7 @@
 						</a>
 						<p>Your account has been successfully been funded.</p>
 						<p>Transaction Id: <b><?= $payId; ?></b></p>
-						<a href="<?= PROOT; ?>scholarship-status/<?= $row[0]['scholarship_id']; ?>" class="btn-primary-link">Access and download reciept</a>
+						<a href="<?= PROOT; ?>scholarship-status" class="btn-primary-link">Access and download reciept</a>
 					</div>
         		</div>
         	</div>
