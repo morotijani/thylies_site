@@ -38,7 +38,7 @@
 
                     $scholarship_id = guidv4();
                     $student_name = $row['0'];
-                    $student_dob = $row['1'];
+                    $student_dob = date("Y-m-d", strtotime($row['1']));
                     $student_age = $row['2'];
                     $student_place_of_birth = $row['3'];
                     $student_place_of_residence = $row['4'];
