@@ -118,6 +118,27 @@ if ($total_data > 0) {
 			$paid = 'success';
 		}
 
+		//
+		$granted = '';
+        if ($row['status'] == 2) {
+            $granted = '
+            	<span class="badge badge-lg badge-dot">
+                	<i class="bg-danger"></i>Denied
+                </span>
+            ';
+        } else {
+            $granted = '
+            	<div class="d-flex align-items-center">
+                    <span class="me-2">' . $percentage . '%</span>
+                    <div>
+                        <div class="progress" style="width:100px">
+                            <div class="progress-bar bg-' . $percentageColor . '" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:' . $percentage . '%"></div>
+                        </div>
+                    </div>
+                </div>
+            ';
+        }
+
 
 		$output .= '
 			<tr>
@@ -127,19 +148,12 @@ if ($total_data > 0) {
                 </td>
                 <td>' . $row["student_dob"] . '</td>
                 <td>
-                    <span class="badge badge-lg badge-dot"><i class="bg-' . $paid . '"></i>' . $row["index_number"] . '</span>
+                    <span class="badge badge-lg badge-dot">
+                    	<i class="bg-' . $paid . '"></i>' . $row["index_number"] . '
+                    </span>
                 </td>
                 <td>' . $row["school_name"] . '</td>
-                <td>
-                    <div class="d-flex align-items-center">
-                        <span class="me-2">' . $percentage . '%</span>
-                        <div>
-                            <div class="progress" style="width:100px">
-                                <div class="progress-bar bg-' . $percentageColor . '" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:' . $percentage . '%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </td>
+                <td>' . $granted . '</td>
                 <td class="text-end">
                     <a href="' . PROOT . 'admin/Scholarship/view/' . $row["scholarship_id"] . '" class="btn btn-sm btn-neutral">View</a> 
                     <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">

@@ -5,6 +5,27 @@
 	include ('../includes/left.side.bar.php');
 	include ('../includes/top.nav.bar.php');
 
+    // Reject Applicant
+    if (isset($_GET['reject']) && !empty($_GET['reject'])) {
+        $id = sanitize($_GET['reject']);
+
+        $update = "
+            UPDATE thylies_scholarship 
+            SET status = ?, percentage = ? 
+            WHERE scholarship_id = ?
+        ";
+        $statement = $conn->prepare($update);
+        $result = $statement->execute([2, 0, $id]);
+        if ($result) {
+            // code...
+            $_SESSION['flash_success'] = 'Applicant rejected!';
+            redirect(PROOT . 'admin/Scholarship/view/' . $id);
+        } else {
+            $_SESSION['flash_error'] = 'Something went wrong!';
+            redirect(PROOT . 'admin/Scholarship/view/' . $id);
+        }
+    }
+    
     if (isset($_GET['sid']) && !empty($_GET['sid'])) {
         $scholarship_id = sanitize($_GET['sid']);
         
@@ -107,7 +128,7 @@
                         </a>
                         <div class="ms-5">
                             <button for="file-upload" class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#grantModal"><span>Grant</span></button>
-                            <a href="#" class="btn d-inline-flex btn-sm btn-neutral ms-2 text-danger">
+                            <a href="javascript:;" class="btn d-inline-flex btn-sm btn-neutral ms-2 text-danger reject-btn">
                                 <span class="pe-2">
                                     <i class="bi bi-person-slash"></i> 
                                 </span>
@@ -362,7 +383,7 @@
                     </div>
                     <div class="modal-footer">
                         <div class="me-auto">
-                            <a href="#" class="text-sm font-semibold"><i class="bi bi-x me-2"></i>Cancel</a>
+                            <a href="javascript" data-bs-dismiss="modal" class="text-sm font-semibold"><i class="bi bi-x me-2"></i>Cancel</a>
                         </div>
                         <button type="button" class="btn btn-sm btn-neutral" data-bs-dismiss="modal">Close</button> 
                         <button type="submit" class="btn btn-sm btn-success">Grant</button>
@@ -373,3 +394,13 @@
     </div>
 
 <?php include ('../includes/footer.php'); ?>
+
+<script>
+    $('.reject-btn').on('click', function() {
+        if (confirm('By clicking on ok, applicant will be Rejected!')) {
+            window.location = '<?= PROOT; ?>admin/Scholarship/view?reject=<?= $scholarship_id; ?>';
+        } else {
+            return false;
+        }
+    })
+</script>
