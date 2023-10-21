@@ -84,13 +84,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
  	// ADMIN LOGIN
- 	if (isset($_SESSION['IQNadmin'])) {
- 		$admin_id = $_SESSION['IQNadmin'];
+ 	if (isset($_SESSION['THYAdmin'])) {
+ 		$admin_id = $_SESSION['THYAdmin'];
  		$data = array(
  			':admin_id' => $admin_id
  		);
  		$sql = "
- 			SELECT * FROM inqoins_admin 
+ 			SELECT * FROM thylies_admin 
  			WHERE admin_id = :admin_id 
  			LIMIT 1
  		";
@@ -98,10 +98,9 @@
  		$statement->execute($data);
 
  		foreach ($statement->fetchAll() as $admin_data) {
- 			$admin_fullname = ucwords($admin_data['admin_fullname']);
  			$fn = explode(' ', $admin_data['admin_fullname']);
  			$admin_data['first'] = ucwords($fn[0]);
- 			$admin_data['last'] = '';
+ 				$admin_data['last'] = '';
  			if (count($fn) > 1) {
  				$admin_data['last'] = ucwords($fn[1]);
  			}

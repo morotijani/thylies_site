@@ -5,7 +5,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button> 
 				<a class="navbar-brand d-inline-block py-lg-2 mb-lg-5 px-lg-6 me-0" href="/">
-					<img src="/img/logos/clever-primary.svg" alt="..."></a>
+					<img src="<?= PROOT; ?>assets/media/logo/logo-min.png" alt="..."></a>
 					<div class="navbar-user d-lg-none">
 						<div class="dropdown">
 							<a href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,7 +27,7 @@
 						<ul class="navbar-nav">
 							<li class="nav-item">
 								<a class="nav-link" href="#sidebar-projects" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-projects">
-									<i class="bi bi-briefcase"></i> Projects</a>
+									<i class="bi bi-briefcase"></i> Dashboard</a>
 									<div class="collapse" id="sidebar-projects">
 										<ul class="nav nav-sm flex-column">
 											<li class="nav-item"><a href="/pages/projects/overview.html" class="nav-link">Overview</a></li>

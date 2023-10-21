@@ -384,26 +384,26 @@ function send_vericode($email) {
 ///////////////////////////////////////// ADMIN
 // Sessions For login
 function adminLogin($admin_id) {
-	$_SESSION['IQNadmin'] = $admin_id;
+	$_SESSION['THYAdmin'] = $admin_id;
 	global $conn;
 	$data = array(
 		':admin_last_login' => date("Y-m-d H:i:s"),
 		':admin_id' => (int)$admin_id
 	);
 	$query = "
-		UPDATE inqoins_admin 
+		UPDATE thylies_admin 
 		SET admin_last_login = :admin_last_login 
 		WHERE admin_id = :admin_id";
 	$statement = $conn->prepare($query);
 	$result = $statement->execute($data);
 	if (isset($result)) {
-		$_SESSION['flash_success'] = '<div class="text-center" id="temporary">You are now logged in!</div>';
-		header('Location: index');
+		$_SESSION['flash_success'] = 'You are now logged in!';
+		redirect('admin/index');
 	}
 }
 
 function admin_is_logged_in() {
-	if (isset($_SESSION['IQNadmin']) && $_SESSION['IQNadmin'] > 0) {
+	if (isset($_SESSION['THYAdmin']) && $_SESSION['THYAdmin'] > 0) {
 		return true;
 	}
 	return false;
@@ -411,14 +411,14 @@ function admin_is_logged_in() {
 
 // Redirect admin if !logged in
 function admn_login_redirect($url = 'login') {
-	$_SESSION['flash_error'] = '<div class="text-center" id="temporary" style="margin-top: 60px;">You must be logged in to access that page.</div>';
-	header('Location: '.$url);
+	$_SESSION['flash_error'] = 'You must be logged in to access that page.';
+	redirect(PROOT . 'admin/' . $url);
 }
 
 // Redirect admin if do not have permission
 function admin_permission_redirect($url = 'login') {
-	$_SESSION['flash_error'] = '<div class="text-center" id="temporary" style="margin-top: 60px;">You do not have permission in to access that page.</div>';
-	header('Location: '.$url);
+	$_SESSION['flash_error'] = 'You do not have permission in to access that page.';
+	redirect(PROOT . 'admin/' . $url);
 }
 
 function admin_has_permission($permission = 'admin') {
