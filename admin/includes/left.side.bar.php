@@ -10,16 +10,16 @@
 						<div class="dropdown">
 							<a href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<div class="avatar-parent-child">
-									<img alt="..." src="/img/people/img-profile.jpg" class="avatar avatar- rounded-circle"> 
+									<img alt="..." src="<?= PROOT; ?>assets/media/svg/friendly-ghost.svg" class="avatar avatar- rounded-circle"> 
 									<span class="avatar-child avatar-badge bg-success"></span>
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar">
-								<a href="#" class="dropdown-item">Profile</a> 
-								<a href="#" class="dropdown-item">Settings</a> 
+								<a href="<?= PROOT; ?>admin/profile" class="dropdown-item">Profile</a> 
+								<a href="<?= PROOT; ?>admin/settings" class="dropdown-item">Settings</a> 
 								<a href="#" class="dropdown-item">Billing</a>
 								<hr class="dropdown-divider">
-								<a href="#" class="dropdown-item">Logout</a>
+								<a href="<?= PROOT; ?>admin/logout" class="dropdown-item">Logout</a>
 							</div>
 						</div>
 					</div>
@@ -87,24 +87,24 @@
 							<div class="my-4 px-lg-6 position-relative">
 								<div class="dropup w-full">
 									<button class="btn-primary d-flex w-full py-3 ps-3 pe-4 align-items-center shadow shadow-3-hover rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										<span class="me-3"><img alt="..." src="/img/people/img-profile.jpg" class="avatar avatar-sm rounded-circle"> </span>
-										<span class="flex-fill text-start text-sm font-semibold">Tahlia Mooney </span>
+										<span class="me-3"><img alt="..." src="<?= PROOT; ?>assets/media/svg/friendly-ghost.svg" class="avatar avatar-sm rounded-circle"> </span>
+										<span class="flex-fill text-start text-sm font-semibold"><?= ucwords($admin_data['admin_fullname']); ?> </span>
 										<span><i class="bi bi-chevron-expand text-white text-opacity-70"></i></span>
 									</button>
 									<div class="dropdown-menu dropdown-menu-end w-full">
 										<div class="dropdown-header">
 											<span class="d-block text-sm text-muted mb-1">Signed in as</span> 
-											<span class="d-block text-heading font-semibold">Tahlia Mooney</span>
+											<span class="d-block text-heading font-semibold"><?= ucwords($admin_data['admin_fullname']); ?></span>
 										</div>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#"><i class="bi bi-house me-3"></i>Home </a>
-										<a class="dropdown-item" href="#"><i class="bi bi-pencil me-3"></i>Profile </a>
-										<a class="dropdown-item" href="#"><i class="bi bi-gear me-3"></i>Settings</a>
+										<a class="dropdown-item" href="<?= PROOT; ?>admin/"><i class="bi bi-house me-3"></i>Home </a>
+										<a class="dropdown-item" href="<?= PROOT; ?>admin/profile"><i class="bi bi-pencil me-3"></i>Profile </a>
+										<a class="dropdown-item" href="<?= PROOT; ?>admin/settings"><i class="bi bi-gear me-3"></i>Settings</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left me-3"></i>Logout</a>
+										<a class="dropdown-item" href="<?= PROOT; ?>admin/logout"><i class="bi bi-box-arrow-left me-3"></i>Logout</a>
 									</div>
 								</div>
-								<div class="d-flex gap-3 justify-content-center align-items-center mt-6 d-none">
+								<!-- <div class="d-flex gap-3 justify-content-center align-items-center mt-6 d-none">
 									<div>
 										<i class="bi bi-moon-stars me-2 text-warning me-2"></i> 
 										<span class="text-heading text-sm font-bold">Dark mode</span>
@@ -113,7 +113,7 @@
 										<input class="form-check-input" type="checkbox" id="switch-dark-mode">
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
