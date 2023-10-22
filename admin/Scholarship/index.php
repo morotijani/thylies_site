@@ -98,7 +98,7 @@
     // SEARCH AND PAGINATION FOR LIST
     function load_data(page, query = '') {
         $.ajax({
-            url : "<?= PROOT; ?>/parsers/get.scholarship.list.php",
+            url : "<?= PROOT; ?>/parsers/scholarship.list.php",
             method : "POST",
             data : {
                 page : page, 
