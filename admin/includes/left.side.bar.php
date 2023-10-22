@@ -76,6 +76,15 @@
 										</ul>
 									</div>
 								</li>
+								<li class="nav-item"><a class="nav-link" href="#sidebar-users" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-users">
+									<i class="bi bi-people"></i> Users</a>
+									<div class="collapse" id="sidebar-users">
+										<ul class="nav nav-sm flex-column">
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/User/" class="nav-link">All users</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/User/trash" class="nav-link">Trash</a></li>
+										</ul>
+									</div>
+								</li>
 							</ul>
 							<hr class="navbar-divider my-4 opacity-70">
 							<ul class="navbar-nav">
