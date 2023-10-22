@@ -8,16 +8,6 @@
 	include ('../includes/header.php');
 	include ('../includes/left.side.bar.php');
 	include ('../includes/top.nav.bar.php');
-
-    //
-    $sql = "
-        SELECT * FROM thylies_scholarship 
-        ORDER BY createdAt DESC
-    ";
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    $row = $statement->fetchAll();
-    $count_row = $statement->rowCount();
 	
 ?>
 

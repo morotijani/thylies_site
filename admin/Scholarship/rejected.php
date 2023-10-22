@@ -8,16 +8,6 @@
 	include ('../includes/header.php');
 	include ('../includes/left.side.bar.php');
 	include ('../includes/top.nav.bar.php');
-
-    //
-    $sql = "
-        SELECT * FROM thylies_scholarship 
-        ORDER BY createdAt DESC
-    ";
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    $row = $statement->fetchAll();
-    $count_row = $statement->rowCount();
 	
 ?>
 
@@ -79,7 +69,7 @@
                         </div>
                     </div>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a> 
+                        <a href="<?= PROOT; ?>admin/Scholarship" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a> 
                         <a href="<?= PROOT; ?>admin/Scholarship/trash" class="btn btn-sm btn-neutral">Trash</a> 
                         <a href="<?= PROOT; ?>admin/Scholarship/rejected" class="btn btn-sm btn-neutral">Rejected</a>
                     </div>

@@ -17,7 +17,8 @@ if ($_POST['page'] > 1) {
 
 $query = "
 	SELECT * FROM thylies_scholarship 
-	WHERE thylies_scholarship.status = 2 
+	WHERE status = 1 
+	AND percentage > 0 
 	AND trash = 0 
 ";
 $search_query = ((isset($_POST['query'])) ? sanitize($_POST['query']) : '');
@@ -38,7 +39,7 @@ if ($search_query != '') {
 
 $filter_query = $query . 'LIMIT ' . $start . ', ' . $limit . '';
 
-$total_data = $conn->query("SELECT * FROM thylies_scholarship WHERE status = 2 AND trash = 0")->rowCount();
+$total_data = $conn->query("SELECT * FROM thylies_scholarship WHERE status = 1 AND percentage > 0 AND trash = 0")->rowCount();
 
 $statement = $conn->prepare($filter_query);
 $statement->execute();
