@@ -28,7 +28,7 @@
 				<div class="row align-items-center">
 					<div class="col-sm col-12">
 						<h1 class="h2 ls-tight">
-							<span class="d-inline-block me-3">😎</span>Scholarship, Rejected view
+							<span class="d-inline-block me-3">😑</span>Rejected, Scholarship view
 						</h1>
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
@@ -98,7 +98,7 @@
     // SEARCH AND PAGINATION FOR LIST
     function load_data(page, query = '') {
         $.ajax({
-            url : "<?= PROOT; ?>/parsers/scholarship.rejected.list.php",
+            url : "<?= PROOT; ?>parsers/scholarship.rejected.list.php",
             method : "POST",
             data : {
                 page : page, 

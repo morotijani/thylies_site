@@ -17,22 +17,24 @@ if ($_POST['page'] > 1) {
 
 $query = "
 	SELECT * FROM thylies_scholarship 
-	WHERE status = 2 
+	WHERE thylies_scholarship.status = 2 
 ";
 $search_query = ((isset($_POST['query'])) ? sanitize($_POST['query']) : '');
 $find_query = str_replace(' ', '%', $search_query);
 if ($search_query != '') {
 	$query .= '
-		AND scholarship_id LIKE "%'.$find_query.'%" 
+		AND (scholarship_id LIKE "%'.$find_query.'%" 
 		OR student_name LIKE "%'.$find_query.'%" 
 		OR student_dob LIKE "%'.$find_query.'%" 
 		OR student_age LIKE "%'.$find_query.'%" 
 		OR index_number LIKE "%'.$find_query.'%" 
-		AND trash = 0 
+		AND trash = 0) 
 	';
 } else {
 	$query .= 'ORDER BY createdAt DESC ';
 }
+
+//dnd($query);
 
 $filter_query = $query . 'LIMIT ' . $start . ', ' . $limit . '';
 
