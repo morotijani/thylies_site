@@ -1,7 +1,11 @@
 <?php 
 	require ('./../connection/conn.php');
 
-	 $error = '';
+	if (admin_is_logged_in()) {
+        redirect(PROOT . 'admin/index');
+    }
+
+	$error = '';
 
     if ($_POST) {
         if (empty($_POST['admin_email']) || empty($_POST['admin_password'])) {
@@ -35,7 +39,7 @@
     }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">

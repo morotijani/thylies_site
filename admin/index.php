@@ -1,6 +1,10 @@
 <?php 
 	require ('./../connection/conn.php');
 
+	if (!admin_is_logged_in()) {
+        admn_login_redirect();
+    }
+
 	include ('includes/header.php');
 	include ('includes/left.side.bar.php');
 	include ('includes/top.nav.bar.php');
@@ -13,7 +17,7 @@
 				<div class="row align-items-center">
 					<div class="col-sm col-12">
 						<h1 class="h2 ls-tight">
-							<span class="d-inline-block me-3">👋</span>Hi, Tahlia!
+							<span class="d-inline-block me-3">👋</span>Hi, <?= $admin_data['first']; ?>!
 						</h1>
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">

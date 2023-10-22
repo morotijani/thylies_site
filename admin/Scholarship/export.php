@@ -1,6 +1,10 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'] . "/thylies_site/connection/conn.php";
 
+    if (!admin_is_logged_in()) {
+        admn_login_redirect();
+    }
+
     use PhpOffice\PhpSpreadsheet\Spreadsheet;
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
     use PhpOffice\PhpSpreadsheet\Writer\Xls;

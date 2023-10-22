@@ -112,7 +112,7 @@
  	$flash = '';
  	if (isset($_SESSION['flash_success'])) {
  	 	$flash = '
-				<div class="alert alert-success my-2" role="alert" id="temporary">
+				<div class="alert alert-success" role="alert" id="temporary">
 				  	' . $_SESSION['flash_success'] . '
 				</div>
  	 		';
@@ -121,7 +121,7 @@
 
  	if (isset($_SESSION['flash_error'])) {
  	 	$flash = '
-				<div class="alert alert-danger my-2" role="alert" id="temporary">
+				<div class="alert alert-danger" role="alert" id="temporary">
 				  	' . $_SESSION['flash_error'] . '
 				</div>
  	 		';

@@ -21,7 +21,7 @@
 						<a href="<?= PROOT; ?>admin" class="btn btn-sm btn-neutral border-base d-none d-md-block">
 							<span>Dashboard</span>
 						</a> 
-						<a href="<?= PROOT; ?>admin/manager/logout" class="btn btn-sm btn-primary">
+						<a href="<?= PROOT; ?>admin/logout" class="btn btn-sm btn-primary">
 							<span>Logout</span>
 						</a>
 					</div>

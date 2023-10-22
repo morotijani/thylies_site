@@ -398,7 +398,7 @@ function adminLogin($admin_id) {
 	$result = $statement->execute($data);
 	if (isset($result)) {
 		$_SESSION['flash_success'] = 'You are now logged in!';
-		redirect('admin/index');
+		redirect(PROOT . 'admin/index');
 	}
 }
 
