@@ -13,19 +13,19 @@
         }
         $query = "
             SELECT * FROM thylies_admin 
-            WHERE admin_email = :admin_email 
+            WHERE admin_email = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($query);
-        $statement->execute(['admin_email' => $_POST['admin_email']]);
+        $statement->execute([$_POST['admin_email']]);
         $count_row = $statement->rowCount();
         $row = $statement->fetchAll();
 
-        if ($count_row < 1) {
-            $error = 'Unkown admin.';
-        }
-
-        if (!password_verify($_POST['admin_password'], $row[0]['admin_password'])) {
+        if ($count_row > 0) {
+	        if (!password_verify($_POST['admin_password'], $row[0]['admin_password'])) {
+	            $error = 'Unkown admin.';
+	        }
+        } else {
             $error = 'Unkown admin.';
         }
 

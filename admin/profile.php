@@ -33,6 +33,7 @@
 			</ul>
 		</div>
 	</header>
+	<?= $flash; ?>
 	<main class="py-6 bg-surface-secondary">
 		<div class="container-fluid max-w-screen-xl">
 			<div class="row g-6">
