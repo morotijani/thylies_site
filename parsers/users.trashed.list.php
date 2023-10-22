@@ -18,7 +18,7 @@ if ($_POST['page'] > 1) {
 
 $query = "
 	SELECT * FROM thylies_user 
-	WHERE user_trash = 0 
+	WHERE user_trash = 1 
 ";
 $search_query = ((isset($_POST['query'])) ? sanitize($_POST['query']) : '');
 $find_query = str_replace(' ', '%', $search_query);
@@ -36,7 +36,7 @@ if ($search_query != '') {
 
 $filter_query = $query . 'LIMIT ' . $start . ', ' . $limit . '';
 
-$total_data = $conn->query("SELECT * FROM thylies_user WHERE user_trash = 0")->rowCount();
+$total_data = $conn->query("SELECT * FROM thylies_user WHERE user_trash = 1")->rowCount();
 
 $statement = $conn->prepare($filter_query);
 $statement->execute();

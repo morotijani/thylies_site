@@ -12,21 +12,27 @@ RewriteRule ^admin/Users/view([0-9a-zA-Z]+)$ admin/Users/view.php?view=$1 [NC,L]
 # Verify user email
 RewriteRule ^auth/verified/([0-9a-zA-Z]+)$ auth/verified.php?vericode=$1 [NC,L]
 
-#scholarship-status
-#RewriteRule ^scholarship-status/([0-9a-zA-Z-]+)$ scholarship-status.php?scholarship=$1 [NC,L]
+
+
+
 
 #pay registraton
 RewriteRule ^auth/pay-scholarship-fee/([0-9a-zA-Z-]+)$ auth/pay-scholarship-fee.php?scholarship=$1 [NC,L]
-
 #authenticate scholarship status
 RewriteRule ^auth/auth-scholarship-status/([0-9a-zA-Z-]+)$ auth/auth-scholarship-status.php?scholarship=$1 [NC,L]
-
-
+#scholarship-status
+#RewriteRule ^scholarship-status/([0-9a-zA-Z-]+)$ scholarship-status.php?scholarship=$1 [NC,L]
 # export scholarship data
 RewriteRule ^admin/Scholarship/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/Scholarship/export.php?data=$1&type=$2 [NC,L]
-
 #view scholarship details
 RewriteRule ^admin/Scholarship/view/([0-9a-zA-Z-]+)$ admin/Scholarship/view.php?sid=$1 [NC,L]
+
+
+
+#view user details
+RewriteRule ^admin/User/view/([0-9a-zA-Z-]+)$ admin/User/view.php?uid=$1 [NC,L]
+# export user data
+RewriteRule ^admin/User/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/User/export.php?data=$1&type=$2 [NC,L]
 
 RewriteRule ^.in/blog/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([0-9]+)$ .in/blog.php?type=$1&status=$2&id=$3 [NC,L]
 RewriteRule ^.in/blog/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([0-9]+)/([0-9]+)$ .in/blog.php?type=$1&status=$2&id=$3&featured=$4 [NC,L]

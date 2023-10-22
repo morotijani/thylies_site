@@ -95,7 +95,7 @@
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="<?= PROOT; ?>admin/Scholarship-import" class="btn btn-sm btn-neutral border-base">
+							<a href="<?= PROOT; ?>admin/Scholarship/view/<?= $scholarship_id; ?>" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
@@ -137,7 +137,7 @@
 
                     <?php if ($row[0]['status'] == 2): ?>
                     <div class="alert alert-danger mb-4" role="alert">
-                        Applicat denied scholarship!
+                        Applicant denied scholarship!
                     </div>
                     <?php else: ?>
                     <div class="d-flex align-items-center justify-content-between mb-1">
