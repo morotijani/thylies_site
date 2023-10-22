@@ -4,7 +4,7 @@
 				<button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button> 
-				<a class="navbar-brand d-inline-block py-lg-2 mb-lg-5 px-lg-6 me-0" href="/">
+				<a class="navbar-brand d-inline-block py-lg-2 mb-lg-5 px-lg-6 me-0" href="<?= PROOT; ?>admin/">
 					<img src="<?= PROOT; ?>assets/media/logo/logo-min.png" alt="..."></a>
 					<div class="navbar-user d-lg-none">
 						<div class="dropdown">
@@ -17,7 +17,7 @@
 							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar">
 								<a href="<?= PROOT; ?>admin/profile" class="dropdown-item">Profile</a> 
 								<a href="<?= PROOT; ?>admin/settings" class="dropdown-item">Settings</a> 
-								<a href="#" class="dropdown-item">Billing</a>
+								<a href="<?= PROOT; ?>admin/change-password" class="dropdown-item">Change Password</a>
 								<hr class="dropdown-divider">
 								<a href="<?= PROOT; ?>admin/logout" class="dropdown-item">Logout</a>
 							</div>

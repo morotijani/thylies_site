@@ -1,9 +1,8 @@
 <?php 
 
-// SEARCH FOR CONTESTANTS
+// SEARCH FOR user trash
 
-// DATABASE CONNECTION
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/thylies_site/connection/conn.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/thylies_site/connection/conn.php";
 
 
 $limit = 10;
@@ -24,7 +23,7 @@ $search_query = ((isset($_POST['query'])) ? sanitize($_POST['query']) : '');
 $find_query = str_replace(' ', '%', $search_query);
 if ($search_query != '') {
 	$query .= '
-		AND (user_ LIKE "%'.$find_query.'%" 
+		AND (user_unique_id LIKE "%'.$find_query.'%" 
 		OR user_fullname LIKE "%'.$find_query.'%" 
 		OR user_email LIKE "%'.$find_query.'%" 
 		OR user_phone LIKE "%'.$find_query.'%" 

@@ -24,7 +24,7 @@ $search_query = ((isset($_POST['query'])) ? sanitize($_POST['query']) : '');
 $find_query = str_replace(' ', '%', $search_query);
 if ($search_query != '') {
 	$query .= '
-		AND (user_ LIKE "%'.$find_query.'%" 
+		AND (user_unique_id LIKE "%'.$find_query.'%" 
 		OR user_fullname LIKE "%'.$find_query.'%" 
 		OR user_email LIKE "%'.$find_query.'%" 
 		OR user_phone LIKE "%'.$find_query.'%" 
@@ -45,7 +45,7 @@ $count_filter = $statement->rowCount();
 
 $output = ' 
 	<div class="card-header border-bottom d-flex align-items-center">
-        <h5 class="me-auto">All list ' . $total_data . '</h5>
+        <h5 class="me-auto">All list ' . $total_data . '</h5>	
     </div>
 
     <div class="table-responsive">
