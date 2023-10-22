@@ -11,7 +11,7 @@
 ?>
 
 
-<div class="flex-lg-1 h-screen overflow-y-lg-auto">
+<div class="flex-lg-1 h-screen">
 	<header class="bg-surface-secondary">
 		<div class="bg-cover" style="height:300px;background-image:url(<?= PROOT; ?>assets/media/logo/logo.jpg);background-position:center center"></div>
 		<div class="container-fluid max-w-screen-xl">
@@ -23,12 +23,7 @@
 				</div>
 				<div class="col ps-4 pt-4">
 					<h6 class="text-xs text-uppercase text-muted mb-1"><?= $admin_data['admin_permissions']; ?></h6>
-					<h1 class="h2"><?= $admin_data["admin_fullname"]; ?></h1>
-					<div class="d-flex gap-2 flex-wrap mt-3 d-none d-sm-block">
-						<a href="#" class="bg-white bg-opacity-50 bg-opacity-100-hover border rounded px-3 py-1 font-semibold text-heading text-xs">UI/UX</a> 
-						<a href="#" class="bg-white bg-opacity-50 bg-opacity-100-hover border rounded px-3 py-1 font-semibold text-heading text-xs">Mobile Apps</a> 
-						<a href="#" class="bg-white bg-opacity-50 bg-opacity-100-hover border rounded px-3 py-1 font-semibold text-heading text-xs">UI Research</a>
-					</div>
+					<h1 class="h2"><?= ucwords($admin_data["admin_fullname"]); ?></h1>
 				</div>
 			</div>
 			<ul class="nav nav-tabs overflow-x ms-1 mt-4">
@@ -48,19 +43,23 @@
 								<h5 class="mb-3">Details</h5>
 								<div class="mb-3">
 									<label for="">Full name</label>
-									<input type="text" class="form-control" disabled value="<?= $admin_data['admin_fullname']; ?>">
+									<input type="text" class="form-control form-control-lg" disabled value="<?= $admin_data['admin_fullname']; ?>">
 								</div>
 								<div class="mb-3">
 									<label for="">Email address</label>
-									<input type="email" class="form-control" disabled value="<?= $admin_data['admin_email']; ?>">
+									<input type="email" class="form-control form-control-lg" disabled value="<?= $admin_data['admin_email']; ?>">
+								</div>
+								<div class="mb-3">
+									<label for="">Permission</label>
+									<input type="email" class="form-control form-control-lg" disabled value="<?= $admin_data['admin_permissions']; ?>">
 								</div>
 								<div class="mb-3">
 									<label for="">Join date</label>
-									<input type="email" class="form-control" disabled value="<?= pretty_date($admin_data['admin_joined_date']); ?>">
+									<input type="email" class="form-control form-control-lg" disabled value="<?= pretty_date($admin_data['admin_joined_date']); ?>">
 								</div>
 								<div class="mb-3">
 									<label for="">Last login</label>
-									<input type="email" class="form-control" disabled value="<?= pretty_date($admin_data['admin_last_login']); ?>">
+									<input type="email" class="form-control form-control-lg" disabled value="<?= pretty_date($admin_data['admin_last_login']); ?>">
 								</div>
 								<a href="<?= PROOT; ?>admin/settings" class="link-primary font-semibold text-sm">Update details</a>
 							</div>
