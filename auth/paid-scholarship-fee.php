@@ -17,7 +17,7 @@
 
 		if ($count_result > 0) {
 			// code...
-			$_SESSION['auth-scholarship'] = $row[0]['scholarship_id'];
+			$_SESSION['auth-scholarship'] = $row[0]['from_id'];
 		
 ?>
 <!DOCTYPE html>
