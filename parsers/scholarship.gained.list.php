@@ -117,7 +117,7 @@ if ($total_data > 0) {
 		// user who has paid for gian scholarship
 		$paid = 'warning';
 		$scholarship_id = $row["scholarship_id"];
-		if ($conn->query("SELECT * FROM thylies_scholarship_transaction WHERE scholarship_id = '".$scholarship_id."' ")->rowCount() > 0) {
+		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$scholarship_id."' AND transaction_service = 'scholarship' ")->rowCount() > 0) {
 			$paid = 'success';
 		}
 

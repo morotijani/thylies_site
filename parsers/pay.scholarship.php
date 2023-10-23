@@ -12,11 +12,11 @@
 
 		if ($conn->query("SELECT * FROM thylies_scholarship WHERE scholarship_id = '".$scholarship_id."' LIMIT 1")->rowCount() > 0) {
 			$sql = "
-				INSERT INTO thylies_scholarship_transaction (transaction_id, scholarship_id, status, createdAt) 
+				INSERT INTO thylies_transactions (transaction_id, from_id, transaction_service, status, createdAt) 
 				VALUES (?, ?, ?, ?)
 			";
 			$statement = $conn->prepare($sql);
-			$result = $statement->execute([$reference, $scholarship_id, 1, $createdAt]);
+			$result = $statement->execute([$reference, $scholarship_id, 'scholarship', 1, $createdAt]);
 
 			if (isset($result)) {
 				$_SESSION['pay_id'] = $reference;
@@ -35,6 +35,8 @@
 				}
 
 				echo '';
+			} else {
+				echo 'Something went wrong';
 			}
 		}
 	}

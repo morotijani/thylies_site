@@ -34,7 +34,7 @@
         $row = $statement->fetchAll();
         $count_row = $statement->rowCount();
         if ($count_row > 0) {
-            if ($conn->query("SELECT * FROM thylies_scholarship_transaction WHERE scholarship_id = '" . $id . "' AND status = 1")->rowCount() > 0) {
+            if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '" . $id . "' AND transaction_service = 'scholarship' AND status = 1")->rowCount() > 0) {
                 redirect(PROOT . 'scholarship-status');
             }
         }

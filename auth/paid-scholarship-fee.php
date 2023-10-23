@@ -5,12 +5,13 @@
 	$payId = issetElse($_SESSION, 'pay_id', 0);
 	if ($payId != 0 && !empty($payId)) {
 		$sql = "
-			SELECT * FROM thylies_scholarship_transaction 
+			SELECT * FROM thylies_transactions 
 			WHERE transaction_id = ? 
+			AND transaction_service = ? 
 			LIMIT 1
 		";
 		$statement = $conn->prepare($sql);
-		$statement->execute([$payId]);
+		$statement->execute([$payId, 'scholarship']);
 		$count_result = $statement->rowCount();
 		$row = $statement->fetchAll();
 

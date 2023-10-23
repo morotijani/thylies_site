@@ -36,12 +36,13 @@
 
             // check if id also exist in transaction
             $Query = "
-                SELECT * FROM thylies_scholarship_transaction 
-                WHERE scholarship_id = ? 
+                SELECT * FROM thylies_transactions 
+                WHERE from_id = ? 
+                AND transaction_service = ?  
                 LIMIT 1
             ";
             $statement = $conn->prepare($Query);
-            $statement->execute([$id]);
+            $statement->execute([$id, 'scholarship']);
             $sub_row = $statement->fetchAll();
             $sub_count = $statement->rowCount();
 
