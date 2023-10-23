@@ -17,7 +17,7 @@
 		//check if user dexist
 		$move = move_uploaded_file($_FILES["passport"]["tmp_name"], $location);
 		if ($move) {
-			if ($conn->query("SELECT * FROM thylies_scholarship WHERE user_id = {$user_id} LIMIT 1")->rowCount() > 0) {
+			if ($conn->query("SELECT * FROM thylies_scholarship WHERE user_id = '" . $user_data['user_unique_id'] . "' LIMIT 1")->rowCount() > 0) {
 				$sql = "
 					UPDATE thylies_scholarship 
 					SET user_id = ?, student_picture = ? 
@@ -29,7 +29,7 @@
 				";
 			}
 			$statement = $conn->prepare($sql);
-			$result = $statement->execute([$user_id, $name]);
+			$result = $statement->execute([$user_data['user_unique_id'], $name]);
 
 			if (isset($result)) {
 				echo '';

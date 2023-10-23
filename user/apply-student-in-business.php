@@ -20,7 +20,7 @@
         LIMIT 1
     ";
     $statement = $conn->prepare($SQL);
-    $statement->execute([$user_id]);
+    $statement->execute([$user_data['user_unique_id']]);
     $apply_row = $statement->fetchAll();
     $count_apply = $statement->rowCount();
 
@@ -55,19 +55,19 @@
         // code...
         $sql = "
             UPDATE `thylies_student_in_business` 
-            SET `sib_id` = ?, `student_name` = ?, `program_of_study` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_semester` = ?, `student_picture` = ?, `submitted` = ?, `createdAt` = ?
+            SET `sib_id` = ?, `student_name` = ?, `program_of_study` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$scholarship_id, $student_name, $program_of_study, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_semester, $student_picture, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sib_id, $student_name, $program_of_study, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
                 <h3>
                     {$student_name},</h3>
                     <p>
-                        Thank you for applying for the Thylies scholarship program. Please your scholarhip identity code is:
-                        <br><h3>{$scholarship_id}</h3>
+                        Thank you for applying for the Thylies student in business fund application. Please your SiB identity code is:
+                        <br><h3>{$sib_id}</h3>
                     </p>
                     We will get in touch with you soon.
                     <br>
@@ -76,10 +76,10 @@
                     Thylies Ghana.
             ";
 
-            $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);
-            if ($mail_result) {
-                redirect(PROOT . 'user/scholarship-status');
-            }
+            // $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);
+            // if ($mail_result) {
+                //redirect(PROOT . 'user/student-in-business-status');
+           // }
         } else {
 
         }
@@ -117,7 +117,7 @@
 							</div>
 							<hr class="my-5">
 
-							<div class="">
+							<div class="<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-block' : 'd-none'); ?>">
 								<!-- form -->
 								<form class="row" method="POST" id="studentInBusinessForm">
 									<div class="col-12 col-md-12">
@@ -193,7 +193,7 @@
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
                                         <label class="form-label" for="expected_budget">EXPECTED BUDGET OF COMMENCEMENT/EXPANSION<span class="text-danger">*</span></label>
-                                        <input type="text" id="expected_budget" name="expected_budget" class="form-control" required <?= $expected_budget; ?>>
+                                        <input type="number" min="0" step="0.01" id="expected_budget" name="expected_budget" class="form-control" required <?= $expected_budget; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
                                         <label class="form-label" for="expected_profit_per_day">EXPECTED PROFIT PER DAY<span class="text-danger">*</span></label>
@@ -237,7 +237,7 @@
     <script>
 
         function submit_student_in_business_form(token) {
-            $('#scholarshipForm').submit();
+            $('#studentInBusinessForm').submit();
         }
 
         $(document).ready(function() {

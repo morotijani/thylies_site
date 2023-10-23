@@ -20,7 +20,7 @@
         LIMIT 1
     ";
     $statement = $conn->prepare($SQL);
-    $statement->execute([$user_id]);
+    $statement->execute([$user_data['user_unique_id']]);
     $apply_row = $statement->fetchAll();
     $count_apply = $statement->rowCount();
 
