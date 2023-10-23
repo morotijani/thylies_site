@@ -254,7 +254,7 @@
                     <p class="h2 font-dm-serif font-italic font-weight-normal mb-3">
                         Thylies bring to you all the list of student who have gin thier scholarship <br>this year
                     </p>
-                    <p class="font-14 mb-5">Thylies, Enterprise</p>
+                    <p class="font-14 mb-5">Thylies, Ghana</p>
                     <a href="<?= PROOT; ?>scholarship-list" class="btn btn-primary">Check out the list</a>
                 </div>
             </div>

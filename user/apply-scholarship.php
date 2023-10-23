@@ -82,7 +82,7 @@
                     <br>
                     <br>
                     Best Regards,<br>
-                    Thylies Enterprise.
+                    Thylies Ghana.
             ";
 
             $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);

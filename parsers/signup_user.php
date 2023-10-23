@@ -36,7 +36,7 @@
         			</p>
         			<br>
         			<br>
-        			Thylies Enterprise.
+        			Thylies Ghana.
 			";
 
 			$mail_result = send_email($fn, $to, $subject, $body);

@@ -164,7 +164,7 @@ function send_email($name, $to, $subject, $body) {
         $fn = $name;
         $to = $to;
         $from = MAIL_MAIL;
-        $from_name = 'Thylies Enterprise.';
+        $from_name = 'Thylies Ghana.';
         $subject = $subject;
         $body = $body;
 
