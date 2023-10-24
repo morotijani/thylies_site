@@ -76,12 +76,16 @@
                     Thylies Ghana.
             ";
 
-            // $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);
-            // if ($mail_result) {
-                //redirect(PROOT . 'user/student-in-business-status');
-           // }
+            $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);
+            if ($mail_result) {
+                redirect(PROOT . 'user/student-in-business-status');
+           } else {
+                echo js_alert('Something went wrong, try again.');
+                redirect(PROOT . 'user/apply-student-in-business')
+           }
         } else {
-
+            echo js_alert('Something went wrong, try again.');
+            redirect(PROOT . 'user/apply-student-in-business')
         }
     }
 
