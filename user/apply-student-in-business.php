@@ -10,8 +10,8 @@
         redirect(PROOT . 'auth/logout');
     }
 
-    if (is_array(applied_student_in_business($user_id))) {
-        redirect(PROOT . 'user/scholarship-status');
+    if (is_array(applied_student_in_business($user_data['user_unique_id']))) {
+        redirect(PROOT . 'user/student-in-business-status');
     }
 
     $SQL = "

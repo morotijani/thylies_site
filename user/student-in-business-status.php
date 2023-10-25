@@ -3,12 +3,12 @@
     require_once ("../connection/conn.php");
 
     if (!user_is_logged_in()) {
-        user_login_redirect()
+        user_login_redirect();
     } else {
         redirect(PROOT . 'auth/logout');
     }
 
-	if (!is_array(applied_student_in_business($user_id)) {
+	if (!is_array(applied_student_in_business($user_data['user_unique_id']))) {
 		redirect(PROOT . 'user/apply-student-in-business');
 	}
 
