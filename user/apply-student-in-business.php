@@ -81,11 +81,11 @@
                 redirect(PROOT . 'user/student-in-business-status');
            } else {
                 echo js_alert('Something went wrong, try again.');
-                redirect(PROOT . 'user/apply-student-in-business')
+                redirect(PROOT . 'user/apply-student-in-business');
            }
         } else {
             echo js_alert('Something went wrong, try again.');
-            redirect(PROOT . 'user/apply-student-in-business')
+            redirect(PROOT . 'user/apply-student-in-business');
         }
     }
 

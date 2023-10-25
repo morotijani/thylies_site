@@ -17,12 +17,12 @@
     }
 
     function applied_student_in_business($user_id) {
-        //  global $conn;
+        global $conn;
 
         $sql = "
-            SELECT * FROM thylies_scholarship 
+            SELECT * FROM thylies_student_in_business 
             WHERE user_id = ? 
-            AND submitted = ?
+            AND submitted = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($sql);
