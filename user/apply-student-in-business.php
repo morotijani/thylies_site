@@ -10,9 +10,9 @@
         redirect(PROOT . 'auth/logout');
     }
 
-    // if (is_array(applied_scholarship($user_id))) {
-    //     redirect(PROOT . 'user/scholarship-status');
-    // }
+    if (is_array(applied_student_in_business($user_id))) {
+        redirect(PROOT . 'user/scholarship-status');
+    }
 
     $SQL = "
         SELECT * FROM thylies_student_in_business 

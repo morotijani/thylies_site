@@ -15,3 +15,24 @@
         // Output the 36 character UUID.
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
+
+    function applied_student_in_business($user_id) {
+        //  global $conn;
+
+        $sql = "
+            SELECT * FROM thylies_scholarship 
+            WHERE user_id = ? 
+            AND submitted = ?
+            LIMIT 1
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$user_id, 1]);
+        $count_row = $statement->rowCount();
+        $row = $statement->fetchAll();
+
+        if ($count_row > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
