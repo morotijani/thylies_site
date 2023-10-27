@@ -31,22 +31,43 @@
 						<div class="card-body p-4">
 							<div class="d-lg-flex align-items-center justify-content-between">
 								<div class="d-flex align-items-center mb-4 mb-lg-0">
-									
+									<h5>Listinnings</h5>
 								</div>
 								<div>
 									<a href="#" class="btn btn-light btn-sm">Sanitary Welfare list</a>
 									<a href="#" class="btn btn-light btn-sm">Student in Business list</a>
 									<a href="#" class="btn btn-light btn-sm ">Scholarship list</a>
-									<a href="<?= PROOT; ?>index" class="btn btn-light btn-sm">Visit site</a>
+									<a href="<?= PROOT; ?>auth/logout" class="btn btn-sm">Logout</a>
 								</div>
 							</div>
 							<hr class="my-5">
 							<ul class="list-group">
-							  	<li class="list-group-item active">Cras justo odio</li>
-							  	<li class="list-group-item">Dapibus ac facilisis in</li>
-							  	<li class="list-group-item">Morbi leo risus</li>
-							  	<li class="list-group-item">Porta ac consectetur ac</li>
-							  	<li class="list-group-item">Vestibulum at eros</li>
+							  	<li class="list-group-item active">Profile</li>
+							  	<li class="list-group-item">
+							  		<h3>Full name</h3>
+							  		<h6><?= $user_data['user_fullname']; ?></h6>
+							  	</li>
+							  	<li class="list-group-item">
+							  		<h3>Student ID</h3>
+							  		<h6><?= $user_data['user_index_number']; ?></h6>
+							  	</li>
+							  	<li class="list-group-item">
+							  		<h3>School</h3>
+							  		<h6><?= $user_data['user_school_name']; ?></h6>
+							  	</li>
+							  	<li class="list-group-item">
+							  		<h3>Email</h3>
+							  		<h6><?= $user_data['user_email']; ?></h6>
+							  	</li>
+							  	<li class="list-group-item">
+							  		<h3>Joined Date</h3>
+							  		<h6><?= pretty_date($user_data['user_joined_date']); ?></h6>
+							  	</li>
+							  	<hr>
+							  	<li class="list-group-item">
+							  		<h3>Last Log in</h3>
+							  		<h6><?= pretty_date($user_data['user_last_login']); ?></h6>
+							  	</li>
 							</ul>
 						</div>
 					</div>
