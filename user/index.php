@@ -31,19 +31,13 @@
 						<div class="card-body p-4">
 							<div class="d-lg-flex align-items-center justify-content-between">
 								<div class="d-flex align-items-center mb-4 mb-lg-0">
-									<img src="../assets/images/avatar-1.png" id="img-uploaded"
-										class="avatar-xl rounded-circle " alt="">
-									<div class="ms-3">
-										<h4 class="mb-0">Your passport picture</h4>
-										<p class=" mb-0 font-14">
-											PNG or JPG no bigger than 800px wide and tall.
-										</p>
-									</div>
+									
 								</div>
 								<div>
-									<a href="#" class="btn btn-primary btn-sm">Upload Photo</a>
-
-									<a href="#" class="btn btn-light btn-sm ">Delete Photo</a>
+									<a href="#" class="btn btn-light btn-sm">Sanitary Welfare list</a>
+									<a href="#" class="btn btn-light btn-sm">Student in Business list</a>
+									<a href="#" class="btn btn-light btn-sm ">Scholarship list</a>
+									<a href="<?= PROOT; ?>index" class="btn btn-light btn-sm">Visit site</a>
 								</div>
 							</div>
 							<hr class="my-5">
