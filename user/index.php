@@ -26,7 +26,7 @@
 				<div class="col-lg-9 col-md-8 col-12">
 					<div class="card rounded-3 mb-4 ">
 						<div class="card-header bg-white p-4">
-							<h3 class="mb-0 h4">Scholarship Form</h3>
+							<h3 class="mb-0 h4">Welcome back,  <?= $user_data['first']; ?></h3>
 						</div>
 						<div class="card-body p-4">
 							<div class="d-lg-flex align-items-center justify-content-between">
@@ -47,7 +47,13 @@
 								</div>
 							</div>
 							<hr class="my-5">
-
+							<ul class="list-group">
+							  	<li class="list-group-item active">Cras justo odio</li>
+							  	<li class="list-group-item">Dapibus ac facilisis in</li>
+							  	<li class="list-group-item">Morbi leo risus</li>
+							  	<li class="list-group-item">Porta ac consectetur ac</li>
+							  	<li class="list-group-item">Vestibulum at eros</li>
+							</ul>
 						</div>
 					</div>
 				</div>
