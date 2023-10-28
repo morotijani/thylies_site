@@ -34,9 +34,9 @@
 									<h5>Listinnings</h5>
 								</div>
 								<div>
-									<a href="#" class="btn btn-light btn-sm">Sanitary Welfare list</a>
-									<a href="#" class="btn btn-light btn-sm">Student in Business list</a>
-									<a href="#" class="btn btn-light btn-sm ">Scholarship list</a>
+									<a href="<?= PROOT; ?>sanitary-welfare-list" class="btn btn-light btn-sm">Sanitary Welfare list</a>
+									<a href="<?= PROOT; ?>student-in-business-list" class="btn btn-light btn-sm">Student in Business list</a>
+									<a href="<?= PROOT; ?>scholarship-list" class="btn btn-light btn-sm ">Scholarship list</a>
 									<a href="<?= PROOT; ?>auth/logout" class="btn btn-sm">Logout</a>
 								</div>
 							</div>
