@@ -15,7 +15,7 @@
     }
 
     $SQL = "
-        SELECT * FROM thylies_student_in_business 
+        SELECT * FROM thylies_sanitary_welfare 
         WHERE user_id = ? 
         LIMIT 1
     ";
@@ -29,7 +29,7 @@
 
     //
     $post = (isset($_POST) ? cleanPost($_POST) : '');
-    $sib_id = guidv4();
+    $sw_id = guidv4();
     $student_name = (isset($post['student_name']) && $post['student_name'] != '') ? $post['student_name'] : '';
     $program_of_study = (isset($post['program_of_study']) && $post['program_of_study'] != '') ? $post['program_of_study'] : '';
     $index_number = (isset($post['index_number']) && $post['index_number'] != '') ? $post['index_number'] : '';
@@ -54,20 +54,20 @@
     if ($_POST) {
         // code...
         $sql = "
-            UPDATE `thylies_student_in_business` 
-            SET `sib_id` = ?, `student_name` = ?, `program_of_study` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
+            UPDATE `thylies_sanitary_welfare` 
+            SET `sw_id` = ?, `student_name` = ?, `program_of_study` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$sib_id, $student_name, $program_of_study, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sw_id, $student_name, $program_of_study, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
                 <h3>
                     {$student_name},</h3>
                     <p>
-                        Thank you for applying for the Thylies student in business fund application. Please your SiB identity code is:
-                        <br><h3>{$sib_id}</h3>
+                        Thank you for applying for the Thylies sanitary welfare fund application. Please your Sanitary Welfare code is:
+                        <br><h3>{$sw_id}</h3>
                     </p>
                     We will get in touch with you soon.
                     <br>
@@ -78,10 +78,10 @@
 
             $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);
             if ($mail_result) {
-                redirect(PROOT . 'user/student-in-business-status');
+                redirect(PROOT . 'user/sanitary-welfare-status');
            } else {
                 echo js_alert('Something went wrong, try again.');
-                redirect(PROOT . 'user/apply-student-in-business');
+                redirect(PROOT . 'user/apply-sanitary-welfare');
            }
         } else {
             echo js_alert('Something went wrong, try again.');
@@ -97,7 +97,7 @@
 				<div class="col-lg-9 col-md-8 col-12">
 					<div class="card rounded-3 mb-4 ">
 						<div class="card-header bg-white p-4">
-							<h3 class="mb-0 h4">STUDENT BUSINESS FUND APPLICATION</h3>
+							<h3 class="mb-0 h4">SANITARY WELFARE</h3>
 						</div>
 						<div class="card-body p-4">
 							<div class="d-lg-flex align-items-center justify-content-between">
@@ -125,7 +125,7 @@
 								<!-- form -->
 								<form class="row" method="POST" id="studentInBusinessForm">
 									<div class="col-12 col-md-12">
-										<h4 class="mb-3">STUDENT INFORMATION</h4>
+										<h4 class="mb-3">Bio Data</h4>
 									</div>
 									<div class="mb-3 col-12 col-md-12">
 										<label class="form-label" for="student_name">NAME OF STUDENT<span class="text-danger">*</span></label>
@@ -157,7 +157,7 @@
                                     </div>
 
 									<div class="col-12 col-md-12">
-										<h4 class="mb-3 mt-3">BUSINESS INFORMATION</h4>
+										<h4 class="mb-3 mt-3">SANITARY PREFERENCE</h4>
 									</div>
                                     <div class="mb-3 col-12 col-md-12">
                                         <label class="form-label" for="name_of_business">NAME OF BUSINESS<span class="text-danger">*</span></label>
@@ -272,7 +272,7 @@
                     var form_data = new FormData();
                     form_data.append("passport", property);
                     $.ajax({
-                        url: "<?= PROOT; ?>parsers/upload.sib.passport.picture.php",
+                        url: "<?= PROOT; ?>parsers/upload.sw.passport.picture.php",
                         method: "POST",
                         data: form_data,
                         contentType: false,
@@ -293,7 +293,7 @@
                 var tempuploded_file_id = $(this).attr('id');
 
                 $.ajax ({
-                    url: "<?= PROOT; ?>parsers/delete.uploaded.sib.picture.php",
+                    url: "<?= PROOT; ?>parsers/delete.uploaded.sw.picture.php",
                     method: "POST",
                     data:{
                         tempuploded_file_id : tempuploded_file_id
