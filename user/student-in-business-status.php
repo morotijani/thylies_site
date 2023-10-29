@@ -11,6 +11,8 @@
 
 	if (!is_array(applied_student_in_business($user_data['user_unique_id']))) {
 		redirect(PROOT . 'user/apply-student-in-business');
+	} else {
+		$row = applied_student_in_business($user_data['user_unique_id']);
 	}
 
  ?>
@@ -25,8 +27,11 @@
 						</div>
 						<div class="card-body p-4">
 							<div class="">
-								<div class="alert alert-primary" role="alert">
-								  	This is a primary alert—check it out!
+								<div class="alert alert-<?= (($row['status'] == 1) ? 'success' : 'primary'); ?>" role="alert">
+								  	<h3>SiB Code: <?= $row['sib_id']; ?></h3>
+								  	<h3>Submitted: <?= (($row['submitted'] == 1) ? 'Yes' : 'No'); ?></h3>
+								  	<h3>Status: <?= (($row['status'] == 1) ? 'Gained' : 'Pending'); ?></h3>
+								  	<h3>Date: <?= pretty_date($row['createdAt']); ?></h3>
 								</div>
 							</div>
 						</div>
@@ -37,4 +42,4 @@
 	</div>
 
     <?php include ('../inc/footer.inc.php'); ?>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=<?= RECAPTCHA_SITE_KEY; ?>"></script>

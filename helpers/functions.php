@@ -31,7 +31,7 @@
         $row = $statement->fetchAll();
 
         if ($count_row > 0) {
-            return $row;
+            return $row[0];
         } else {
             return false;
         }
