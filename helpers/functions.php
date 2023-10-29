@@ -16,6 +16,7 @@
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 
+    // 
     function applied_student_in_business($user_id) {
         global $conn;
 

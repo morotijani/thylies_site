@@ -86,16 +86,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href=" <?= PROOT; ?>scholarship-list" class="nav-link">Scholarship List</a>
-                    </li>
-                    <li class="nav-item">
                         <a href=" <?= PROOT; ?>user/apply-student-in-business" class="nav-link">Student in Business</a>
                     </li>
-                    <?php if ($user_data['user_gender'] == 'Female'): ?>
+                    <?php // if ($user_data['user_gender'] == 'Female'): ?>
                     <li class="nav-item">
                         <a href=" <?= PROOT; ?>user/apply-sanitary-welfare" class="nav-link">Sanitary Welfare</a>
                     </li>
-                    <?php endif; ?>
+                    <?php //endif; ?>
                 </ul>
                 <div class="header">
                     <li class="nav-item dropdown">

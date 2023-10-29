@@ -31,6 +31,7 @@
 								  	<h3>SiB Code: <?= $row['sib_id']; ?></h3>
 								  	<h3>Submitted: <?= (($row['submitted'] == 1) ? 'Yes' : 'No'); ?></h3>
 								  	<h3>Status: <?= (($row['status'] == 1) ? 'Gained' : 'Pending'); ?></h3>
+								  	<hr>
 								  	<h3>Date: <?= pretty_date($row['createdAt']); ?></h3>
 								</div>
 							</div>
