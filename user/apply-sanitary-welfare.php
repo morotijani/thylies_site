@@ -121,91 +121,116 @@
 							</div>
 							<hr class="my-5">
 
-							<div class="<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-block' : 'd-none'); ?>">
+							<div class="<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-block' : ''); ?>">
 								<!-- form -->
 								<form class="row" method="POST" id="studentInBusinessForm">
 									<div class="col-12 col-md-12">
 										<h4 class="mb-3">Bio Data</h4>
 									</div>
-									<div class="mb-3 col-12 col-md-12">
+									<div class="mb-3 col-6 col-md-6">
 										<label class="form-label" for="student_name">NAME OF STUDENT<span class="text-danger">*</span></label>
 										<input type="text" id="student_name" name="student_name" class="form-control" placeholder="First Name" required <?= $student_name; ?>>
 									</div>
-									<div class="mb-3 col-12 col-md-12">
-										<label class="form-label" for="program_of_study">PROGRAM OF STUDY<span class="text-danger">*</span></label>
-										<input type="text" id="program_of_study" name="program_of_study" class="form-control" required <?= $program_of_study; ?>>
+									<div class="mb-3 col-6 col-md-6">
+										<label class="form-label" for="dob">Date of Birth<span class="text-danger">*</span></label>
+										<input type="date" id="dob" name="dob" class="form-control" required <?= $dob; ?>>
 									</div>
-									<div class="mb-3 col-12 col-md-12">
-										<label class="form-label" for="index_number">INDEX NUMBER<span class="text-danger">*</span></label>
-										<input type="text" id="index_number" name="index_number" class="form-control" required <?= $index_number; ?>>
+									<div class="mb-3 col-6 col-md-6">
+										<label class="form-label" for="student_index">Student Index<span class="text-danger">*</span></label>
+										<input type="text" id="student_index" name="student_index" class="form-control" required <?= $student_index; ?>>
 									</div>
-									<div class="mb-3 col-12 col-md-12">
+									<div class="mb-3 col-6 col-md-6">
 										<label class="form-label" for="age">AGE<span class="text-danger">*</span></label>
 										<input type="number" min="1" id="age" name="age" class="form-control" placeholder="Your place of birth" required <?= $age; ?>>
 									</div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="region_of_residence">REGION OF RESIDENCE<span class="text-danger">*</span></label>
-                                        <input type="text" id="region_of_residence" name="region_of_residence" class="form-control" placeholder="Your lace of residence" required <?= $region_of_residence; ?>>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="program">Program<span class="text-danger">*</span></label>
+                                        <input type="text" id="program" name="program" class="form-control" placeholder="Your lace of residence" required <?= $program; ?>>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="town_of_residence">TOWN OF RESIDENCE<span class="text-danger">*</span></label>
-                                        <input type="text" id="town_of_residence" name="town_of_residence" class="form-control" placeholder="What is the size of your family?" required <?= $town_of_residence; ?>>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="whatsapp">WhatsApp<span class="text-danger">*</span></label>
+                                        <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="What is the size of your family?" required <?= $whatsapp; ?>>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="residence_address">RESIDENTIAL ADDRESS<span class="text-danger">*</span></label>
-                                        <input type="text" id="residence_address" name="residence_address" class="form-control"  placeholder="Enter your father's full name here" required <?= $residence_address; ?>>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="contact">Contact<span class="text-danger">*</span></label>
+                                        <input type="text" id="contact" name="contact" class="form-control"  placeholder="Enter your father's full name here" required <?= $contact; ?>>
+                                    </div>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="email">E-mail<span class="text-danger">*</span></label>
+                                        <input type="text" id="email" name="email" class="form-control"  placeholder="Enter your father's full name here" required <?= $email; ?>>
                                     </div>
 
 									<div class="col-12 col-md-12">
 										<h4 class="mb-3 mt-3">SANITARY PREFERENCE</h4>
 									</div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="name_of_business">NAME OF BUSINESS<span class="text-danger">*</span></label>
-                                        <input type="text" id="name_of_business" name="name_of_business" class="form-control" required <?= $name_of_business; ?>>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="number_of_pads_per_semester">Number of pads per semester<span class="text-danger">*</span></label>
+                                        <input type="number" min="1" max="4" id="number_of_pads_per_semester" name="number_of_pads_per_semester" class="form-control" required <?= $number_of_pads_per_semester; ?>>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="goals_objectives">WHAT ARE THE GOALS AND OBJECTIVES OF YOUR BUSINESS<span class="text-danger">*</span></label>
-                                        <textarea type="text" id="goals_objectives" name="goals_objectives" class="form-control" required><?= $goals_objectives; ?></textarea>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="brand_of_sanitary_pad">Brand of Sanitary pad<span class="text-danger">*</span></label>
+                                        <select type="text" id="brand_of_sanitary_pad" name="brand_of_sanitary_pad" class="form-control" required>
+                                            <?= $brand_of_sanitary_pad; ?>
+                                            <option value=""></option>
+                                            <option value="Yazz">Yazz</option>
+                                            <option value="Softcare">Softcare</option>
+                                            <option value="Proper">Proper</option>
+                                            <option value="Always Ultra">Always Ultra</option>
+                                        </select>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="business_registered_why">IS YOUR BUSINESS REGISTERED, WHY?<span class="text-danger">*</span></label>
-                                        <textarea type="text" id="business_registered_why" name="business_registered_why" class="form-control" required><?= $business_registered_why; ?></textarea>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="number_of_pantie_liners">Number of pantie liners<span class="text-danger">*</span></label>
+                                        <input type="number" min="1" max="4" id="number_of_pantie_liners" name="number_of_pantie_liners" class="form-control" required <?= $number_of_pantie_liners; ?>>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="be_procured">HOW WILL YOUR PRODUCTS BE MADE OR HOW WOULD YOUR GOODS AND SERVICES FOR SALE BE PROCURED<span class="text-danger">*</span></label>
-                                        <textarea name="be_procured" id="be_procured" class="form-control" required><?= $be_procured; ?></textarea>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="brand_of_sanitary_pad">Brand of Sanitary pad<span class="text-danger">*</span></label>
+                                        <select type="text" id="brand_of_sanitary_pad" name="brand_of_sanitary_pad" class="form-control" required>
+                                            <?= $brand_of_sanitary_pad; ?>
+                                            <option value=""></option>
+                                            <option value="Yazz">Yazz</option>
+                                            <option value="Softcare">Softcare</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="introduce_new">WOULD YOU INTRODUCE NEW GOODS AND SERVICES IN THE FUTURE IN ADDITION TO THE ONES YOU ARE ALREADY DEALING IN<span class="text-danger">*</span></label>
-                                        <textarea type="text" id="introduce_new" name="introduce_new" class="form-control" required><?= $introduce_new; ?></textarea>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="number_of_tissue">Number of tissue<span class="text-danger">*</span></label>
+                                        <input type="number" min="1" max="4" id="number_of_tissue" name="number_of_tissue" class="form-control" required <?= $number_of_tissue; ?>>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="target_populace">TARGET POPULACE<span class="text-danger">*</span></label>
-                                        <input type="text" id="target_populace" name="target_populace" class="form-control" required <?= $target_populace; ?>>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="brand_of_tissue_papers">Brand of tissue papers<span class="text-danger">*</span></label>
+                                        <select type="text" id="brand_of_tissue_papers" name="brand_of_tissue_papers" class="form-control" required>
+                                            <?= $brand_of_tissue_papers; ?>
+                                            <option value=""></option>
+                                            <option value="Softcare">Softcare</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="number_per_day">TARGETTED NUMBER OF CUSTOMERS PER DAY<span class="text-danger">*</span></label>
-                                        <input type="number" min="0" id="number_per_day" name="number_per_day" class="form-control" required <?= $number_per_day; ?>>
+                                    <div class="mb-3 col-4 col-md-4">
+                                        <label class="form-label" for="type_of_panties">Type of panties<span class="text-danger">*</span></label>
+                                        <select type="text" id="type_of_panties" name="type_of_panties" class="form-control" required>
+                                            <?= $type_of_panties; ?>
+                                            <option value=""></option>
+                                            <option value="Softcare">Softcare</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="customers_per_semester">TARGETTED CUSTOMERS PER SEMESTER<span class="text-danger">*</span></label>
-                                        <input type="number" min="0" id="customers_per_semester" name="customers_per_semester" class="form-control" required <?= $customers_per_semester; ?>>
+                                    <div class="mb-3 col-4 col-md-4">
+                                        <label class="form-label" for="type_of_panties">Number of panties<span class="text-danger">*</span></label>
+                                        <select type="text" id="type_of_panties" name="type_of_panties" class="form-control" required>
+                                            <?= $type_of_panties; ?>
+                                            <option value=""></option>
+                                            <option value="3">3</option>
+                                            <option value="6">6</option>
+                                        </select>
                                     </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="category_of_business">CATEGORY OF BUSINESS<span class="text-danger">*</span></label>
-                                        <input type="text" id="category_of_business" name="category_of_business" class="form-control" required <?= $category_of_business; ?>>
-                                    </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="expected_budget">EXPECTED BUDGET OF COMMENCEMENT/EXPANSION<span class="text-danger">*</span></label>
-                                        <input type="number" min="0" step="0.01" id="expected_budget" name="expected_budget" class="form-control" required <?= $expected_budget; ?>>
-                                    </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="expected_profit_per_day">EXPECTED PROFIT PER DAY<span class="text-danger">*</span></label>
-                                        <input type="number" min="0" step="0.01" id="expected_profit_per_day" name="expected_profit_per_day" class="form-control" required <?= $expected_profit_per_day; ?>>
-                                    </div>
-                                    <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="expected_profit_per_semester">EXPECTED PROFIT PER SEMESTER</label>
-                                        <input type="number" min="0" step="0.01" id="expected_profit_per_semester" name="expected_profit_per_semester" class="form-control" <?= $expected_profit_per_semester; ?>>
+                                    <div class="mb-3 col-4 col-md-4">
+                                        <label class="form-label" for="design_of_panties">Design of panties<span class="text-danger">*</span></label>
+                                        <select type="text" id="design_of_panties" name="design_of_panties" class="form-control" required>
+                                            <?= $design_of_panties; ?>
+                                            <option value=""></option>
+                                            <option value="Plain">Plain</option>
+                                            <option value="Decorated">Decorated</option>
+                                        </select>
                                     </div>
 
 									<div class="col-12">
