@@ -31,24 +31,22 @@
     $post = (isset($_POST) ? cleanPost($_POST) : '');
     $sw_id = guidv4();
     $student_name = (isset($post['student_name']) && $post['student_name'] != '') ? $post['student_name'] : '';
-    $program_of_study = (isset($post['program_of_study']) && $post['program_of_study'] != '') ? $post['program_of_study'] : '';
-    $index_number = (isset($post['index_number']) && $post['index_number'] != '') ? $post['index_number'] : '';
-    $age = (isset($post['age']) && $post['age'] != '') ? $post['age'] : '';
-    $region_of_residence = (isset($post['region_of_residence']) && $post['region_of_residence'] != '') ? $post['region_of_residence'] : '';
-    $town_of_residence = (isset($post['town_of_residence']) && $post['town_of_residence'] != '') ? $post['town_of_residence'] : '';
-    $residence_address = (isset($post['residence_address']) && $post['residence_address'] != '') ? $post['residence_address'] : '';
-    $name_of_business = (isset($post['name_of_business']) && $post['name_of_business'] != '') ? $post['name_of_business'] : '';
-    $goals_objectives = (isset($post['goals_objectives']) && $post['goals_objectives'] != '') ? $post['goals_objectives'] : '';
-    $business_registered_why = (isset($post['business_registered_why']) && $post['business_registered_why'] != '') ? $post['business_registered_why'] : '';
-    $be_procured = (isset($post['be_procured']) && $post['be_procured'] != '') ? $post['be_procured'] : '';
-    $introduce_new = (isset($post['introduce_new']) && $post['introduce_new'] != '') ? $post['introduce_new'] : '';
-    $target_populace = (isset($post['target_populace']) && $post['target_populace'] != '') ? $post['target_populace'] : '';
-    $number_per_day = (isset($post['number_per_day']) && $post['number_per_day'] != '') ? $post['number_per_day'] : '';
-    $customers_per_semester = (isset($post['customers_per_semester']) && $post['customers_per_semester'] != '') ? $post['customers_per_semester'] : '';
-    $category_of_business = (isset($post['category_of_business']) && $post['category_of_business'] != '') ? $post['category_of_business'] : '';
-    $expected_budget = (isset($post['expected_budget']) && $post['expected_budget'] != '') ? $post['expected_budget'] : '';
-    $expected_profit_per_day = (isset($post['expected_profit_per_day']) && $post['expected_profit_per_day'] != '') ? $post['expected_profit_per_day'] : '';
-    $expected_profit_per_semester = (isset($post['expected_profit_per_semester']) && $post['expected_profit_per_semester'] != '') ? $post['expected_profit_per_semester'] : '';
+    $dob = (isset($post['dob']) && $post['dob'] != '') ? $post['dob'] : '';
+    $student_index = (isset($post['student_index']) && $post['student_index'] != '') ? $post['student_index'] : '';
+    $program = (isset($post['program']) && $post['program'] != '') ? $post['program'] : '';
+    $whatsapp = (isset($post['whatsapp']) && $post['whatsapp'] != '') ? $post['whatsapp'] : '';
+    $contact = (isset($post['contact']) && $post['contact'] != '') ? $post['contact'] : '';
+    $email = (isset($post['email']) && $post['email'] != '') ? $post['email'] : '';
+
+    $number_of_pads_per_semester = (isset($post['number_of_pads_per_semester']) && $post['number_of_pads_per_semester'] != '') ? $post['number_of_pads_per_semester'] : '';
+    $brand_of_sanitary_pad = (isset($post['brand_of_sanitary_pad']) && $post['brand_of_sanitary_pad'] != '') ? $post['brand_of_sanitary_pad'] : '';
+    $number_of_pantie_liners = (isset($post['number_of_pantie_liners']) && $post['number_of_pantie_liners'] != '') ? $post['number_of_pantie_liners'] : '';
+    $brand_of_pantie_liners = (isset($post['brand_of_pantie_liners']) && $post['brand_of_pantie_liners'] != '') ? $post['brand_of_pantie_liners'] : '';
+    $number_of_tissue = (isset($post['number_of_tissue']) && $post['number_of_tissue'] != '') ? $post['number_of_tissue'] : '';
+    $brand_of_tissue_papers = (isset($post['brand_of_tissue_papers']) && $post['brand_of_tissue_papers'] != '') ? $post['brand_of_tissue_papers'] : '';
+    $type_of_panties = (isset($post['type_of_panties']) && $post['type_of_panties'] != '') ? $post['type_of_panties'] : '';
+    $design_of_panties = (isset($post['design_of_panties']) && $post['design_of_panties'] != '') ? $post['design_of_panties'] : '';
+
     $createdAt = date("Y-m-d H:i:s");
 
     if ($_POST) {
@@ -139,10 +137,6 @@
 										<label class="form-label" for="student_index">Student Index<span class="text-danger">*</span></label>
 										<input type="text" id="student_index" name="student_index" class="form-control" required <?= $student_index; ?>>
 									</div>
-									<div class="mb-3 col-6 col-md-6">
-										<label class="form-label" for="age">AGE<span class="text-danger">*</span></label>
-										<input type="number" min="1" id="age" name="age" class="form-control" placeholder="Your place of birth" required <?= $age; ?>>
-									</div>
                                     <div class="mb-3 col-6 col-md-6">
                                         <label class="form-label" for="program">Program<span class="text-danger">*</span></label>
                                         <input type="text" id="program" name="program" class="form-control" placeholder="Your lace of residence" required <?= $program; ?>>
@@ -170,7 +164,6 @@
                                     <div class="mb-3 col-6 col-md-6">
                                         <label class="form-label" for="brand_of_sanitary_pad">Brand of Sanitary pad<span class="text-danger">*</span></label>
                                         <select type="text" id="brand_of_sanitary_pad" name="brand_of_sanitary_pad" class="form-control" required>
-                                            <?= $brand_of_sanitary_pad; ?>
                                             <option value=""></option>
                                             <option value="Yazz">Yazz</option>
                                             <option value="Softcare">Softcare</option>
@@ -183,9 +176,8 @@
                                         <input type="number" min="1" max="4" id="number_of_pantie_liners" name="number_of_pantie_liners" class="form-control" required <?= $number_of_pantie_liners; ?>>
                                     </div>
                                     <div class="mb-3 col-6 col-md-6">
-                                        <label class="form-label" for="brand_of_sanitary_pad">Brand of Sanitary pad<span class="text-danger">*</span></label>
-                                        <select type="text" id="brand_of_sanitary_pad" name="brand_of_sanitary_pad" class="form-control" required>
-                                            <?= $brand_of_sanitary_pad; ?>
+                                        <label class="form-label" for="brand_of_pantie_liners">Brand of Pantie liners<span class="text-danger">*</span></label>
+                                        <select type="text" id="brand_of_pantie_liners" name="brand_of_pantie_liners" class="form-control" required>
                                             <option value=""></option>
                                             <option value="Yazz">Yazz</option>
                                             <option value="Softcare">Softcare</option>
@@ -199,7 +191,6 @@
                                     <div class="mb-3 col-6 col-md-6">
                                         <label class="form-label" for="brand_of_tissue_papers">Brand of tissue papers<span class="text-danger">*</span></label>
                                         <select type="text" id="brand_of_tissue_papers" name="brand_of_tissue_papers" class="form-control" required>
-                                            <?= $brand_of_tissue_papers; ?>
                                             <option value=""></option>
                                             <option value="Softcare">Softcare</option>
                                             <option value="Other">Other</option>
@@ -208,7 +199,6 @@
                                     <div class="mb-3 col-4 col-md-4">
                                         <label class="form-label" for="type_of_panties">Type of panties<span class="text-danger">*</span></label>
                                         <select type="text" id="type_of_panties" name="type_of_panties" class="form-control" required>
-                                            <?= $type_of_panties; ?>
                                             <option value=""></option>
                                             <option value="Softcare">Softcare</option>
                                             <option value="Other">Other</option>
@@ -217,7 +207,6 @@
                                     <div class="mb-3 col-4 col-md-4">
                                         <label class="form-label" for="type_of_panties">Number of panties<span class="text-danger">*</span></label>
                                         <select type="text" id="type_of_panties" name="type_of_panties" class="form-control" required>
-                                            <?= $type_of_panties; ?>
                                             <option value=""></option>
                                             <option value="3">3</option>
                                             <option value="6">6</option>
@@ -234,11 +223,11 @@
                                     </div>
 
 									<div class="col-12">
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#studentInBusinessModalCenter">Submit</button>
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sanitaryWelfareModalCenter">Submit</button>
 									</div>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="studentInBusinessModalCenter" tabindex="-1" role="dialog" aria-labelledby="studentInBusinessModalCenterTitle" aria-hidden="true">
+                                    <div class="modal fade" id="sanitaryWelfareModalCenter" tabindex="-1" role="dialog" aria-labelledby="sanitaryWelfareModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-body">
