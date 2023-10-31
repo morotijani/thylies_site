@@ -53,11 +53,11 @@
         // code...
         $sql = "
             UPDATE `thylies_sanitary_welfare` 
-            SET `sw_id` = ?, `student_name` = ?, `program_of_study` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
+            SET `sw_id` = ?, `name_of_student` = ?, `dob` = ?, `student_index` = ?, `program` = ?, `whatsapp` = ?, `contact` = ?, `email` = ?, `number_of_pads_per_semester` = ?, `brand_of_sanitary_pad` = ?, `number_of_tissue` = ?, `brand_of_tissue_papers` = ?, `type_of_panties` = ?, `number_of_panties` = ?, `design_of_panties` = ?, `submitted` = ?, `createdAt` = ?
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$sw_id, $student_name, $program_of_study, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sw_id, $name_of_student, $dob, $student_index, $program, $whatsapp, $contact, $email, $number_of_pads_per_semester, $brand_of_sanitary_pad, $number_of_tissue, $brand_of_tissue_papers, $type_of_panties, $number_of_panties, $design_of_panties, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
