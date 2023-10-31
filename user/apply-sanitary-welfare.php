@@ -45,6 +45,7 @@
     $number_of_tissue = (isset($post['number_of_tissue']) && $post['number_of_tissue'] != '') ? $post['number_of_tissue'] : '';
     $brand_of_tissue_papers = (isset($post['brand_of_tissue_papers']) && $post['brand_of_tissue_papers'] != '') ? $post['brand_of_tissue_papers'] : '';
     $type_of_panties = (isset($post['type_of_panties']) && $post['type_of_panties'] != '') ? $post['type_of_panties'] : '';
+    $number_of_panties = (isset($post['number_of_panties']) && $post['number_of_panties'] != '') ? $post['number_of_panties'] : '';
     $design_of_panties = (isset($post['design_of_panties']) && $post['design_of_panties'] != '') ? $post['design_of_panties'] : '';
 
     $createdAt = date("Y-m-d H:i:s");
@@ -57,7 +58,7 @@
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$sw_id, $name_of_student, $dob, $student_index, $program, $whatsapp, $contact, $email, $number_of_pads_per_semester, $brand_of_sanitary_pad, $number_of_tissue, $brand_of_tissue_papers, $type_of_panties, $number_of_panties, $design_of_panties, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sw_id, $student_name, $dob, $student_index, $program, $whatsapp, $contact, $email, $number_of_pads_per_semester, $brand_of_sanitary_pad, $number_of_tissue, $brand_of_tissue_papers, $type_of_panties, $number_of_panties, $design_of_panties, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
@@ -205,8 +206,8 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 col-4 col-md-4">
-                                        <label class="form-label" for="type_of_panties">Number of panties<span class="text-danger">*</span></label>
-                                        <select type="text" id="type_of_panties" name="type_of_panties" class="form-control" required>
+                                        <label class="form-label" for="number_of_panties">Number of panties<span class="text-danger">*</span></label>
+                                        <select type="text" id="number_of_panties" name="number_of_panties" class="form-control" required>
                                             <option value=""></option>
                                             <option value="3">3</option>
                                             <option value="6">6</option>
