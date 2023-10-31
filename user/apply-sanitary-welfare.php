@@ -102,7 +102,7 @@
 							<div class="d-lg-flex align-items-center justify-content-between">
 								<div class="d-flex align-items-center mb-4 mb-lg-0">
                                     <span id="upload_profile">
-									   <img src="<?= PROOT; ?>assets/media/<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'student-in-business/' .$apply_row[0]['student_picture']  : 'svg/friendly-ghost.svg'); ?>" class="avatar-xl rounded-circle " alt="">
+									   <img src="<?= PROOT; ?>assets/media/<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'sanitary-welfare/' .$apply_row[0]['student_picture']  : 'svg/friendly-ghost.svg'); ?>" class="avatar-xl rounded-circle " alt="">
                                     </span>
 									<div class="ms-3">
 										<h4 class="mb-0">Your passport picture</h4>
@@ -122,7 +122,7 @@
 
 							<div class="<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-block' : 'd-none'); ?>">
 								<!-- form -->
-								<form class="row" method="POST" id="studentInBusinessForm">
+								<form class="row" method="POST" id="sanitaryWelfareForm">
 									<div class="col-12 col-md-12">
 										<h4 class="mb-3">Bio Data</h4>
 									</div>
@@ -236,7 +236,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_student_in_business_form' data-action='submit' type="submit">Proceed</button>
+                                                    <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_sanitary_welfare_form' data-action='submit' type="submit">Proceed</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -255,8 +255,8 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
 
-        function submit_student_in_business_form(token) {
-            $('#studentInBusinessForm').submit();
+        function submit_sanitary_welfare_form(token) {
+            $('#sanitaryWelfareForm').submit();
         }
 
         $(document).ready(function() {
