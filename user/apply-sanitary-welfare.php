@@ -120,7 +120,7 @@
 							</div>
 							<hr class="my-5">
 
-							<div class="<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-block' : ''); ?>">
+							<div class="<?= (($count_apply > 0 && $apply_row[0]['student_picture'] != '') ? 'd-block' : 'd-none'); ?>">
 								<!-- form -->
 								<form class="row" method="POST" id="studentInBusinessForm">
 									<div class="col-12 col-md-12">
