@@ -9,10 +9,10 @@
     $title = 'Student in Business Status - ';
     include ("inc/user.header.inc.php");
 
-	if (!is_array(applied_student_in_business($user_data['user_unique_id']))) {
+	if (!is_array(applied_sanitary_welfare($user_data['user_unique_id']))) {
 		redirect(PROOT . 'user/apply-student-in-business');
 	} else {
-		$row = applied_student_in_business($user_data['user_unique_id']);
+		$row = applied_sanitary_welfare($user_data['user_unique_id']);
 	}
 
  ?>
