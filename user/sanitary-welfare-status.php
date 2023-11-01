@@ -23,7 +23,7 @@
 				<div class="col-lg-9 col-md-8 col-12">
 					<div class="card rounded-3 mb-4 ">
 						<div class="card-header bg-white p-4">
-							<h3 class="mb-0 h4">STUDENT BUSINESS FUND STATUS</h3>
+							<h3 class="mb-0 h4">SANITARY WELFARE STATUS</h3>
 						</div>
 						<div class="card-body p-4">
 							<div class="">
