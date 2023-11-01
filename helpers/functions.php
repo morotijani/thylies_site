@@ -60,19 +60,19 @@
         }
     }
 
-    //
-    function check_gender_status($user_id) {
+    // check user to see if user is a female
+    function check_gender_status($user_unique_id) {
         global $conn;
         return false;
 
         $sql = "
             SELECT * FROM thylies_user 
-            WHERE 
-            AND user_id = ? 
+            WHERE user_gender = ? 
+            AND user_unique_id = ? 
             LIMIT 1 
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$user_id]);
+        $result = $statement->execute(['Female', $user_unique_id]);
         if (isset($result)) {
             return true;
         }
