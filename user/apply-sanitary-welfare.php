@@ -236,7 +236,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_sanitary_welfare_form' data-action='submit' type="submit">Proceed</button>
+                                                    <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_sanitary_welfare_form' data-action='submit' type="button">Proceed</button>
                                                 </div>
                                             </div>
                                         </div>
