@@ -28,7 +28,7 @@
 						<div class="card-body p-4">
 							<div class="">
 								<div class="alert alert-<?= (($row['status'] == 1) ? 'success' : 'primary'); ?>" role="alert">
-								  	<h3>SiB Code: <?= $row['sib_id']; ?></h3>
+								  	<h3>SW Code: <?= $row['sw_id']; ?></h3>
 								  	<h3>Submitted: <?= (($row['submitted'] == 1) ? 'Yes' : 'No'); ?></h3>
 								  	<h3>Status: <?= (($row['status'] == 1) ? 'Gained' : 'Pending'); ?></h3>
 								  	<hr>
