@@ -63,4 +63,17 @@
     //
     function check_gender_status($user_id) {
         global $conn;
+        return false;
+
+        $sql = "
+            SELECT * FROM thylies_user 
+            WHERE 
+            AND user_id = ? 
+            LIMIT 1 
+        ";
+        $statement = $conn->prepare($sql);
+        $result = $statement->execute([$user_id]);
+        if (isset($result)) {
+            return true;
+        }
     }
