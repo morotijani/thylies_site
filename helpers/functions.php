@@ -59,3 +59,8 @@
             return false;
         }
     }
+
+    //
+    function check_gender_status($user_id) {
+        global $conn;
+    }
