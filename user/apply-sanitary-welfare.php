@@ -128,7 +128,7 @@
 									</div>
 									<div class="mb-3 col-6 col-md-6">
 										<label class="form-label" for="student_name">NAME OF STUDENT<span class="text-danger">*</span></label>
-										<input type="text" id="student_name" name="student_name" class="form-control" placeholder="First Name" required <?= $student_name; ?>>
+										<input type="text" id="student_name" name="student_name" class="form-control" required <?= $student_name; ?>>
 									</div>
 									<div class="mb-3 col-6 col-md-6">
 										<label class="form-label" for="dob">Date of Birth<span class="text-danger">*</span></label>
@@ -140,19 +140,19 @@
 									</div>
                                     <div class="mb-3 col-6 col-md-6">
                                         <label class="form-label" for="program">Program<span class="text-danger">*</span></label>
-                                        <input type="text" id="program" name="program" class="form-control" placeholder="Your lace of residence" required <?= $program; ?>>
+                                        <input type="text" id="program" name="program" class="form-control" required <?= $program; ?>>
                                     </div>
                                     <div class="mb-3 col-6 col-md-6">
                                         <label class="form-label" for="whatsapp">WhatsApp<span class="text-danger">*</span></label>
-                                        <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="What is the size of your family?" required <?= $whatsapp; ?>>
+                                        <input type="text" id="whatsapp" name="whatsapp" class="form-control" required <?= $whatsapp; ?>>
                                     </div>
                                     <div class="mb-3 col-6 col-md-6">
                                         <label class="form-label" for="contact">Contact<span class="text-danger">*</span></label>
-                                        <input type="text" id="contact" name="contact" class="form-control"  placeholder="Enter your father's full name here" required <?= $contact; ?>>
+                                        <input type="text" id="contact" name="contact" class="form-control" required <?= $contact; ?>>
                                     </div>
                                     <div class="mb-3 col-6 col-md-6">
                                         <label class="form-label" for="email">E-mail<span class="text-danger">*</span></label>
-                                        <input type="text" id="email" name="email" class="form-control"  placeholder="Enter your father's full name here" required <?= $email; ?>>
+                                        <input type="text" id="email" name="email" class="form-control" required <?= $email; ?>>
                                     </div>
 
 									<div class="col-12 col-md-12">
