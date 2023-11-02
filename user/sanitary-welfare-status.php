@@ -7,7 +7,7 @@
     }
 
     if (!check_gender_status($user_date['user_unique_id'])) {
-        redirec(PROOT . 'user/index');
+        redirect(PROOT . 'user/index');
     }
 
     $title = 'Student in Business Status - ';
