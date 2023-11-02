@@ -6,6 +6,10 @@
         user_login_redirect();
     }
 
+    if (!check_gender_status($user_date['user_unique_id'])) {
+        redirec(PROOT . 'user/index');
+    }
+
     $title = 'Student in Business Status - ';
     include ("inc/user.header.inc.php");
 
