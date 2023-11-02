@@ -72,8 +72,9 @@
             LIMIT 1 
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute(['Female', $user_unique_id]);
-        if (isset($result)) {
+        $statement->execute(['Female', $user_unique_id]);
+        $result = $statement->rowCount();
+        if ($result > 0) {
             return true;
         }
     }
