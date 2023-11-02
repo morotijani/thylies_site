@@ -22,6 +22,7 @@
 
 	<div class="pb-12 mt-lg-n18 mt-n10">
 		<div class="container">
+			<?= $flash; ?>
 			<div class="row justify-content-center">
 				<div class="col-lg-9 col-md-8 col-12">
 					<div class="card rounded-3 mb-4 ">
