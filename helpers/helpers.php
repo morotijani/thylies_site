@@ -47,6 +47,11 @@ function pretty_date($date){
 }
 
 // Make Date Redable
+function pretty_date_half($date){
+	return date("M d, Y ", strtotime($date));
+}
+
+// Make Date Redable
 function pretty_date_on_time($date){
 	return date("h:i", strtotime($date));
 }

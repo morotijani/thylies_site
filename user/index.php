@@ -62,7 +62,7 @@
 							  	</li>
 							  	<li class="list-group-item">
 							  		<h3>Joined Date</h3>
-							  		<h6><?= pretty_date($user_data['user_joined_date']); ?></h6>
+							  		<h6><?= pretty_date_half($user_data['user_joined_date']); ?></h6>
 							  	</li>
 							  	<hr>
 							  	<li class="list-group-item">
