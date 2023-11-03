@@ -63,7 +63,6 @@
     // check user to see if user is a female
     function check_gender_status($user_unique_id) {
         global $conn;
-        return false;
 
         $sql = "
             SELECT * FROM thylies_user 
@@ -76,5 +75,7 @@
         $result = $statement->rowCount();
         if ($result > 0) {
             return true;
+        } else {
+            return false;
         }
     }

@@ -6,7 +6,7 @@
         user_login_redirect();
     }
 
-    if (!check_gender_status($user_data['user_unique_id'])) {
+    if (check_gender_status($user_data['user_unique_id']) == false) {
     	$_SESSION['flash_error'] = 'Only females are allowed for the Sanitary Welfare application.';
         redirect(PROOT . 'user/index');
     }
