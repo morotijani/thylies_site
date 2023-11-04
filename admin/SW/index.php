@@ -18,12 +18,12 @@
 				<div class="row align-items-center">
 					<div class="col-sm col-12">
 						<h1 class="h2 ls-tight">
-							<span class="d-inline-block me-3">😎</span>Scholarship, List view
+							<span class="d-inline-block me-3">😎</span>Sanitary Welfare, List view
 						</h1>
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="<?= PROOT; ?>admin/Scholarship-import" class="btn btn-sm btn-neutral border-base">
+							<a href="<?= PROOT; ?>admin/SW-import" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
@@ -35,10 +35,9 @@
 					</div>
 				</div>
 				<ul class="nav nav-tabs overflow-x border-0">
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/import" class="nav-link">Import Data</a></li>
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship" class="nav-link active">View all</a></li>
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/rejected" class="nav-link">Rejected</a></li>
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/gained" class="nav-link">Gained</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW" class="nav-link active">View all</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/rejected" class="nav-link">Rejected</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/gained" class="nav-link">Gained</a></li>
 				</ul>
 			</div>
 		</div>
@@ -62,16 +61,16 @@
                                 <span class="text-xs text-primary">Data</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="<?= PROOT; ?>admin/Scholarship/export/all/xlsx" class="dropdown-item">XLSX </a>
-                                <a href="<?= PROOT; ?>admin/Scholarship/export/all/xls" class="dropdown-item">XLS </a>
-                                <a href="<?= PROOT; ?>admin/Scholarship/export/all/csv" class="dropdown-item">CSV </a>
+                                <a href="<?= PROOT; ?>admin/SW/export/all/xlsx" class="dropdown-item">XLSX </a>
+                                <a href="<?= PROOT; ?>admin/SW/export/all/xls" class="dropdown-item">XLS </a>
+                                <a href="<?= PROOT; ?>admin/SW/export/all/csv" class="dropdown-item">CSV </a>
                             </div>
                         </div>
                     </div>
                     <div class="btn-group">
                         <a href="#" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a> 
-                        <a href="<?= PROOT; ?>admin/Scholarship/trash" class="btn btn-sm btn-neutral">Trash</a> 
-                        <a href="<?= PROOT; ?>admin/Scholarship/rejected" class="btn btn-sm btn-neutral">Rejected</a>
+                        <a href="<?= PROOT; ?>admin/SW/trash" class="btn btn-sm btn-neutral">Trash</a> 
+                        <a href="<?= PROOT; ?>admin/SW/rejected" class="btn btn-sm btn-neutral">Rejected</a>
                     </div>
                 </div>
                 <div class="card">
@@ -88,7 +87,7 @@
     // SEARCH AND PAGINATION FOR LIST
     function load_data(page, query = '') {
         $.ajax({
-            url : "<?= PROOT; ?>/parsers/scholarship.list.php",
+            url : "<?= PROOT; ?>/parsers/sw.list.php",
             method : "POST",
             data : {
                 page : page, 
