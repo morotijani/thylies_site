@@ -51,8 +51,8 @@ $output = '
         		<i class="bi bi-three-dots-vertical"></i>
         	</a>
         	<div class="dropdown-menu">
-	        	<a href="' . PROOT . 'admin/Scholarhip/paid" class="dropdown-item">Paid </a>
-	        	<a href="' . PROOT . 'admin/Scholarhip/not-paid" class="dropdown-item">Not Paid </a>
+	        	<a href="' . PROOT . 'admin/SW/paid" class="dropdown-item">Paid </a>
+	        	<a href="' . PROOT . 'admin/SW/not-paid" class="dropdown-item">Not Paid </a>
 	        </div>
 	    </div>
     </div>
@@ -79,36 +79,7 @@ if ($total_data > 0) {
 		// retrieve user image
 		$profile = 'svg/friendly-ghost.svg';
 		if ($row["student_picture"] != '') {
-			$profile = 'scholarship/' . $row["student_picture"];
-		}
-
-		// get each percentage gain by users
-		$percentage = '0%';
-		$percentageColor = 'default';
-
-		if ($row['percentage'] >= 15) {
-			$percentage = $row['percentage'];
-			$percentageColor = 'danger';
-		} 
-
-		if ($percentage >= 25) {
-			$percentage = $row['percentage'];
-			$percentageColor = 'warning';
-		}  
-
-		if ($percentage <= 40) {
-			$percentage = $row['percentage'];
-			$percentageColor = 'info';
-		}   
-
-		if ($percentage >= 60) {
-			$percentage = $row['percentage'];
-			$percentageColor = 'primary';
-		}    
-
-		if ($percentage >= 80) {
-			$percentage = $row['percentage'];
-			$percentageColor = 'success';
+			$profile = 'sanitary-welfare/' . $row["student_picture"];
 		}
 
 		// user who has paid for gian scholarship
@@ -128,14 +99,9 @@ if ($total_data > 0) {
             ';
         } else {
             $granted = '
-            	<div class="d-flex align-items-center">
-                    <span class="me-2">' . $percentage . '%</span>
-                    <div>
-                        <div class="progress" style="width:100px">
-                            <div class="progress-bar bg-' . $percentageColor . '" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:' . $percentage . '%"></div>
-                        </div>
-                    </div>
-                </div>
+            	<span class="badge badge-lg badge-dot">
+                	<i class="bg-danger"></i>Granted
+                </span>
             ';
         }
 
