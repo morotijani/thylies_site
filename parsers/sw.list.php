@@ -26,9 +26,9 @@ if ($search_query != '') {
 	$query .= '
 		AND (sw_id LIKE "%'.$find_query.'%" 
 		OR name_of_student LIKE "%'.$find_query.'%" 
-		OR student_dob LIKE "%'.$find_query.'%" 
-		OR student_age LIKE "%'.$find_query.'%" 
-		OR index_number LIKE "%'.$find_query.'%") 
+		OR dob LIKE "%'.$find_query.'%" 
+		OR student_index LIKE "%'.$find_query.'%" 
+		OR program LIKE "%'.$find_query.'%") 
 	';
 } else {
 	$query .= 'ORDER BY createdAt DESC ';
@@ -146,7 +146,7 @@ if ($total_data > 0) {
                     <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
                     <a class="text-heading font-semibold" href="' . PROOT . 'admin/Scholarship-view/' . $row["sw_id"] . ' ">' . ucwords($row["name_of_student"]) . '</a>
                 </td>
-                <td>' . $row["student_dob"] . '</td>
+                <td>' . $row["dob"] . '</td>
                 <td>
                     <span class="badge badge-lg badge-dot">
                     	<i class="bg-' . $paid . '"></i>' . $row["index_number"] . '
