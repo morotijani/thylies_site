@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="mb-3 col-6 col-md-6">
                                         <label class="form-label" for="email">E-mail<span class="text-danger">*</span></label>
-                                        <input type="text" id="email" name="email" class="form-control" required <?= $email; ?>>
+                                        <input type="email" id="email" name="email" class="form-control" required <?= $email; ?>>
                                     </div>
 
 									<div class="col-12 col-md-12">
