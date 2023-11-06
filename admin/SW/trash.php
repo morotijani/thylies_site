@@ -23,7 +23,7 @@
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="<?= PROOT; ?>admin/WS" class="btn btn-sm btn-neutral border-base">
+							<a href="<?= PROOT; ?>admin/WS/trash" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
@@ -61,9 +61,9 @@
                                 <span class="text-xs text-primary">Data</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="<?= PROOT; ?>admin/WS/export/all/xlsx" class="dropdown-item">XLSX </a>
-                                <a href="<?= PROOT; ?>admin/WS/export/all/xls" class="dropdown-item">XLS </a>
-                                <a href="<?= PROOT; ?>admin/WS/export/all/csv" class="dropdown-item">CSV </a>
+                                <a href="<?= PROOT; ?>admin/WS/export/all/xlsx" class="dropdown-item">XLSX</a>
+                                <a href="<?= PROOT; ?>admin/WS/export/all/xls" class="dropdown-item">XLS</a>
+                                <a href="<?= PROOT; ?>admin/WS/export/all/csv" class="dropdown-item">CSV</a>
                             </div>
                         </div>
                     </div>
