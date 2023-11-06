@@ -85,7 +85,7 @@ if ($total_data > 0) {
 		// user who has paid for gian scholarship
 		$paid = 'warning';
 		$sw_id = $row["sw_id"];
-		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'scholarship' ")->rowCount() > 0) {
+		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitary_welfare' ")->rowCount() > 0) {
 			$paid = 'success';
 		}
 
@@ -110,18 +110,18 @@ if ($total_data > 0) {
 			<tr>
                 <td>
                     <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
-                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/Scholarship-view/' . $row["sw_id"] . ' ">' . ucwords($row["name_of_student"]) . '</a>
+                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/SW/view/' . $row["sw_id"] . ' ">' . ucwords($row["name_of_student"]) . '</a>
                 </td>
                 <td>' . $row["dob"] . '</td>
                 <td>
                     <span class="badge badge-lg badge-dot">
-                    	<i class="bg-' . $paid . '"></i>' . $row["index_number"] . '
+                    	<i class="bg-' . $paid . '"></i>' . $row["student_index"] . '
                     </span>
                 </td>
-                <td>' . $row["school_name"] . '</td>
+                <td>' . ucwords($row["school_name"]) . '</td>
                 <td>' . $granted . '</td>
                 <td class="text-end">
-                    <a href="' . PROOT . 'admin/Scholarship/view/' . $row["sw_id"] . '" class="btn btn-sm btn-neutral">View</a> 
+                    <a href="' . PROOT . 'admin/SW/view/' . $row["sw_id"] . '" class="btn btn-sm btn-neutral">View</a> 
                     <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                         <i class="bi bi-trash"></i>
                     </button>
