@@ -37,6 +37,7 @@
     $sw_id = guidv4();
     $student_name = (isset($post['student_name']) && $post['student_name'] != '') ? $post['student_name'] : '';
     $dob = (isset($post['dob']) && $post['dob'] != '') ? $post['dob'] : '';
+    $school_name = (isset($post['school_name']) && $post['school_name'] != '') ? $post['school_name'] : '';
     $student_index = (isset($post['student_index']) && $post['student_index'] != '') ? $post['student_index'] : '';
     $program = (isset($post['program']) && $post['program'] != '') ? $post['program'] : '';
     $whatsapp = (isset($post['whatsapp']) && $post['whatsapp'] != '') ? $post['whatsapp'] : '';
@@ -59,11 +60,11 @@
         // code...
         $sql = "
             UPDATE `thylies_sanitary_welfare` 
-            SET `sw_id` = ?, `name_of_student` = ?, `dob` = ?, `student_index` = ?, `program` = ?, `whatsapp` = ?, `contact` = ?, `email` = ?, `number_of_pads_per_semester` = ?, `brand_of_sanitary_pad` = ?, `number_of_tissue` = ?, `brand_of_tissue_papers` = ?, `type_of_panties` = ?, `number_of_panties` = ?, `design_of_panties` = ?, `submitted` = ?, `createdAt` = ?
+            SET `sw_id` = ?, `name_of_student` = ?, `dob` = ?, `school_name` = ?, `student_index` = ?, `program` = ?, `whatsapp` = ?, `contact` = ?, `email` = ?, `number_of_pads_per_semester` = ?, `brand_of_sanitary_pad` = ?, `number_of_tissue` = ?, `brand_of_tissue_papers` = ?, `type_of_panties` = ?, `number_of_panties` = ?, `design_of_panties` = ?, `submitted` = ?, `createdAt` = ?
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$sw_id, $student_name, $dob, $student_index, $program, $whatsapp, $contact, $email, $number_of_pads_per_semester, $brand_of_sanitary_pad, $number_of_tissue, $brand_of_tissue_papers, $type_of_panties, $number_of_panties, $design_of_panties, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sw_id, $student_name, $dob, $school_name, $student_index, $program, $whatsapp, $contact, $email, $number_of_pads_per_semester, $brand_of_sanitary_pad, $number_of_tissue, $brand_of_tissue_papers, $type_of_panties, $number_of_panties, $design_of_panties, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
@@ -136,9 +137,13 @@
 										<input type="text" id="student_name" name="student_name" class="form-control" required <?= $student_name; ?>>
 									</div>
 									<div class="mb-3 col-6 col-md-6">
-										<label class="form-label" for="dob">Date of Birth<span class="text-danger">*</span></label>
-										<input type="date" id="dob" name="dob" class="form-control" required <?= $dob; ?>>
+										<label class="form-label" for="school_name">School Name<span class="text-danger">*</span></label>
+										<input type="text" id="school_name" name="school_name" class="form-control" required <?= $school_name; ?>>
 									</div>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="dob">Date of Birth<span class="text-danger">*</span></label>
+                                        <input type="date" id="dob" name="dob" class="form-control" required <?= $dob; ?>>
+                                    </div>
 									<div class="mb-3 col-6 col-md-6">
 										<label class="form-label" for="student_index">Student Index<span class="text-danger">*</span></label>
 										<input type="text" id="student_index" name="student_index" class="form-control" required <?= $student_index; ?>>
