@@ -144,7 +144,7 @@ if ($total_data > 0) {
 			<tr>
                 <td>
                     <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
-                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/Scholarship-view/' . $row["scholarship_id"] . ' ">' . ucwords($row["student_name"]) . '</a>
+                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/Scholarship/view/' . $row["scholarship_id"] . ' ">' . ucwords($row["student_name"]) . '</a>
                 </td>
                 <td>' . $row["student_dob"] . '</td>
                 <td>
