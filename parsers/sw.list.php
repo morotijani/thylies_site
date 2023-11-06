@@ -97,10 +97,16 @@ if ($total_data > 0) {
                 	<i class="bg-danger"></i>Denied
                 </span>
             ';
-        } else {
+        } else if ($row['status'] == 1) {
             $granted = '
             	<span class="badge badge-lg badge-dot">
-                	<i class="bg-danger"></i>Granted
+                	<i class="bg-success"></i>Granted
+                </span>
+            ';
+        } else {
+        	$granted = '
+            	<span class="badge badge-lg badge-dot">
+                	<i class="bg-primary"></i>Pending
                 </span>
             ';
         }
