@@ -18,7 +18,8 @@ if ($_POST['page'] > 1) {
 
 $query = "
 	SELECT * FROM thylies_sanitary_welfare 
-	WHERE trash = 0 
+	WHERE thylies_sanitary_welfare.status = 2 
+	AND trash = 0 
 ";
 $search_query = ((isset($_POST['query'])) ? sanitize($_POST['query']) : '');
 $find_query = str_replace(' ', '%', $search_query);
