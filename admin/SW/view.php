@@ -14,7 +14,7 @@
         $id = sanitize($_GET['reject']);
 
         $update = "
-            UPDATE thylies_scholarship 
+            UPDATE thylies_sanitary_welfare 
             SET status = ?, percentage = ? 
             WHERE scholarship_id = ?
         ";
@@ -31,15 +31,15 @@
     }
 
     if (isset($_GET['swid']) && !empty($_GET['swid'])) {
-        $scholarship_id = sanitize($_GET['swid']);
+        $sw_id = sanitize($_GET['swid']);
         
         $sql = "
-            SELECT * FROM thylies_scholarship 
+            SELECT * FROM thylies_sanitary_welfare 
             WHERE scholarship_id = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($sql);
-        $statement->execute([$scholarship_id]);
+        $statement->execute([$sw_id]);
         $row = $statement->fetchAll();
         $count_row = $statement->rowCount();
 
@@ -56,19 +56,19 @@
                 $percentage = sanitize((int)$_POST['percentage']);
 
                 $percentageQuery = "
-                    UPDATE thylies_scholarship 
+                    UPDATE thylies_sanitary_welfare 
                     SET status = ?, percentage = ? 
                     WHERE scholarship_id = ?
                 ";
                 $statement = $conn->prepare($percentageQuery);
-                $result = $statement->execute([(($percentage <= 0) ? 0 : 1), $percentage, $scholarship_id]);
+                $result = $statement->execute([(($percentage <= 0) ? 0 : 1), $percentage, $sw_id]);
                 if (isset($result)) {
                     // code...
                     $_SESSION['flash_success'] = $percentage . "% has been granted to " . $row[0]['student_name'];
-                    redirect(PROOT . 'admin/Scholarship/view/' . $scholarship_id);
+                    redirect(PROOT . 'admin/Scholarship/view/' . $sw_id);
                 } else {
                     $_SESSION['flash_error'] = 'Something went wrong.';
-                    redirect(PROOT . 'admin/Scholarship/view/' . $scholarship_id);
+                    redirect(PROOT . 'admin/Scholarship/view/' . $sw_id);
                 }
             }
         } else {
@@ -95,7 +95,7 @@
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="<?= PROOT; ?>admin/Scholarship/view/<?= $scholarship_id; ?>" class="btn btn-sm btn-neutral border-base">
+							<a href="<?= PROOT; ?>admin/Scholarship/view/<?= $sw_id; ?>" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
@@ -372,7 +372,7 @@
                 <div class="card-body">
                     <h4 class="text-danger mb-2">Delete details</h4>
                     <p class="text-sm text-muted mb-4">Temporary remove this user scholarship details and all of its contents. This action is reversible – please be certain.</p>
-                    <a href="<?= PROOT; ?>admin/Scholarship/delete/<?= $scholarship_id; ?>" class="btn btn-sm btn-danger">Delete my details</a>
+                    <a href="<?= PROOT; ?>admin/Scholarship/delete/<?= $sw_id; ?>" class="btn btn-sm btn-danger">Delete my details</a>
                 </div>
             </div>
 
@@ -426,7 +426,7 @@
 <script>
     $('.reject-btn').on('click', function() {
         if (confirm('By clicking on ok, applicant will be Rejected!')) {
-            window.location = '<?= PROOT; ?>admin/Scholarship/view?reject=<?= $scholarship_id; ?>';
+            window.location = '<?= PROOT; ?>admin/Scholarship/view?reject=<?= $sw_id; ?>';
         } else {
             return false;
         }
