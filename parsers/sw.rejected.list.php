@@ -37,7 +37,7 @@ if ($search_query != '') {
 
 $filter_query = $query . 'LIMIT ' . $start . ', ' . $limit . '';
 
-$total_data = $conn->query("SELECT * FROM thylies_sanitary_welfare WHERE trash = 0")->rowCount();
+$total_data = $conn->query("SELECT * FROM thylies_sanitary_welfare WHERE status = 2 AND trash = 0")->rowCount();
 
 $statement = $conn->prepare($filter_query);
 $statement->execute();
