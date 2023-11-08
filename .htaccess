@@ -16,7 +16,7 @@ RewriteRule ^auth/verified/([0-9a-zA-Z]+)$ auth/verified.php?vericode=$1 [NC,L]
 
 
 
-#pay registraton
+#pay scholarship fee
 RewriteRule ^auth/pay-scholarship-fee/([0-9a-zA-Z-]+)$ auth/pay-scholarship-fee.php?scholarship=$1 [NC,L]
 #authenticate scholarship status
 RewriteRule ^auth/auth-scholarship-status/([0-9a-zA-Z-]+)$ auth/auth-scholarship-status.php?scholarship=$1 [NC,L]
@@ -26,6 +26,9 @@ RewriteRule ^auth/auth-scholarship-status/([0-9a-zA-Z-]+)$ auth/auth-scholarship
 RewriteRule ^admin/Scholarship/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/Scholarship/export.php?data=$1&type=$2 [NC,L]
 #view scholarship details
 RewriteRule ^admin/Scholarship/view/([0-9a-zA-Z-]+)$ admin/Scholarship/view.php?sid=$1 [NC,L]
+
+#view scholarship details
+RewriteRule ^admin/SW/view/([0-9a-zA-Z-]+)$ admin/SW/view.php?swid=$1 [NC,L]
 
 
 

@@ -6,7 +6,7 @@
     }
 
 	include ('../includes/header.php');
-	include ('../includes/left.side.bar.php');
+	include ('../includes/left.swide.bar.php');
 	include ('../includes/top.nav.bar.php');
 
     // Reject Applicant
@@ -30,8 +30,8 @@
         }
     }
 
-    if (isset($_GET['sid']) && !empty($_GET['sid'])) {
-        $scholarship_id = sanitize($_GET['sid']);
+    if (isset($_GET['swid']) && !empty($_GET['swid'])) {
+        $scholarship_id = sanitize($_GET['swid']);
         
         $sql = "
             SELECT * FROM thylies_scholarship 
