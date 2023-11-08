@@ -61,9 +61,9 @@
                                 <span class="text-xs text-primary">Data</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="<?= PROOT; ?>admin/SW/export/all/xlsx" class="dropdown-item">XLSX </a>
-                                <a href="<?= PROOT; ?>admin/SW/export/all/xls" class="dropdown-item">XLS </a>
-                                <a href="<?= PROOT; ?>admin/SW/export/all/csv" class="dropdown-item">CSV </a>
+                                <a href="<?= PROOT; ?>admin/SW/export/all/xlsx" class="dropdown-item">XLSX</a>
+                                <a href="<?= PROOT; ?>admin/SW/export/all/xls" class="dropdown-item">XLS</a>
+                                <a href="<?= PROOT; ?>admin/SW/export/all/csv" class="dropdown-item">CSV</a>
                             </div>
                         </div>
                     </div>
