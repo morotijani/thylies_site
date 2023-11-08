@@ -68,8 +68,8 @@
                         </div>
                     </div>
                     <div class="btn-group">
-                        <a href="<?= PROOT; ?>admin/SW" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a> 
-                        <a href="<?= PROOT; ?>admin/SW/trash" class="btn btn-sm btn-neutral">Trash</a> 
+                        <a href="<?= PROOT; ?>admin/SW" class="btn btn-sm btn-neutral">View all</a> 
+                        <a href="<?= PROOT; ?>admin/SW/trash" class="btn btn-sm btn-neutral text-primary" aria-current="page">Trash</a> 
                         <a href="<?= PROOT; ?>admin/SW/rejected" class="btn btn-sm btn-neutral">Rejected</a>
                     </div>
                 </div>
