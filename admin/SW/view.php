@@ -240,20 +240,20 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Father's Name</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['father_name']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of pantie liners</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['number_of_pantie_liners']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Father's Age</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['father_age']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Brand of Pantie liners</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['brand_of_pantie_liners']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Father's Occupation</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['father_occupation']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of tissue</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['number_of_tissue']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
