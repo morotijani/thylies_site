@@ -15,11 +15,11 @@
 
         $update = "
             UPDATE thylies_sanitary_welfare 
-            SET status = ?, percentage = ? 
+            SET status = ?, 
             WHERE scholarship_id = ?
         ";
         $statement = $conn->prepare($update);
-        $result = $statement->execute([2, 0, $id]);
+        $result = $statement->execute([2, $id]);
         if ($result) {
             // code...
             $_SESSION['flash_success'] = 'Applicant rejected!';
