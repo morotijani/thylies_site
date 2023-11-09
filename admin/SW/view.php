@@ -64,7 +64,7 @@
                 $result = $statement->execute([(($percentage <= 0) ? 0 : 1), $percentage, $sw_id]);
                 if (isset($result)) {
                     // code...
-                    $_SESSION['flash_success'] = $percentage . "% has been granted to " . $row[0]['student_name'];
+                    $_SESSION['flash_success'] = $percentage . "% has been granted to " . $row[0]['name_of_student'];
                     redirect(PROOT . 'admin/SW/view/' . $sw_id);
                 } else {
                     $_SESSION['flash_error'] = 'Something went wrong.';
@@ -90,7 +90,7 @@
 				<div class="row align-items-center">
 					<div class="col-sm col-12">
 						<h1 class="h2 ls-tight">
-							<span class="d-inline-block me-3">😎</span>Scholarship details on, <?= ucwords($row[0]['student_name']); ?>
+							<span class="d-inline-block me-3">😎</span>Sanitary Welfare details on, <?= ucwords($row[0]['name_of_student']); ?>
 						</h1>
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
