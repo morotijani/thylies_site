@@ -258,14 +258,14 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Mother's Name</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['mother_name']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Brand of tissue papers</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['brand_of_tissue_papers']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Mother's Ag</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['mother_age']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Type of panties</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['type_of_panties']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
