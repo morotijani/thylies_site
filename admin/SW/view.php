@@ -200,7 +200,7 @@
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">WhatsApp</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['whatsApp']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['whatsapp']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
@@ -222,20 +222,20 @@
             <div class="card">
                 <div class="card-body pb-0">
                     <div class="mb-4">
-                        <h4 class="mb-1">Parent</h4>
-                        <p class="text-sm text-muted">Details on parents.</p>
+                        <h4 class="mb-1">SANITARY PREFERENCE</h4>
+                        <p class="text-sm text-muted">Details on preference.</p>
                     </div>
                     <div class="list-group list-group-flush">
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Do you live with your parents?</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['student_with_parent']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of pads per semester</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['number_of_pads_per_semester']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Size of Family</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['student_family_size']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Brand of Sanitary pad</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['brand_of_sanitary_pad']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
