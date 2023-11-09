@@ -247,7 +247,7 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Mother's Ag</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Mother's Age</a>
                                 <span class="d-block text-sm text-muted"><?= $row[0]['mother_age']; ?></span>
                             </div>
                         </div>

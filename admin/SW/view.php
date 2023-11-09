@@ -270,8 +270,8 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Mother's Occupation</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['mother_occupation']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of panties</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['number_of_panties']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
