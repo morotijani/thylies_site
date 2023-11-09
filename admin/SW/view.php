@@ -107,7 +107,6 @@
 					</div>
 				</div>
 				<ul class="nav nav-tabs overflow-x border-0">
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/import" class="nav-link">Import Data</a></li>
 					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW" class="nav-link">View all</a></li>
 					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/rejected" class="nav-link">Rejected</a></li>
 					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/gained" class="nav-link">Gained</a></li>
@@ -139,13 +138,13 @@
                     <div class="alert alert-danger mb-4" role="alert">
                         Applicant denied scholarship!
                     </div>
-                    <?php else: ?>
-                    <div class="d-flex align-items-center justify-content-between mb-1">
-                        <span class="text-sm text-muted font-semibold text-heading d-block"><?= $row[0]['percentage']; ?> percent</span> 
-                        <span class="text-sm text-muted font-semibold d-block"><?= (100 - $row[0]['percentage']); ?> percent left</span>
+                    <?php elseif ($row[0]['status'] == 1): ?>
+                    <div class="alert alert-success mb-4" role="alert">
+                        Applicant garanted student welfare!
                     </div>
-                    <div class="progress progress-sm shadow-none mb-6">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width:<?= $row[0]['percentage']; ?>%" aria-valuenow="<?= $row[0]['percentage']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                    <?php else: ?>
+                    <div class="alert alert-primary mb-4" role="alert">
+                        Applicant student welfare pending!
                     </div>
                     <?php endif ?>
 
