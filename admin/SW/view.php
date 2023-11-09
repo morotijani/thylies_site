@@ -126,12 +126,6 @@
                             <h6 class="h5 font-semibold mb-1">Scholarship details</h6>
                             <p class="text-sm text-muted">View and Manage details of student who applied for scholarship.</p>
                         </div>
-                        <div class="ms-auto">
-                            <div class="d-flex align-items-center mt-5 mb-3 lh-none text-heading d-block display-5 ls-tight mb-0">
-                                <span><?= $row[0]['percentage']; ?></span> 
-                                <span class="font-semibold text-2xl align-self-start mt-1 mt-sm-1 me-1">%</span> 
-                            </div>
-                        </div>
                     </div>
 
                     <?php if ($row[0]['status'] == 2): ?>
