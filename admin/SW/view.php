@@ -276,14 +276,8 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Are both parent alive?</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['parent_alive']; ?></span>
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex align-items-center">
-                            <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">If No, which of your parent is deseased?</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['parent_deceased']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['design_of_panties']; ?></span>
                             </div>
                         </div>
                     </div>
