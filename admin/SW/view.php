@@ -16,7 +16,7 @@
         $update = "
             UPDATE thylies_sanitary_welfare 
             SET status = ?, 
-            WHERE scholarship_id = ?
+            WHERE sw_id = ?
         ";
         $statement = $conn->prepare($update);
         $result = $statement->execute([2, $id]);
@@ -35,7 +35,7 @@
         
         $sql = "
             SELECT * FROM thylies_sanitary_welfare 
-            WHERE scholarship_id = ? 
+            WHERE sw_id = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($sql);
@@ -48,7 +48,7 @@
             // retrieve user image
             $profile = 'svg/friendly-ghost.svg';
             if ($row[0]["student_picture"] != '') {
-                $profile = 'scholarship/' . $row[0]["student_picture"];
+                $profile = 'sanitary-welfare/' . $row[0]["student_picture"];
             }
 
             // Grant
@@ -58,7 +58,7 @@
                 $percentageQuery = "
                     UPDATE thylies_sanitary_welfare 
                     SET status = ?, percentage = ? 
-                    WHERE scholarship_id = ?
+                    WHERE sw_id = ?
                 ";
                 $statement = $conn->prepare($percentageQuery);
                 $result = $statement->execute([(($percentage <= 0) ? 0 : 1), $percentage, $sw_id]);
@@ -72,11 +72,11 @@
                 }
             }
         } else {
-            $_SESSION['flash_error'] = 'Unknown scholarship info provided';
+            $_SESSION['flash_error'] = 'Unknown Sanitary welfare info provided';
             redirect(PROOT . 'admin/SW/index');   
         }
     } else {
-        $_SESSION['flash_error'] = 'Unknown scholarship info provided';
+        $_SESSION['flash_error'] = 'Unknown Sanitary welfare info provided';
         redirect(PROOT . 'admin/SW/index');
     }
 
@@ -177,7 +177,7 @@
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Scholarship ID</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['scholarship_id']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['sw_id']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
