@@ -163,32 +163,44 @@
             <div class="card">
                 <div class="card-body pb-0">
                     <div class="mb-4">
-                        <h4 class="mb-1">Student</h4>
+                        <h4 class="mb-1">BIO Data</h4>
                         <p class="text-sm text-muted">Details on student.</p>
                     </div>
                     <div class="list-group list-group-flush">
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Scholarship ID</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['sw_id']; ?></span>
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex align-items-center">
-                            <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Name</a>
-                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['student_name']); ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Name of Student</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['name_of_student']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Date of Birth</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['student_dob']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['dob']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Age</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['student_age']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Student index</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['student_index']; ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Program</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['program']; ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Program</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['program']; ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Program</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['program']; ?></span>
                             </div>
                         </div>
                     </div>
