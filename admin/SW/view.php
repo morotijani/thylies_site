@@ -6,7 +6,7 @@
     }
 
 	include ('../includes/header.php');
-	include ('../includes/left.swide.bar.php');
+	include ('../includes/left.side.bar.php');
 	include ('../includes/top.nav.bar.php');
 
     // Reject Applicant
