@@ -170,13 +170,13 @@
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Name of Student</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['name_of_student']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['name_of_student']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Date of Birth</a>
-                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['dob']); ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['dob']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
@@ -187,20 +187,32 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Program</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['program']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">School</a>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['school_name']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Program</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['program']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['program']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Program</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['program']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">WhatsApp</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['whatsApp']; ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Contact</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['contact']; ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">E-mail</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['email']; ?></span>
                             </div>
                         </div>
                     </div>
