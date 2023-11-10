@@ -52,19 +52,18 @@
             }
 
             // Grant
-            if (isset($_POST['percentage'])) {
-                $percentage = sanitize((int)$_POST['percentage']);
+            if (isset($_POST)) {
 
                 $percentageQuery = "
                     UPDATE thylies_sanitary_welfare 
-                    SET status = ?, percentage = ? 
+                    SET status = ?, 
                     WHERE sw_id = ?
                 ";
                 $statement = $conn->prepare($percentageQuery);
-                $result = $statement->execute([(($percentage <= 0) ? 0 : 1), $percentage, $sw_id]);
+                $result = $statement->execute([1, $sw_id]);
                 if (isset($result)) {
                     // code...
-                    $_SESSION['flash_success'] = $percentage . "% has been granted to " . $row[0]['name_of_student'];
+                    $_SESSION['flash_success'] = "Sanitary welfare has been granted to " . $row[0]['name_of_student'];
                     redirect(PROOT . 'admin/SW/view/' . $sw_id);
                 } else {
                     $_SESSION['flash_error'] = 'Something went wrong.';
@@ -304,7 +303,7 @@
                     <div class="icon icon-shape rounded-3 bg-soft-primary text-primary text-lg me-4"><i class="bi bi-globe"></i></div>
                     <div>
                         <h5 class="mb-1">Grant</h5>
-                        <small class="d-block text-xs text-muted">Accept and grant <b><?= ucwords($row[0]['student_name']); ?></b> the scholarship</small>
+                        <small class="d-block text-xs text-muted">Accept and grant <b><?= ucwords($row[0]['name_of_student']); ?></b> sanitary welfare</small>
                     </div>
                     <div class="ms-auto">
                         <div class="me-n2" data-bs-dismiss="modal" style="cursor: pointer;">
@@ -313,22 +312,7 @@
                     </div>
                 </div>
                 <form action="" method="POST">
-                    <div class="modal-body">
-                        <div class="d-flex align-items-center mb-5">
-                            <div>
-                                <p class="text-sm">Percentage <span class="font-bold text-heading">%</span></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-group input-group-inline">
-                                <input type="number" min="0" name="percentage" class="form-control" placeholder="%" value="<?= $row[0]["percentage"]; ?>">
-                            </div>
-                        </div>
-                    </div>
                     <div class="modal-footer">
-                        <div class="me-auto">
-                            <a href="javascript" data-bs-dismiss="modal" class="text-sm font-semibold"><i class="bi bi-x me-2"></i>Cancel</a>
-                        </div>
                         <button type="button" class="btn btn-sm btn-neutral" data-bs-dismiss="modal">Close</button> 
                         <button type="submit" class="btn btn-sm btn-success">Grant</button>
                     </div>
