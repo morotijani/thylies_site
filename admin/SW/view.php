@@ -15,7 +15,7 @@
 
         $update = "
             UPDATE thylies_sanitary_welfare 
-            SET status = ?, 
+            SET status = ? 
             WHERE sw_id = ?
         ";
         $statement = $conn->prepare($update);
@@ -52,14 +52,14 @@
             }
 
             // Grant
-            if (isset($_POST)) {
+            if (isset($_POST['grantSW'])) {
 
-                $percentageQuery = "
+                $grantQuery = "
                     UPDATE thylies_sanitary_welfare 
-                    SET status = ?, 
+                    SET status = ? 
                     WHERE sw_id = ?
                 ";
-                $statement = $conn->prepare($percentageQuery);
+                $statement = $conn->prepare($grantQuery);
                 $result = $statement->execute([1, $sw_id]);
                 if (isset($result)) {
                     // code...
@@ -314,7 +314,7 @@
                 <form action="" method="POST">
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sm btn-neutral" data-bs-dismiss="modal">Close</button> 
-                        <button type="submit" class="btn btn-sm btn-success">Grant</button>
+                        <button type="submit" name="grantSW" class="btn btn-sm btn-success">Grant</button>
                     </div>
                 </form>
             </div>
