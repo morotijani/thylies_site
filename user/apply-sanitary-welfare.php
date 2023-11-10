@@ -60,11 +60,11 @@
         // code...
         $sql = "
             UPDATE `thylies_sanitary_welfare` 
-            SET `sw_id` = ?, `name_of_student` = ?, `dob` = ?, `school_name` = ?, `student_index` = ?, `program` = ?, `whatsapp` = ?, `contact` = ?, `email` = ?, `number_of_pads_per_semester` = ?, `brand_of_sanitary_pad` = ?, `number_of_tissue` = ?, `brand_of_tissue_papers` = ?, `type_of_panties` = ?, `number_of_panties` = ?, `design_of_panties` = ?, `submitted` = ?, `createdAt` = ?
+            SET `sw_id` = ?, `name_of_student` = ?, `dob` = ?, `school_name` = ?, `student_index` = ?, `program` = ?, `whatsapp` = ?, `contact` = ?, `email` = ?, `number_of_pads_per_semester` = ?, `brand_of_sanitary_pad` = ?, `number_of_pantie_liners` = ?, `brand_of_pantie_liners` = ?, `number_of_tissue` = ?, `brand_of_tissue_papers` = ?, `type_of_panties` = ?, `number_of_panties` = ?, `design_of_panties` = ?, `submitted` = ?, `createdAt` = ?
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$sw_id, $student_name, $dob, $school_name, $student_index, $program, $whatsapp, $contact, $email, $number_of_pads_per_semester, $brand_of_sanitary_pad, $number_of_tissue, $brand_of_tissue_papers, $type_of_panties, $number_of_panties, $design_of_panties, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sw_id, $student_name, $dob, $school_name, $student_index, $program, $whatsapp, $contact, $email, $number_of_pads_per_semester, $brand_of_sanitary_pad, $number_of_pantie_liners, $brand_of_pantie_liners, $number_of_tissue, $brand_of_tissue_papers, $type_of_panties, $number_of_panties, $design_of_panties, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
