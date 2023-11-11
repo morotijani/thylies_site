@@ -113,7 +113,7 @@
             header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attactment; filename="' . urlencode($NewFileName) . '"');
             $writer->save('php://output');
-            redirect(PROOT . 'admin/Scholarship/index');
+            // redirect(PROOT . 'admin/Scholarship/index');
 
         } else {
             $_SESSION['flash_error'] = "No Record Found";
