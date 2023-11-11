@@ -29,6 +29,8 @@ RewriteRule ^admin/Scholarship/view/([0-9a-zA-Z-]+)$ admin/Scholarship/view.php?
 
 #view scholarship details
 RewriteRule ^admin/SW/view/([0-9a-zA-Z-]+)$ admin/SW/view.php?swid=$1 [NC,L]
+# export scholarship data
+RewriteRule ^admin/SW/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/SW/export.php?data=$1&type=$2 [NC,L]
 
 
 
