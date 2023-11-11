@@ -66,29 +66,29 @@
 
             $rowCount = 2;
             foreach ($rows as $row) {
-                $sheet->setCellValue('A' . $rowCount, $row['student_name']);
+                $sheet->setCellValue('A' . $rowCount, ucwords($row['student_name']));
                 $sheet->setCellValue('B' . $rowCount, $row['student_dob']);
                 $sheet->setCellValue('C' . $rowCount, $row['student_age']);
                 $sheet->setCellValue('D' . $rowCount, $row['student_place_of_birth']);
                 $sheet->setCellValue('E' . $rowCount, $row['student_place_of_residence']);
                 $sheet->setCellValue('F' . $rowCount, $row['student_with_parent']);
                 $sheet->setCellValue('G' . $rowCount, $row['student_family_size']);
-                $sheet->setCellValue('H' . $rowCount, $row['father_name']);
+                $sheet->setCellValue('H' . $rowCount, ucwords($row['father_name']));
                 $sheet->setCellValue('I' . $rowCount, $row['father_age']);
-                $sheet->setCellValue('J' . $rowCount, $row['father_occupation']);
-                $sheet->setCellValue('K' . $rowCount, $row['mother_name']);
+                $sheet->setCellValue('J' . $rowCount, ucwords($row['father_occupation']));
+                $sheet->setCellValue('K' . $rowCount, ucwords($row['mother_name']);
                 $sheet->setCellValue('L' . $rowCount, $row['mother_age']);
-                $sheet->setCellValue('M' . $rowCount, $row['mother_occupation']);
+                $sheet->setCellValue('M' . $rowCount, ucwords($row['mother_occupation']));
                 $sheet->setCellValue('N' . $rowCount, $row['parent_alive']);
                 $sheet->setCellValue('O' . $rowCount, $row['parent_deceased']); //school_name
                 $sheet->setCellValue('P' . $rowCount, $row['wpys_fees']);
-                $sheet->setCellValue('Q' . $rowCount, $row['program_name']);
+                $sheet->setCellValue('Q' . $rowCount, ucwords($row['program_name']));
                 $sheet->setCellValue('R' . $rowCount, $row['year_of_study']);
                 $sheet->setCellValue('S' . $rowCount, $row['index_number']);
                 $sheet->setCellValue('T' . $rowCount, $row['self_description']);
                 $sheet->setCellValue('U' . $rowCount, $row['professional_dream']);
                 $sheet->setCellValue('V' . $rowCount, $row['limitation']);
-                $sheet->setCellValue('W' . $rowCount, $row['referee_name']);
+                $sheet->setCellValue('W' . $rowCount, ucwords($row['referee_name']));
                 $sheet->setCellValue('X' . $rowCount, $row['relation_nature']);
                 $sheet->setCellValue('Y' . $rowCount, $row['referee_occupation']);
                 $sheet->setCellValue('Z' . $rowCount, $row['referee_contact']);

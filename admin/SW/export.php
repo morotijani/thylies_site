@@ -54,11 +54,11 @@
 
             $rowCount = 2;
             foreach ($rows as $row) {
-                $sheet->setCellValue('A' . $rowCount, $row['name_of_student']);
+                $sheet->setCellValue('A' . $rowCount, ucwords($row['name_of_student']));
                 $sheet->setCellValue('B' . $rowCount, $row['dob']);
-                $sheet->setCellValue('C' . $rowCount, $row['school_name']);
+                $sheet->setCellValue('C' . $rowCount, ucwords($row['school_name']));
                 $sheet->setCellValue('D' . $rowCount, $row['student_index']);
-                $sheet->setCellValue('E' . $rowCount, $row['program']);
+                $sheet->setCellValue('E' . $rowCount, ucwords($row['program']));
                 $sheet->setCellValue('F' . $rowCount, $row['whatsapp']);
                 $sheet->setCellValue('G' . $rowCount, $row['contact']);
                 $sheet->setCellValue('H' . $rowCount, $row['email']);
