@@ -98,7 +98,7 @@
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
-							<a href="<?= PROOT; ?>admin/SW/" class="btn btn-sm btn-primary">
+							<a href="<?= PROOT; ?>adminSW/" class="btn btn-sm btn-primary">
 								<span class="pe-2"><i class="bi bi-arrow-left"></i> </span>
 								<span>Go Back</span>
 							</a>
@@ -123,7 +123,7 @@
                     <div class="d-flex align-items-center justify-content-between mb-5">
                         <div class="flex-1">
                             <h6 class="h5 font-semibold mb-1">Scholarship details</h6>
-                            <p class="text-sm text-muted">View and Manage details of student who applied for scholarship.</p>
+                            <p class="text-sm text-muted">View and Manage details of student who applied for Sanitary Welfare.</p>
                         </div>
                     </div>
 
