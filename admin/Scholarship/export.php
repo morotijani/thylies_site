@@ -49,20 +49,21 @@
             $sheet->setCellValue('M1', 'MOTHER\'S OCCUPATION');
             $sheet->setCellValue('N1', 'ARE BOTH PARENT ALIVE');
             $sheet->setCellValue('O1', 'IF NO, WHICH PARENT IS DESEASED');
-            $sheet->setCellValue('P1', 'WHO PAID YOUR LAST SCHOOL FEES');
-            $sheet->setCellValue('Q1', 'PROGRAM');
-            $sheet->setCellValue('R1', 'YEAR OF STUDY');
-            $sheet->setCellValue('S1', 'STUDENT ID');
-            $sheet->setCellValue('T1', 'SELF DESCRIPTION');
-            $sheet->setCellValue('U1', 'PERSONAL DREAM');
-            $sheet->setCellValue('V1', 'LIMITATION IN YOUR LIFE AS A STUDENT');
-            $sheet->setCellValue('W1', 'NAME OF REFEREE');
-            $sheet->setCellValue('X1', 'REFEREE RELATION');
-            $sheet->setCellValue('Y1', 'REFEREE OCCUPATION');
-            $sheet->setCellValue('Z1', 'CONTACT OF REFEREE');
-            $sheet->setCellValue('AA1', 'REFEREE ADDRESS');
-            $sheet->setCellValue('AB1', 'REFEREE EMAIL');
-            $sheet->setCellValue('AC1', 'PERCENTAGE GAINED');
+            $sheet->setCellValue('P1', 'SCHOOL NAME');
+            $sheet->setCellValue('Q1', 'WHO PAID YOUR LAST SCHOOL FEES');
+            $sheet->setCellValue('R1', 'PROGRAM');
+            $sheet->setCellValue('S1', 'YEAR OF STUDY');
+            $sheet->setCellValue('T1', 'STUDENT ID');
+            $sheet->setCellValue('U1', 'SELF DESCRIPTION');
+            $sheet->setCellValue('V1', 'PERSONAL DREAM');
+            $sheet->setCellValue('W1', 'LIMITATION IN YOUR LIFE AS A STUDENT');
+            $sheet->setCellValue('X1', 'NAME OF REFEREE');
+            $sheet->setCellValue('Y1', 'REFEREE RELATION');
+            $sheet->setCellValue('Z1', 'REFEREE OCCUPATION');
+            $sheet->setCellValue('AA1', 'CONTACT OF REFEREE');
+            $sheet->setCellValue('AB1', 'REFEREE ADDRESS');
+            $sheet->setCellValue('AC1', 'REFEREE EMAIL');
+            $sheet->setCellValue('AD1', 'PERCENTAGE GAINED');
 
             $rowCount = 2;
             foreach ($rows as $row) {
@@ -80,21 +81,22 @@
                 $sheet->setCellValue('L' . $rowCount, $row['mother_age']);
                 $sheet->setCellValue('M' . $rowCount, ucwords($row['mother_occupation']));
                 $sheet->setCellValue('N' . $rowCount, $row['parent_alive']);
-                $sheet->setCellValue('O' . $rowCount, $row['parent_deceased']); //school_name
-                $sheet->setCellValue('P' . $rowCount, $row['wpys_fees']);
-                $sheet->setCellValue('Q' . $rowCount, ucwords($row['program_name']));
-                $sheet->setCellValue('R' . $rowCount, $row['year_of_study']);
-                $sheet->setCellValue('S' . $rowCount, $row['index_number']);
-                $sheet->setCellValue('T' . $rowCount, $row['self_description']);
-                $sheet->setCellValue('U' . $rowCount, $row['professional_dream']);
-                $sheet->setCellValue('V' . $rowCount, $row['limitation']);
-                $sheet->setCellValue('W' . $rowCount, ucwords($row['referee_name']));
-                $sheet->setCellValue('X' . $rowCount, $row['relation_nature']);
-                $sheet->setCellValue('Y' . $rowCount, $row['referee_occupation']);
-                $sheet->setCellValue('Z' . $rowCount, $row['referee_contact']);
-                $sheet->setCellValue('AA' . $rowCount, $row['referee_address']);
-                $sheet->setCellValue('AB' . $rowCount, $row['referee_email']);
-                $sheet->setCellValue('AC' . $rowCount, $row['percentage']);
+                $sheet->setCellValue('O' . $rowCount, $row['parent_deceased']);
+                $sheet->setCellValue('P' . $rowCount, ucwords($row['school_name']));
+                $sheet->setCellValue('Q' . $rowCount, $row['wpys_fees']);
+                $sheet->setCellValue('R' . $rowCount, ucwords($row['program_name']));
+                $sheet->setCellValue('S' . $rowCount, $row['year_of_study']);
+                $sheet->setCellValue('T' . $rowCount, $row['index_number']);
+                $sheet->setCellValue('U' . $rowCount, $row['self_description']);
+                $sheet->setCellValue('V' . $rowCount, $row['professional_dream']);
+                $sheet->setCellValue('W' . $rowCount, $row['limitation']);
+                $sheet->setCellValue('X' . $rowCount, ucwords($row['referee_name']));
+                $sheet->setCellValue('Y' . $rowCount, $row['relation_nature']);
+                $sheet->setCellValue('Z' . $rowCount, $row['referee_occupation']);
+                $sheet->setCellValue('AA' . $rowCount, $row['referee_contact']);
+                $sheet->setCellValue('AB' . $rowCount, $row['referee_address']);
+                $sheet->setCellValue('AC' . $rowCount, $row['referee_email']);
+                $sheet->setCellValue('AD' . $rowCount, $row['percentage']);
                 $rowCount++;
             }
 
