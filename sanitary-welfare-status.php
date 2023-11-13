@@ -1,7 +1,7 @@
 <?php 
     require_once ("connection/conn.php");
 
-    $title = 'Scholarhip Status - ';
+    $title = 'Sanitary Welfare Status - ';
 
     //  
     $authSW = issetElse($_SESSION, 'auth-sanitarywelfare', 0);
@@ -124,14 +124,14 @@
 
 <?php
             } else {
-                redirect(PROOT . 'auth/auth-scholarship-status/' . $authSW);
+                redirect(PROOT . 'auth/auth-sanitary-welfare-status/' . $authSW);
             }
         } else {
-            redirect(PROOT . 'scholarship-list');
+            redirect(PROOT . 'sanitary-welfare-list');
         }
                 
     } else {
-        redirect(PROOT . 'scholarship-list');
+        redirect(PROOT . 'sanitary-welfare-list');
     }
 ?>
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
@@ -151,7 +151,7 @@
                     // console.log(window);
                     var opt = {
                         margin: 1,
-                        filename: 'scholarship-<?= $sub_row[0]['transaction_id']; ?>.pdf',
+                        filename: 'sanitary-welfare-<?= $sub_row[0]['transaction_id']; ?>.pdf',
                         image: { type: 'jpeg', quality: 0.98 },
                         html2canvas: { scale: 2 },
                         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
