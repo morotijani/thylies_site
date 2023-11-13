@@ -5,7 +5,7 @@
     require_once ('../connection/conn.php');
 
     if (user_is_logged_in()) {
-        if (check_payment_of_sanitary_welfare_fee($user_id)) {
+        if (check_payment_of_sanitary_welfare_fee($sw_id)) {
             redirect(PROOT . 'user/index');
         }
     } else {

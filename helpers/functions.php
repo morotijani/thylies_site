@@ -81,18 +81,18 @@
     }
 
     // Check if you has paid sanitary welfare fee after granted
-    function check_payment_of_sanitary_welfare_fee($user_id) {
+    function check_payment_of_sanitary_welfare_fee($sw_id) {
         global $conn;
 
         $sql = "
-            SELECT * FROM thylies_user_registration_transaction
-            INNER JOIN thylies_user 
-            ON thylies_user.user_id = thylies_user_registration_transaction.user_id 
-            WHERE thylies_user.user_id = ? 
+            SELECT * FROM thylies_transactions
+            INNER JOIN thylies_sanitary_welfare 
+            ON thylies_sanitary_welfare.sw_id = thylies_transactions.from_id 
+            WHERE thylies_sanitary_welfare.sw_id = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($sql);
-        $statement->execute([$user_id]);
+        $statement->execute([$sw_id]);
         $result = $statement->rowCount();
         $row = $statement->fetchAll();
 
