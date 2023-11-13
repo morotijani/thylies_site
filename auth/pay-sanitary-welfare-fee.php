@@ -1,6 +1,6 @@
 <?php 
 
-    // PAY FOR REGISTRATION PAGE
+    // PAY FOR SANITARY WELFARE PAGE
 
     require_once ('../connection/conn.php');
 
@@ -8,17 +8,17 @@
         redirect(PROOT . 'auth/logout');  
     }
     
-    //  
-    $authSW = issetElse($_SESSION, 'auth-scholarship', 0);
-    if ($authSW == 0 && empty($authSW)) {
-        redirect(PROOT . 'auth/auth-sanitary-welfare-status/' . $id);
-    }
-    
     if (isset($_GET['sanitarywelfare'])) {
         $id = sanitize($_GET['sanitarywelfare']);
+    
+        //  
+        $authSW = issetElse($_SESSION, 'auth-sanitarywelfare', 0);
+        if ($authSW == 0 && empty($authSW)) {
+            redirect(PROOT . 'auth/auth-sanitary-welfare-status/' . $id);
+        }
 
          if (check_payment_of_sanitary_welfare_fee($id)) {
-            redirect(PROOT . 'user/index');
+            redirect(PROOT . 'sanitary-welfare-status');
         }
 
         // check if id exist in sanitarywelfare table
