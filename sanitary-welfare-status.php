@@ -4,20 +4,19 @@
     $title = 'Scholarhip Status - ';
 
     //  
-    $authScholarship = issetElse($_SESSION, 'auth-scholarship', 0);
-    if ($authScholarship != 0 && !empty($authScholarship)) {
-        $id = sanitize($authScholarship);
+    $authSW = issetElse($_SESSION, 'auth-sanitarywelfare', 0);
+    if ($authSW != 0 && !empty($authSW)) {
+        $id = sanitize($authSW);
 
         // check if id exist in scholarship table
         $sql = "
-            SELECT * FROM thylies_scholarship 
-            WHERE scholarship_id = ? 
-            AND status = ? AND 
-            percentage > ? 
+            SELECT * FROM thylies_sanitary_welfare 
+            WHERE sw_id = ? 
+            AND status = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($sql);
-        $statement->execute([$id, 1, 0]);
+        $statement->execute([$id, 1]);
         $row = $statement->fetchAll();
         if ($statement->rowCount() > 0) {
 
@@ -42,17 +41,17 @@
                 LIMIT 1
             ";
             $statement = $conn->prepare($Query);
-            $statement->execute([$id, 'scholarship']);
+            $statement->execute([$id, 'sanitarywelfare']);
             $sub_row = $statement->fetchAll();
             $sub_count = $statement->rowCount();
 
             if ($sub_count) {
                 // 
-                unset($_SESSION['auth-scholarship']);
+                unset($_SESSION['auth-sanitarywelfare']);
 
                 $picture = 'svg/friendly-ghost.svg';
                 if ($row[0]["student_picture"] != '') {
-                    $picture = 'scholarship/' . $row[0]["student_picture"];
+                    $picture = 'sanitary-welfare/' . $row[0]["student_picture"];
                 }
 ?>
 <!DOCTYPE html>
@@ -125,7 +124,7 @@
 
 <?php
             } else {
-                redirect(PROOT . 'auth/auth-scholarship-status/' . $authScholarship);
+                redirect(PROOT . 'auth/auth-scholarship-status/' . $authSW);
             }
         } else {
             redirect(PROOT . 'scholarship-list');
