@@ -51,7 +51,7 @@
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Pay Scholarship Fees - Thylies</title>
+    <title>Pay Sanitary Welfare Fees - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
@@ -80,8 +80,8 @@
 
                      <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
                         <form id="paymentForm">
-                            <h1 class="mb-3 text-center h3">Scholarship percentage status.</h1>
-                            <p class="mb-4 text-center">Hello <b><?= ucwords($row[0]["student_name"]); ?></b> you have been granted a percentage of <b class="text-success"><?= $row[0]['percentage']; ?>%</b>. You are to pay the sum of GHS101.00 to access and download your receipt.</p>
+                            <h1 class="mb-3 text-center h3">Sanitary Welfare status.</h1>
+                            <p class="mb-4 text-center">Hello <b><?= ucwords($row[0]["name_of_student"]); ?></b> you have been granted Sanitary Welfare. You are to pay the sum of GHS101.00 to access and download your receipt.</p>
                             
                             <div class="mb-4">
                                 <label for="email">Email</label>
@@ -138,8 +138,7 @@
                 // label: "Optional string that replaces customer email",
                 metadata: {
                     "sw_id": '<?= $row[0]['sw_id']; ?>',
-                    "student_name" : '<?= $row[0]['student_name']; ?>',
-                    "percentage_gained" : '<?= $row[0]['percentage']; ?>',
+                    "name_of_student" : '<?= $row[0]['name_of_student']; ?>',
                     "school" : '<?= $row[0]['school_name']; ?>',
                     "index_number" : '<?= $row[0]['index_number']; ?>'
                 },
