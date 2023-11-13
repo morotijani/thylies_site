@@ -105,13 +105,13 @@
                                 <a href="javascript:;" class="mx-auto"><img src="<?= PROOT . 'assets/media/' . $picture; ?>" alt="book" class="mt-3 img-fluid" style="width: 300px !important; height: 300px !important;"></a>
                                 <div class="mt-3">
                                     <a href="javascript:;">
-                                        <h4 class="mb-1"><?= ucwords($row[0]['student_name']); ?></h4>
+                                        <h4 class="mb-1"><?= ucwords($row[0]['name_of_student']); ?></h4>
                                     </a>
-                                    <p class="font-12 mb-2"><?= $row[0]["index_number"]; ?></p>
-                                    <div class="text-dark me-2"><span class="text-muted">Percentage gained: </span><?= $row[0]["percentage"]; ?> %</div>
-                                    <div class="text-dark me-2"><span class="text-muted">Scholarship ID: </span><?= $row[0]["scholarship_id"]; ?></div>
+                                    <p class="font-12 mb-2"><?= $row[0]["student_index"]; ?></p>
+                                    <div class="text-dark me-2"><span class="text-muted">Sanitary Welfare ID: </span><?= $row[0]["sw_id"]; ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Transaction ID: </span><?= $sub_row[0]["transaction_id"] ?></div>
-                                    <div class="text-dark me-2"><span class="text-muted">Date: </span><?= $row[0]["createdAt"] ?></div>
+                                    <div class="text-dark me-2"><span class="text-muted">Paid Date: </span><?= $sub_row[0]["createdAt"] ?></div>
+                                    <div class="text-dark me-2"><span class="text-muted">Applied Date: </span><?= $row[0]["createdAt"] ?></div>
                                 </div>
                             </div>
                         </div>
