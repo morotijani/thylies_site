@@ -90,7 +90,7 @@
 
                             <div class="d-xxl-flex justify-content-between mt-4">
                                 <p class="font-14 mb-0">
-                                    <a href="<?= PROOT; ?>scholarship-list">Go back</a>
+                                    <a href="<?= PROOT; ?>sanitary-welfare-list">Go back</a>
                                 </p>
                             </div>
                         </form>
