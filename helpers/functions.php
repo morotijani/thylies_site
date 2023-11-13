@@ -79,3 +79,30 @@
             return false;
         }
     }
+
+    // Check if you has paid sanitary welfare fee after granted
+    function check_payment_of_sanitary_welfare_fee($user_id) {
+        global $conn;
+
+        $sql = "
+            SELECT * FROM thylies_user_registration_transaction
+            INNER JOIN thylies_user 
+            ON thylies_user.user_id = thylies_user_registration_transaction.user_id 
+            WHERE thylies_user.user_id = ? 
+            LIMIT 1
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$user_id]);
+        $result = $statement->rowCount();
+        $row = $statement->fetchAll();
+
+        if ($result > 0) {
+            if ($row[0]['status'] = 1) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
