@@ -10,9 +10,9 @@ $nav = 0;
 // }
 
 // 
-$authScholarship = issetElse($_SESSION, 'auth-sanitarywelfare', 0);
-if ($authScholarship != 0 && !empty($authScholarship)) {
-    redirect(PROOT . 'auth/apply-sanitary-welfare-fee/' . $authScholarship);
+$authSW = issetElse($_SESSION, 'auth-sanitarywelfare', 0);
+if ($authSW != 0 && !empty($authSW)) {
+    redirect(PROOT . 'auth/apply-sanitary-welfare-fee/' . $authSW);
 }
 
 if (isset($_GET['sanitarywelfare'])) {
