@@ -29,8 +29,8 @@ if (isset($_GET['sanitarywelfare'])) {
         }
 
         $query = "
-            SELECT * FROM thylies_scholarship 
-            WHERE index_number = ? 
+            SELECT * FROM thylies_sanitary_welfare 
+            WHERE student_index = ? 
             AND student_dob = ? 
             AND scholarship_id = ? 
             LIMIT 1
@@ -59,7 +59,7 @@ if (isset($_GET['sanitarywelfare'])) {
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Auth Scholarship Status - Thylies</title>
+    <title>Auth Sanitary Welfare Status - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
@@ -89,7 +89,7 @@ if (isset($_GET['sanitarywelfare'])) {
                     <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
                         <form method="POST" id="loginForm">
                             <h1 class="mb-1 text-center h3">Authenticate</h1>
-                            <p class="mb-4 text-center">Provide the below details to access your scholarship status.</p>
+                            <p class="mb-4 text-center">Provide the below details to access your sanitary welfare status.</p>
                             <?= $errors; ?>
                             <div class="mb-3">
                                 <label for="index_number" class="form-label">Index number<span class="text-danger">*</span> </label>
@@ -104,11 +104,16 @@ if (isset($_GET['sanitarywelfare'])) {
                                 <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_signup' data-action='submit' type="submit" name="submit_login" id="submit_login">Check status</button>
                             </div>
                             <div class="d-xxl-flex justify-content-between mt-4 ">
-                                <p class="text-muted font-14 mb-0">
-                                    Don't have an account yet? <a href="<?= PROOT; ?>auth/join">Sign up</a>
-                                </p>
+                                <?php if (!user_is_logged_in()): ?>
+                                    <p class="text-muted font-14 mb-0">
+                                        Don't have an account yet? <a href="<?= PROOT; ?>auth/join">Sign up</a>
+                                    </p>
+                                    <p class="font-14 mb-0">
+                                        <a href="<?= PROOT; ?>auth/login">Sign in</a>
+                                    </p>
+                                <?php endif; ?>
                                 <p class="font-14 mb-0">
-                                    <a href="<?= PROOT; ?>auth/login">Sign in</a>
+                                    <a href="<?= PROOT; ?>auth/logout">Cancel</a>
                                 </p>
                             </div>
                         </form>
