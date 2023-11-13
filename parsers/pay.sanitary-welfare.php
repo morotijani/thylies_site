@@ -23,7 +23,7 @@
 
 				foreach ($conn->query("SELECT * FROM thylies_sanitary_welfare WHERE sw_id = '".$sw_id."' LIMIT 1")->fetchAll() as $key) {
 					// code...
-					if ($conn->query("SELECT * FROM thylies_user WHERE user_unique_id = '".$key['user_id']."' LIMIT 1")->rowCount() > 0) {
+					if ($conn->query("SELECT * FROM thylies_user WHERE user_unique_id = '".$key['user_id']."' AND user_email = NULL OR user_email = '' LIMIT 1")->rowCount() > 0) {
 						$updateQuery = "
 							UPDATE thylies_user 
 							SET user_email = ? 
