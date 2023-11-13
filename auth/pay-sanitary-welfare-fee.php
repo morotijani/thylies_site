@@ -4,12 +4,8 @@
 
     require_once ('../connection/conn.php');
 
-    if (user_is_logged_in()) {
-        if (check_payment_of_sanitary_welfare_fee($sw_id)) {
-            redirect(PROOT . 'user/index');
-        }
-    } else {
-        redirect(PROOT . 'auth/logout');
+    if (!user_is_logged_in()) {
+        redirect(PROOT . 'auth/logout');  
     }
     
     //  
@@ -18,10 +14,14 @@
         redirect(PROOT . 'auth/auth-sanitary-welfare-status/' . $id);
     }
     
-    if (isset($_GET['scholarship'])) {
-        $id = sanitize($_GET['scholarship']);
+    if (isset($_GET['sanitarywelfare'])) {
+        $id = sanitize($_GET['sanitarywelfare']);
 
-        // check if id exist in scholarship table
+         if (check_payment_of_sanitary_welfare_fee($id)) {
+            redirect(PROOT . 'user/index');
+        }
+
+        // check if id exist in sanitarywelfare table
         $sql = "
             SELECT * FROM thylies_sanitary_welfare 
             WHERE sw_id = ? 
