@@ -4,9 +4,9 @@
 
     require_once ('../connection/conn.php');
 
-    if (!user_is_logged_in()) {
-        redirect(PROOT . 'auth/logout');  
-    }
+    // if (!user_is_logged_in()) {
+    //     redirect(PROOT . 'auth/logout');  
+    // }
     
     if (isset($_GET['sanitarywelfare'])) {
         $id = sanitize($_GET['sanitarywelfare']);
@@ -17,7 +17,7 @@
             redirect(PROOT . 'auth/auth-sanitary-welfare-status/' . $id);
         }
 
-         if (check_payment_of_sanitary_welfare_fee($id)) {
+        if (check_payment_of_sanitary_welfare_fee($id)) {
             redirect(PROOT . 'sanitary-welfare-status');
         }
 
@@ -25,12 +25,11 @@
         $sql = "
             SELECT * FROM thylies_sanitary_welfare 
             WHERE sw_id = ? 
-            AND status = ? AND 
-            percentage > ? 
+            AND status = ?
             LIMIT 1
         ";
         $statement = $conn->prepare($sql);
-        $statement->execute([$id, 1, 0]);
+        $statement->execute([$id, 1]);
         $row = $statement->fetchAll();
         $count_row = $statement->rowCount();
         if ($count_row > 0) {
