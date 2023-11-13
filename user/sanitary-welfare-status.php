@@ -39,7 +39,7 @@
 								  	<hr>
 								  	<h3>Date: <?= pretty_date_half($row['createdAt']); ?></h3>
 								  	<?php if ($row['status'] == 1): ?>
-								  		<a href="<?= PROOT; ?>auth/auth-sanitary-welfare-status/<?= $row['sw_id']; ?>" class="btn">Proceed to access</a>
+								  		<a href="<?= PROOT; ?>auth/auth-sanitary-welfare-status/<?= $row['sw_id']; ?>" class="btn btn-success">Proceed to access</a>
 								  	<?php endif ?>
 								</div>
 							</div>

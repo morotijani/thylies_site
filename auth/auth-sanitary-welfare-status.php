@@ -3,21 +3,15 @@
 // USER SIGNIN
 
 require_once ('../connection/conn.php');
-$nav = 0;
-
-// if (user_is_logged_in()) {
-//     redirect(PROOT . 'user/index');
-// }
 
 // 
 $authSW = issetElse($_SESSION, 'auth-sanitarywelfare', 0);
 if ($authSW != 0 && !empty($authSW)) {
-    redirect(PROOT . 'auth/apply-sanitary-welfare-fee/' . $authSW);
+    redirect(PROOT . 'auth/pay-sanitary-welfare-fee/' . $authSW);
 }
 
 if (isset($_GET['sanitarywelfare'])) {
     $id = sanitize($_GET['sanitarywelfare']);
-
 
     $index_number = ((isset($_POST['index_number'])) ? sanitize($_POST['index_number']):'');
     $dob = ((isset($_POST['dob'])) ? sanitize($_POST['dob']):'');
@@ -31,8 +25,8 @@ if (isset($_GET['sanitarywelfare'])) {
         $query = "
             SELECT * FROM thylies_sanitary_welfare 
             WHERE student_index = ? 
-            AND student_dob = ? 
-            AND scholarship_id = ? 
+            AND dob = ? 
+            AND sw_id = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($query);
