@@ -13,9 +13,9 @@
     }
     
     //  
-    $authScholarship = issetElse($_SESSION, 'auth-scholarship', 0);
-    if ($authScholarship == 0 && empty($authScholarship)) {
-        redirect(PROOT . 'auth/auth-scholarship-status/' . $id);
+    $authSW = issetElse($_SESSION, 'auth-scholarship', 0);
+    if ($authSW == 0 && empty($authSW)) {
+        redirect(PROOT . 'auth/auth-sanitary-welfare-status/' . $id);
     }
     
     if (isset($_GET['scholarship'])) {
