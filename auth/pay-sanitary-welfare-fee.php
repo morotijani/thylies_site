@@ -4,10 +4,6 @@
 
     require_once ('../connection/conn.php');
 
-    // if (!user_is_logged_in()) {
-    //     redirect(PROOT . 'auth/logout');  
-    // }
-    
     if (isset($_GET['sanitarywelfare'])) {
         $id = sanitize($_GET['sanitarywelfare']);
     
@@ -33,10 +29,12 @@
         $row = $statement->fetchAll();
         $count_row = $statement->rowCount();
         if ($count_row > 0) {
-            if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '" . $id . "' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
-                redirect(PROOT . 'user/sanitary-welfare-status');
-            }
+            // if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '" . $id . "' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
+            //     redirect(PROOT . 'user/sanitary-welfare-status');
+            // }
         }
+    } else {
+        redirect(PROOT . 'sanitary-welfare-list');
     }
 
 ?>
