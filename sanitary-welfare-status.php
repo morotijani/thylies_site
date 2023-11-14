@@ -110,8 +110,8 @@
                                     <p class="font-12 mb-2"><?= $row[0]["student_index"]; ?></p>
                                     <div class="text-dark me-2"><span class="text-muted">Sanitary Welfare ID: </span><?= $row[0]["sw_id"]; ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Transaction ID: </span><?= $sub_row[0]["transaction_id"] ?></div>
-                                    <div class="text-dark me-2"><span class="text-muted">Paid Date: </span><?= $sub_row[0]["createdAt"] ?></div>
-                                    <div class="text-dark me-2"><span class="text-muted">Applied Date: </span><?= $row[0]["createdAt"] ?></div>
+                                    <div class="text-dark me-2"><span class="text-muted">Paid Date: </span><?= pretty_date_half($sub_row[0]["createdAt"]); ?></div>
+                                    <div class="text-dark me-2"><span class="text-muted">Applied Date: </span><?= pretty_date_half($row[0]["createdAt"]); ?></div>
                                 </div>
                             </div>
                         </div>
