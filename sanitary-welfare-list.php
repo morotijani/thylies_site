@@ -11,14 +11,14 @@
     $sql = "
         SELECT * FROM thylies_sanitary_welfare 
         WHERE status = ? 
-        ORDER BY student_name ASC
+        ORDER BY name_of_student ASC
     ";
     if (isset($_GET['q'])) {
         $string = sanitize($_GET['q']);
         $sql = "
             SELECT * FROM thylies_sanitary_welfare 
             WHERE scholarship_id LIKE '%{$string}%'
-            OR student_name LIKE '%{$string}%'
+            OR name_of_student LIKE '%{$string}%'
             AND status = ? 
         ";
     }
