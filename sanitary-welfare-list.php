@@ -33,7 +33,7 @@
                     <div class="card-header bg-white p-4 border-bottom-0">
                         <?php if (isset($_GET['scholarship'])): ?>
                         <?php else: ?>
-                       <h3 class="mb-0 h4">Scholarship List <?= date('Y'); ?></h3>
+                       <h3 class="mb-0 h4">Sanitary Welfare List <?= date('Y'); ?></h3>
                        <br>
                        <div class="d-inline">
                             <form action="" class="row" method="GET">
