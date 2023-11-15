@@ -106,10 +106,10 @@ if (isset($_GET['sanitarywelfare'])) {
                                         <a href="<?= PROOT; ?>auth/login">Sign in</a>
                                     </p>
                                 <?php endif; ?>
-                                <p class="font-14 mb-0">
-                                    <a href="<?= PROOT; ?>auth/logout">Cancel</a>
-                                </p>
                             </div>
+                            <p class="font-14 mb-0">
+                                <a href="<?= PROOT; ?>sanitary-welfare-list">Cancel</a>
+                            </p>
                         </form>
                     </div>
                     <div class="mt-3 nav-footer-links">
