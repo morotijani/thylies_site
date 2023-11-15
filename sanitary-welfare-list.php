@@ -17,7 +17,7 @@
         $string = sanitize($_GET['q']);
         $sql = "
             SELECT * FROM thylies_sanitary_welfare 
-            WHERE scholarship_id LIKE '%{$string}%'
+            WHERE sw_id LIKE '%{$string}%'
             OR name_of_student LIKE '%{$string}%'
             AND status = ? 
         ";
@@ -38,7 +38,7 @@
                        <div class="d-inline">
                             <form action="" class="row" method="GET">
                                 <div class="mb-3 mb-2 mb-lg-0 col-lg-10 col-md-10 col-12">
-                                    <input type="text" name="q" class="form-control" placeholder="search with name, scholarship id ..." required>
+                                    <input type="text" name="q" class="form-control" placeholder="search with name, sanitary welfare id ..." required>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-12">
                                     <button class="btn btn-warning">Search</button>
@@ -64,7 +64,7 @@
                                     <?php if (isset($_GET['q'])): ?>
                                         <div class="d-flex justify-content-between">
                                             <p class="px-3 text-muted small">Search result for '<?= $string; ?>'</p>
-                                            <p class="px-3 text-muted small"><a href="<?= PROOT; ?>scholarship-list"><< go back</a></p>
+                                            <p class="px-3 text-muted small"><a href="<?= PROOT; ?>sanitary-welfare-list"><< go back</a></p>
                                             
                                         </div>
                                     <?php endif ?>
@@ -74,13 +74,13 @@
                                         <tr>
                                             <td><?= $i; ?></td>
                                            <td class="align-middle">
-                                              <?= $row['scholarship_id']; ?>
+                                              <?= $row['sw_id']; ?>
                                            </td>
                                            <td class="align-middle"><?= ucwords($row['student_name']); ?></td>
                                            <td class="align-middle"><?= ucwords($row['school_name']); ?></td>
                                            <td class="align-middle"><?= $row['index_number']; ?></td>
                                            <td class="align-middle"><?= pretty_date($row['createdAt']); ?></td>
-                                           <td class="align-middle"><a href="<?= PROOT; ?>auth/auth-scholarship-status/<?= $row['scholarship_id']; ?>">view status</a></td>
+                                           <td class="align-middle"><a href="<?= PROOT; ?>auth/auth-sanitary-welfare-status/<?= $row['sw_id']; ?>">view status</a></td>
                                         </tr>
                                     <?php $i++; endforeach; ?>
                                     <?php else: ?>
