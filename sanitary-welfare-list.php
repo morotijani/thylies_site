@@ -76,10 +76,10 @@
                                            <td class="align-middle">
                                               <?= $row['sw_id']; ?>
                                            </td>
-                                           <td class="align-middle"><?= ucwords($row['student_name']); ?></td>
+                                           <td class="align-middle"><?= ucwords($row['name_of_student']); ?></td>
                                            <td class="align-middle"><?= ucwords($row['school_name']); ?></td>
-                                           <td class="align-middle"><?= $row['index_number']; ?></td>
-                                           <td class="align-middle"><?= pretty_date($row['createdAt']); ?></td>
+                                           <td class="align-middle"><?= $row['student_index']; ?></td>
+                                           <td class="align-middle"><?= pretty_date_half($row['createdAt']); ?></td>
                                            <td class="align-middle"><a href="<?= PROOT; ?>auth/auth-sanitary-welfare-status/<?= $row['sw_id']; ?>">view status</a></td>
                                         </tr>
                                     <?php $i++; endforeach; ?>
