@@ -20,11 +20,10 @@
             WHERE scholarship_id LIKE '%{$string}%'
             OR student_name LIKE '%{$string}%'
             AND status = ? 
-            AND percentage > ?
         ";
     }
     $statement = $conn->prepare($sql);
-    $statement->execute([1, 0]);
+    $statement->execute([1]);
     $count_row = $statement->rowCount();
     $rows = $statement->fetchAll();
 ?>
