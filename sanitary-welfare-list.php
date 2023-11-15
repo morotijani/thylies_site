@@ -1,7 +1,7 @@
 <?php 
     require_once ("connection/conn.php");
 
-    $title = 'Scholarhip List - ';
+    $title = 'Sanitary Welfare List - ';
     $navbar = 'navbar-light';
 
     include ('inc/header.inc.php');
@@ -9,15 +9,14 @@
 
     // FETCH ALL STUDENT WHO HAS GAIN SCHOLARSHIP
     $sql = "
-        SELECT * FROM thylies_scholarship 
+        SELECT * FROM thylies_sanitary_welfare 
         WHERE status = ? 
-        AND percentage > ?
         ORDER BY student_name ASC
     ";
     if (isset($_GET['q'])) {
         $string = sanitize($_GET['q']);
         $sql = "
-            SELECT * FROM thylies_scholarship 
+            SELECT * FROM thylies_sanitary_welfare 
             WHERE scholarship_id LIKE '%{$string}%'
             OR student_name LIKE '%{$string}%'
             AND status = ? 
