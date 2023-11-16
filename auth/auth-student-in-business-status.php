@@ -83,7 +83,7 @@ if (isset($_GET['studentinbusiness'])) {
                     <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
                         <form method="POST" id="loginForm">
                             <h1 class="mb-1 text-center h3">Authenticate</h1>
-                            <p class="mb-4 text-center">Provide the below details to access your sanitary welfare status.</p>
+                            <p class="mb-4 text-center">Provide the below details to access your student in business status.</p>
                             <?= $errors; ?>
                             <div class="mb-3">
                                 <label for="index_number" class="form-label">Index number<span class="text-danger">*</span> </label>
@@ -143,6 +143,6 @@ if (isset($_GET['studentinbusiness'])) {
 
 <?php 
     } else {
-        redirect(PROOT . 'scholarship-list');
+        redirect(PROOT . 'student-in-business-list');
     } ?>
 

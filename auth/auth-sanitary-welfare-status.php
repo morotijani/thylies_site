@@ -143,6 +143,6 @@ if (isset($_GET['sanitarywelfare'])) {
 
 <?php 
     } else {
-        redirect(PROOT . 'scholarship-list');
+        redirect(PROOT . 'sanitary-welfare-list');
     } ?>
 
