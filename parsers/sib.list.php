@@ -24,10 +24,10 @@ $search_query = ((isset($_POST['query'])) ? sanitize($_POST['query']) : '');
 $find_query = str_replace(' ', '%', $search_query);
 if ($search_query != '') {
 	$query .= '
-		AND (sw_id LIKE "%'.$find_query.'%" 
+		AND (sib_id LIKE "%'.$find_query.'%" 
 		OR name_of_student LIKE "%'.$find_query.'%" 
 		OR dob LIKE "%'.$find_query.'%" 
-		OR student_index LIKE "%'.$find_query.'%" 
+		OR index_number LIKE "%'.$find_query.'%" 
 		OR program LIKE "%'.$find_query.'%") 
 	';
 } else {
@@ -75,7 +75,7 @@ $output = '
 if ($total_data > 0) {
 	$i = 1;
 	foreach ($result as $row) {
-		$sw_id = $row["sw_id"];
+		$sib_id = $row["sib_id"];
 
 		// retrieve user image
 		$profile = 'svg/friendly-ghost.svg';
@@ -85,7 +85,7 @@ if ($total_data > 0) {
 
 		// user who has paid for gian sw
 		$paid = 'warning';
-		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
+		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sib_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
 			$paid = 'success';
 		}
 
@@ -116,18 +116,18 @@ if ($total_data > 0) {
 			<tr>
                 <td>
                     <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
-                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/SW/view/' . $row["sw_id"] . ' ">' . ucwords($row["name_of_student"]) . '</a>
+                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/SW/view/' . $row["sib_id"] . ' ">' . ucwords($row["name_of_student"]) . '</a>
                 </td>
                 <td>' . $row["dob"] . '</td>
                 <td>
                     <span class="badge badge-lg badge-dot">
-                    	<i class="bg-' . $paid . '"></i>' . $row["student_index"] . '
+                    	<i class="bg-' . $paid . '"></i>' . $row["index_number"] . '
                     </span>
                 </td>
                 <td>' . ucwords($row["school_name"]) . '</td>
                 <td>' . $granted . '</td>
                 <td class="text-end">
-                    <a href="' . PROOT . 'admin/SW/view/' . $row["sw_id"] . '" class="btn btn-sm btn-neutral">View</a> 
+                    <a href="' . PROOT . 'admin/SW/view/' . $row["sib_id"] . '" class="btn btn-sm btn-neutral">View</a> 
                     <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                         <i class="bi bi-trash"></i>
                     </button>
