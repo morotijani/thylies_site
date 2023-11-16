@@ -63,8 +63,10 @@
 									<i class="bi bi-duffle-fill"></i> Student in Business</a>
 									<div class="collapse" id="sidebar-business">
 										<ul class="nav nav-sm flex-column">
-											<li class="nav-item"><a href="/pages/tasks/overview.html" class="nav-link">Import data</a></li>
-											<li class="nav-item"><a href="/pages/tasks/list-view.html" class="nav-link">List View</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB/index" class="nav-link">List View</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB/gained" class="nav-link">Gained</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB/rejected" class="nav-link">Rejected</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB/trash" class="nav-link">Trash</a></li>
 										</ul>
 									</div>
 								</li>
