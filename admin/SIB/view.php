@@ -14,9 +14,9 @@
         $id = sanitize($_GET['reject']);
 
         $update = "
-            UPDATE thylies_sanitary_welfare 
+            UPDATE thylies_student_in_business 
             SET status = ? 
-            WHERE sw_id = ?
+            WHERE sib_id = ?
         ";
         $statement = $conn->prepare($update);
         $result = $statement->execute([2, $id]);
@@ -31,15 +31,15 @@
     }
 
     if (isset($_GET['swid']) && !empty($_GET['swid'])) {
-        $sw_id = sanitize($_GET['swid']);
+        $sib_id = sanitize($_GET['swid']);
         
         $sql = "
-            SELECT * FROM thylies_sanitary_welfare 
-            WHERE sw_id = ? 
+            SELECT * FROM thylies_student_in_business 
+            WHERE sib_id = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($sql);
-        $statement->execute([$sw_id]);
+        $statement->execute([$sib_id]);
         $row = $statement->fetchAll();
         $count_row = $statement->rowCount();
 
@@ -55,19 +55,19 @@
             if (isset($_POST['grantSW'])) {
 
                 $grantQuery = "
-                    UPDATE thylies_sanitary_welfare 
+                    UPDATE thylies_student_in_business 
                     SET status = ? 
-                    WHERE sw_id = ?
+                    WHERE sib_id = ?
                 ";
                 $statement = $conn->prepare($grantQuery);
-                $result = $statement->execute([1, $sw_id]);
+                $result = $statement->execute([1, $sib_id]);
                 if (isset($result)) {
                     // code...
                     $_SESSION['flash_success'] = "Sanitary welfare has been granted to " . $row[0]['name_of_student'];
-                    redirect(PROOT . 'admin/SW/view/' . $sw_id);
+                    redirect(PROOT . 'admin/SW/view/' . $sib_id);
                 } else {
                     $_SESSION['flash_error'] = 'Something went wrong.';
-                    redirect(PROOT . 'admin/SW/view/' . $sw_id);
+                    redirect(PROOT . 'admin/SW/view/' . $sib_id);
                 }
             }
         } else {
@@ -94,7 +94,7 @@
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="<?= PROOT; ?>admin/SW/view/<?= $sw_id; ?>" class="btn btn-sm btn-neutral border-base">
+							<a href="<?= PROOT; ?>admin/SW/view/<?= $sib_id; ?>" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
@@ -149,7 +149,7 @@
                         <div class="ms-5">
                             <button for="file-upload" class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#grantModal"><span>Grant</span></button>
                             <?php 
-                                if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
+                                if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sib_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
                                     echo '
                                         <button class="btn btn-sm btn-success"><span><i class="bi bi-cash"></i> Paid</span></button>
                                     ';
@@ -297,7 +297,7 @@
                 <div class="card-body">
                     <h4 class="text-danger mb-2">Delete details</h4>
                     <p class="text-sm text-muted mb-4">Temporary remove this user scholarship details and all of its contents. This action is reversible – please be certain.</p>
-                    <a href="<?= PROOT; ?>admin/SW/delete/<?= $sw_id; ?>" class="btn btn-sm btn-danger">Delete my details</a>
+                    <a href="<?= PROOT; ?>admin/SW/delete/<?= $sib_id; ?>" class="btn btn-sm btn-danger">Delete my details</a>
                 </div>
             </div>
 
@@ -336,7 +336,7 @@
 <script>
     $('.reject-btn').on('click', function() {
         if (confirm('By clicking on ok, applicant will be Rejected!')) {
-            window.location = '<?= PROOT; ?>admin/SW/view?reject=<?= $sw_id; ?>';
+            window.location = '<?= PROOT; ?>admin/SW/view?reject=<?= $sib_id; ?>';
         } else {
             return false;
         }
