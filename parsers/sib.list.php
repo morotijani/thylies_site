@@ -28,7 +28,7 @@ if ($search_query != '') {
 		OR student_name LIKE "%'.$find_query.'%" 
 		OR age LIKE "%'.$find_query.'%" 
 		OR index_number LIKE "%'.$find_query.'%" 
-		OR program LIKE "%'.$find_query.'%") 
+		OR program_of_study LIKE "%'.$find_query.'%") 
 	';
 } else {
 	$query .= 'ORDER BY createdAt DESC ';
