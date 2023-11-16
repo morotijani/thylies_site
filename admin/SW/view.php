@@ -149,7 +149,6 @@
                         <div class="ms-5">
                             <button for="file-upload" class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#grantModal"><span>Grant</span></button>
                             <?php 
-                                
                                 if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
                                     echo '
                                         <button class="btn btn-sm btn-success"><span><i class="bi bi-cash"></i> Paid</span></button>
