@@ -24,9 +24,9 @@ if (isset($_GET['studentinbusiness'])) {
 
         $query = "
             SELECT * FROM thylies_student_in_business 
-            WHERE student_index = ? 
+            WHERE index_number = ? 
             AND dob = ? 
-            AND sw_id = ? 
+            AND sib_id = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($query);
@@ -35,7 +35,7 @@ if (isset($_GET['studentinbusiness'])) {
             $errors = '<div class="alert alert-secondary" role="alert">Unknown student.</div>';
         } else {
             $_SESSION['auth-studentinbusiness'] = $id;
-            redirect(PROOT . 'sanitary-welfare-status');
+            redirect(PROOT . 'student-in-business');
         }
 
     }
