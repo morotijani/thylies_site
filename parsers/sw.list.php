@@ -84,8 +84,8 @@ if ($total_data > 0) {
 		}
 
 		// user who has paid for gian sw
-		$paid = 'dark';
-		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitary_welfare' AND status = 1")->rowCount() > 0) {
+		$paid = 'warning';
+		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
 			$paid = 'success';
 		}
 
