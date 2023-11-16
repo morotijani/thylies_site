@@ -118,7 +118,7 @@ if ($total_data > 0) {
                     <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
                     <a class="text-heading font-semibold" href="' . PROOT . 'admin/SW/view/' . $row["sw_id"] . ' ">' . ucwords($row["name_of_student"]) . '</a>
                 </td>
-                <td>' . $row["dob"] . '</td>
+                <td>' . pretty_date_half($row["createdAt"]) . '</td>
                 <td>
                     <span class="badge badge-lg badge-dot">
                     	<i class="bg-' . $paid . '"></i>' . $row["student_index"] . '

@@ -146,7 +146,7 @@ if ($total_data > 0) {
                     <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
                     <a class="text-heading font-semibold" href="' . PROOT . 'admin/Scholarship/view/' . $row["scholarship_id"] . ' ">' . ucwords($row["student_name"]) . '</a>
                 </td>
-                <td>' . $row["student_dob"] . '</td>
+                <td>' . pretty_date_half($row["createdAt"]) . '</td>
                 <td>
                     <span class="badge badge-lg badge-dot">
                     	<i class="bg-' . $paid . '"></i>' . $row["index_number"] . '
