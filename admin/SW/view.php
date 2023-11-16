@@ -148,12 +148,21 @@
                         </a>
                         <div class="ms-5">
                             <button for="file-upload" class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#grantModal"><span>Grant</span></button>
-                            <a href="javascript:;" class="btn d-inline-flex btn-sm btn-neutral ms-2 text-danger reject-btn">
-                                <span class="pe-2">
-                                    <i class="bi bi-person-slash"></i> 
-                                </span>
-                                <span>Deny</span>
-                            </a>
+                            <?php 
+                                
+                                if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
+                                    
+                                } else {
+                                    echo '
+                                        <a href="javascript:;" class="btn d-inline-flex btn-sm btn-neutral ms-2 text-danger reject-btn">
+                                            <span class="pe-2">
+                                                <i class="bi bi-person-slash"></i> 
+                                            </span>
+                                            <span>Deny</span>
+                                        </a>
+                                    ';
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
