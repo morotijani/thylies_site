@@ -80,12 +80,12 @@ if ($total_data > 0) {
 		// retrieve user image
 		$profile = 'svg/friendly-ghost.svg';
 		if ($row["student_picture"] != '') {
-			$profile = 'sanitary-welfare/' . $row["student_picture"];
+			$profile = 'student-in-business/' . $row["student_picture"];
 		}
 
 		// user who has paid for gian sw
 		$paid = 'warning';
-		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sib_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
+		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sib_id."' AND transaction_service = 'studentinbusiness' AND status = 1")->rowCount() > 0) {
 			$paid = 'success';
 		}
 
