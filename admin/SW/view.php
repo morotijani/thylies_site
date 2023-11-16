@@ -151,7 +151,9 @@
                             <?php 
                                 
                                 if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
-                                    
+                                    echo '
+                                        <button class="btn btn-sm btn-success"><span><i class="bi bi-cash"></i> Paid</span></button>
+                                    ';
                                 } else {
                                     echo '
                                         <a href="javascript:;" class="btn d-inline-flex btn-sm btn-neutral ms-2 text-danger reject-btn">
