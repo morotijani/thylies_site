@@ -82,10 +82,10 @@ if ($total_data > 0) {
 			$profile = 'sanitary-welfare/' . $row["student_picture"];
 		}
 
-		// user who has paid for gian scholarship
+		// user who has paid for gian sw
 		$paid = 'warning';
 		$sw_id = $row["sw_id"];
-		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitary_welfare' ")->rowCount() > 0) {
+		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sw_id."' AND transaction_service = 'sanitary_welfare' AND status = 1")->rowCount() > 0) {
 			$paid = 'success';
 		}
 
