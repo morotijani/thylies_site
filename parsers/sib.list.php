@@ -25,8 +25,8 @@ $find_query = str_replace(' ', '%', $search_query);
 if ($search_query != '') {
 	$query .= '
 		AND (sib_id LIKE "%'.$find_query.'%" 
-		OR name_of_student LIKE "%'.$find_query.'%" 
-		OR dob LIKE "%'.$find_query.'%" 
+		OR student_name LIKE "%'.$find_query.'%" 
+		OR age LIKE "%'.$find_query.'%" 
 		OR index_number LIKE "%'.$find_query.'%" 
 		OR program LIKE "%'.$find_query.'%") 
 	';
@@ -116,9 +116,9 @@ if ($total_data > 0) {
 			<tr>
                 <td>
                     <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
-                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/SW/view/' . $row["sib_id"] . ' ">' . ucwords($row["name_of_student"]) . '</a>
+                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/SW/view/' . $row["sib_id"] . ' ">' . ucwords($row["student_name"]) . '</a>
                 </td>
-                <td>' . $row["dob"] . '</td>
+                <td>' . pretty_date_half($row["createdAt"]) . '</td>
                 <td>
                     <span class="badge badge-lg badge-dot">
                     	<i class="bg-' . $paid . '"></i>' . $row["index_number"] . '
