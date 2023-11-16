@@ -33,6 +33,9 @@
 								  	<h3>Status: <?= (($row['status'] == 1) ? 'Gained' : 'Pending'); ?></h3>
 								  	<hr>
 								  	<h3>Date: <?= pretty_date_half($row['createdAt']); ?></h3>
+								  	<?php if ($row['status'] == 1): ?>
+								  		<a href="<?= PROOT; ?>auth/auth-student-in-business-status/<?= $row['sib_id']; ?>" class="btn btn-success">Proceed to access</a>
+								  	<?php endif ?>
 								</div>
 							</div>
 						</div>
