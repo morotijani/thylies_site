@@ -48,7 +48,7 @@
             // retrieve user image
             $profile = 'svg/friendly-ghost.svg';
             if ($row[0]["student_picture"] != '') {
-                $profile = 'sanitary-welfare/' . $row[0]["student_picture"];
+                $profile = 'student-in-business/' . $row[0]["student_picture"];
             }
 
             // Grant

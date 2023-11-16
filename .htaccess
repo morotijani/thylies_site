@@ -36,10 +36,16 @@ RewriteRule ^auth/auth-sanitary-welfare-status/([0-9a-zA-Z-]+)$ auth/auth-sanita
 #sanitary-welfare-status
 #RewriteRule ^scholarship-status/([0-9a-zA-Z-]+)$ scholarship-status.php?sanitarywelfare=$1 [NC,L]
 
-#view scholarship details
+#view sanitary welfare details
 RewriteRule ^admin/SW/view/([0-9a-zA-Z-]+)$ admin/SW/view.php?swid=$1 [NC,L]
-# export scholarship data
+# export sanitary welfare data
 RewriteRule ^admin/SW/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/SW/export.php?data=$1&type=$2 [NC,L]
+
+
+#view student in business details
+RewriteRule ^admin/SIB/view/([0-9a-zA-Z-]+)$ admin/SIB/view.php?swid=$1 [NC,L]
+# export student in business data
+RewriteRule ^admin/SIB/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/SIB/export.php?data=$1&type=$2 [NC,L]
 
 
 
