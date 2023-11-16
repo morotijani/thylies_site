@@ -51,8 +51,8 @@ $output = '
         		<i class="bi bi-three-dots-vertical"></i>
         	</a>
         	<div class="dropdown-menu">
-	        	<a href="' . PROOT . 'admin/SW/paid" class="dropdown-item">Paid </a>
-	        	<a href="' . PROOT . 'admin/SW/not-paid" class="dropdown-item">Not Paid </a>
+	        	<a href="' . PROOT . 'admin/SIB/paid" class="dropdown-item">Paid </a>
+	        	<a href="' . PROOT . 'admin/SIB/not-paid" class="dropdown-item">Not Paid </a>
 	        </div>
 	    </div>
     </div>
@@ -83,7 +83,7 @@ if ($total_data > 0) {
 			$profile = 'student-in-business/' . $row["student_picture"];
 		}
 
-		// user who has paid for gian sw
+		// user who has paid for gian SIB
 		$paid = 'warning';
 		if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '".$sib_id."' AND transaction_service = 'studentinbusiness' AND status = 1")->rowCount() > 0) {
 			$paid = 'success';
@@ -116,7 +116,7 @@ if ($total_data > 0) {
 			<tr>
                 <td>
                     <img alt="..." src="' . PROOT . 'assets/media/' . $profile . '" class="avatar avatar-sm rounded-circle me-2"> 
-                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/SW/view/' . $row["sib_id"] . ' ">' . ucwords($row["student_name"]) . '</a>
+                    <a class="text-heading font-semibold" href="' . PROOT . 'admin/SIB/view/' . $row["sib_id"] . ' ">' . ucwords($row["student_name"]) . '</a>
                 </td>
                 <td>' . pretty_date_half($row["createdAt"]) . '</td>
                 <td>
@@ -127,7 +127,7 @@ if ($total_data > 0) {
                 <td>' . ucwords($row["school_name"]) . '</td>
                 <td>' . $granted . '</td>
                 <td class="text-end">
-                    <a href="' . PROOT . 'admin/SW/view/' . $row["sib_id"] . '" class="btn btn-sm btn-neutral">View</a> 
+                    <a href="' . PROOT . 'admin/SIB/view/' . $row["sib_id"] . '" class="btn btn-sm btn-neutral">View</a> 
                     <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                         <i class="bi bi-trash"></i>
                     </button>
