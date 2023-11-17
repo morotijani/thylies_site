@@ -231,19 +231,19 @@
             <div class="card">
                 <div class="card-body pb-0">
                     <div class="mb-4">
-                        <h4 class="mb-1">SANITARY PREFERENCE</h4>
-                        <p class="text-sm text-muted">Details on preference.</p>
+                        <h4 class="mb-1">BUSINESS INFORMATION</h4>
+                        <p class="text-sm text-muted">Details on business.</p>
                     </div>
                     <div class="list-group list-group-flush">
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of pads per semester</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['number_of_pads_per_semester']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">NAME OF BUSINESS</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['name_of_business']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Brand of Sanitary pad</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">WHAT ARE THE GOALS AND OBJECTIVES OF YOUR BUSINESS</a>
                                 <span class="d-block text-sm text-muted"><?= $row[0]['brand_of_sanitary_pad']; ?></span>
                             </div>
                         </div>
