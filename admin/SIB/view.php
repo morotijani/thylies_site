@@ -133,11 +133,11 @@
                     </div>
                     <?php elseif ($row[0]['status'] == 1): ?>
                     <div class="alert alert-success mb-4" role="alert">
-                        Applicant garanted student welfare!
+                        Applicant garanted student in business!
                     </div>
                     <?php else: ?>
                     <div class="alert alert-primary mb-4" role="alert">
-                        Applicant student welfare pending!
+                        Applicant student in business pending!
                     </div>
                     <?php endif ?>
 
