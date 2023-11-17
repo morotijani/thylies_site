@@ -244,49 +244,67 @@
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">WHAT ARE THE GOALS AND OBJECTIVES OF YOUR BUSINESS</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['brand_of_sanitary_pad']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['goals_objectives']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of pantie liners</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['number_of_pantie_liners']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['business_registered_why']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Brand of Pantie liners</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['brand_of_pantie_liners']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['be_procured']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of tissue</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['number_of_tissue']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['introduce_new']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Brand of tissue papers</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['brand_of_tissue_papers']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['target_populace']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Type of panties</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['type_of_panties']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['number_per_day']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of panties</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['number_of_panties']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['customers_per_semester']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['design_of_panties']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['category_of_business']; ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
+                                <span class="d-block text-sm text-muted"><?= money($row[0]['expected_budget']); ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
+                                <span class="d-block text-sm text-muted"><?= money($row[0]['expected_profit_per_day']); ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
+                                <span class="d-block text-sm text-muted"><?= money($row[0]['expected_profit_per_semester']); ?></span>
                             </div>
                         </div>
                     </div>
