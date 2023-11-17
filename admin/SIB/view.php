@@ -23,15 +23,15 @@
         if ($result) {
             // code...
             $_SESSION['flash_success'] = 'Applicant rejected!';
-            redirect(PROOT . 'admin/SW/view/' . $id);
+            redirect(PROOT . 'admin/SIB/view/' . $id);
         } else {
             $_SESSION['flash_error'] = 'Something went wrong!';
-            redirect(PROOT . 'admin/SW/view/' . $id);
+            redirect(PROOT . 'admin/SIB/view/' . $id);
         }
     }
 
-    if (isset($_GET['swid']) && !empty($_GET['swid'])) {
-        $sib_id = sanitize($_GET['swid']);
+    if (isset($_GET['sibid']) && !empty($_GET['sibid'])) {
+        $sib_id = sanitize($_GET['sibid']);
         
         $sql = "
             SELECT * FROM thylies_student_in_business 
@@ -52,7 +52,7 @@
             }
 
             // Grant
-            if (isset($_POST['grantSW'])) {
+            if (isset($_POST['grantSIB'])) {
 
                 $grantQuery = "
                     UPDATE thylies_student_in_business 
@@ -63,7 +63,7 @@
                 $result = $statement->execute([1, $sib_id]);
                 if (isset($result)) {
                     // code...
-                    $_SESSION['flash_success'] = "Sanitary welfare has been granted to " . $row[0]['name_of_student'];
+                    $_SESSION['flash_success'] = "Sanitary welfare has been granted to " . $row[0]['student_name'];
                     redirect(PROOT . 'admin/SW/view/' . $sib_id);
                 } else {
                     $_SESSION['flash_error'] = 'Something went wrong.';
@@ -89,7 +89,7 @@
 				<div class="row align-items-center">
 					<div class="col-sm col-12">
 						<h1 class="h2 ls-tight">
-							<span class="d-inline-block me-3">😎</span>Sanitary Welfare details on, <?= ucwords($row[0]['name_of_student']); ?>
+							<span class="d-inline-block me-3">😎</span>Student in Business details on, <?= ucwords($row[0]['student_name']); ?>
 						</h1>
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
@@ -179,7 +179,7 @@
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">Name of Student</a>
-                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['name_of_student']); ?></span>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['student_name']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
@@ -313,7 +313,7 @@
                     <div class="icon icon-shape rounded-3 bg-soft-primary text-primary text-lg me-4"><i class="bi bi-globe"></i></div>
                     <div>
                         <h5 class="mb-1">Grant</h5>
-                        <small class="d-block text-xs text-muted">Accept and grant <b><?= ucwords($row[0]['name_of_student']); ?></b> sanitary welfare</small>
+                        <small class="d-block text-xs text-muted">Accept and grant <b><?= ucwords($row[0]['student_name']); ?></b> sanitary welfare</small>
                     </div>
                     <div class="ms-auto">
                         <div class="me-n2" data-bs-dismiss="modal" style="cursor: pointer;">
@@ -324,7 +324,7 @@
                 <form action="" method="POST">
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sm btn-neutral" data-bs-dismiss="modal">Close</button> 
-                        <button type="submit" name="grantSW" class="btn btn-sm btn-success">Grant</button>
+                        <button type="submit" name="grantSIB" class="btn btn-sm btn-success">Grant</button>
                     </div>
                 </form>
             </div>
@@ -336,7 +336,7 @@
 <script>
     $('.reject-btn').on('click', function() {
         if (confirm('By clicking on ok, applicant will be Rejected!')) {
-            window.location = '<?= PROOT; ?>admin/SW/view?reject=<?= $sib_id; ?>';
+            window.location = '<?= PROOT; ?>admin/SIB/view?reject=<?= $sib_id; ?>';
         } else {
             return false;
         }
