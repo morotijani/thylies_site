@@ -249,25 +249,25 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of pantie liners</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">IS YOUR BUSINESS REGISTERED, WHY?</a>
                                 <span class="d-block text-sm text-muted"><?= $row[0]['business_registered_why']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Brand of Pantie liners</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">HOW WILL YOUR PRODUCTS BE MADE OR HOW WOULD YOUR GOODS AND SERVICES FOR SALE BE PROCURED</a>
                                 <span class="d-block text-sm text-muted"><?= $row[0]['be_procured']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of tissue</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">WOULD YOU INTRODUCE NEW GOODS AND SERVICES IN THE FUTURE IN ADDITION TO THE ONES YOU ARE ALREADY DEALING IN</a>
                                 <span class="d-block text-sm text-muted"><?= $row[0]['introduce_new']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Brand of tissue papers</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">TARGET POPULACE</a>
                                 <span class="d-block text-sm text-muted"><?= $row[0]['target_populace']; ?></span>
                             </div>
                         </div>
