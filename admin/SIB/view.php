@@ -171,21 +171,27 @@
 
             <div class="card">
                 <div class="card-body pb-0">
-                    <div class="mb-4">
-                        <h4 class="mb-1">BIO Data</h4>
+                     <div class="mb-4">
+                        <h4 class="mb-1">STUDENT INFORMATION</h4>
                         <p class="text-sm text-muted">Details on student.</p>
                     </div>
                     <div class="list-group list-group-flush">
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Name of Student</a>
-                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['student_name']); ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">NAME OF STUDENT</a>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['name_of_student']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Date of Birth</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['dob']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">SCHOOL</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['school_name']; ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">PROGRAM OF STUDY</a>
+                                <span class="d-block text-sm text-muted"><?= $row[0]['program_of_study']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
