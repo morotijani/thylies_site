@@ -273,37 +273,37 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Type of panties</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">TARGETTED NUMBER OF CUSTOMERS PER DAY</a>
                                 <span class="d-block text-sm text-muted"><?= $row[0]['number_per_day']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Number of panties</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">TARGETTED CUSTOMERS PER SEMESTER</a>
                                 <span class="d-block text-sm text-muted"><?= $row[0]['customers_per_semester']; ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['category_of_business']; ?></span>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">CATEGORY OF BUSINESS</a>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['category_of_business']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">EXPECTED BUDGET OF COMMENCEMENT/EXPANSION</a>
                                 <span class="d-block text-sm text-muted"><?= money($row[0]['expected_budget']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">EXPECTED PROFIT PER DAY</a>
                                 <span class="d-block text-sm text-muted"><?= money($row[0]['expected_profit_per_day']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
-                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">Design of panties</a>
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">EXPECTED PROFIT PER SEMESTER</a>
                                 <span class="d-block text-sm text-muted"><?= money($row[0]['expected_profit_per_semester']); ?></span>
                             </div>
                         </div>
