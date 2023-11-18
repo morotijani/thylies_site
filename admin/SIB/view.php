@@ -64,19 +64,19 @@
                 if (isset($result)) {
                     // code...
                     $_SESSION['flash_success'] = "Sanitary welfare has been granted to " . $row[0]['student_name'];
-                    redirect(PROOT . 'admin/SW/view/' . $sib_id);
+                    redirect(PROOT . 'admin/SIB/view/' . $sib_id);
                 } else {
                     $_SESSION['flash_error'] = 'Something went wrong.';
-                    redirect(PROOT . 'admin/SW/view/' . $sib_id);
+                    redirect(PROOT . 'admin/SIB/view/' . $sib_id);
                 }
             }
         } else {
             $_SESSION['flash_error'] = 'Unknown Sanitary welfare info provided';
-            redirect(PROOT . 'admin/SW/index');   
+            redirect(PROOT . 'admin/SIB/index');   
         }
     } else {
         $_SESSION['flash_error'] = 'Unknown Sanitary welfare info provided';
-        redirect(PROOT . 'admin/SW/index');
+        redirect(PROOT . 'admin/SIB/index');
     }
 
 	
@@ -94,11 +94,11 @@
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="<?= PROOT; ?>admin/SW/view/<?= $sib_id; ?>" class="btn btn-sm btn-neutral border-base">
+							<a href="<?= PROOT; ?>admin/SIB/view/<?= $sib_id; ?>" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
-							<a href="<?= PROOT; ?>admin/SW/" class="btn btn-sm btn-primary">
+							<a href="<?= PROOT; ?>admin/SIB/" class="btn btn-sm btn-primary">
 								<span class="pe-2"><i class="bi bi-arrow-left"></i> </span>
 								<span>Go Back</span>
 							</a>
@@ -106,9 +106,9 @@
 					</div>
 				</div>
 				<ul class="nav nav-tabs overflow-x border-0">
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW" class="nav-link">View all</a></li>
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/rejected" class="nav-link">Rejected</a></li>
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/gained" class="nav-link">Gained</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB" class="nav-link">View all</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB/rejected" class="nav-link">Rejected</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB/gained" class="nav-link">Gained</a></li>
 				</ul>
 			</div>
 		</div>
@@ -315,7 +315,7 @@
                 <div class="card-body">
                     <h4 class="text-danger mb-2">Delete details</h4>
                     <p class="text-sm text-muted mb-4">Temporary remove this user scholarship details and all of its contents. This action is reversible – please be certain.</p>
-                    <a href="<?= PROOT; ?>admin/SW/delete/<?= $sib_id; ?>" class="btn btn-sm btn-danger">Delete my details</a>
+                    <a href="<?= PROOT; ?>admin/SIB/delete/<?= $sib_id; ?>" class="btn btn-sm btn-danger">Delete my details</a>
                 </div>
             </div>
 
