@@ -7,7 +7,7 @@ require_once ('../connection/conn.php');
 // 
 $authSW = issetElse($_SESSION, 'auth-studentinbusiness', 0);
 if ($authSW != 0 && !empty($authSW)) {
-    redirect(PROOT . 'auth/pay-sanitary-welfare-fee/' . $authSW);
+    redirect(PROOT . 'auth/apply-student-in-business-fee/' . $authSW);
 }
 
 if (isset($_GET['studentinbusiness'])) {
