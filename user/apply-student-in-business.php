@@ -31,6 +31,7 @@
     $post = (isset($_POST) ? cleanPost($_POST) : '');
     $sib_id = guidv4();
     $student_name = (isset($post['student_name']) && $post['student_name'] != '') ? $post['student_name'] : '';
+    $dob = (isset($post['dob']) && $post['dob'] != '') ? $post['dob'] : '';
     $program_of_study = (isset($post['program_of_study']) && $post['program_of_study'] != '') ? $post['program_of_study'] : '';
     $index_number = (isset($post['index_number']) && $post['index_number'] != '') ? $post['index_number'] : '';
     $age = (isset($post['age']) && $post['age'] != '') ? $post['age'] : '';
@@ -55,11 +56,11 @@
         // code...
         $sql = "
             UPDATE `thylies_student_in_business` 
-            SET `sib_id` = ?, `student_name` = ?, `program_of_study` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
+            SET `sib_id` = ?, `student_name` = ?, `dob` = ?, `program_of_study` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$sib_id, $student_name, $program_of_study, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sib_id, $student_name, $dob, $program_of_study, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
@@ -127,10 +128,14 @@
 									<div class="col-12 col-md-12">
 										<h4 class="mb-3">STUDENT INFORMATION</h4>
 									</div>
-									<div class="mb-3 col-12 col-md-12">
+									<div class="mb-3 col-6 col-md-6">
 										<label class="form-label" for="student_name">NAME OF STUDENT<span class="text-danger">*</span></label>
 										<input type="text" id="student_name" name="student_name" class="form-control" placeholder="First Name" required <?= $student_name; ?>>
 									</div>
+                                    <div class="mb-3 col-6 col-md-6">
+                                        <label class="form-label" for="dob">DATE OF BIRTH<span class="text-danger">*</span></label>
+                                        <input type="date" id="dob" name="dob" class="form-control" placeholder="First Name" required <?= $dob; ?>>
+                                    </div>
 									<div class="mb-3 col-12 col-md-12">
 										<label class="form-label" for="program_of_study">PROGRAM OF STUDY<span class="text-danger">*</span></label>
 										<input type="text" id="program_of_study" name="program_of_study" class="form-control" required <?= $program_of_study; ?>>
