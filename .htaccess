@@ -41,6 +41,8 @@ RewriteRule ^admin/SW/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/SW/export.
 RewriteRule ^admin/SIB/view/([0-9a-zA-Z-]+)$ admin/SIB/view.php?sibid=$1 [NC,L]
 # export student in business data
 RewriteRule ^admin/SIB/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/SIB/export.php?data=$1&type=$2 [NC,L]
+#authenticate student in business status
+RewriteRule ^auth/auth-student-in-business-status/([0-9a-zA-Z-]+)$ auth/auth-student-in-business-status.php?studentinbusiness=$1 [NC,L]
 
 
 
@@ -49,9 +51,13 @@ RewriteRule ^admin/User/view/([0-9a-zA-Z-]+)$ admin/User/view.php?uid=$1 [NC,L]
 # export user data
 RewriteRule ^admin/User/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/User/export.php?data=$1&type=$2 [NC,L]
 
+
+
 RewriteRule ^.in/blog/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([0-9]+)$ .in/blog.php?type=$1&status=$2&id=$3 [NC,L]
 RewriteRule ^.in/blog/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([0-9]+)/([0-9]+)$ .in/blog.php?type=$1&status=$2&id=$3&featured=$4 [NC,L]
 
+
+############################################################################################################################
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteCond %{REQUEST_FILENAME}\.php -f
