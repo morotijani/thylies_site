@@ -10,7 +10,7 @@
 
         // check if id exist in scholarship table
         $sql = "
-            SELECT * FROM thylies_sanitary_welfare 
+            SELECT * FROM thylies_student_in_business 
             WHERE sw_id = ? 
             AND status = ? 
             LIMIT 1
