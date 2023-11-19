@@ -124,14 +124,14 @@
 
 <?php
             } else {
-                redirect(PROOT . 'auth/auth-sanitary-welfare-status/' . $authSW);
+                redirect(PROOT . 'auth/auth-student-in-business-status/' . $authSW);
             }
         } else {
-            redirect(PROOT . 'sanitary-welfare-list');
+            redirect(PROOT . 'student-in-business-list');
         }
                 
     } else {
-        redirect(PROOT . 'sanitary-welfare-list');
+        redirect(PROOT . 'student-in-business-list');
     }
 ?>
     <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
