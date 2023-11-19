@@ -51,7 +51,7 @@
 
                 $picture = 'svg/friendly-ghost.svg';
                 if ($row[0]["student_picture"] != '') {
-                    $picture = 'sanitary-welfare/' . $row[0]["student_picture"];
+                    $picture = 'student-in-business/' . $row[0]["student_picture"];
                 }
 ?>
 <!DOCTYPE html>
