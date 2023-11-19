@@ -35,7 +35,7 @@ if (isset($_GET['studentinbusiness'])) {
             $errors = '<div class="alert alert-secondary" role="alert">Unknown student.</div>';
         } else {
             $_SESSION['auth-studentinbusiness'] = $id;
-            redirect(PROOT . 'student-in-business');
+            redirect(PROOT . 'student-in-business-status');
         }
 
     }
