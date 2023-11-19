@@ -1,7 +1,7 @@
 <?php 
     require_once ("connection/conn.php");
 
-    $title = 'Sanitary Welfare Status - ';
+    $title = 'Student in Business Status - ';
 
     //  
     $authSW = issetElse($_SESSION, 'auth-studentinbusiness', 0);
@@ -11,7 +11,7 @@
         // check if id exist in scholarship table
         $sql = "
             SELECT * FROM thylies_student_in_business 
-            WHERE sw_id = ? 
+            WHERE sib_id = ? 
             AND status = ? 
             LIMIT 1
         ";
@@ -108,7 +108,7 @@
                                         <h4 class="mb-1"><?= ucwords($row[0]['name_of_student']); ?></h4>
                                     </a>
                                     <p class="font-12 mb-2"><?= $row[0]["student_index"]; ?></p>
-                                    <div class="text-dark me-2"><span class="text-muted">Sanitary Welfare ID: </span><?= $row[0]["sw_id"]; ?></div>
+                                    <div class="text-dark me-2"><span class="text-muted">Sanitary Welfare ID: </span><?= $row[0]["sib_id"]; ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Transaction ID: </span><?= $sub_row[0]["transaction_id"] ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Paid Date: </span><?= pretty_date_half($sub_row[0]["createdAt"]); ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Applied Date: </span><?= pretty_date_half($row[0]["createdAt"]); ?></div>
