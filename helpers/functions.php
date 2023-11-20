@@ -108,18 +108,18 @@
     }
 
     // Check if you has paid sanitary welfare fee after granted
-    function check_payment_of_student_in_business_fee($sw_id) {
+    function check_payment_of_student_in_business_fee($sib_id) {
         global $conn;
 
         $sql = "
             SELECT * FROM thylies_transactions
             INNER JOIN thylies_student_in_business 
-            ON thylies_student_in_business.sw_id = thylies_transactions.from_id 
-            WHERE thylies_student_in_business.sw_id = ? 
+            ON thylies_student_in_business.sib_id = thylies_transactions.from_id 
+            WHERE thylies_student_in_business.sib_id = ? 
             LIMIT 1
         ";
         $statement = $conn->prepare($sql);
-        $statement->execute([$sw_id]);
+        $statement->execute([$sib_id]);
         $result = $statement->rowCount();
         $row = $statement->fetchAll();
 

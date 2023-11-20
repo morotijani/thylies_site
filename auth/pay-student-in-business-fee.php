@@ -13,7 +13,7 @@
             redirect(PROOT . 'auth/auth-student-in-business-status/' . $id);
         }
 
-        if (check_payment_of_sanitary_welfare_fee($id)) {
+        if (check_payment_of_student_in_business_fee($id)) {
             redirect(PROOT . 'student-in-business-status');
         }
 
