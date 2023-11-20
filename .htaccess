@@ -44,7 +44,7 @@ RewriteRule ^admin/SIB/export/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$ admin/SIB/expor
 #authenticate student in business status
 RewriteRule ^auth/auth-student-in-business-status/([0-9a-zA-Z-]+)$ auth/auth-student-in-business-status.php?studentinbusiness=$1 [NC,L]
 #pay student in business fee
-RewriteRule ^auth/pay-student-in-business-fee/([0-9a-zA-Z-]+)$ auth/pay-student-in-business-fee.php?sanitarywelfare=$1 [NC,L]
+RewriteRule ^auth/pay-student-in-business-fee/([0-9a-zA-Z-]+)$ auth/pay-student-in-business-fee.php?studentinbusiness=$1 [NC,L]
 
 
 

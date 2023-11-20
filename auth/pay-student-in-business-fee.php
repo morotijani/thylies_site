@@ -4,23 +4,23 @@
 
     require_once ('../connection/conn.php');
 
-    if (isset($_GET['sanitarywelfare'])) {
-        $id = sanitize($_GET['sanitarywelfare']);
+    if (isset($_GET['studentinbusiness'])) {
+        $id = sanitize($_GET['studentinbusiness']);
     
         //  
-        $authSW = issetElse($_SESSION, 'auth-sanitarywelfare', 0);
+        $authSW = issetElse($_SESSION, 'auth-studentinbusiness', 0);
         if ($authSW == 0 && empty($authSW)) {
-            redirect(PROOT . 'auth/auth-sanitary-welfare-status/' . $id);
+            redirect(PROOT . 'auth/auth-student-in-business-status/' . $id);
         }
 
         if (check_payment_of_sanitary_welfare_fee($id)) {
-            redirect(PROOT . 'sanitary-welfare-status');
+            redirect(PROOT . 'student-in-business-status');
         }
 
-        // check if id exist in sanitarywelfare table
+        // check if id exist in studentinbusiness table
         $sql = "
-            SELECT * FROM thylies_sanitary_welfare 
-            WHERE sw_id = ? 
+            SELECT * FROM thylies_student_in_business 
+            WHERE sib_id = ? 
             AND status = ?
             LIMIT 1
         ";
@@ -29,12 +29,12 @@
         $row = $statement->fetchAll();
         $count_row = $statement->rowCount();
         if ($count_row > 0) {
-            // if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '" . $id . "' AND transaction_service = 'sanitarywelfare' AND status = 1")->rowCount() > 0) {
+            // if ($conn->query("SELECT * FROM thylies_transactions WHERE from_id = '" . $id . "' AND transaction_service = 'studentinbusiness' AND status = 1")->rowCount() > 0) {
             //     redirect(PROOT . 'user/sanitary-welfare-status');
             // }
         }
     } else {
-        redirect(PROOT . 'sanitary-welfare-list');
+        redirect(PROOT . 'student-in-business-list');
     }
 
 ?>
@@ -135,7 +135,7 @@
                 // label: "Optional string that replaces customer email",
                 metadata: {
                     "for": 'sanitary-welfare',
-                    "sw_id": '<?= $row[0]['sw_id']; ?>',
+                    "sib_id": '<?= $row[0]['sib_id']; ?>',
                     "name_of_student" : '<?= $row[0]['name_of_student']; ?>',
                     "school" : '<?= $row[0]['school_name']; ?>',
                     "index_number" : '<?= $row[0]['student_index']; ?>'
@@ -153,7 +153,7 @@
                         data: { 
                             reference : response.reference, 
                             email : $('#email').val(), 
-                            sw_id : '<?= $id; ?>'
+                            sib_id : '<?= $id; ?>'
                         },
                         success : function(data) {
                             if (data == '') {
