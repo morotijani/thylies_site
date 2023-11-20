@@ -106,3 +106,30 @@
             return false;
         }
     }
+
+    // Check if you has paid sanitary welfare fee after granted
+    function check_payment_of_student_in_business_fee($sw_id) {
+        global $conn;
+
+        $sql = "
+            SELECT * FROM thylies_transactions
+            INNER JOIN thylies_student_in_business 
+            ON thylies_student_in_business.sw_id = thylies_transactions.from_id 
+            WHERE thylies_student_in_business.sw_id = ? 
+            LIMIT 1
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$sw_id]);
+        $result = $statement->rowCount();
+        $row = $statement->fetchAll();
+
+        if ($result > 0) {
+            if ($row[0]['status'] = 1) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
