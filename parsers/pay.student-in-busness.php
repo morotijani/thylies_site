@@ -7,21 +7,21 @@
 	if (isset($_POST['reference'])) {
 		$reference = sanitize($_POST['reference']);
 		$email = sanitize($_POST['email']);
-		$sw_id = sanitize($_POST['sw_id']);
+		$sib_id = sanitize($_POST['sib_id']);
 		$createdAt = date("Y-m-d H:m:s");
 
-		if ($conn->query("SELECT * FROM thylies_sanitary_welfare WHERE sw_id = '".$sw_id."' LIMIT 1")->rowCount() > 0) {
+		if ($conn->query("SELECT * FROM thylies_student_in_business WHERE sib_id = '".$sib_id."' LIMIT 1")->rowCount() > 0) {
 			$sql = "
 				INSERT INTO thylies_transactions (transaction_id, from_id, transaction_service, status, createdAt) 
 				VALUES (?, ?, ?, ?, ?)
 			";
 			$statement = $conn->prepare($sql);
-			$result = $statement->execute([$reference, $sw_id, 'sanitarywelfare', 1, $createdAt]);
+			$result = $statement->execute([$reference, $sib_id, 'sanitarywelfare', 1, $createdAt]);
 
 			if (isset($result)) {
 				$_SESSION['pay_id'] = $reference;
 
-				foreach ($conn->query("SELECT * FROM thylies_sanitary_welfare WHERE sw_id = '".$sw_id."' LIMIT 1")->fetchAll() as $key) {
+				foreach ($conn->query("SELECT * FROM thylies_student_in_business WHERE sib_id = '".$sib_id."' LIMIT 1")->fetchAll() as $key) {
 					// code...
 					if ($conn->query("SELECT * FROM thylies_user WHERE user_unique_id = '".$key['user_id']."' AND user_email = NULL OR user_email = '' LIMIT 1")->rowCount() > 0) {
 						$updateQuery = "
