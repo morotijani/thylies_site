@@ -134,11 +134,11 @@
                 ref: 'THY'+Math.floor((Math.random() * 1000000000) + 1),
                 // label: "Optional string that replaces customer email",
                 metadata: {
-                    "for": 'sanitary-welfare',
+                    "for": 'student-in-busness',
                     "sib_id": '<?= $row[0]['sib_id']; ?>',
-                    "name_of_student" : '<?= $row[0]['name_of_student']; ?>',
+                    "name_of_student" : '<?= $row[0]['student_name']; ?>',
                     "school" : '<?= $row[0]['school_name']; ?>',
-                    "index_number" : '<?= $row[0]['student_index']; ?>'
+                    "index_number" : '<?= $row[0]['index_number']; ?>'
                 },
                 onClose: function() {
                     alert('Window closed.');
