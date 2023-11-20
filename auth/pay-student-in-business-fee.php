@@ -148,7 +148,7 @@
                     alert(message);
 
                     $.ajax ({
-                        url: '<?= PROOT; ?>parsers/pay.sanitary-welfare.php',
+                        url: '<?= PROOT; ?>parsers/pay.student-in-busness.php',
                         method : 'POST',
                         data: { 
                             reference : response.reference, 
