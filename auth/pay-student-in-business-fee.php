@@ -157,7 +157,7 @@
                         },
                         success : function(data) {
                             if (data == '') {
-                                window.location = '<?= PROOT; ?>auth/paid-sanitary-welfare-fee';
+                                window.location = '<?= PROOT; ?>auth/paid-student-in-business';
                             }
                         }
                     });
