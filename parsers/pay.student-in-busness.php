@@ -16,7 +16,7 @@
 				VALUES (?, ?, ?, ?, ?)
 			";
 			$statement = $conn->prepare($sql);
-			$result = $statement->execute([$reference, $sib_id, 'sanitarywelfare', 1, $createdAt]);
+			$result = $statement->execute([$reference, $sib_id, 'studentinbusiness', 1, $createdAt]);
 
 			if (isset($result)) {
 				$_SESSION['pay_id'] = $reference;
