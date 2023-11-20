@@ -11,13 +11,13 @@
 			LIMIT 1
 		";
 		$statement = $conn->prepare($sql);
-		$statement->execute([$payId, 'sanitarywelfare']);
+		$statement->execute([$payId, 'studentinbusiness']);
 		$count_result = $statement->rowCount();
 		$row = $statement->fetchAll();
 
 		if ($count_result > 0) {
 			// code...
-			$_SESSION['auth-sanitarywelfare'] = $row[0]['from_id'];
+			$_SESSION['auth-studentinbusiness'] = $row[0]['from_id'];
 		
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Paid Student in Business Form - Thylies</title>
+    <title>Paid Student in Business - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
@@ -71,10 +71,10 @@
 
 <?php
 		} else {
-			redirect(PROOT . 'scholarship-list');
+			redirect(PROOT . 'student-in-business-list');
 		}
 	} else {
-		redirect(PROOT . 'scholarship-list');
+		redirect(PROOT . 'student-in-business-list');
 	}
 	
 ?>

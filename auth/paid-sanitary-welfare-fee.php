@@ -29,7 +29,7 @@
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Paid Sanitary Welfare Form - Thylies</title>
+    <title>Paid Sanitary Welfare - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
@@ -71,10 +71,10 @@
 
 <?php
 		} else {
-			redirect(PROOT . 'scholarship-list');
+			redirect(PROOT . 'sanitary-welfare-list');
 		}
 	} else {
-		redirect(PROOT . 'scholarship-list');
+		redirect(PROOT . 'sanitary-welfare-list');
 	}
 	
 ?>
