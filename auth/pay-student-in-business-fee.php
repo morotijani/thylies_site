@@ -78,7 +78,7 @@
                      <div class="bg-white p-4 p-xl-6 p-xxl-8 p-lg-4 rounded-3 border">
                         <form id="paymentForm">
                             <h1 class="mb-3 text-center h3">Student in Business status.</h1>
-                            <p class="mb-4 text-center">Hello <b><?= ucwords($row[0]["name_of_student"]); ?></b> you have been granted Student in Business. You are to pay the sum of GHS101.00 to access and download your receipt.</p>
+                            <p class="mb-4 text-center">Hello <b><?= ucwords($row[0]["student_name"]); ?></b> you have been granted Student in Business. You are to pay the sum of GHS101.00 to access and download your receipt.</p>
                             
                             <div class="mb-4">
                                 <label for="email">Email</label>
