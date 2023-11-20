@@ -48,7 +48,7 @@
     <meta name="description" content="Sign in Page - Coach">
     <meta name="keywords" content="">
     <meta name="author" content="Codescandy">
-    <title>Pay Sanitary Welfare Fees - Thylies</title>
+    <title>Pay Student in Business Fees - Thylies</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?= PROOT; ?>assets/media/logo/logo-min.png">
 
