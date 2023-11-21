@@ -37,11 +37,11 @@
             $sheet->setCellValue('A1', 'NAME OF STUDENT');
             $sheet->setCellValue('B1', 'SCHOOL NAME');
             $sheet->setCellValue('C1', 'PROGRAM OF STUDY');
-            $sheet->setCellValue('D1', 'Student index');
-            $sheet->setCellValue('E1', 'Program');
-            $sheet->setCellValue('F1', 'WhatsApp');
-            $sheet->setCellValue('G1', 'Contact');
-            $sheet->setCellValue('H1', 'E-mail');
+            $sheet->setCellValue('D1', 'INDEX NUMBER');
+            $sheet->setCellValue('E1', 'AGE');
+            $sheet->setCellValue('F1', 'REGION OF RESIDENCE');
+            $sheet->setCellValue('G1', 'TOWN OF RESIDENCE');
+            $sheet->setCellValue('H1', 'RESIDENTIAL ADDRESS');
             $sheet->setCellValue('I1', 'Number of pads per semester');
             $sheet->setCellValue('J1', 'Brand of Sanitary pad');
             $sheet->setCellValue('K1', 'Number of pantie liners');
@@ -56,12 +56,12 @@
             foreach ($rows as $row) {
                 $sheet->setCellValue('A' . $rowCount, ucwords($row['student_name']));
                 $sheet->setCellValue('B' . $rowCount, $row['school_name']);
-                $sheet->setCellValue('C' . $rowCount, ucwords($row['school_name']));
-                $sheet->setCellValue('D' . $rowCount, $row['student_index']);
-                $sheet->setCellValue('E' . $rowCount, ucwords($row['program']));
-                $sheet->setCellValue('F' . $rowCount, $row['whatsapp']);
-                $sheet->setCellValue('G' . $rowCount, $row['contact']);
-                $sheet->setCellValue('H' . $rowCount, $row['email']);
+                $sheet->setCellValue('C' . $rowCount, ucwords($row['program_of_study']));
+                $sheet->setCellValue('D' . $rowCount, $row['index_number']);
+                $sheet->setCellValue('E' . $rowCount, ucwords($row['age']));
+                $sheet->setCellValue('F' . $rowCount, $row['region_of_residence']);
+                $sheet->setCellValue('G' . $rowCount, $row['town_of_residence']);
+                $sheet->setCellValue('H' . $rowCount, $row['residence_address']);
                 $sheet->setCellValue('I' . $rowCount, $row['number_of_pads_per_semester']);
                 $sheet->setCellValue('J' . $rowCount, $row['brand_of_sanitary_pad']);
                 $sheet->setCellValue('K' . $rowCount, $row['number_of_pantie_liners']);
