@@ -66,7 +66,7 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 
 RewriteRule ^(.*)$ $1.php
 
-RewriteCond $1 !^(media|helpers|account|auth|admin|fonts|assets|dist|controller|connection|robots\.txt)
+RewriteCond $1 !^(media|helpers|account|user|auth|admin|fonts|assets|dist|controller|connection|robots\.txt)
 
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
