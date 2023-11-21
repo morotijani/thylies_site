@@ -105,9 +105,9 @@
                                 <a href="javascript:;" class="mx-auto"><img src="<?= PROOT . 'assets/media/' . $picture; ?>" alt="book" class="mt-3 img-fluid" style="width: 300px !important; height: 300px !important;"></a>
                                 <div class="mt-3">
                                     <a href="javascript:;">
-                                        <h4 class="mb-1"><?= ucwords($row[0]['name_of_student']); ?></h4>
+                                        <h4 class="mb-1"><?= ucwords($row[0]['student_name']); ?></h4>
                                     </a>
-                                    <p class="font-12 mb-2"><?= $row[0]["student_index"]; ?></p>
+                                    <p class="font-12 mb-2"><?= $row[0]["index_number"]; ?></p>
                                     <div class="text-dark me-2"><span class="text-muted">Sanitary Welfare ID: </span><?= $row[0]["sib_id"]; ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Transaction ID: </span><?= $sub_row[0]["transaction_id"] ?></div>
                                     <div class="text-dark me-2"><span class="text-muted">Paid Date: </span><?= pretty_date_half($sub_row[0]["createdAt"]); ?></div>
@@ -151,7 +151,7 @@
                     // console.log(window);
                     var opt = {
                         margin: 1,
-                        filename: 'sanitary-welfare-<?= $sub_row[0]['transaction_id']; ?>.pdf',
+                        filename: 'student-in-business-<?= $sub_row[0]['transaction_id']; ?>.pdf',
                         image: { type: 'jpeg', quality: 0.98 },
                         html2canvas: { scale: 2 },
                         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
