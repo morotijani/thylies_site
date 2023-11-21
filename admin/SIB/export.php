@@ -13,7 +13,7 @@
     if (isset($_GET['data']) && !empty($_GET['type'])) {
         $data = sanitize($_GET['data']);
         $FileExtType = sanitize($_GET['type']);
-        $fileName = "Sanitary-Welfare-" . $data . "-sheet";
+        $fileName = "Student-in-Business-" . $data . "-sheet";
 
         if ($data == 'all') {
             $query = "SELECT * FROM thylies_sanitary_welfare WHERE trash = 0";
@@ -34,9 +34,9 @@
             $sheet = $spreadsheet->getActiveSheet();
 
             // Header
-            $sheet->setCellValue('A1', 'Name of Student');
-            $sheet->setCellValue('B1', 'Date of Birth');
-            $sheet->setCellValue('C1', 'School Name');
+            $sheet->setCellValue('A1', 'NAME OF STUDENT');
+            $sheet->setCellValue('B1', 'SCHOOL NAME');
+            $sheet->setCellValue('C1', 'PROGRAM OF STUDY');
             $sheet->setCellValue('D1', 'Student index');
             $sheet->setCellValue('E1', 'Program');
             $sheet->setCellValue('F1', 'WhatsApp');
@@ -54,8 +54,8 @@
 
             $rowCount = 2;
             foreach ($rows as $row) {
-                $sheet->setCellValue('A' . $rowCount, ucwords($row['name_of_student']));
-                $sheet->setCellValue('B' . $rowCount, $row['dob']);
+                $sheet->setCellValue('A' . $rowCount, ucwords($row['student_name']));
+                $sheet->setCellValue('B' . $rowCount, $row['school_name']);
                 $sheet->setCellValue('C' . $rowCount, ucwords($row['school_name']));
                 $sheet->setCellValue('D' . $rowCount, $row['student_index']);
                 $sheet->setCellValue('E' . $rowCount, ucwords($row['program']));
@@ -89,11 +89,11 @@
             header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attactment; filename="' . urlencode($NewFileName) . '"');
             $writer->save('php://output');
-            // redirect(PROOT . 'admin/SW/index');
+            // redirect(PROOT . 'admin/SIB/index');
 
         } else {
             $_SESSION['flash_error'] = "No Record Found";
-            redirect(PROOT . 'admin/SW/index');
+            redirect(PROOT . 'admin/SIB/index');
         }
     }
 
