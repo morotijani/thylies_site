@@ -288,8 +288,8 @@ function user_is_logged_in() {
 
 // Redirect admin if !logged in
 function user_login_redirect($url = 'login') {
-	$_SESSION['flash_error'] = '<div class="text-center" id="temporary" style="margin-top: 60px;">You must be logged in to access that page.</div>';
-	header('Location: '.$url);
+	$_SESSION['flash_error'] = 'You must be logged in to access that page.';
+	redirect(PROOT . 'auth/' . $url);
 }
 
 // Check if you has paid registration fee
