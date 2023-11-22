@@ -76,6 +76,9 @@ ARE ALREADY DEALING IN');
                 $sheet->setCellValue('O' . $rowCount, $row['number_per_day']);
                 $sheet->setCellValue('P' . $rowCount, $row['customers_per_semester']);
                 $sheet->setCellValue('Q' . $rowCount, $row['category_of_business']);
+                $sheet->setCellValue('Q' . $rowCount, $row['expected_budget']);
+                $sheet->setCellValue('Q' . $rowCount, $row['expected_profit_per_day']);
+                $sheet->setCellValue('Q' . $rowCount, $row['expected_profit_per_semester']);
                 $rowCount++;
             }
 
