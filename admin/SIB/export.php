@@ -44,11 +44,9 @@
             $sheet->setCellValue('H1', 'RESIDENTIAL ADDRESS');
             $sheet->setCellValue('I1', 'NAME OF BUSINESS');
             $sheet->setCellValue('J1', 'WHAT ARE THE GOALS AND OBJECTIVES OF YOUR BUSINESS');
-            $sheet->setCellValue('K1', 'IS YOUR BUSINESS REGISTERED,WHY');
-            $sheet->setCellValue('L1', 'HOW WILL YOUR PRODUCTS BE MADE OR HOW WOULD YOUR GOODS AND SERVICES FOR SALE BE
-PROCURED');
-            $sheet->setCellValue('M1', 'WOULD YOU INTRODUCE NEW GOODS AND SERVICES IN THE FUTURE IN ADDITION TO THE ONES YOU
-ARE ALREADY DEALING IN');
+            $sheet->setCellValue('K1', 'IS YOUR BUSINESS REGISTERED, WHY?');
+            $sheet->setCellValue('L1', 'HOW WILL YOUR PRODUCTS BE MADE OR HOW WOULD YOUR GOODS AND SERVICES FOR SALE BE PROCURED');
+            $sheet->setCellValue('M1', 'WOULD YOU INTRODUCE NEW GOODS AND SERVICES IN THE FUTURE IN ADDITION TO THE ONES YOU ARE ALREADY DEALING IN');
             $sheet->setCellValue('N1', 'TARGET POPULACE');
             $sheet->setCellValue('O1', 'TARGETTED NUMBER OF CUSTOMERS PER DAY');
             $sheet->setCellValue('P1', 'TARGETTED CUSTOMERS PER SEMESTER');

@@ -185,13 +185,13 @@
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">SCHOOL</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['school_name']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['school_name']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">PROGRAM OF STUDY</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['program_of_study']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['program_of_study']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
@@ -215,7 +215,7 @@
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">TOWN OF RESIDENCE</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['town_of_residence']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['town_of_residence']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
@@ -238,7 +238,7 @@
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">NAME OF BUSINESS</a>
-                                <span class="d-block text-sm text-muted"><?= $row[0]['name_of_business']; ?></span>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['name_of_business']); ?></span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center">
