@@ -63,11 +63,11 @@ ARE ALREADY DEALING IN');
                 $sheet->setCellValue('B' . $rowCount, $row['school_name']);
                 $sheet->setCellValue('C' . $rowCount, ucwords($row['program_of_study']));
                 $sheet->setCellValue('D' . $rowCount, $row['index_number']);
-                $sheet->setCellValue('E' . $rowCount, ucwords($row['age']));
-                $sheet->setCellValue('F' . $rowCount, $row['region_of_residence']);
-                $sheet->setCellValue('G' . $rowCount, $row['town_of_residence']);
+                $sheet->setCellValue('E' . $rowCount, $row['age']);
+                $sheet->setCellValue('F' . $rowCount, ucwords($row['region_of_residence']));
+                $sheet->setCellValue('G' . $rowCount, ucwords($row['town_of_residence']));
                 $sheet->setCellValue('H' . $rowCount, $row['residence_address']);
-                $sheet->setCellValue('I' . $rowCount, $row['name_of_business']);
+                $sheet->setCellValue('I' . $rowCount, ucwords($row['name_of_business']));
                 $sheet->setCellValue('J' . $rowCount, $row['goals_objectives']);
                 $sheet->setCellValue('K' . $rowCount, $row['business_registered_why']);
                 $sheet->setCellValue('L' . $rowCount, $row['be_procured']);
@@ -76,9 +76,9 @@ ARE ALREADY DEALING IN');
                 $sheet->setCellValue('O' . $rowCount, $row['number_per_day']);
                 $sheet->setCellValue('P' . $rowCount, $row['customers_per_semester']);
                 $sheet->setCellValue('Q' . $rowCount, $row['category_of_business']);
-                $sheet->setCellValue('R' . $rowCount, $row['expected_budget']);
-                $sheet->setCellValue('S' . $rowCount, $row['expected_profit_per_day']);
-                $sheet->setCellValue('T' . $rowCount, $row['expected_profit_per_semester']);
+                $sheet->setCellValue('R' . $rowCount, money($row['expected_budget']));
+                $sheet->setCellValue('S' . $rowCount, money($row['expected_profit_per_day']));
+                $sheet->setCellValue('T' . $rowCount, money($row['expected_profit_per_semester']));
                 $rowCount++;
             }
 
