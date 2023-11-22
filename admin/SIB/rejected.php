@@ -87,7 +87,7 @@
     // SEARCH AND PAGINATION FOR LIST
     function load_data(page, query = '') {
         $.ajax({
-            url : "<?= PROOT; ?>parsers/sw.rejected.list.php",
+            url : "<?= PROOT; ?>parsers/sib.rejected.list.php",
             method : "POST",
             data : {
                 page : page, 
