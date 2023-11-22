@@ -42,11 +42,13 @@
             $sheet->setCellValue('F1', 'REGION OF RESIDENCE');
             $sheet->setCellValue('G1', 'TOWN OF RESIDENCE');
             $sheet->setCellValue('H1', 'RESIDENTIAL ADDRESS');
-            $sheet->setCellValue('I1', 'Number of pads per semester');
-            $sheet->setCellValue('J1', 'Brand of Sanitary pad');
-            $sheet->setCellValue('K1', 'Number of pantie liners');
-            $sheet->setCellValue('L1', 'Brand of Pantie liners');
-            $sheet->setCellValue('M1', 'Number of tissue');
+            $sheet->setCellValue('I1', 'NAME OF BUSINESS');
+            $sheet->setCellValue('J1', 'WHAT ARE THE GOALS AND OBJECTIVES OF YOUR BUSINESS');
+            $sheet->setCellValue('K1', 'IS YOUR BUSINESS REGISTERED,WHY');
+            $sheet->setCellValue('L1', 'HOW WILL YOUR PRODUCTS BE MADE OR HOW WOULD YOUR GOODS AND SERVICES FOR SALE BE
+PROCURED');
+            $sheet->setCellValue('M1', 'WOULD YOU INTRODUCE NEW GOODS AND SERVICES IN THE FUTURE IN ADDITION TO THE ONES YOU
+ARE ALREADY DEALING IN');
             $sheet->setCellValue('N1', 'Brand of tissue papers');
             $sheet->setCellValue('O1', 'Type of panties');
             $sheet->setCellValue('P1', 'Number of panties');
@@ -62,11 +64,11 @@
                 $sheet->setCellValue('F' . $rowCount, $row['region_of_residence']);
                 $sheet->setCellValue('G' . $rowCount, $row['town_of_residence']);
                 $sheet->setCellValue('H' . $rowCount, $row['residence_address']);
-                $sheet->setCellValue('I' . $rowCount, $row['number_of_pads_per_semester']);
-                $sheet->setCellValue('J' . $rowCount, $row['brand_of_sanitary_pad']);
-                $sheet->setCellValue('K' . $rowCount, $row['number_of_pantie_liners']);
-                $sheet->setCellValue('L' . $rowCount, $row['brand_of_pantie_liners']);
-                $sheet->setCellValue('M' . $rowCount, $row['number_of_tissue']);
+                $sheet->setCellValue('I' . $rowCount, $row['name_of_business']);
+                $sheet->setCellValue('J' . $rowCount, $row['goals_objectives']);
+                $sheet->setCellValue('K' . $rowCount, $row['business_registered_why']);
+                $sheet->setCellValue('L' . $rowCount, $row['be_procured']);
+                $sheet->setCellValue('M' . $rowCount, $row['introduce_new']);
                 $sheet->setCellValue('N' . $rowCount, $row['brand_of_tissue_papers']);
                 $sheet->setCellValue('O' . $rowCount, $row['type_of_panties']);
                 $sheet->setCellValue('P' . $rowCount, $row['number_of_panties']);
