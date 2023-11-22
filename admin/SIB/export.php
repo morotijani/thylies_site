@@ -49,10 +49,10 @@
 PROCURED');
             $sheet->setCellValue('M1', 'WOULD YOU INTRODUCE NEW GOODS AND SERVICES IN THE FUTURE IN ADDITION TO THE ONES YOU
 ARE ALREADY DEALING IN');
-            $sheet->setCellValue('N1', 'Brand of tissue papers');
-            $sheet->setCellValue('O1', 'Type of panties');
-            $sheet->setCellValue('P1', 'Number of panties');
-            $sheet->setCellValue('Q1', 'Design of panties');
+            $sheet->setCellValue('N1', 'TARGET POPULACE');
+            $sheet->setCellValue('O1', 'TARGETTED NUMBER OF CUSTOMERS PER DAY');
+            $sheet->setCellValue('P1', 'TARGETTED CUSTOMERS PER SEMESTER');
+            $sheet->setCellValue('Q1', 'CATEGORY OF BUSINESS');
 
             $rowCount = 2;
             foreach ($rows as $row) {
