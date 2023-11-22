@@ -53,6 +53,9 @@ ARE ALREADY DEALING IN');
             $sheet->setCellValue('O1', 'TARGETTED NUMBER OF CUSTOMERS PER DAY');
             $sheet->setCellValue('P1', 'TARGETTED CUSTOMERS PER SEMESTER');
             $sheet->setCellValue('Q1', 'CATEGORY OF BUSINESS');
+            $sheet->setCellValue('Q1', 'EXPECTED BUDGET OF COMMENCEMENT/EXPANSION');
+            $sheet->setCellValue('Q1', 'EXPECTED PROFIT PER DAY');
+            $sheet->setCellValue('Q1', 'EXPECTED PROFIT PER SEMESTER');
 
             $rowCount = 2;
             foreach ($rows as $row) {
