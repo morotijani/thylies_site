@@ -53,9 +53,9 @@ ARE ALREADY DEALING IN');
             $sheet->setCellValue('O1', 'TARGETTED NUMBER OF CUSTOMERS PER DAY');
             $sheet->setCellValue('P1', 'TARGETTED CUSTOMERS PER SEMESTER');
             $sheet->setCellValue('Q1', 'CATEGORY OF BUSINESS');
-            $sheet->setCellValue('Q1', 'EXPECTED BUDGET OF COMMENCEMENT/EXPANSION');
-            $sheet->setCellValue('Q1', 'EXPECTED PROFIT PER DAY');
-            $sheet->setCellValue('Q1', 'EXPECTED PROFIT PER SEMESTER');
+            $sheet->setCellValue('R1', 'EXPECTED BUDGET OF COMMENCEMENT/EXPANSION');
+            $sheet->setCellValue('S1', 'EXPECTED PROFIT PER DAY');
+            $sheet->setCellValue('T1', 'EXPECTED PROFIT PER SEMESTER');
 
             $rowCount = 2;
             foreach ($rows as $row) {
@@ -76,9 +76,9 @@ ARE ALREADY DEALING IN');
                 $sheet->setCellValue('O' . $rowCount, $row['number_per_day']);
                 $sheet->setCellValue('P' . $rowCount, $row['customers_per_semester']);
                 $sheet->setCellValue('Q' . $rowCount, $row['category_of_business']);
-                $sheet->setCellValue('Q' . $rowCount, $row['expected_budget']);
-                $sheet->setCellValue('Q' . $rowCount, $row['expected_profit_per_day']);
-                $sheet->setCellValue('Q' . $rowCount, $row['expected_profit_per_semester']);
+                $sheet->setCellValue('R' . $rowCount, $row['expected_budget']);
+                $sheet->setCellValue('S' . $rowCount, $row['expected_profit_per_day']);
+                $sheet->setCellValue('T' . $rowCount, $row['expected_profit_per_semester']);
                 $rowCount++;
             }
 
