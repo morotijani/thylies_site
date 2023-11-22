@@ -34,7 +34,6 @@
 					</div>
 				</div>
 				<ul class="nav nav-tabs overflow-x border-0">
-					<li class="nav-item"><a href="<?= PROOT; ?>adminSW/import" class="nav-link">Import Data</a></li>
 					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW" class="nav-link">View all</a></li>
 					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/rejected" class="nav-link">Rejected</a></li>
 					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/gained" class="nav-link active">Gained</a></li>
@@ -87,7 +86,7 @@
     // SEARCH AND PAGINATION FOR LIST
     function load_data(page, query = '') {
         $.ajax({
-            url : "<?= PROOT; ?>parsers/scholarship.gained.list.php",
+            url : "<?= PROOT; ?>parsers/sw.gained.list.php",
             method : "POST",
             data : {
                 page : page, 
