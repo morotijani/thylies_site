@@ -46,7 +46,7 @@
 							  	<li class="list-group-item active">Profile</li>
 							  	<li class="list-group-item">
 							  		<h3>Full name</h3>
-							  		<h6><?= $user_data['user_fullname']; ?></h6>
+							  		<h6><?= ucwords($user_data['user_fullname']); ?></h6>
 							  	</li>
 							  	<li class="list-group-item">
 							  		<h3>Student ID</h3>
@@ -54,11 +54,15 @@
 							  	</li>
 							  	<li class="list-group-item">
 							  		<h3>School</h3>
-							  		<h6><?= $user_data['user_school_name']; ?></h6>
+							  		<h6><?= ucwords($user_data['user_school_name']); ?></h6>
 							  	</li>
 							  	<li class="list-group-item">
 							  		<h3>Email</h3>
 							  		<h6><?= $user_data['user_email']; ?></h6>
+							  	</li>
+							  	<li class="list-group-item">
+							  		<h3>Gender</h3>
+							  		<h6><?= $user_data['user_gender']; ?></h6>
 							  	</li>
 							  	<li class="list-group-item">
 							  		<h3>Joined Date</h3>
