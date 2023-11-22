@@ -69,10 +69,10 @@ ARE ALREADY DEALING IN');
                 $sheet->setCellValue('K' . $rowCount, $row['business_registered_why']);
                 $sheet->setCellValue('L' . $rowCount, $row['be_procured']);
                 $sheet->setCellValue('M' . $rowCount, $row['introduce_new']);
-                $sheet->setCellValue('N' . $rowCount, $row['brand_of_tissue_papers']);
-                $sheet->setCellValue('O' . $rowCount, $row['type_of_panties']);
-                $sheet->setCellValue('P' . $rowCount, $row['number_of_panties']);
-                $sheet->setCellValue('Q' . $rowCount, $row['design_of_panties']);
+                $sheet->setCellValue('N' . $rowCount, $row['target_populace']);
+                $sheet->setCellValue('O' . $rowCount, $row['number_per_day']);
+                $sheet->setCellValue('P' . $rowCount, $row['customers_per_semester']);
+                $sheet->setCellValue('Q' . $rowCount, $row['category_of_business']);
                 $rowCount++;
             }
 
