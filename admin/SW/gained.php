@@ -22,11 +22,11 @@
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="<?= PROOT; ?>admin/SW/" class="btn btn-sm btn-neutral border-base">
+							<a href="<?= PROOT; ?>admin/gained" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
-							<a href="<?= PROOT; ?>admin/index" class="btn btn-sm btn-primary">
+							<a href="<?= PROOT; ?>admin/SW/" class="btn btn-sm btn-primary">
 								<span class="pe-2"><i class="bi bi-arrow-left"></i> </span>
 								<span>Go Back</span>
 							</a>

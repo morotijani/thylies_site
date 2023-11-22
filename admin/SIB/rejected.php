@@ -23,11 +23,11 @@
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="<?= PROOT; ?>admin/SW/rejected" class="btn btn-sm btn-neutral border-base">
+							<a href="<?= PROOT; ?>admin/SIB/rejected" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
 								<span>Refresh</span> 
 							</a>
-							<a href="<?= PROOT; ?>admin/index" class="btn btn-sm btn-primary">
+							<a href="<?= PROOT; ?>admin/SIB/" class="btn btn-sm btn-primary">
 								<span class="pe-2"><i class="bi bi-arrow-left"></i> </span>
 								<span>Go Back</span>
 							</a>
@@ -35,9 +35,9 @@
 					</div>
 				</div>
 				<ul class="nav nav-tabs overflow-x border-0">
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW" class="nav-link">View all</a></li>
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/rejected" class="nav-link active">Rejected</a></li>
-					<li class="nav-item"><a href="<?= PROOT; ?>admin/SW/gained" class="nav-link">Gained</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB" class="nav-link">View all</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB/rejected" class="nav-link active">Rejected</a></li>
+					<li class="nav-item"><a href="<?= PROOT; ?>admin/SIB/gained" class="nav-link">Gained</a></li>
 				</ul>
 			</div>
 		</div>
@@ -61,16 +61,16 @@
                                 <span class="text-xs text-primary">Data</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="<?= PROOT; ?>admin/SW/export/all/xlsx" class="dropdown-item">XLSX</a>
-                                <a href="<?= PROOT; ?>admin/SW/export/all/xls" class="dropdown-item">XLS</a>
-                                <a href="<?= PROOT; ?>admin/SW/export/all/csv" class="dropdown-item">CSV</a>
+                                <a href="<?= PROOT; ?>admin/SIB/export/all/xlsx" class="dropdown-item">XLSX</a>
+                                <a href="<?= PROOT; ?>admin/SIB/export/all/xls" class="dropdown-item">XLS</a>
+                                <a href="<?= PROOT; ?>admin/SIB/export/all/csv" class="dropdown-item">CSV</a>
                             </div>
                         </div>
                     </div>
                     <div class="btn-group">
-                        <a href="<?= PROOT; ?>admin/SW" class="btn btn-sm btn-neutral">View all</a> 
-                        <a href="<?= PROOT; ?>admin/SW/trash" class="btn btn-sm btn-neutral">Trash</a> 
-                        <a href="<?= PROOT; ?>admin/SW/rejected" class="btn btn-sm btn-neutral text-primary" aria-current="page">Rejected</a>
+                        <a href="<?= PROOT; ?>admin/SIB" class="btn btn-sm btn-neutral">View all</a> 
+                        <a href="<?= PROOT; ?>admin/SIB/trash" class="btn btn-sm btn-neutral">Trash</a> 
+                        <a href="<?= PROOT; ?>admin/SIB/rejected" class="btn btn-sm btn-neutral text-primary" aria-current="page">Rejected</a>
                     </div>
                 </div>
                 <div class="card">

@@ -16,13 +16,13 @@
         $fileName = "Student-in-Business-" . $data . "-sheet";
 
         if ($data == 'all') {
-            $query = "SELECT * FROM thylies_sanitary_welfare WHERE trash = 0";
+            $query = "SELECT * FROM thylies_student_in_business WHERE trash = 0";
         } else if ($data == 'gained') {
-            $query = "SELECT * FROM thylies_sanitary_welfare WHERE status = 1 AND trash = 0";
+            $query = "SELECT * FROM thylies_student_in_business WHERE status = 1 AND trash = 0";
         } else if ($data == 'rejected') {
-            $query = "SELECT * FROM thylies_sanitary_welfare WHERE status != 0 OR status != 1";
+            $query = "SELECT * FROM thylies_student_in_business WHERE status != 0 OR status != 1";
         }  else if ($data == 'trash') {
-            $query = "SELECT * FROM thylies_sanitary_welfare WHERE trash = 1";
+            $query = "SELECT * FROM thylies_student_in_business WHERE trash = 1";
         }
         $statement = $conn->prepare($query);
         $statement->execute();
