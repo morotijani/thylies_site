@@ -20,14 +20,14 @@
     function check_uiser_verified($user_verified) {
         global $conn;
 
-        if ($user_verified == 1) {
+        if ($user_verified != 1) {
             return '
-
+                <div class="alert alert-primary" role="alert">
+                   Please make sure you verify your account ' . $user_email . '
+                </div>
             ';
         } else {
-            return '
-
-            ';
+            return false;
         }
     }
 
