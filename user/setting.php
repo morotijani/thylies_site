@@ -2,17 +2,9 @@
 
     require_once ("../connection/conn.php");
 
-    if (user_is_logged_in()) {
-        // if (!check_payment_of_registration_fee($user_id)) {
-        //     redirect(PROOT . 'auth/pay-registration');
-        // }
-    } else {
+    if (!user_is_logged_in()) {
         redirect(PROOT . 'auth/logout');
     }
-
-    // if (is_array(applied_scholarship($user_id))) {
-    //     redirect(PROOT . 'user/scholarship-status');
-    // }
 
     $SQL = "
         SELECT * FROM thylies_scholarship 
@@ -168,69 +160,10 @@
     <?php include ('../inc/footer.inc.php'); ?>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
+        // Fade out messages
+        $("#temporary").fadeOut(5000);
 
         function submit_settings_form(token) {
             $('#settingsForm').submit();
         }
-
-        $(document).ready(function() {
-            
-
-            // Fade out messages
-            $("#temporary").fadeOut(5000);
-
-            // Upload IMAGE Temporary
-            $(document).on('change','#passport', function() {
-
-                var property = document.getElementById("passport").files[0];
-                var image_name = property.name;
-
-                var image_extension = image_name.split(".").pop().toLowerCase();
-                if (jQuery.inArray(image_extension, ['jpeg', 'png', 'jpg']) == -1) {
-                    alert("The file extension must be .jpg, .png, .jpeg");
-                    $('#passport').val('');
-                    return false;
-                }
-
-                var image_size = property.size;
-                if (image_size > 15000000) {
-                    alert('The file size must be under 15MB');
-                    return false;
-                } else {
-
-                    var form_data = new FormData();
-                    form_data.append("passport", property);
-                    $.ajax({
-                        url: "<?= PROOT; ?>parsers/upload.scholarship.passport.picture.php",
-                        method: "POST",
-                        data: form_data,
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        beforeSend: function() {
-                            $("#upload_profile").html("<div class='text-success font-weight-bolder'>Uploading passport picture ...</div>");
-                        },
-                        success: function(data) {
-                            location.reload();
-                        }
-                    });
-                }
-            });
-
-            // DELETE TEMPORARY UPLOADED IMAGE
-            $(document).on('click', '.change-passport-picture', function() {
-                var tempuploded_file_id = $(this).attr('id');
-
-                $.ajax ({
-                    url: "<?= PROOT; ?>parsers/delete.uploaded.picture.php",
-                    method: "POST",
-                    data:{
-                        tempuploded_file_id : tempuploded_file_id
-                    },
-                    success: function(data) {
-                        location.reload();
-                    }
-                });
-            });
-        });
     </script>
