@@ -47,31 +47,29 @@
     if ($_POST) {
         // code...
         $sql = "
-            UPDATE `thylies_scholarship` 
-            SET `scholarship_id` = ?, `student_name` = ?, `student_dob` = ?, `student_age` = ?, `student_place_of_birth` = ?, `student_place_of_residence` = ?, `student_with_parent` = ?, `student_family_size` = ?, `father_name` = ?, `father_age` = ?, `father_occupation` = ?, `mother_name` = ?, `mother_age` = ?, `mother_occupation` = ?, `parent_alive` = ?, `parent_deceased` = ?, `wpys_fees` = ?, `program_name` = ?, `year_of_study` = ?, `index_number` = ?, `self_description` = ?, `professional_dream` = ?, `limitation` = ?, `referee_name` = ?, `relation_nature` = ?, `referee_occupation` = ?, `referee_contact` = ?, `referee_address` = ?, `referee_email` = ?, `submitted` = ?, `createdAt` = ?
-            WHERE user_id = ?
+            UPDATE `thylies_user` 
+            SET `user_fullname` = ?, `user_email` = ?, `user_phone` = ?, `user_school_name` = ?, `user_index_number` = ?, `user_gender` = ?, `user_country` = ?, `user_state` = ?, `user_city` = ?, `user_address` = ?, `user_postcode` = ? 
+            WHERE user_unique_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$scholarship_id, $student_name, $student_dob, $student_age, $student_place_of_birth, $student_place_of_residence, $student_with_parent, $student_family_size, $father_name, $father_age, $father_occupation, $mother_name, $mother_age, $mother_occupation, $parent_alive, $parent_deceased, $wpys_fees, $program_name, $year_of_study, $index_number, $self_description, $professional_dream, $limitation, $referee_name, $relation_nature, $referee_occupation, $referee_contact, $referee_address, $referee_email, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$user_fullname, $user_email, $user_phone, $user_school_name, $user_index_number, $user_gender, $user_country, $user_state, $user_city, $user_address, $user_postcode, $user_data['user_unique_id']]);
         if (isset($result)) {
-            $subject = "Thylies Scholarhip Application.";
+            $subject = "Profile Update.";
             $body = "
                 <h3>
-                    {$student_name},</h3>
+                    {$user_fullname},</h3>
                     <p>
-                        Thank you for applying for the Thylies scholarship program. Please your scholarhip identity code is:
-                        <br><h3>{$scholarship_id}</h3>
+                        You just updated your user profile at 
+                        <br><h3>{$createdAt}</h3>
                     </p>
-                    We will get in touch with you soon.
-                    <br>
                     <br>
                     Best Regards,<br>
                     Thylies Ghana.
             ";
 
-            $mail_result = send_email($student_name, $user_data['user_email'], $subject, $body);
+            $mail_result = send_email($user_fullname, $user_email, $subject, $body);
             if ($mail_result) {
-                redirect(PROOT . 'user/scholarship-status');
+                redirect(PROOT . 'user/index');
             }
         } else {
 
