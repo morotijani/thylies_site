@@ -202,6 +202,12 @@
                         </div>
                         <div class="list-group-item d-flex align-items-center">
                             <div class="flex-fill">
+                                <a href="javascript:;" class="d-block h6 font-semibold mb-1">DATE OF BIRTH</a>
+                                <span class="d-block text-sm text-muted"><?= ucwords($row[0]['dob']); ?></span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <div class="flex-fill">
                                 <a href="javascript:;" class="d-block h6 font-semibold mb-1">AGE</a>
                                 <span class="d-block text-sm text-muted"><?= ucwords($row[0]['age']); ?></span>
                             </div>

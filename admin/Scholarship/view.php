@@ -97,9 +97,9 @@
 						<div class="hstack gap-2 justify-content-sm-end">
 							<a href="<?= PROOT; ?>admin/Scholarship/view/<?= $scholarship_id; ?>" class="btn btn-sm btn-neutral border-base">
 								<span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
-								<span>Refresh</span> 
+								<span>Refresh</span>
 							</a>
-							<a href="<?= PROOT; ?>admin/index" class="btn btn-sm btn-primary">
+							<a href="<?= PROOT; ?>admin/Scholarship" class="btn btn-sm btn-primary">
 								<span class="pe-2"><i class="bi bi-arrow-left"></i> </span>
 								<span>Go Back</span>
 							</a>
