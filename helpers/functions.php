@@ -16,6 +16,21 @@
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 
+    // user veirfied
+    function check_uiser_verified($user_verified) {
+        global $conn;
+
+        if ($user_verified == 1) {
+            return '
+
+            ';
+        } else {
+            return '
+
+            ';
+        }
+    }
+
     // 
     function applied_student_in_business($user_id) {
         global $conn;
