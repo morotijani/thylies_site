@@ -17,9 +17,7 @@
     }
 
     // user veirfied
-    function check_uiser_verified($user_verified) {
-        global $conn;
-
+    function check_user_verified($user_verified, $user_email) {
         if ($user_verified != 1) {
             return '
                 <div class="alert alert-primary" role="alert">

@@ -90,7 +90,7 @@
 						</div>
 						<div class="card-body p-4">
 							<div class="">
-                                <?= $user_verified; ?>
+                                <?= check_user_verified($user_data['user_verified'], $user_data['user_email']); ?>
                             </div>
 							<!-- form -->
 							<form class="row" method="POST" id="settingsForm">
