@@ -69,6 +69,7 @@
 
             $mail_result = send_email($user_fullname, $user_email, $subject, $body);
             if ($mail_result) {
+                $_SESSION['flash_success'] = 'Profile details updated successfully!';
                 redirect(PROOT . 'user/index');
             }
         } else {
