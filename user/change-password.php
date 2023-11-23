@@ -67,7 +67,7 @@
                 )
             );
             if (isset($result)) {
-                $_SESSION['flash_success'] = 'Password successfully UPDATED';
+                $_SESSION['flash_success'] = 'Password successfully UPDATED!';
                 redirect(PROOT . "user/");
 
                  $subject = "Password Update.";
