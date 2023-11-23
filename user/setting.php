@@ -30,17 +30,17 @@
     //
     $post = (isset($_POST) ? cleanPost($_POST) : '');
     $scholarship_id = guidv4();
-    $user_fullname = (isset($post['user_fullname']) && $post['user_fullname'] != '') ? $post['user_fullname'] : '';
-    $user_email = (isset($post['user_email']) && $post['user_email'] != '') ? $post['user_email'] : '';
-    $user_phone = (isset($post['user_phone']) && $post['user_phone'] != '') ? $post['user_phone'] : '';
-    $user_school_name = (isset($post['user_school_name']) && $post['user_school_name'] != '') ? $post['user_school_name'] : '';
-    $user_index_number = (isset($post['user_index_number']) && $post['user_index_number'] != '') ? $post['user_index_number'] : '';
-    $user_gender = (isset($post['user_gender']) && $post['user_gender'] != '') ? $post['user_gender'] : '';
-    $user_country = (isset($post['user_country']) && $post['user_country'] != '') ? $post['user_country'] : '';
-    $user_state = (isset($post['user_state']) && $post['user_state'] != '') ? $post['user_state'] : '';
-    $user_city = (isset($post['user_city']) && $post['user_city'] != '') ? $post['user_city'] : '';
-    $user_address = (isset($post['user_address']) && $post['user_address'] != '') ? $post['user_address'] : '';
-    $user_postcode = (isset($post['user_postcode']) && $post['user_postcode'] != '') ? $post['user_postcode'] : '';
+    $user_fullname = (isset($post['user_fullname']) && $post['user_fullname'] != '') ? $post['user_fullname'] : $user_data['user_fullname'];
+    $user_email = (isset($post['user_email']) && $post['user_email'] != '') ? $post['user_email'] : $user_data['user_email'];
+    $user_phone = (isset($post['user_phone']) && $post['user_phone'] != '') ? $post['user_phone'] : $user_data['user_phone'];
+    $user_school_name = (isset($post['user_school_name']) && $post['user_school_name'] != '') ? $post['user_school_name'] : $user_data['user_school_name'];
+    $user_index_number = (isset($post['user_index_number']) && $post['user_index_number'] != '') ? $post['user_index_number'] : $user_data['user_index_number'];
+    $user_gender = (isset($post['user_gender']) && $post['user_gender'] != '') ? $post['user_gender'] : $user_data['user_gender'];
+    $user_country = (isset($post['user_country']) && $post['user_country'] != '') ? $post['user_country'] : $user_data['user_country'];
+    $user_state = (isset($post['user_state']) && $post['user_state'] != '') ? $post['user_state'] : $user_data['user_state'];
+    $user_city = (isset($post['user_city']) && $post['user_city'] != '') ? $post['user_city'] : $user_data['user_city'];
+    $user_address = (isset($post['user_address']) && $post['user_address'] != '') ? $post['user_address'] : $user_data['user_address'];
+    $user_postcode = (isset($post['user_postcode']) && $post['user_postcode'] != '') ? $post['user_postcode'] : $user_data['user_postcode'];
    
     $createdAt = date("Y-m-d H:i:s");
 
