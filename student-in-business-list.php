@@ -1,7 +1,7 @@
 <?php 
     require_once ("connection/conn.php");
 
-    $title = 'Sanitary Welfare List - ';
+    $title = 'Student in Business List - ';
     $navbar = 'navbar-light';
 
     include ('inc/header.inc.php');
@@ -38,7 +38,7 @@
                        <div class="d-inline">
                             <form action="" class="row" method="GET">
                                 <div class="mb-3 mb-2 mb-lg-0 col-lg-10 col-md-10 col-12">
-                                    <input type="text" name="q" class="form-control" placeholder="search with name, sanitary welfare id ..." required>
+                                    <input type="text" name="q" class="form-control" placeholder="search with name, student in business id ..." required>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-12">
                                     <button class="btn btn-warning">Search</button>
