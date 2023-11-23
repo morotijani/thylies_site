@@ -32,6 +32,15 @@
     $scholarship_id = guidv4();
     $user_fullname = (isset($post['user_fullname']) && $post['user_fullname'] != '') ? $post['user_fullname'] : '';
     $user_email = (isset($post['user_email']) && $post['user_email'] != '') ? $post['user_email'] : '';
+    $user_phone = (isset($post['user_phone']) && $post['user_phone'] != '') ? $post['user_phone'] : '';
+    $user_school_name = (isset($post['user_school_name']) && $post['user_school_name'] != '') ? $post['user_school_name'] : '';
+    $user_index_number = (isset($post['user_index_number']) && $post['user_index_number'] != '') ? $post['user_index_number'] : '';
+    $user_gender = (isset($post['user_gender']) && $post['user_gender'] != '') ? $post['user_gender'] : '';
+    $user_country = (isset($post['user_country']) && $post['user_country'] != '') ? $post['user_country'] : '';
+    $user_state = (isset($post['user_state']) && $post['user_state'] != '') ? $post['user_state'] : '';
+    $user_city = (isset($post['user_city']) && $post['user_city'] != '') ? $post['user_city'] : '';
+    $user_address = (isset($post['user_address']) && $post['user_address'] != '') ? $post['user_address'] : '';
+    $user_postcode = (isset($post['user_postcode']) && $post['user_postcode'] != '') ? $post['user_postcode'] : '';
    
     $createdAt = date("Y-m-d H:i:s");
 
@@ -85,7 +94,7 @@
 								<form class="row" method="POST" id="settingsForm">
 									<div class="mb-3 col-12 col-md-12">
 										<label class="form-label" for="user_fullname">Name of Student<span class="text-danger">*</span></label>
-										<input type="text" id="user_fullname" name="user_fullname" class="form-control" placeholder="First Name" required <?= $user_data['user_fullname']; ?>>
+										<input type="text" id="user_fullname" name="user_fullname" class="form-control" required <?= $; ?>>
 									</div>
 									<div class="mb-3 col-12 col-md-12">
 										<label class="form-label" for="user_email">Email<span class="text-danger">*</span></label>
@@ -101,31 +110,31 @@
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
                                         <label class="form-label" for="user_index_number">Index Number<span class="text-danger">*</span></label>
-                                        <input type="number" min="1" id="user_index_number" name="index_number" class="form-control" required <?= $user_data['user_index_number ']; ?>>
+                                        <input type="number" min="1" id="user_index_number" name="index_number" class="form-control" required <?= $user_data['user_index_number']; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
                                         <label class="form-label" for="user_gender">Gender<span class="text-danger">*</span></label>
-                                        <input type="number" min="1" id="user_gender" class="form-control" required <?= $user_data['user_gender']; ?>>
+                                        <input type="number" min="1" id="user_gender" name="user_gender" class="form-control" required <?= $user_data['user_gender']; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="student_age">Index Number<span class="text-danger">*</span></label>
-                                        <input type="number" min="1" id="student_age" class="form-control" required <?= $user_data['user_index_number ']; ?>>
+                                        <label class="form-label" for="user_country">Country</label>
+                                        <input type="number" min="1" id="user_country" name="user_country" class="form-control" <?= $user_data['user_country']; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="student_age">Index Number<span class="text-danger">*</span></label>
-                                        <input type="number" min="1" id="student_age" class="form-control" required <?= $user_data['user_index_number ']; ?>>
+                                        <label class="form-label" for="user_state">State / Region</label>
+                                        <input type="number" min="1" id="user_state" name="user_state" class="form-control" <?= $user_data['user_state']; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="student_age">Index Number<span class="text-danger">*</span></label>
-                                        <input type="number" min="1" id="student_age" class="form-control" required <?= $user_data['user_index_number ']; ?>>
+                                        <label class="form-label" for="user_city">City</label>
+                                        <input type="number" min="1" id="user_city" name="user_city" class="form-control" <?= $user_data['user_city']; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="student_age">Index Number<span class="text-danger">*</span></label>
-                                        <input type="number" min="1" id="student_age" class="form-control" required <?= $user_data['user_index_number ']; ?>>
+                                        <label class="form-label" for="user_address">Address<span class="text-danger">*</span></label>
+                                        <input type="number" min="1" id="user_address" name="user_address" class="form-control" <?= $user_data['user_address']; ?>>
                                     </div>
                                     <div class="mb-3 col-12 col-md-12">
-                                        <label class="form-label" for="student_age">Index Number<span class="text-danger">*</span></label>
-                                        <input type="number" min="1" id="student_age" class="form-control" required <?= $user_data['user_index_number ']; ?>>
+                                        <label class="form-label" for="user_postcode">Post Code</label>
+                                        <input type="number" min="1" id="user_postcode" name="user_postcode" class="form-control" <?= $user_data['user_postcode']; ?>>
                                     </div>
 
                                     <!-- Modal -->
