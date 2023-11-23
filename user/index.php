@@ -38,10 +38,11 @@
 									<a href="<?= PROOT; ?>sanitary-welfare-list" class="btn btn-light btn-sm">Sanitary Welfare list</a>
 									<a href="<?= PROOT; ?>student-in-business-list" class="btn btn-light btn-sm">Student in Business list</a>
 									<a href="<?= PROOT; ?>scholarship-list" class="btn btn-light btn-sm ">Scholarship list</a>
-									<a href="<?= PROOT; ?>auth/logout" class="btn btn-sm">Logout</a>
+									<a href="<?= PROOT; ?>user/settings" class="btn btn-sm">Settings</a>
 								</div>
 							</div>
 							<hr class="my-5">
+							<?= check_user_verified($user_data['user_verified'], $user_data['user_email']); ?>
 							<ul class="list-group">
 							  	<li class="list-group-item active">Profile</li>
 							  	<li class="list-group-item">
