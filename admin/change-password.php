@@ -19,7 +19,6 @@
     $confirm = trim($confirm);
     $new_hashed = password_hash($password, PASSWORD_BCRYPT);
     $admin_id = $admin_data['admin_id'];
-    echo $admin_id;
 
     if ($_POST) {
         if (empty($_POST['old_password']) || empty($_POST['password']) || empty($_POST['confirm'])) {

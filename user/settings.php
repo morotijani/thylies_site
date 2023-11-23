@@ -160,9 +160,6 @@
     <?php include ('../inc/footer.inc.php'); ?>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
-        // Fade out messages
-        $("#temporary").fadeOut(5000);
-
         function submit_settings_form(token) {
             $('#settingsForm').submit();
         }
