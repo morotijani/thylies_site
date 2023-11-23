@@ -139,7 +139,7 @@
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-body">
-                                                Are you sure you ant to make these changes?
+                                                Are you sure you want to make these changes to your profile?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
