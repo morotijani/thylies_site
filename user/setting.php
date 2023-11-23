@@ -137,16 +137,20 @@
                                         <input type="number" min="1" id="user_postcode" name="user_postcode" class="form-control" value="<?= $user_postcode; ?>">
                                     </div>
 
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#settingsModalCenter">Submit</button>
+                                    </div>
+
                                     <!-- Modal -->
-                                    <div class="modal fade" id="scholarshipModalCenter" tabindex="-1" role="dialog" aria-labelledby="scholarshipModalCenterTitle" aria-hidden="true">
+                                    <div class="modal fade" id="settingsModalCenter" tabindex="-1" role="dialog" aria-labelledby="settingsModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-body">
-                                                    Make sure your details you are to send is accurate before clicking on the proceed button.
+                                                    Are you sure you ant to make these changes?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_settings_form' data-action='submit' type="submit">Proceed</button>
+                                                    <button class="g-recaptcha btn btn-warning" data-sitekey="<?= RECAPTCHA_SITE_KEY; ?>" data-callback='submit_settings_form' data-action='submit' type="submit">Yes</button>
                                                 </div>
                                             </div>
                                         </div>
