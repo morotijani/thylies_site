@@ -107,7 +107,11 @@
                                 </div>
                                 <div class="mb-3 col-12 col-md-12">
                                     <label class="form-label" for="user_gender">Gender<span class="text-danger">*</span></label>
-                                    <input type="number" min="1" id="user_gender" name="user_gender" class="form-control" required value="<?= $user_gender; ?>">
+                                    <select type="text" id="user_gender" name="user_gender" class="form-control" required>
+                                        <option value=""></option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
                                 </div>
                                 <div class="mb-3 col-12 col-md-12">
                                     <label class="form-label" for="user_country">Country</label>
