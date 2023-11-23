@@ -33,6 +33,7 @@
     $student_name = (isset($post['student_name']) && $post['student_name'] != '') ? $post['student_name'] : '';
     $dob = (isset($post['dob']) && $post['dob'] != '') ? $post['dob'] : '';
     $program_of_study = (isset($post['program_of_study']) && $post['program_of_study'] != '') ? $post['program_of_study'] : '';
+    $school_name = (isset($post['school_name']) && $post['school_name'] != '') ? $post['school_name'] : '';
     $index_number = (isset($post['index_number']) && $post['index_number'] != '') ? $post['index_number'] : '';
     $age = (isset($post['age']) && $post['age'] != '') ? $post['age'] : '';
     $region_of_residence = (isset($post['region_of_residence']) && $post['region_of_residence'] != '') ? $post['region_of_residence'] : '';
@@ -56,11 +57,11 @@
         // code...
         $sql = "
             UPDATE `thylies_student_in_business` 
-            SET `sib_id` = ?, `student_name` = ?, `dob` = ?, `program_of_study` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
+            SET `sib_id` = ?, `student_name` = ?, `dob` = ?, `program_of_study` = ?, `index_number` = ?, `school_name` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$sib_id, $student_name, $dob, $program_of_study, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sib_id, $student_name, $dob, $program_of_study, $index_number, $school_name, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
@@ -141,9 +142,13 @@
 										<input type="text" id="program_of_study" name="program_of_study" class="form-control" required <?= $program_of_study; ?>>
 									</div>
 									<div class="mb-3 col-12 col-md-12">
-										<label class="form-label" for="index_number">INDEX NUMBER<span class="text-danger">*</span></label>
-										<input type="text" id="index_number" name="index_number" class="form-control" required <?= $index_number; ?>>
+										<label class="form-label" for="school_name">SCHOOL NAME<span class="text-danger">*</span></label>
+										<input type="text" id="school_name" name="school_name" class="form-control" required <?= $school_name; ?>>
 									</div>
+                                    <div class="mb-3 col-12 col-md-12">
+                                        <label class="form-label" for="index_number">INDEX NUMBER<span class="text-danger">*</span></label>
+                                        <input type="text" id="index_number" name="index_number" class="form-control" required <?= $index_number; ?>>
+                                    </div>
 									<div class="mb-3 col-12 col-md-12">
 										<label class="form-label" for="age">AGE<span class="text-danger">*</span></label>
 										<input type="number" min="1" id="age" name="age" class="form-control" placeholder="Your place of birth" required <?= $age; ?>>
