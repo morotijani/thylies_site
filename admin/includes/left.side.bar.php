@@ -30,11 +30,8 @@
 									<i class="bi bi-briefcase"></i> Dashboard</a>
 									<div class="collapse" id="sidebar-projects">
 										<ul class="nav nav-sm flex-column">
-											<li class="nav-item"><a href="/pages/projects/overview.html" class="nav-link">Overview</a></li>
-											<li class="nav-item"><a href="/pages/projects/grid-view.html" class="nav-link">Grid View</a></li>
-											<li class="nav-item"><a href="/pages/projects/table-view.html" class="nav-link">Table View</a></li>
-											<li class="nav-item"><a href="/pages/projects/details.html" class="nav-link">Details</a></li>
-											<li class="nav-item"><a href="/pages/projects/create-project.html" class="nav-link">Create Project</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/l" class="nav-link">Overview</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/donations" class="nav-link">Donations</a></li>
 										</ul>
 									</div>
 								</li>
@@ -92,7 +89,7 @@
 							<hr class="navbar-divider my-4 opacity-70">
 							<ul class="navbar-nav">
 								<li><span class="nav-link text-xs font-semibold text-uppercase text-muted ls-wide">Resources</span></li>
-								<li class="nav-item"><a class="nav-link py-2 d-flex align-items-center" href="<?= PROOT; ?>admin/admins"><i class="bi bi-person-fill-gear"></i> <span>Admins</span> <span class="badge badge-sm bg-soft-success text-success rounded-pill ms-auto">v1.0.0</span></a></li>
+								<li class="nav-item"><a class="nav-link py-2 d-flex align-items-center" href="<?= PROOT; ?>admin/admins"><i class="bi bi-person-fill-gear"></i> <span>Admins</span></a></li>
 								<li class="nav-item"><a class="nav-link py-2" href="<?= PROOT?>admin/docs"><i class="bi bi-code-square"></i> Documentation</a></li>
 							</ul>
 							<div class="mt-auto"></div>
