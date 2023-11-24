@@ -164,6 +164,7 @@
     // Currently Paid
     function get_currently_paid() {
         global $conn;
+        $output = '';
 
         $sql = "
             SELECT * FROM thylies_transactions 
@@ -176,8 +177,28 @@
                     OR thylies_scholarship.scholarship_id = thylies_transactions.from_id 
                     OR thylies_sanitary_welfare.sw_id = thylies_transactions.from_id
                 )
-            AND 
+            ORDER BY thylies_transactions.createdAt DESC
+            LIMIT 3
         ";
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        $count_row = $statement->rowCount();
+        $row = $statement->fetchAll();
+
+        if ($count_row > 0) {
+            foreach ($rows as $row) {
+                $output .= '
+
+                ';
+            }
+        } else {
+            $output = '
+
+            ';
+        }
+
+        return $output;
+
     }
     // Count Scholarships
     // Count Student in Business
