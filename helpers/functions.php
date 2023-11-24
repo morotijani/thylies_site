@@ -268,3 +268,31 @@
     }
 
     // Count Associates
+    
+    // Last 5 users
+    function last_five_users() {
+        global $conn;
+        $output = '';
+
+        $sql = '
+            SELECT * FROM thylies_user 
+            WHERE user_trash = ? 
+            ORDER BY user_id DESC 
+            LIMIT 5
+        ';
+        $statement = $conn->prepare($sql);
+        $statement->execute([0]);
+        $count_row = $statement->rowCount();
+        $rows = $statement->fetchAll();
+
+        if ($count_row > 0) {
+            // code...
+            foreach ($rows as $row) {
+                $output .= '
+                    
+                ';
+            }
+        } else {
+
+        }
+    }
