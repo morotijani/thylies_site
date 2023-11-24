@@ -159,7 +159,7 @@
         $statement->execute();
         $row = $statement->fetchAll();
         $amount = ($row[0]['total'] * 101);
-        return money($amount);
+        return money_symbol('₵', $amount);
     }
 
     // Total donations
@@ -173,7 +173,7 @@
         $statement = $conn->prepare($sql);
         $statement->execute();
         $row = $statement->fetchAll();
-        return money($row[0]['total']);
+        return money_symbol('₵', $row[0]['total']);
     }
 
     // Currently Paid

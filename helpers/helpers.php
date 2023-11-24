@@ -64,10 +64,10 @@ function sanitize($dirty) {
 
 // Display money in a readable way
 function money_symbol($symbol, $number) {
-	return $symbol . ' ' . number_format($number, 2);
+	return $symbol . number_format($number, 2);
 }
 function money($number) {
-	return number_format($number, 2);
+	return  number_format($number, 2);
 }
 
 function cleanPost($post) {
