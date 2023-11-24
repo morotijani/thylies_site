@@ -22,14 +22,14 @@
 					</div>
 					<div class="col-sm-auto col-12 mt-4 mt-sm-0">
 						<div class="hstack gap-2 justify-content-sm-end">
-							<a href="#modalExport" class="btn btn-sm btn-neutral border-base" data-bs-toggle="modal">
-								<span class="pe-2"><i class="bi bi-people-fill"></i> </span>
-								<span>Share</span> 
+							<a href="<?= PROOT; ?>admin/donations" class="btn btn-sm btn-neutral border-base">
+								<span class="pe-2"><i class="bi bi-wallet2"></i> </span>
+								<span>Donations</span> 
 							</a>
-							<a href="#offcanvasCreate" class="btn btn-sm btn-primary" data-bs-toggle="offcanvas">
+							<!-- <a href="#offcanvasCreate" class="btn btn-sm btn-primary" data-bs-toggle="offcanvas">
 								<span class="pe-2"><i class="bi bi-plus-square-dotted"></i> </span>
 								<span>Create</span>
-							</a>
+							</a> -->
 						</div>
 					</div>
 				</div>
@@ -43,8 +43,6 @@
 	</header>
 
 	<main class="py-6 bg-surface-secondary">
-		<div class="modal fade" id="modalExport" tabindex="-1" aria-labelledby="modalExport" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content shadow-3"><div class="modal-header"><div class="icon icon-shape rounded-3 bg-soft-primary text-primary text-lg me-4"><i class="bi bi-globe"></i></div><div><h5 class="mb-1">Share to web</h5><small class="d-block text-xs text-muted">Publish and share link with anyone</small></div><div class="ms-auto"><div class="form-check form-switch me-n2"><input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="checked"> <label class="form-check-label" for="flexSwitchCheckChecked"></label></div></div></div><div class="modal-body"><div class="d-flex align-items-center mb-5"><div><p class="text-sm">Anyone with this link <span class="font-bold text-heading">can view</span></p></div><div class="ms-auto"><a href="#" class="text-sm font-semibold">Settings</a></div></div><div><div class="input-group input-group-inline"><input type="email" class="form-control" placeholder="username" value="https://webpixels.io/your-amazing-link"> <span class="input-group-text"><i class="bi bi-clipboard"></i></span></div><span class="mt-2 valid-feedback">Looks good!</span></div></div><div class="modal-footer"><div class="me-auto"><a href="#" class="text-sm font-semibold"><i class="bi bi-clipboard me-2"></i>Copy link</a></div><button type="button" class="btn btn-sm btn-neutral" data-bs-dismiss="modal">Close</button> <button type="button" class="btn btn-sm btn-success">Share file</button></div></div></div></div>
-
 		<div class="container-fluid">
 			<div class="row g-6 mb-6">
 				<div class="col-xl-8">
@@ -89,12 +87,6 @@
 									</div>
 								</div>
 							</div>
-							<div class="mt-2 mb-0 text-sm">
-								<span class="badge badge-pill bg-soft-success text-success me-2">
-									<i class="bi bi-arrow-up me-1"></i>30% 
-								</span>
-								<span class="text-nowrap text-xs text-muted">Since last month</span>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -107,16 +99,10 @@
 									<span class="h3 font-bold mb-0"><?= total_donation_amount(); ?></span>
 								</div>
 								<div class="col-auto">
-									<div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
-										<i class="bi bi-credit-card"></i>
+									<div class="icon icon-shape bg-success text-white text-lg rounded-circle">
+										<i class="bi bi-wallet2"></i>
 									</div>
 								</div>
-							</div>
-							<div class="mt-2 mb-0 text-sm">
-								<span class="badge badge-pill bg-soft-success text-success me-2">
-									<i class="bi bi-arrow-up me-1"></i>30% 
-								</span>
-								<span class="text-nowrap text-xs text-muted">Since last month</span>
 							</div>
 						</div>
 					</div>
@@ -131,15 +117,9 @@
 								</div>
 								<div class="col-auto">
 									<div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
-										<i class="bi bi-people"></i>
+										<i class="bi bi-building"></i>
 									</div>
 								</div>
-							</div>
-							<div class="mt-2 mb-0 text-sm">
-								<span class="badge badge-pill bg-soft-success text-success me-2">
-									<i class="bi bi-arrow-up me-1"></i>23% 
-								</span>
-								<span class="text-nowrap text-xs text-muted">Since last week</span>
 							</div>
 						</div>
 					</div>
@@ -154,15 +134,9 @@
 								</div>
 								<div class="col-auto">
 									<div class="icon icon-shape bg-info text-white text-lg rounded-circle">
-										<i class="bi bi-clock-history"></i>
+										<i class="bi bi-gender-female"></i>
 									</div>
 								</div>
-							</div>
-							<div class="mt-2 mb-0 text-sm">
-								<span class="badge badge-pill bg-soft-danger text-danger me-2">
-									<i class="bi bi-arrow-down me-1"></i>-10% 
-								</span>
-								<span class="text-nowrap text-xs text-muted">Since last month</span>
 							</div>
 						</div>
 					</div>
@@ -177,15 +151,9 @@
 								</div>
 								<div class="col-auto">
 									<div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
-										<i class="bi bi-minecart-loaded"></i>
+										<i class="bi bi-briefcase"></i>
 									</div>
 								</div>
-							</div>
-							<div class="mt-2 mb-0 text-sm">
-								<span class="badge badge-pill bg-soft-success text-success me-2">
-									<i class="bi bi-arrow-up me-1"></i>15% 
-								</span>
-								<span class="text-nowrap text-xs text-muted">Since yestearday</span>
 							</div>
 						</div>
 					</div>
@@ -199,16 +167,10 @@
 									<span class="h3 font-bold mb-0">95%</span>
 								</div>
 								<div class="col-auto">
-									<div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
-										<i class="bi bi-minecart-loaded"></i>
+									<div class="icon icon-shape bg-dark text-white text-lg rounded-circle">
+										<i class="bi bi-person-lines-fill"></i>
 									</div>
 								</div>
-							</div>
-							<div class="mt-2 mb-0 text-sm">
-								<span class="badge badge-pill bg-soft-success text-success me-2">
-									<i class="bi bi-arrow-up me-1"></i>15% 
-								</span>
-								<span class="text-nowrap text-xs text-muted">Since yestearday</span>
 							</div>
 						</div>
 					</div>
@@ -216,7 +178,7 @@
 			</div>
 			<div class="card">
 				<div class="card-header border-bottom">
-					<h5 class="mb-0">current signups</h5>
+					<h5 class="mb-0">Current signups</h5>
 				</div>
 				<div class="table-responsive">
 					<table class="table table-hover table-nowrap">
