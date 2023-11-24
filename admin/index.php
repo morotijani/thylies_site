@@ -127,7 +127,7 @@
 							<div class="row">
 								<div class="col">
 									<span class="h6 font-semibold text-muted text-sm d-block mb-2">Scholarships</span> 
-									<span class="h3 font-bold mb-0">215</span>
+									<span class="h3 font-bold mb-0"><?= count_scholarship(); ?></span>
 								</div>
 								<div class="col-auto">
 									<div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
@@ -150,7 +150,7 @@
 							<div class="row">
 								<div class="col">
 									<span class="h6 font-semibold text-muted text-sm d-block mb-2">Sanitary Welfare</span> 
-									<span class="h3 font-bold mb-0">1.400</span>
+									<span class="h3 font-bold mb-0"><?= count_sanitary_welfare(); ?></span>
 								</div>
 								<div class="col-auto">
 									<div class="icon icon-shape bg-info text-white text-lg rounded-circle">
@@ -173,7 +173,7 @@
 							<div class="row">
 								<div class="col">
 									<span class="h6 font-semibold text-muted text-sm d-block mb-2">Student in Business</span> 
-									<span class="h3 font-bold mb-0">95%</span>
+									<span class="h3 font-bold mb-0"><?= count_student_in_business(); ?></span>
 								</div>
 								<div class="col-auto">
 									<div class="icon icon-shape bg-warning text-white text-lg rounded-circle">

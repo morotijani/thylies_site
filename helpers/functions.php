@@ -227,7 +227,44 @@
         return $output;
 
     }
+
     // Count Scholarships
+    function count_scholarship() {
+        global $conn;
+
+        $sql = "
+            SELECT * FROM thylies_scholarship 
+            WHERE trash = ?
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute([0]);
+        return $statement->rowCount();
+    }
+
     // Count Student in Business
+    function count_student_in_business() {
+        global $conn;
+
+        $sql = "
+            SELECT * FROM thylies_student_in_business 
+            WHERE trash = ?
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute([0]);
+        return $statement->rowCount();
+    }
+
     // Count Sanitary Welfare
+    function count_sanitary_welfare() {
+        global $conn;
+
+        $sql = "
+            SELECT * FROM thylies_sanitary_welfare 
+            WHERE trash = ?
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute([0]);
+        return $statement->rowCount();
+    }
+
     // Count Associates
