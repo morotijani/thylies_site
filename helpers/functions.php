@@ -163,7 +163,21 @@
 
     // Currently Paid
     function get_currently_paid() {
-        
+        global $conn;
+
+        $sql = "
+            SELECT * FROM thylies_transactions 
+            INNER JOIN thylies_student_in_business 
+            INNER JOIN thylies_scholarship 
+            INNER JOIN thylies_sanitary_welfare 
+            WHERE 
+                (
+                    thylies_student_in_business.sib_id = thylies_transactions.from_id 
+                    OR thylies_scholarship.scholarship_id = thylies_transactions.from_id 
+                    OR thylies_sanitary_welfare.sw_id = thylies_transactions.from_id
+                )
+            AND 
+        ";
     }
     // Count Scholarships
     // Count Student in Business
