@@ -289,7 +289,21 @@
             // code...
             foreach ($rows as $row) {
                 $output .= '
-                    
+                    <tr>
+                        <td>' . ucwords($row["user_fullname"]) . '</td>
+                        <td>' . $row["user_email"] . '</td>
+                        <td>' . $row["user_phone"] . ' </td>
+                        <td>' . pretty_date($row["user_joined_date"]) . ' </td>
+                        <td>' . $row["user_index_number"] . '</td>
+                        <td>' . $row["user_gender"] . '</td>
+                        <td>' . $verified . '</td>
+                        <td class="text-end">
+                            <a href="' . PROOT . 'admin/User/view/' . $row["user_unique_id"] . '" class="btn btn-sm btn-neutral">View</a> 
+                            <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
                 ';
             }
         } else {
