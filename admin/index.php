@@ -222,7 +222,6 @@
 					<table class="table table-hover table-nowrap">
 			            <thead class="table-light">
 			                <tr>
-			                    <th scope="col"></th>
 			                    <th scope="col">Name</th>
 			                    <th scope="col">Email</th>
 			                    <th scope="col">Phone</th>

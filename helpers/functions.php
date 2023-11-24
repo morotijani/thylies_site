@@ -288,6 +288,21 @@
         if ($count_row > 0) {
             // code...
             foreach ($rows as $row) {
+                $verified = '';
+                if ($row['user_verified'] == 1) {
+                    $verified = '
+                        <span class="badge badge-lg badge-dot">
+                            <i class="bg-success"></i>Verified
+                        </span>
+                    ';
+                } else {
+                    $verified = '
+                        <span class="badge badge-lg badge-dot">
+                            <i class="bg-danger"></i>No verified
+                        </span>
+                    ';
+                }
+
                 $output .= '
                     <tr>
                         <td>' . ucwords($row["user_fullname"]) . '</td>
@@ -313,4 +328,6 @@
                 </tr>
             ';
         }
+
+        return $output;
     }
