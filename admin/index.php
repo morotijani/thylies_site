@@ -68,68 +68,7 @@
 								</div>
 							</div>
 							<div class="list-group gap-4">
-								<?= currently_paid(); ?>
-								<div class="list-group-item d-flex align-items-center border rounded">
-									<div class="me-4">
-										<div class="avatar rounded-circle"><img alt="..." src="/img/people/img-1.jpg"></div>
-									</div>
-									<div class="flex-fill">
-										<a href="#" class="d-block h6 font-semibold mb-1">Norman Mohrbacher</a>
-										<span class="d-block text-sm text-muted">UI Designer</span>
-									</div>
-									<div class="ms-auto text-end">
-										<div class="dropdown">
-											<a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></a>
-											<div class="dropdown-menu">
-												<a href="#!" class="dropdown-item">Action </a>
-												<a href="#!" class="dropdown-item">Another action </a>
-												<a href="#!" class="dropdown-item">Something else here</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="list-group-item d-flex align-items-center border rounded">
-									<div class="me-4">
-										<div class="avatar rounded-circle">
-											<img alt="..." src="/img/people/img-2.jpg">
-										</div>
-									</div>
-									<div class="flex-fill">
-										<a href="#" class="d-block h6 font-semibold mb-1">Leeann Monnet</a>
-										<span class="d-block text-sm text-muted">Web Developer</span>
-									</div>
-									<div class="ms-auto text-end">
-										<div class="dropdown">
-											<a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></a>
-											<div class="dropdown-menu">
-												<a href="#!" class="dropdown-item">Action </a>
-												<a href="#!" class="dropdown-item">Another action </a>
-												<a href="#!" class="dropdown-item">Something else here</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="list-group-item d-flex align-items-center border rounded">
-									<div class="me-4">
-										<div class="avatar rounded-circle">
-											<img alt="..." src="/img/people/img-3.jpg">
-										</div>
-									</div>
-									<div class="flex-fill">
-										<a href="#" class="d-block h6 font-semibold mb-1">Kathe Rahimi</a>
-										<span class="d-block text-sm text-muted">Marketing Team</span>
-									</div>
-									<div class="ms-auto text-end">
-										<div class="dropdown">
-											<a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></a>
-											<div class="dropdown-menu">
-												<a href="#!" class="dropdown-item">Action </a>
-												<a href="#!" class="dropdown-item">Another action </a>
-												<a href="#!" class="dropdown-item">Something else here</a>
-											</div>
-										</div>
-									</div>
-								</div>
+								<?= get_currently_paid(); ?>
 							</div>
 						</div>
 					</div>
@@ -165,7 +104,7 @@
 							<div class="row">
 								<div class="col">
 									<span class="h6 font-semibold text-muted text-sm d-block mb-2">Donations</span> 
-									<span class="h3 font-bold mb-0">$750.90</span>
+									<span class="h3 font-bold mb-0"><?= total_donation_amount(); ?></span>
 								</div>
 								<div class="col-auto">
 									<div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">

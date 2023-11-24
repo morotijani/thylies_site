@@ -153,7 +153,7 @@
 
         $sql = "
             SELECT SUM(donate_amount) AS total 
-            FROM thylies_donations
+            FROM thylies_donates
         ";
         $statement = $conn->prepare($sql);
         $statement->execute();
@@ -168,22 +168,13 @@
 
         $sql = "
             SELECT * FROM thylies_transactions 
-            INNER JOIN thylies_student_in_business 
-            INNER JOIN thylies_scholarship 
-            INNER JOIN thylies_sanitary_welfare 
-            WHERE 
-                (
-                    thylies_student_in_business.sib_id = thylies_transactions.from_id 
-                    OR thylies_scholarship.scholarship_id = thylies_transactions.from_id 
-                    OR thylies_sanitary_welfare.sw_id = thylies_transactions.from_id
-                )
             ORDER BY thylies_transactions.createdAt DESC
             LIMIT 3
         ";
         $statement = $conn->prepare($sql);
         $statement->execute();
         $count_row = $statement->rowCount();
-        $row = $statement->fetchAll();
+        $rows = $statement->fetchAll();
 
         if ($count_row > 0) {
             foreach ($rows as $row) {
@@ -193,8 +184,9 @@
                             <div class="avatar rounded-circle"><img alt="..." src="/img/people/img-1.jpg"></div>
                         </div>
                         <div class="flex-fill">
-                            <a href="#" class="d-block h6 font-semibold mb-1">Norman Mohrbacher</a>
-                            <span class="d-block text-sm text-muted">UI Designer</span>
+                            <a href="#" class="d-block h6 font-semibold mb-1">' . ucwords($row["transaction_id"]) . '</a>
+                            <span class="d-block text-sm text-muted">' . strtoupper($row['transaction_service']) . '</span>
+                            <span class="d-block text-sm text-muted">' . pretty_date_half($row['createdAt']) . '</span>
                         </div>
                     </div>
                 ';
