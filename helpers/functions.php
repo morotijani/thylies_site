@@ -148,6 +148,21 @@
     }
 
     // Total donations
+    function total_service_amount() {
+        global $conn;
+
+        $sql = "
+            SELECT COUNT(transaction_id) AS total 
+            FROM thylies_transactions
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        $row = $statement->fetchAll();
+        $amount = ($row[0]['total'] * 101);
+        return money($amount);
+    }
+
+    // Total donations
     function total_donation_amount() {
         global $conn;
 
@@ -186,7 +201,11 @@
                         <div class="flex-fill">
                             <a href="#" class="d-block h6 font-semibold mb-1">' . ucwords($row["transaction_id"]) . '</a>
                             <span class="d-block text-sm text-muted">' . strtoupper($row['transaction_service']) . '</span>
-                            <span class="d-block text-sm text-muted">' . pretty_date_half($row['createdAt']) . '</span>
+                        </div>
+                        <div class="ms-auto text-end">
+                            <div class="">
+                                <a class="text-muted" href="javascript:;">' . pretty_date_half($row['createdAt']) . '</a>
+                            </div>
                         </div>
                     </div>
                 ';
