@@ -30,7 +30,7 @@
 									<i class="bi bi-briefcase"></i> Dashboard</a>
 									<div class="collapse" id="sidebar-projects">
 										<ul class="nav nav-sm flex-column">
-											<li class="nav-item"><a href="<?= PROOT; ?>admin/l" class="nav-link">Overview</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/" class="nav-link">Overview</a></li>
 											<li class="nav-item"><a href="<?= PROOT; ?>admin/donations" class="nav-link">Donations</a></li>
 										</ul>
 									</div>
