@@ -146,3 +146,26 @@
             return false;
         }
     }
+
+    // Total donations
+    function total_donation_amount () {
+        global $conn;
+
+        $sql = "
+            SELECT SUM(donate_amount) AS total 
+            FROM thylies_donations
+        ";
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        $row = $statement->fetchAll();
+        return money($row[0]['total']);
+    }
+
+    // Currently Paid
+    function get_currently_paid() {
+        
+    }
+    // Count Scholarships
+    // Count Student in Business
+    // Count Sanitary Welfare
+    // Count Associates
