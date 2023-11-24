@@ -6,26 +6,31 @@
 
     include ('inc/header.inc.php');
 
-    $contact_id = uniqid();
+    $contact_id = guidv4();
     $fname = ((isset($_POST['fname']) && !empty($_POST['fname'])) ? sanitize($_POST['fname']) : '');
     $lname = ((isset($_POST['lname']) && !empty($_POST['lname'])) ? sanitize($_POST['lname']) : '');
     $email = ((isset($_POST['email']) && !empty($_POST['email'])) ? sanitize($_POST['email']) : '');
     $message = ((isset($_POST['message']) && !empty($_POST['message'])) ? htmlspecialchars($_POST['message']) : '');
+
+    $createdAt = date('Y-m-d H:m:s');
+
     if ($_POST) {
         // code...
-        $query = "
-            INSERT INTO (contact_id, fname, lname, email, message, createdAt) 
-            VALUES (?, ?, ?, ?, ?, ?)
-        ";
-        $statement = $conn->prepare($query);
-        $statement->execute([$contact_id, $fname, $lname, $email, $message]);
-        if (isset($result)) {
-            // code...
-            echo js_alert('Message sent!');
-            // redirect(PROOT . 'contact-us');
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo js_alert("Email is not valid.");
         } else {
-            echo js_alert('Something went wrong, please try again.');
-            // redirect(PROOT . 'contact-us');
+            $query = "
+                INSERT INTO thylies_contacts (contact_id, fname, lname, email, message, createdAt) 
+                VALUES (?, ?, ?, ?, ?, ?)
+            ";
+            $statement = $conn->prepare($query);
+            $result = $statement->execute([$contact_id, $fname, $lname, $email, $message, $createdAt]);
+            if (isset($result)) {
+                // code...
+                echo js_alert('Message sent!');
+            } else {
+                echo js_alert('Something went wrong, please try again.');
+            }
         }
     }
 
@@ -104,13 +109,13 @@
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="text-center  mb-6 mb-md-0">
                                 <h4 class="h5 mb-2">Business inquiries:</h4>
-                                <a href="#" class="text-warning fw-bold">info@coachexample.com</a>
+                                <a href="#" class="text-warning fw-bold">info@thylies.com</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="text-center">
                                 <h4 class="h5 mb-2">Press Contact:</h4>
-                                <a href="#" class="text-warning fw-bold">farris@coach.com
+                                <a href="#" class="text-warning fw-bold">contact-us@thylies.com
                                 </a>
                             </div>
                         </div>
