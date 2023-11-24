@@ -92,8 +92,8 @@
 							<hr class="navbar-divider my-4 opacity-70">
 							<ul class="navbar-nav">
 								<li><span class="nav-link text-xs font-semibold text-uppercase text-muted ls-wide">Resources</span></li>
-								<li class="nav-item"><a class="nav-link py-2" href="/docs"><i class="bi bi-code-square"></i> Documentation</a></li>
-								<li class="nav-item"><a class="nav-link py-2 d-flex align-items-center" href="https://webpixels.io/themes/clever-admin-dashboard-template/releases" target="_blank"><i class="bi bi-journals"></i> <span>Changelog</span> <span class="badge badge-sm bg-soft-success text-success rounded-pill ms-auto">v1.0.0</span></a></li>
+								<li class="nav-item"><a class="nav-link py-2 d-flex align-items-center" href="<?= PROOT; ?>admin/admins"><i class="bi bi-person-fill-gear"></i> <span>Admins</span> <span class="badge badge-sm bg-soft-success text-success rounded-pill ms-auto">v1.0.0</span></a></li>
+								<li class="nav-item"><a class="nav-link py-2" href="<?= PROOT?>admin/docs"><i class="bi bi-code-square"></i> Documentation</a></li>
 							</ul>
 							<div class="mt-auto"></div>
 							<div class="my-4 px-lg-6 position-relative">

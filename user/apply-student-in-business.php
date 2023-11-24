@@ -57,11 +57,11 @@
         // code...
         $sql = "
             UPDATE `thylies_student_in_business` 
-            SET `sib_id` = ?, `student_name` = ?, `dob` = ?, `program_of_study` = ?, `index_number` = ?, `school_name` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
+            SET `sib_id` = ?, `student_name` = ?, `dob` = ?, `program_of_study` = ?, `school_name` = ?, `index_number` = ?, `age` = ?, `region_of_residence` = ?, `town_of_residence` = ?, `residence_address` = ?, `name_of_business` = ?, `goals_objectives` = ?, `business_registered_why` = ?, `be_procured` = ?, `introduce_new` = ?, `target_populace` = ?, `number_per_day` = ?, `customers_per_semester` = ?, `category_of_business` = ?, `expected_budget` = ?, `expected_profit_per_day` = ?, `expected_profit_per_semester` = ?, `submitted` = ?, `createdAt` = ?
             WHERE user_id = ?
         ";
         $statement = $conn->prepare($sql);
-        $result = $statement->execute([$sib_id, $student_name, $dob, $program_of_study, $index_number, $school_name, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
+        $result = $statement->execute([$sib_id, $student_name, $dob, $program_of_study, $school_name, $index_number, $age, $region_of_residence, $town_of_residence, $residence_address, $name_of_business, $goals_objectives, $business_registered_why, $be_procured, $introduce_new, $target_populace, $number_per_day, $customers_per_semester, $category_of_business, $expected_budget, $expected_profit_per_day, $expected_profit_per_semester, 1, $createdAt, $user_data['user_unique_id']]);
         if (isset($result)) {
             $subject = "Thylies Student in Business Fund Application.";
             $body = "
