@@ -6,8 +6,27 @@
 
     include ('inc/header.inc.php');
 
+    $contact_id = uniqid();
+    $fname = ((isset($_POST['fname']) && !empty($_POST['fname'])) ? sanitize($_POST['fname']) : '');
+    $lname = ((isset($_POST['lname']) && !empty($_POST['lname'])) ? sanitize($_POST['lname']) : '');
+    $email = ((isset($_POST['email']) && !empty($_POST['email'])) ? sanitize($_POST['email']) : '');
+    $message = ((isset($_POST['message']) && !empty($_POST['message'])) ? htmlspecialchars($_POST['message']) : '');
     if ($_POST) {
         // code...
+        $query = "
+            INSERT INTO (contact_id, fname, lname, email, message, createdAt) 
+            VALUES (?, ?, ?, ?, ?, ?)
+        ";
+        $statement = $conn->prepare($query);
+        $statement->execute([$contact_id, $fname, $lname, $email, $message]);
+        if (isset($result)) {
+            // code...
+            echo js_alert('Message sent!');
+            // redirect(PROOT . 'contact-us');
+        } else {
+            echo js_alert('Something went wrong, please try again.');
+            // redirect(PROOT . 'contact-us');
+        }
     }
 
 ?>
