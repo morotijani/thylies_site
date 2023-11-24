@@ -307,6 +307,10 @@
                 ';
             }
         } else {
-
+            $output = '
+                <tr>
+                    <td rowspan="8">No data found.</td>
+                </tr>
+            ';
         }
     }
