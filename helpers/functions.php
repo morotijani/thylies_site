@@ -148,7 +148,7 @@
     }
 
     // Total donations
-    function total_donation_amount () {
+    function total_donation_amount() {
         global $conn;
 
         $sql = "
@@ -188,12 +188,28 @@
         if ($count_row > 0) {
             foreach ($rows as $row) {
                 $output .= '
-
+                    <div class="list-group-item d-flex align-items-center border rounded">
+                        <div class="me-4">
+                            <div class="avatar rounded-circle"><img alt="..." src="/img/people/img-1.jpg"></div>
+                        </div>
+                        <div class="flex-fill">
+                            <a href="#" class="d-block h6 font-semibold mb-1">Norman Mohrbacher</a>
+                            <span class="d-block text-sm text-muted">UI Designer</span>
+                        </div>
+                    </div>
                 ';
             }
         } else {
             $output = '
-
+                <div class="list-group-item d-flex align-items-center border rounded">
+                    <div class="me-4">
+                        <div class="avatar rounded-circle"><img alt="..." src="/img/people/img-1.jpg"></div>
+                    </div>
+                    <div class="flex-fill">
+                        <a href="#" class="d-block h6 font-semibold mb-1">Paid status</a>
+                        <span class="d-block text-sm text-muted">there are currently no paid amount for any of our services</span>
+                    </div>
+                </div>
             ';
         }
 

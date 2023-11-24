@@ -68,6 +68,7 @@
 								</div>
 							</div>
 							<div class="list-group gap-4">
+								<?= currently_paid(); ?>
 								<div class="list-group-item d-flex align-items-center border rounded">
 									<div class="me-4">
 										<div class="avatar rounded-circle"><img alt="..." src="/img/people/img-1.jpg"></div>
@@ -141,7 +142,7 @@
 							<div class="row">
 								<div class="col">
 									<span class="h6 font-semibold text-muted text-sm d-block mb-2">Total Amount</span> 
-									<span class="h3 font-bold mb-0">$750.90</span>
+									<span class="h3 font-bold mb-0"><?= total_donation_amount(); ?></span>
 								</div>
 								<div class="col-auto">
 									<div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
