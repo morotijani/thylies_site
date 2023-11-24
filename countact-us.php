@@ -6,6 +6,10 @@
 
     include ('inc/header.inc.php');
 
+    if ($_POST) {
+        // code...
+    }
+
 ?>
     
      <!-- hero section -->
@@ -40,25 +44,25 @@
                                     get in touch.
                                 </p>
                             </div>
-                            <form class="row">
+                            <form class="row" method="POST">
                                 <div class=" col-md-6 col-12 mb-3">
                                     <label for="fname" class="sr-only">First Name</label>
-                                    <input type="text" class="form-control" id="fname" placeholder="First Name"
+                                    <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name"
                                         name="fname" required>
                                 </div>
                                 <div class=" col-md-6 col-12 mb-3">
                                     <label for="lname" class="sr-only">Last Name</label>
-                                    <input type="text" class="form-control" id="lname" placeholder="Last Name"
-                                        name="lname" required>
+                                    <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name"
+                                        name="lname">
                                 </div>
                                 <div class=" col-12 mb-3">
                                     <label for="email" class="sr-only"> Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email" name="email"
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" name="email"
                                         required>
                                 </div>
                                 <div class="mb-3 col-12 mb-3">
                                     <label for="message" class="sr-only">Message</label>
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10"></textarea>
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <div class="d-grid">
