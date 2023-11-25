@@ -1,14 +1,15 @@
 <?php 
 	// SUBSCRIBE 
 	
-	require_once $_SERVER['DOCUMENT_ROOT'] . "/thylies_site/db_connection/conn.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/thylies_site/connection/conn.php";
 
 	if (isset($_POST['email'])) {
 		$email = sanitize($_POST['email']);
+		$subscription_id = guidv4();
 		$output = '';
 
 		$select = "
-			SELECT * FROM mifo_subscription 
+			SELECT * FROM thylies_subscription 
 			WHERE subscription_email = :subscription_email 
 			LIMIT 1
 		";
@@ -20,26 +21,27 @@
 			$output = 'This email '. $email . ' has already subscribed';
 		} else {
 			$to = $email;
-            $subject = "Products Subscription.";
+            $subject = "Thylies Subscription.";
             $body = "
                 <h3>Hello
                     {$to},</h3>
                     <p>
-                        Thank you for subscribing to MIFO. You will be recieving notifications on any highly purchased products, featured products, and more.
+                        Thank you for subscribing to Thylies Ghana. 
+                        <br>You will get notified on whats going on and daily new motivational & inspiration tips.
                     </p>
                     <p>
 						Sincerely, <br>
-						MIFO.
+						Thylies Ghana.
                     </p>
             ";
 			$mail_result = send_email($to, $to, $subject, $body);
 			if ($mail_result) {
 				$query = "
-					INSERT INTO mifo_subscription (subscription_email) 
-					VALUES (:subscription_email)
+					INSERT INTO thylies_subscription (subscription_id, subscription_email) 
+					VALUES (:subscription_id, :subscription_email)
 				";
 				$statement = $conn->prepare($query);
-				$result = $statement->execute([':subscription_email' => $email]);
+				$result = $statement->execute([':subscription_id' => $subscription_id, ':subscription_email' => $email]);
 				if ($result) {
 					$output = 'Email subscribed successfully';
 				}
