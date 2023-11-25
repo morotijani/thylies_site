@@ -77,7 +77,7 @@
                         <a href=" <?= PROOT; ?>about-us" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href=" <?= PROOT; ?>countact-us" class="nav-link">Contact</a>
+                        <a href=" <?= PROOT; ?>contact-us" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 <div class="ms-auto">
