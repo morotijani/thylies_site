@@ -27,6 +27,23 @@
             $result = $statement->execute([$contact_id, $fname, $lname, $email, $message, $createdAt]);
             if (isset($result)) {
                 // code...
+                $name = ucwords($fname);
+                $to = $email;
+                $subject = "Message recieved.";
+                $body = "
+                    <h3>
+                        {$name},</h3>
+                    <p>
+                        Thank you for contacting us, our team members and I do read every single email that comes through.
+                        <br>
+                        We will get in touch with you soon.
+                        <br>
+                        <br>
+                        Best Regards,<br>
+                        Thylies Ghana.
+                    </p>
+                ";
+                send_email($name, $to, $subject, $body);
                 echo js_alert('Message sent!');
             } else {
                 echo js_alert('Something went wrong, please try again.');
