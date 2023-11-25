@@ -32,6 +32,9 @@
 										<ul class="nav nav-sm flex-column">
 											<li class="nav-item"><a href="<?= PROOT; ?>admin/" class="nav-link">Overview</a></li>
 											<li class="nav-item"><a href="<?= PROOT; ?>admin/donations" class="nav-link">Donations</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/donations" class="nav-link">Site</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/donations" class="nav-link">Contacts</a></li>
+											<li class="nav-item"><a href="<?= PROOT; ?>admin/donations" class="nav-link">Subscriptions</a></li>
 										</ul>
 									</div>
 								</li>
