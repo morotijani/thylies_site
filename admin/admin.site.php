@@ -51,12 +51,12 @@
                 <div class="row align-items-center">
                     <div class="col-sm col-12">
                         <h1 class="h2 ls-tight">
-                            <span class="d-inline-block me-3">🏡</span>About, Thylies Ghana
+                            <span class="d-inline-block me-3">🏡</span>Site, Thylies Ghana
                         </h1>
                     </div>
                     <div class="col-sm-auto col-12 mt-4 mt-sm-0">
                         <div class="hstack gap-2 justify-content-sm-end">
-                            <a href="<?= PROOT; ?>admin/admin.about" class="btn btn-sm btn-neutral border-base">
+                            <a href="<?= PROOT; ?>admin/admin.site" class="btn btn-sm btn-neutral border-base">
                                 <span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
                                 <span>Refresh</span> 
                             </a>
@@ -68,8 +68,8 @@
                     </div>
                 </div>
                 <ul class="nav nav-tabs overflow-x border-0">
-                    <li class="nav-item"><a href="<?= PROOT; ?>admin/admin.about" class="nav-link active">About</a></li>
-                    <li class="nav-item"><a href="<?= PROOT; ?>admin/admin.contacts" class="nav-link active">Contacts</a></li>
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/admin.site" class="nav-link active">About</a></li>
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/admin.contacts" class="nav-link">Contacts</a></li>
                     <li class="nav-item"><a href="<?= PROOT; ?>admin/admin.subscribers" class="nav-link">Subscribers</a></li>
                 </ul>
             </div>
