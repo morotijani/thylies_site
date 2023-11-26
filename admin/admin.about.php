@@ -6,9 +6,9 @@
         admn_login_redirect();
     }
 
-    include ("includes/header.inc.php");
-    include ("includes/nav.inc.php");
-    include ("includes/left-side-bar.inc.php");
+    include ('includes/header.php');
+    include ('includes/left.side.bar.php');
+    include ('includes/top.nav.bar.php');
 
     $about_info = ((isset($_POST['about_info']))?sanitize($_POST['about_info']):'');
     $query = "SELECT * FROM mifo_about";
