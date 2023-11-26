@@ -11,7 +11,7 @@
     include ('includes/top.nav.bar.php');
 
     $about_info = ((isset($_POST['about_info'])) ? sanitize($_POST['about_info']) : '');
-    $query = "SELECT * FROM thylies_about";
+    $query = "SELECT * FROM thylies_site";
     $statement = $conn->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -26,7 +26,7 @@
             echo js_alert("Empty field required.");
         } else {
             $updateQ = "
-                UPDATE thylies_about
+                UPDATE thylies_site
                 SET about_info = :about_info
             ";
             $statement = $conn->prepare($updateQ);
