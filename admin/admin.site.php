@@ -81,11 +81,11 @@
             <?= $flash; ?>
             <div>
                 <div class="row justify-content-center mt-10">
-                    <div class="col-md-6">
+                    <div class="col-md-10">
                         <form method="POST">
                             <div class="form-group mb-2">
                                 <label>Update about us.</label>
-                                <textarea class="form-control" rows="15" name="about_info" id="about_info">
+                                <textarea class="form-control" rows="20" name="about_info" id="about_info">
                                     <?= $about_info; ?>
                                 </textarea>
                                 <div class="form-text">After, it will update itself on the user page. click <a href="<?= PROOT; ?>about-us" target="blank">here...</a> to see changes</div>
@@ -99,11 +99,9 @@
             </div>
         </div>
     </main>
-<?php 
 
-    include ("includes/footer.inc.php");
+<?php include ('includes/footer.php'); ?>
 
-?>
 <script src="https://cdn.tiny.cloud/1/87lq0a69wq228bimapgxuc63s4akao59p3y5jhz37x50zpjk/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript">
     // Testarea Editor
