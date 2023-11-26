@@ -107,6 +107,15 @@
  		}
  	}
 
+ 	// Site details
+ 	$site_query = "
+ 		SELECT * FROM thylies_site
+ 	";
+ 	$statement = $conn->prepare($site_query);
+ 	$statement->execute();
+ 	$site_rows = $statement->fetchAll();
+ 	$site_row = $site_rows[0];
+
 
  	// Display on Messages on Errors And Success
  	$flash = '';

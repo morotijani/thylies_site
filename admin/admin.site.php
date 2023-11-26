@@ -10,7 +10,7 @@
     include ('includes/left.side.bar.php');
     include ('includes/top.nav.bar.php');
 
-    $about_info = ((isset($_POST['about_info'])) ? sanitize($_POST['about_info']) : '');
+    $about_info = ((isset($_POST['about_info'])) ? sanitize($_POST['about_info']) : $site_row['about_info']);
     $query = "SELECT * FROM thylies_site";
     $statement = $conn->prepare($query);
     $statement->execute();
@@ -35,8 +35,8 @@
             ]);
 
             if (isset($result)) {
-                $_SESSION['flash_success'] = 'About us page has been successfully <span class="bg-info">UPDATED</span>';
-                redirect(PROOT . 'admin/admin.about');
+                $_SESSION['flash_success'] = 'About us page has been successfully UPDATED!';
+                redirect(PROOT . 'admin/admin.site');
             }
         }
 
