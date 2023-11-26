@@ -59,21 +59,8 @@
                 </a>
             </div>
         </div>
-        <span><?= $flash; ?></span>
 
-        
-        <form method="POST">
-            <div class="form-group mb-2">
-                <label>Update about us.</label>
-                <textarea class="form-control" rows="15" name="about_info" id="about_info">
-                    <?= $about_info; ?>
-                </textarea>
-                <div class="form-text">After, it will update itself on the user page. click <a href="<?= PROOT; ?>about-us" target="blank">here...</a> to see changes</div>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-info" type="submit" name="submit_form" id="submit_form">Update.</button>
-            </div>
-        </form>
+    
     </main>
 
     <!--  -->
@@ -83,7 +70,7 @@
                 <div class="row align-items-center">
                     <div class="col-sm col-12">
                         <h1 class="h2 ls-tight">
-                            <span class="d-inline-block me-3">🤯</span>About, Thylies Ghana
+                            <span class="d-inline-block me-3">🏡</span>About, Thylies Ghana
                         </h1>
                     </div>
                     <div class="col-sm-auto col-12 mt-4 mt-sm-0">
@@ -115,13 +102,16 @@
             <div>
                 <div class="row justify-content-center mt-10">
                     <div class="col-md-6">
-                        <form action="" method="POST" enctype="multipart/form-data">
-                            <div class="d-flex flex-column flex-sm-row justify-content-between gap-3">
-                                <div class="input-group input-group-lg input-group-inline">
-                                    <span class="input-group-text pe-2"><i class="bi bi-file-text"></i> </span>
-                                    <input type="file" class="form-control form-control-lg" name="import_file">
-                                </div>
-                                <button type="submit" name="submit_scholarship_import" class="btn btn-lg btn-warning text-nowrap">Import</button>
+                        <form method="POST">
+                            <div class="form-group mb-2">
+                                <label>Update about us.</label>
+                                <textarea class="form-control" rows="15" name="about_info" id="about_info">
+                                    <?= $about_info; ?>
+                                </textarea>
+                                <div class="form-text">After, it will update itself on the user page. click <a href="<?= PROOT; ?>about-us" target="blank">here...</a> to see changes</div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-info" type="submit" name="submit_form" id="submit_form">Update.</button>
                             </div>
                         </form>
                     </div>
