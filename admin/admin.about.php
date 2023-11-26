@@ -56,11 +56,11 @@
                     </div>
                     <div class="col-sm-auto col-12 mt-4 mt-sm-0">
                         <div class="hstack gap-2 justify-content-sm-end">
-                            <a href="<?= PROOT; ?>admin/Scholarship/import" class="btn btn-sm btn-neutral border-base">
+                            <a href="<?= PROOT; ?>admin/admin.about" class="btn btn-sm btn-neutral border-base">
                                 <span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
                                 <span>Refresh</span> 
                             </a>
-                            <a href="<?= PROOT; ?>admin/Scholarship" class="btn btn-sm btn-primary">
+                            <a href="<?= PROOT; ?>admin/" class="btn btn-sm btn-primary">
                                 <span class="pe-2"><i class="bi bi-arrow-left"></i> </span>
                                 <span>Go Back</span>
                             </a>
@@ -68,10 +68,9 @@
                     </div>
                 </div>
                 <ul class="nav nav-tabs overflow-x border-0">
-                    <li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/import" class="nav-link active">Import Data</a></li>
-                    <li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship" class="nav-link">View all</a></li>
-                    <li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/rejected" class="nav-link">Rejected</a></li>
-                    <li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/gained" class="nav-link">Gained</a></li>
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/admin.about" class="nav-link active">About</a></li>
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/admin.contacts" class="nav-link active">Contacts</a></li>
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/admin.subscribers" class="nav-link">Subscribers</a></li>
                 </ul>
             </div>
         </div>
