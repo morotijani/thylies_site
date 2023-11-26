@@ -75,6 +75,60 @@
             </div>
         </form>
     </main>
+
+    <!--  -->
+    <header>
+        <div class="container-fluid">
+            <div class="border-bottom pt-6">
+                <div class="row align-items-center">
+                    <div class="col-sm col-12">
+                        <h1 class="h2 ls-tight">
+                            <span class="d-inline-block me-3">🤯</span>About, Thylies Ghana
+                        </h1>
+                    </div>
+                    <div class="col-sm-auto col-12 mt-4 mt-sm-0">
+                        <div class="hstack gap-2 justify-content-sm-end">
+                            <a href="<?= PROOT; ?>admin/Scholarship/import" class="btn btn-sm btn-neutral border-base">
+                                <span class="pe-2"><i class="bi bi-arrow-clockwise"></i> </span>
+                                <span>Refresh</span> 
+                            </a>
+                            <a href="<?= PROOT; ?>admin/Scholarship" class="btn btn-sm btn-primary">
+                                <span class="pe-2"><i class="bi bi-arrow-left"></i> </span>
+                                <span>Go Back</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav nav-tabs overflow-x border-0">
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/import" class="nav-link active">Import Data</a></li>
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship" class="nav-link">View all</a></li>
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/rejected" class="nav-link">Rejected</a></li>
+                    <li class="nav-item"><a href="<?= PROOT; ?>admin/Scholarship/gained" class="nav-link">Gained</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-6 bg-surface-secondary">
+        <div class="container-fluid">
+            <?= $flash; ?>
+            <div>
+                <div class="row justify-content-center mt-10">
+                    <div class="col-md-6">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="d-flex flex-column flex-sm-row justify-content-between gap-3">
+                                <div class="input-group input-group-lg input-group-inline">
+                                    <span class="input-group-text pe-2"><i class="bi bi-file-text"></i> </span>
+                                    <input type="file" class="form-control form-control-lg" name="import_file">
+                                </div>
+                                <button type="submit" name="submit_scholarship_import" class="btn btn-lg btn-warning text-nowrap">Import</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 <?php 
 
     include ("includes/footer.inc.php");
