@@ -10,13 +10,13 @@
     include ('includes/left.side.bar.php');
     include ('includes/top.nav.bar.php');
 
-    $about_info = ((isset($_POST['about_info']))?sanitize($_POST['about_info']):'');
-    $query = "SELECT * FROM mifo_about";
+    $about_info = ((isset($_POST['about_info'])) ? sanitize($_POST['about_info']) : '');
+    $query = "SELECT * FROM thylies_about";
     $statement = $conn->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
     foreach ($result as $row) {
-        $about_info = ((isset($_POST['about_info']))?sanitize($_POST['about_info']):$row['about_info']);
+        $about_info = ((isset($_POST['about_info'])) ? sanitize($_POST['about_info']): $row['about_info']);
     }
 
     if (isset($_POST['submit_form'])) {
@@ -26,7 +26,7 @@
             echo js_alert("Empty field required.");
         } else {
             $updateQ = "
-                UPDATE mifo_about
+                UPDATE thylies_about
                 SET about_info = :about_info
             ";
             $statement = $conn->prepare($updateQ);
@@ -62,7 +62,7 @@
         <span><?= $flash; ?></span>
 
         
-        <form method="POST" action="about.php">
+        <form method="POST">
             <div class="form-group mb-2">
                 <label>Update about us.</label>
                 <textarea class="form-control" rows="15" name="about_info" id="about_info">
