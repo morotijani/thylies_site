@@ -38,28 +38,7 @@
                 <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
                     <!--heading-->
                     <h2 class="mb-4">About Thylies</h2>
-                    <p>
-                        My name is Coach and I want to get real with you for a minute.
-                    </p>
-                    <p>
-                        I’ve always dreamed big, wanted to make something of my life, and deeply cared about people.
-                    </p>
-                    <p>
-                        However, as a kid I suffered emotionally in a major way. I always felt like the dumbest person
-                        in class.
-                    </p>
-                    <p>
-                        I was tall, skinny, goofy looking, constantly made fun of and never felt I had any real friends
-                        until later in high school.
-                    </p>
-                    <p>
-                        Reading was a major challenge for me. I couldn’t comprehend and read out loud what I saw in
-                        books. I was in the bottom of my class academically, insecure, and looking for ways to fit in.
-                    </p>
-                    <p>
-                        There were many moments I didn’t understand why I was born; I was bullied, picked last in
-                        sports, and experienced constant tension at home.
-                    </p>
+                    <p><?= nl2br($site_row['about_info']); ?></p>
                 </div>
             </div>
         </div>

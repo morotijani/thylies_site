@@ -11,13 +11,13 @@
     include ('includes/top.nav.bar.php');
 
     $about_info = ((isset($_POST['about_info'])) ? sanitize($_POST['about_info']) : $site_row['about_info']);
-    $query = "SELECT * FROM thylies_site";
-    $statement = $conn->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchAll();
-    foreach ($result as $row) {
-        $about_info = ((isset($_POST['about_info'])) ? sanitize($_POST['about_info']): $row['about_info']);
-    }
+    // $query = "SELECT * FROM thylies_site";
+    // $statement = $conn->prepare($query);
+    // $statement->execute();
+    // $result = $statement->fetchAll();
+    // foreach ($result as $row) {
+    //     $about_info = ((isset($_POST['about_info'])) ? sanitize($_POST['about_info']): $row['about_info']);
+    // }
 
     if (isset($_POST['submit_form'])) {
         $about_info = $_POST['about_info'];
