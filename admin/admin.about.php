@@ -23,7 +23,7 @@
         $about_info = $_POST['about_info'];
 
         if (empty($about_info) || $about_info == '') {
-            echo '<script>alert("Empty field required.");</script>';
+            echo js_alert("Empty field required.");
         } else {
             $updateQ = "
                 UPDATE mifo_about
@@ -36,7 +36,7 @@
 
             if (isset($result)) {
                 $_SESSION['flash_success'] = 'About us page has been successfully <span class="bg-info">UPDATED</span>';
-               echo '<script>window.location = "'.PROOT.'admin/about";</script>';
+                redirect(PROOT . 'admin/admin.about');
             }
         }
 
