@@ -12,18 +12,17 @@
       url(<?= PROOT; ?>assets/media/hero-1.jpg);">
         <div class="container">
             <div class="row">
-                <div class="col-xxl-5 col-lg-6 col-md-8 col-12">
+                <div class="col-xxl-8 col-lg-6 col-md-8 col-12">
                     <div class="text-white">
                         <h5 class="text-muted mb-4">NB: make sure your url is: https://thylies.com</h5>
                         <h1 class="text-white mb-3 display-1" style="font-family: Gaegu; letter-spacing: 3px;">
                             Thylies.
                         </h1>
                         <h2 class="mb-3 text-white" style="font-family: Patrick Hand;">
-                            Support a cause your care about.
+                            A Period with Confort.
                         </h2>
-                        <p class="mb-3 pe-lg-12 pe-0 display-6" style="font-family: Mansalva; letter-spacing: 1px;">
-                            Maecenas molestie sagittis tellus et venenatis. In suscipit tortor eget ante semper
-                            suscipit. Mauris dictum elementum diam in laoreet.
+                        <p class="mb-3 pe-lg-12 pe-0 display-6" style="font-family: Mansalva;">
+                            Thylies is a feminine centered organization whose basic aim is to empower the girl child to better pursue her career goals. We bring comfort to the  girl during her menstrual period, in her academic and social life and beyond.
                         </p>
                         <a href="<?= PROOT; ?>scholarship-list" class="btn btn-warning btn-lg">Scholarship List <?= date('Y'); ?></a>
                         <a href="sanitary-welfare" class="btn btn-outline-warning btn-lg ms-lg-1 mt-2 mt-lg-0">Sanitary Welfare</a>
