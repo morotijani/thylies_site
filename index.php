@@ -134,7 +134,7 @@
                       <span class="text-secondary text-uppercase fw-bold">Thylies . Associate</span>
                       <h2 class="fw-bold mt-5">I work via a holistic approach with an <span class="text-bottom-line">emphasis
                           on:</span></h2>
-                      <p class="mb-5">Do you want to become an associate team member, retailer, salesperson, or executive? Find out how to land an associate position, including the skills you'll need, the education you should pursue, and the ways to advance your career.</p>
+                      <p class="mb-5">Do you want to become an associate team member? Find out how to land an associate position, including the skills you'll need, the education you should pursue, and the ways to advance your career.</p>
                       <ul class="list-unstyled mb-5">
                             <li class="mb-2">
                                 <span>
