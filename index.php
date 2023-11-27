@@ -54,7 +54,7 @@
                             <div class="col-xl-4 col-md-4 col-12">
                                 <div class="text-center">
                                     <h5 class="text-muted">03</h5>
-                                    <h4 class="fw-bold">Access platform</h4>
+                                    <h4 class="fw-bold">Apply any of our Service</h4>
                               </div>
                             </div>
                         </div>
