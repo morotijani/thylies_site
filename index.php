@@ -113,7 +113,7 @@
                             </svg>
                         </div>
                         <h4>Student in Business</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aspernatur alias dolorum repellendus esse ut pariatu.</p>
+                        <p>We set a solid ground for you to take your first steps into the World of Entrepreneurship.</p>
                     </div>
                 </div>
             </div>
