@@ -48,7 +48,7 @@
                             <div class="col-xl-4 col-md-4 col-12">
                                 <div class="text-center border-md-end mb-4 mb-md-0">
                                     <h5 class="text-muted">02</h5>
-                                    <h4 class="fw-bold">Pay entry fees</h4>
+                                    <h4 class="fw-bold">Access platform</h4>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-md-4 col-12">
