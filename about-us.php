@@ -25,7 +25,7 @@
                             Thylies Ghana
                         </h1>
                         <p class="mb-0 lead text-light mb-0">
-                            world leading motivational speaker
+                            Period with comfort.
                         </p>
                     </div>
                 </div>
