@@ -86,7 +86,7 @@
                             </svg>
                         </div>
                         <h4>Student Scholarship</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quibusdam ipsa doloribus error mollitia soluta tempora minima perferendis accusamu.</p>
+                        <p>We provide financial aid in the form of Scholarships and bursaries to clear your path to academic success.</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 col-12">
@@ -101,7 +101,7 @@
                             </svg>
                         </div>
                         <h4>Sanitary Welfare</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Repellat numquam cupiditate placeat dig.</p>
+                        <p>We provide huge subsidies to make your basic sanitary items more affordable</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 col-12">
