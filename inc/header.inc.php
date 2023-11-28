@@ -65,7 +65,7 @@
                         <a href="<?= PROOT; ?>" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href=" <?= PROOT; ?>scholarships" class="nav-link">Scholarships</a>
+                        <a href=" <?= PROOT; ?>scholarship" class="nav-link">Scholarship</a>
                     </li>
                     <li class="nav-item">
                         <a href=" <?= PROOT; ?>sanitary-welfare" class="nav-link">Sanitary Welfare</a>
