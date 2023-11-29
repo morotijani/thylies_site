@@ -18,6 +18,7 @@
                             THE THYLIES SCHOLARSHIP PROGRAM
                         </h1>
                         <a href="<?= PROOT; ?>user/apply-scholarship" class="btn btn-warning">Application form</a>
+                        <a href="<?= PROOT; ?>scholarship-list" class="btn btn-light"><?= date('Y'); ?> approved list</a>
                     </div>
                 </div>
             </div>

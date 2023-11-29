@@ -42,7 +42,8 @@
                                 Thylies protects you from excessive taxations that make the prices of your basic sanitary items woefully expensive therefore discouraging you from affording them though they are a necessity
                             </p>
                             <!--button-->
-                            <a href="<?= PROOT; ?>user/apply-sanitary-welfare" class="btn btn-secondary btn-lg">Get Started</a>
+                            <a href="<?= PROOT; ?>user/apply-sanitary-welfare" class="btn btn-secondary btn-lg">Application form</a>
+                        <a href="<?= PROOT; ?>sanitary-welfare-list" class="btn btn-light btn-lg"><?= date('Y'); ?> approved list</a>
                         </div>
                     </div>
                 </div>
