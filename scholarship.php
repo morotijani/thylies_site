@@ -61,7 +61,8 @@
                         <div class="p-5 d-flex justify-content-between
                             align-items-center">
                             <div>
-                                <h4 class="mb-1">Candidates should be in actual need of financial assistance</h4>
+                                <h4 class="mb-1">1</h4>
+                                <p class="px-lg-7 lead">Candidates should be in actual need of financial assistance</p>
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
@@ -81,7 +82,8 @@
                         <div class="p-5 d-flex justify-content-between
                             align-items-center">
                             <div>
-                                <h4 class="mb-1">Candidates are to put together  a 500 letter essay(1 page ) introducing themselves and demonstrating the reason for which they should be considered for the Scholarship and bursary offers</h4>
+                                <h4 class="mb-1">2</h4>
+                                <p class="px-lg-7 lead">Candidates are to put together  a 500 letter essay(1 page ) introducing themselves and demonstrating the reason for which they should be considered for the Scholarship and bursary offers</p>
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
@@ -101,7 +103,8 @@
                         <div class="p-5 d-flex justify-content-between
                             align-items-center">
                             <div>
-                                <h4 class="mb-1">Applicants should be registered Member of Thylies</h4>
+                                <h4 class="mb-1">3</h4>
+                                <p class="px-lg-7 lead">Applicants should be registered Member of Thylies</p>
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
@@ -121,7 +124,8 @@
                         <div class="p-5 d-flex justify-content-between
                             align-items-center">
                             <div>
-                                <h4 class="mb-1">Our goal is not to reward the brightest students but to remove financial barriers from every students in the chase for academic excellence</h4>
+                                <h4 class="mb-1">4</h4>
+                                <p class="px-lg-7 lead">Our goal is not to reward the brightest students but to remove financial barriers from every students in the chase for academic excellence</p>
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
@@ -138,72 +142,12 @@
                 </div>
             </div>
             <div class="text-center">
-                <p class="lead mb-0">We've got you covered all semester all year.</p>
+                <p class="lead mb-0">We've got you covered all year.</p>
                 <br>
-                <a href="<?= PROOT; ?>user/apply-sanitary-welfare" class="btn btn-outline-warning">Apply Now!</a>
+                <a href="<?= PROOT; ?>user/apply-scholarship" class="btn btn-outline-warning">Apply Now!</a>
             </div>
         </div>
     </div>
-
-        <div class="pt-lg-18 pb-lg-16 py-10">
-            <div class="container">
-                <span class="text-uppercase fw-bold"><span class="text-primary">#1</span> Sanitary Welfare</span>
-                <h2 class="mb-3 display-5 mt-2">Sanitary Pads</h2>
-
-                <div class="row mb-10">
-                    <!-- coach -->
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/proper.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Propoer Sanitary Pad</h4>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/yazz.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Yazz Sanitary Pad</h4>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/always.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Always Ultra Sanitary Pad</h4>
-                        </div>
-                    </div>
-                    <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-5">
-                        <a href="#" class="btn btn-primary">Meet the Coaches</a>
-                    </div> -->
-                </div>
-
-                <span class="text-uppercase fw-bold"><span class="text-primary">#2</span> Sanitary Welfare</span>
-                <h2 class="mb-3 display-5 mt-2">Brands of Panty Liners</h2>
-
-                <div class="row mb-10">
-                    <!-- coach -->
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/softcare-panty-liner.jpg
-                            " alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Softcare Panty Liner</h4>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/yazz-panty-liner.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Yazz Panty Liner</h4>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/proper-panty-liner.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Proper Panty Liner</h4>
-                        </div>
-                    </div>
-                    <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-5">
-                        <a href="#" class="btn btn-primary">Meet the Coaches</a>
-                    </div> -->
-                </div>
-            </div>
 
 
             
