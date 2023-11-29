@@ -35,18 +35,66 @@
                         <div class="text-center mb-12">
                             <!--title-->
                             <h2 class="text-white mb-3 h1">
-                                Lead Your Field. Impact the World.
+                                We Care.
                             </h2>
                             <!--para-->
                             <p class="lead mb-5">
-                                We draw on our 25-year track record to coach established and emerging leaders to identify
-                                their purpose, thrive personally & professionally and so improve business performance.
+                                Thylies protects you from excessive taxations that make the prices of your basic sanitary items woefully expensive therefore discouraging you from affording them though they are a necessity
                             </p>
                             <!--button-->
-                            <a href="#" class="btn btn-secondary btn-lg">Get Started</a>
+                            <a href="<?= PROOT; ?>user/apply-sanitary-welfare" class="btn btn-secondary btn-lg">Get Started</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="pt-lg-18 pb-lg-16 py-10">
+            <div class="container">
+      <div class="row">
+        <div class="offset-xl-1 col-xl-10 col-md-12 col-12 mb-lg-18 mb-8">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-12 mb-6 mb-lg-0">
+              <div class="pe-xl-6 mb-4 mb-md-0">
+                <!-- number -->
+                <span class="text-uppercase fw-bold"><span class="text-primary">#1</span> Trainer in
+                  Country</span>
+                <!-- heading -->
+                <h2 class="mb-3 display-5
+                    mt-2">About Deena Nichols
+                </h2>
+                <!-- para -->
+                <p class="fs-3">Donec sollicitudin augue ipsum, id
+                  su
+                  sem cursus epurus sapien, consequat at
+                  pretium volutunt ultricies tristique.</p>
+                <!-- para -->
+                <p class="lead mb-4">Donec sollicitudin augue ipsum,
+                  id suscipit sem cursus
+                  epurus sapien, consequat at pretium volutunt
+                  ultricies
+                  tristique.</p>
+                <!-- button -->
+                <a href="#" class="btn btn-primary">Start Free Class</a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12">
+              <!-- row -->
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <!-- img -->
+                  <img src="../assets/images/fitness/fitness-img-3.jpg" alt="fitness" class="img-fluid w-100 rounded-3">
+                </div>
+                <!-- img -->
+                <div class="col-md-6">
+                  <!-- img -->
+                  <img src="../assets/images/fitness/fitness-img-2.jpg" alt="fitness" class="img-fluid mb-3 w-100 rounded-3">
+                  <!-- img -->
+                  <img src="../assets/images/fitness/fitness-img-1.jpg" alt="fitness" class="img-fluid w-100 rounded-3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 <?php include ('inc/footer.inc.php'); ?>
