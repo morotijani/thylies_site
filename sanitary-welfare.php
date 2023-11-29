@@ -1,7 +1,7 @@
 <?php 
     require_once ("connection/conn.php");
 
-    $title = 'About us - ';
+    $title = 'Sanitary Welfare - ';
     $navbar = 'navbar-light';
 
     include ('inc/header.inc.php');
@@ -9,11 +9,11 @@
 
 ?>
      <!-- hero section -->
-        <div style="background: url(<?= PROOT; ?>assets/media/sanitary-welfare/photo.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div style="background: url(<?= PROOT; ?>assets/media/sanitary-welfare/bg-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
             <div class="container">
                 <div class="row">
                     <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
-                        <div class="pt-17 pb-13 pt-lg-19 pb-lg-19 text-center text-dark">
+                        <div class="pt-17 pb-13 pt-lg-19 pb-lg-19 text-center text-light">
                             <h1 class="display-3 text-light mb-3 lh-1" style="text-shadow: 4px 4px 4px #000;">
                                 Sanitary Welfare
                             </h1>
@@ -53,73 +53,30 @@
             <div class="container">
                 <span class="text-uppercase fw-bold"><span class="text-primary">#1</span> Sanitary Welfare</span>
                 <h2 class="mb-3 display-5 mt-2">Sanitary Products</h2>
-                <!-- <div class="row justify-content">
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="<?= PROOT; ?>assets/media/sanitary-welfare/yazz.jpg" alt="fitness" class="img-thumbnail w-100 rounded-3">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper.jpg" alt="fitness" class="img-thumbnail mb-3 w-100 rounded-3">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="<?= PROOT; ?>assets/media/sanitary-welfare/always.jpg" alt="fitness" class="img-thumbnail w-100 rounded-3">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
                 <div class="row">
-        <!-- coach -->
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-          <!--image-->
-          <div class="mb-3">
-            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper-3.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded">
-            <!--heading-->
-            <h4 class="mb-0">Victoria Howard</h4>
-            <span class="font-14">Head of Global Events</span>
-
-          </div>
-        </div>
-        <!-- coach -->
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-          <!--image-->
-          <div class="mb-3">
-            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/yazz.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded">
-            <!--heading-->
-            <h4 class="mb-0">Stella Murphy</h4>
-            <span class="font-14">Head of Media Design</span>
-
-          </div>
-        </div>
-        <!-- coach -->
-
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-          <!--image-->
-          <div class="mb-3">
-            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/always.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded">
-            <!--heading-->
-            <h4 class="mb-0">Gloria Richards</h4>
-            <span class="font-14">User Experience</span>
-
-          </div>
-        </div>
-        <!-- coach -->
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-          <!--image-->
-          <div class="mb-3">
-            <img src="../assets/images/coach-img-6.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded">
-            <!--heading-->
-            <h4 class="mb-0">Victoria Howard</h4>
-            <span class="font-14">Strategic Advisor</span>
-
-          </div>
-        </div>
-        <!--button-->
-        <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-5">
-          <a href="#" class="btn btn-primary">Meet the Coaches</a>
-        </div>
-      </div>
-
+                    <!-- coach -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <div class="mb-3">
+                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper-3.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <h4 class="mb-0">Victoria Howard</h4>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <div class="mb-3">
+                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/yazz.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <h4 class="mb-0">Victoria Howard</h4>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <div class="mb-3">
+                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/always.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <h4 class="mb-0">Victoria Howard</h4>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-5">
+                        <a href="#" class="btn btn-primary">Meet the Coaches</a>
+                    </div>
+                </div>
             </div>
 <?php include ('inc/footer.inc.php'); ?>
