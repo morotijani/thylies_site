@@ -9,7 +9,7 @@
 
 ?>
      <!-- hero section -->
-        <div style="background: url(<?= PROOT; ?>assets/media/sanitary-welfare/bg-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div style="background: url(<?= PROOT; ?>assets/media/sanitary-cover.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
             <div class="container">
                 <div class="row">
                     <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
@@ -184,19 +184,19 @@
                     <!-- coach -->
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <img src="<?= PROOT; ?>assets/media/proper.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
                             <h4 class="mb-0">Propoer Sanitary Pad</h4>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/yazz.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <img src="<?= PROOT; ?>assets/media/yazz.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
                             <h4 class="mb-0">Yazz Sanitary Pad</h4>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/always.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <img src="<?= PROOT; ?>assets/media/always.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
                             <h4 class="mb-0">Always Ultra Sanitary Pad</h4>
                         </div>
                     </div>
@@ -212,20 +212,20 @@
                     <!-- coach -->
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/softcare-panty-liner.jpg
+                            <img src="<?= PROOT; ?>assets/media/softcare-panty-liner.jpg
                             " alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
                             <h4 class="mb-0">Softcare Panty Liner</h4>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/yazz-panty-liner.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <img src="<?= PROOT; ?>assets/media/yazz-panty-liner.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
                             <h4 class="mb-0">Yazz Panty Liner</h4>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper-panty-liner.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <img src="<?= PROOT; ?>assets/media/proper-panty-liner.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
                             <h4 class="mb-0">Proper Panty Liner</h4>
                         </div>
                     </div>

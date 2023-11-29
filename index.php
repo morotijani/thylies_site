@@ -24,8 +24,9 @@
                         <p class="mb-3 pe-lg-12 pe-0 display-6" style="font-family: Mansalva;">
                             Thylies is a feminine centered organization whose basic aim is to empower the girl child to better pursue her career goals. We bring comfort to the  girl during her menstrual period, in her academic and social life and beyond.
                         </p>
-                        <a href="<?= PROOT; ?>scholarship-list" class="btn btn-warning btn-lg">Scholarship List <?= date('Y'); ?></a>
-                        <a href="sanitary-welfare" class="btn btn-outline-warning btn-lg ms-lg-1 mt-2 mt-lg-0">Sanitary Welfare</a>
+                        <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#listModalCenter">
+                            <?= date('Y'); ?> list of approved members
+                        </button>                                                           
                     </div>
                 </div>
             </div>
@@ -285,3 +286,25 @@
     </section>
 
 <?php include ('inc/footer.inc.php');  ?>
+
+    <div class="modal fade" id="listModalCenter" tabindex="-1" role="dialog" aria-labelledby="listModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="listModalCenterTitle">
+                        Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save
+                        changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
