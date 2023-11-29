@@ -52,26 +52,54 @@
         <div class="pt-lg-18 pb-lg-16 py-10">
             <div class="container">
                 <span class="text-uppercase fw-bold"><span class="text-primary">#1</span> Sanitary Welfare</span>
-                <h2 class="mb-3 display-5 mt-2">Sanitary Products</h2>
+                <h2 class="mb-3 display-5 mt-2">Sanitary Pads</h2>
+
+                <div class="row mb-10">
+                    <!-- coach -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <div class="mb-3">
+                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <h4 class="mb-0">Propoer Sanitary Pad</h4>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <div class="mb-3">
+                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/yazz.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <h4 class="mb-0">Yazz Sanitary Pad</h4>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <div class="mb-3">
+                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/always.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <h4 class="mb-0">Always Ultra Sanitary Pad</h4>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-5">
+                        <a href="#" class="btn btn-primary">Meet the Coaches</a>
+                    </div>
+                </div>
+
+                <span class="text-uppercase fw-bold"><span class="text-primary">#1</span> Sanitary Welfare</span>
+                <h2 class="mb-3 display-5 mt-2">Brands of Panty Liners</h2>
 
                 <div class="row">
                     <!-- coach -->
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
                             <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Victoria Howard</h4>
+                            <h4 class="mb-0">Propoer Sanitary Pad</h4>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
                             <img src="<?= PROOT; ?>assets/media/sanitary-welfare/yazz.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Victoria Howard</h4>
+                            <h4 class="mb-0">Yazz Sanitary Pad</h4>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
                             <img src="<?= PROOT; ?>assets/media/sanitary-welfare/always.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
-                            <h4 class="mb-0">Victoria Howard</h4>
+                            <h4 class="mb-0">Always Ultra Sanitary Pad</h4>
                         </div>
                     </div>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-5">
