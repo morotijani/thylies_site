@@ -142,10 +142,10 @@
             <div class="py-lg-18 py-12 bg-light">
                 <div class="container">
                     <div class="row">
-                        <div class="offset-xl-2 col-xl-5 col-lg-7 col-md-12 col-12">
+                        <div class="offset-xl-2 col-xl-8 col-lg-7 col-md-12 col-12">
                             <div class="mb-12">
-                                <h2 class="mb-2 display-5">Why Deena Nichols </h2>
-                                <p class="lead mb-0">Lorem ipsum.</p>
+                                <h2 class="mb-2 display-5">Your sanitary items should be CHEAP enough for you to AFFORD.</h2>
+                                <p class="lead mb-0">Enjoy 50% Discount on each of your Sanitary products all through the year.</p>
                             </div>
                         </div>
                     </div>
@@ -155,8 +155,7 @@
                                 <div class="p-5 d-flex justify-content-between
                                     align-items-center">
                                     <div>
-                                        <h4 class="mb-1">Certified trainer</h4>
-                                        <p class="mb-0">Lorem ip.</p>
+                                        <h4 class="mb-1">Sanitary Pads</h4>
                                     </div>
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
@@ -171,7 +170,70 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card rounded-3 mb-5">
+                                <div class="p-5 d-flex justify-content-between
+                                    align-items-center">
+                                    <div>
+                                        <h4 class="mb-1">Tissue Papers</h4>
+                                    </div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
+                                            24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" class="feather
+                                            feather-award text-primary">
+                                          <circle cx="12" cy="8" r="7"></circle>
+                                          <polyline points="8.21 13.89 7 23 12 20 17 23
+                                              15.79 13.88"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card rounded-3 mb-5">
+                                <div class="p-5 d-flex justify-content-between
+                                    align-items-center">
+                                    <div>
+                                        <h4 class="mb-1">Pantie Liners</h4>
+                                    </div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
+                                            24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" class="feather
+                                            feather-award text-primary">
+                                          <circle cx="12" cy="8" r="7"></circle>
+                                          <polyline points="8.21 13.89 7 23 12 20 17 23
+                                              15.79 13.88"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card rounded-3 mb-5">
+                                <div class="p-5 d-flex justify-content-between
+                                    align-items-center">
+                                    <div>
+                                        <h4 class="mb-1">Panties</h4>
+                                    </div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
+                                            24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" class="feather
+                                            feather-award text-primary">
+                                          <circle cx="12" cy="8" r="7"></circle>
+                                          <polyline points="8.21 13.89 7 23 12 20 17 23
+                                              15.79 13.88"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="lead mb-0">We've got you covered all semester all year.</p>
+                    </div>
                 </div>
-            </div>
             </div>
 <?php include ('inc/footer.inc.php'); ?>
