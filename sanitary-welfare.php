@@ -58,7 +58,7 @@
                     <!-- coach -->
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
-                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper-3.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
+                            <img src="<?= PROOT; ?>assets/media/sanitary-welfare/proper.jpg" alt="coach" class="img-fluid w-100 mb-4 rounded" style="width: 300px; height: 300px; object-fit: cover; object-position: center;">
                             <h4 class="mb-0">Victoria Howard</h4>
                         </div>
                     </div>
