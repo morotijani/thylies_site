@@ -137,4 +137,41 @@
                     </div>
                 </div>
             </div>
+
+            <!-- features -->
+            <div class="py-lg-18 py-12 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="offset-xl-2 col-xl-5 col-lg-7 col-md-12 col-12">
+                            <div class="mb-12">
+                                <h2 class="mb-2 display-5">Why Deena Nichols </h2>
+                                <p class="lead mb-0">Lorem ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="card rounded-3 mb-5">
+                                <div class="p-5 d-flex justify-content-between
+                                    align-items-center">
+                                    <div>
+                                        <h4 class="mb-1">Certified trainer</h4>
+                                        <p class="mb-0">Lorem ip.</p>
+                                    </div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
+                                            24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" class="feather
+                                            feather-award text-primary">
+                                          <circle cx="12" cy="8" r="7"></circle>
+                                          <polyline points="8.21 13.89 7 23 12 20 17 23
+                                              15.79 13.88"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
 <?php include ('inc/footer.inc.php'); ?>
