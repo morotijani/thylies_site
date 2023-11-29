@@ -14,10 +14,10 @@
                 <div class="row">
                     <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
                         <div class="pt-17 pb-13 pt-lg-19 pb-lg-19 text-center text-light">
-                            <h1 class="display-3 text-white mb-3 lh-1">
+                            <h1 class="display-3 text-light mb-3 lh-1" style="text-shadow: 4px 4px 4px #000;">
                                 Sanitary Welfare
                             </h1>
-                            <p class="px-xl-18 px-md-10 mb-5 lead">
+                            <p class="px-xl-18 px-md-10 mb-5 lead" style="color: #333;">
                                 Thylies offers you a variety of  choices tailored to meet your preference of Sanitary items
                             </p>
                             <a href="pages/signin.html" class="btn btn-primary btn-lg">Get Ticket</a>
