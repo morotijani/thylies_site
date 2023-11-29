@@ -9,39 +9,24 @@
 
 ?>
      <!-- hero section -->
-    <div class="bg-cover" style="background-image:linear-gradient(180deg, rgba(30, 24, 53, 0.4) 0%, rgba(30, 24, 53, 0.4) 90.16%),
-            url(<?= PROOT; ?>assets/media/bg-1.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
-                    <div class="py-lg-20 py-12 text-white text-center">
-                        <a class="popup-youtube icon-shape rounded-circle btn-play icon-xl
-                                text-decoration-none mb-3" href="javascript:;"> <!-- https://www.youtube.com/watch?v=JRzWRZahOVU -->
-                            <i class="fas fa-play"></i>
-                        </a>
-
-                        <!--heading-->
-                        <h1 class="text-white mb-2 display-2">
-                            Thylies Ghana
-                        </h1>
-                        <p class="mb-0 lead text-light mb-0">
-                            Period with comfort.
-                        </p>
-                    </div>
-                </div>
-            </div>
+  <div
+    style="background: url(<?= PROOT; ?>assets/media/sanitary-welfare/bg-3.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="container">
+      <div class="row">
+        <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
+          <div class="pt-17 pb-13 pt-lg-19 pb-lg-19 text-center text-light">
+            <h1 class="display-3 text-white mb-3 lh-1">
+              Become the hero of your own story
+            </h1>
+            <p class="px-xl-18 px-md-10 mb-5 lead">
+              Join our Coach community of like-minded individuals. Get your ticket to the 2021 event.
+            </p>
+            <a href="pages/signin.html" class="btn btn-primary btn-lg">Get Ticket</a>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="py-lg-16 py-6">
-        <div class="container">
-            <div class="row">
-                <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
-                    <!--heading-->
-                    <h2 class="mb-4">About Thylies</h2>
-                    <p><?= nl2br($site_row['about_info']); ?></p>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
+  <!--hero section-->
 
 <?php include ('inc/footer.inc.php'); ?>
