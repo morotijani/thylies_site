@@ -82,7 +82,7 @@
                 <span class="text-uppercase fw-bold"><span class="text-primary">#2</span> Sanitary Welfare</span>
                 <h2 class="mb-3 display-5 mt-2">Brands of Panty Liners</h2>
 
-                <div class="row">
+                <div class="row mb-10">
                     <!-- coach -->
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12">
                         <div class="mb-3">
@@ -106,6 +106,35 @@
                     <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-5">
                         <a href="#" class="btn btn-primary">Meet the Coaches</a>
                     </div> -->
+                </div>
+            </div>
+
+            <div class="container">
+                <hr>
+            </div>
+
+            <!-- prgoram -->
+            <div class="py-lg-12 py-8">
+                <div class="container">
+                    <div class="mb-9">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                                <!--heading-->
+                                <h2 class="h1">The 50% Discount Program.</h2>
+                            </div>
+                            <div class=" col-xl-6 col-lg-6 col-md-6 col-12">
+                                <!--para-->
+                                <p class="lead">
+                                    The 50 percent Discount program seeks to ease the inflationary pressures on sanitary products which makes them very expensive hence discouraging the girl from purchasing enough to comfortably  suit her menstrual needs in order to enhance her self esteem and promote her wellbeing during her menstrual period
+
+                                    <br>
+                                    <br>
+                                    With the fifty percent program , all member schools would be able to purchase all their basic menstrual welfare items at fifty percent discount all through 2023
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 <?php include ('inc/footer.inc.php'); ?>
