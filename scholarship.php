@@ -183,9 +183,9 @@
                 </div>
             </div>
             <div class="text-center">
-                <p class="lead mb-0">We've got you covered all year.</p>
+                <p class="lead mb-0">We keep your dream of academic excellence alive.</p>
                 <br>
-                <a href="<?= PROOT; ?>user/apply-scholarship" class="btn btn-outline-warning">Apply Now!</a>
+                <a href="<?= PROOT; ?>user/apply-scholarship" class="btn btn-outline-warning">Start Now!</a>
             </div>
         </div>
     </div>
