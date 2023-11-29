@@ -24,7 +24,7 @@
                         <p class="mb-3 pe-lg-12 pe-0 display-6" style="font-family: Mansalva;">
                             Thylies is a feminine centered organization whose basic aim is to empower the girl child to better pursue her career goals. We bring comfort to the  girl during her menstrual period, in her academic and social life and beyond.
                         </p>
-                        <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#listModalCenter">
+                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#listModalCenter">
                             <?= date('Y'); ?> list of approved members
                         </button>                                                           
                     </div>
@@ -296,9 +296,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <a href="<?= PROOT; ?>scholarship-list" class="btn btn-danger">Approved Scholarships</button>
-                        <a href="<?= PROOT; ?>sanitary-welfare-list" class="btn btn-warning">Approved Sanitary Welfares</button>
-                        <a href="<?= PROOT; ?>student-in-business-list.php" class="btn btn-success">Approved Students in Business</button>
+                        <a href="<?= PROOT; ?>scholarship-list" class="btn btn-danger">Approved Scholarships</a>
+                        <a href="<?= PROOT; ?>sanitary-welfare-list" class="btn btn-warning">Approved Sanitary Welfares</a>
+                        <a href="<?= PROOT; ?>student-in-business-list.php" class="btn btn-success">Approved Students in Business</a>
                     </div>
                 </div>
             </div>
