@@ -17,6 +17,9 @@
                         <h1 class=" text-white mb-3 display-4">
                             THE THYLIES SCHOLARSHIP PROGRAM
                         </h1>
+                        <p class="mb-4 pe-lg-12 text-white lead">
+                            This program is aimed at giving the Girl Child the necessary financial support she needs in the pursuit of academic excellence.
+                        </p>
                         <a href="<?= PROOT; ?>user/apply-scholarship" class="btn btn-warning">Application form</a>
                         <a href="<?= PROOT; ?>scholarship-list" class="btn btn-light"><?= date('Y'); ?> approved list</a>
                     </div>
@@ -37,6 +40,43 @@
                         <p class="px-lg-10 lead">
                             Thylies Ghana recognizes that not all Girls are born with a silver spoon as such , The Scholarship program has been put in place to enable students of member School who demonstrate the need for financial assistance in their academic life to ensure solvency in the pursuit of academic excellence
                         </p>
+                    </div>
+                    <div class="row">
+                        <h2 class="text-muted">Categories</h2>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="mb-lg-4 mb-0 text-center px-6">
+                                <h4 class="">Tuition fee Bursaries</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="mb-lg-4 mb-0 text-center px-6">
+                                <h4 class="">Accommodation fee Bursaries</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="mb-lg-4 mb-0 text-center px-6">
+                                <h4 class="">Stipend (Monthly Upkeep Bursaries)</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <h2 class="text-muted">Types of scholarships</h2>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="mb-lg-4 mb-0 text-center px-6">
+                                <span class="">Certificate Scholarships</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="mb-lg-4 mb-0 text-center px-6">
+                                <span class="">Diploma Scholarships</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="mb-lg-4 mb-0 text-center px-6">
+                                <span class="">Degree and Post Graduate Scholarships</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
