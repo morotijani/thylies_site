@@ -67,7 +67,8 @@
                             <div class="p-5 d-flex justify-content-between
                                 align-items-center">
                                 <div>
-                                    <h4 class="mb-1">Sanitary Pads</h4>
+                                    <h4 class="mb-1">1</h4>
+                                    <p class="px-lg-7 lead"></p>
                                 </div>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
