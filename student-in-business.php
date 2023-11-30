@@ -21,6 +21,7 @@
                                 Thylies offers you a variety of  choices tailored to meet your preference of Sanitary items
                             </p>
                             <a href="<?= PROOT; ?>user/apply-sanitary-welfare" class="btn btn-warning btn-lg">Application form</a>
+                            <a href="<?= PROOT; ?>student-in-business-list.php" class="btn btn-light"><?= date('Y'); ?> approved list</a>
                         </div>
                     </div>
                 </div>
