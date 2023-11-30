@@ -1,7 +1,7 @@
 <?php 
     require_once ("connection/conn.php");
 
-    $title = 'Sanitary Welfare - ';
+    $title = 'Student in Business - ';
     $navbar = 'navbar-light';
 
     include ('inc/header.inc.php');
@@ -14,11 +14,11 @@
                 <div class="row">
                     <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
                         <div class="pt-17 pb-13 pt-lg-19 pb-lg-19 text-center text-light">
-                            <h1 class="display-3 text-light mb-3 lh-1" style="text-shadow: 4px 4px 4px #000;">
+                            <h1 class="display-3 text-light mb-3 lh-1" style="text-shadow: 2px 2px 2px #000;">
                                 The Student business Fund
                             </h1>
-                            <p class="px-xl-18 px-md-10 mb-5 lead" style="color: #333;">
-                                Thylies offers you a variety of  choices tailored to meet your preference of Sanitary items
+                            <p class="px-xl-18 px-md-10 mb-5 lead">
+                                What business do you wish to start?
                             </p>
                             <a href="<?= PROOT; ?>user/apply-sanitary-welfare" class="btn btn-warning btn-lg">Application form</a>
                             <a href="<?= PROOT; ?>student-in-business-list.php" class="btn btn-light"><?= date('Y'); ?> approved list</a>
