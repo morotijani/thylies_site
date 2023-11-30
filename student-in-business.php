@@ -20,7 +20,7 @@
                             <p class="px-xl-18 px-md-10 mb-5 lead">
                                 What business do you wish to start?
                             </p>
-                            <a href="<?= PROOT; ?>user/apply-sanitary-welfare" class="btn btn-warning btn-lg">Application form</a>
+                            <a href="<?= PROOT; ?>user/apply-student-in-business" class="btn btn-warning btn-lg">Application form</a>
                             <a href="<?= PROOT; ?>student-in-business-list.php" class="btn btn-light"><?= date('Y'); ?> approved list</a>
                         </div>
                     </div>
@@ -40,36 +40,10 @@
                             </h2>
                             <!--para-->
                             <p class="lead mb-5">
-                                Thylies protects you from excessive taxations that make the prices of your basic sanitary items woefully expensive therefore discouraging you from affording them though they are a necessity
+                                It is aimed at creating all the needed mentorship, Training and Financial grounding for students from member Schools to start businesses of their own  or expand their already existing businesses to grow and develop.
                             </p>
                             <!--button-->
-                            <a href="<?= PROOT; ?>user/apply-sanitary-welfare" class="btn btn-secondary btn-lg">Application form</a>
-                        <a href="<?= PROOT; ?>sanitary-welfare-list" class="btn btn-light btn-lg"><?= date('Y'); ?> approved list</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- prgoram -->
-        <div class="py-lg-12 py-8">
-            <div class="container">
-                <div class="mb-9">
-                    <div class="row align-items-center">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
-                            <!--heading-->
-                            <h2 class="h1">The 50% Discount Program.</h2>
-                        </div>
-                        <div class=" col-xl-6 col-lg-6 col-md-6 col-12">
-                            <!--para-->
-                            <p class="lead">
-                                The 50 percent Discount program seeks to ease the inflationary pressures on sanitary products which makes them very expensive hence discouraging the girl from purchasing enough to comfortably  suit her menstrual needs in order to enhance her self esteem and promote her wellbeing during her menstrual period
-
-                                <br>
-                                <br>
-                                With the fifty percent program , all member schools would be able to purchase all their basic menstrual welfare items at fifty percent discount all through 2023
-
-                            </p>
+                            <a href="<?= PROOT; ?>user/apply-student-in-business" class="btn btn-secondary btn-lg">Application form</a>
                         </div>
                     </div>
                 </div>
@@ -82,8 +56,8 @@
                 <div class="row">
                     <div class="offset-xl-2 col-xl-8 col-lg-7 col-md-12 col-12">
                         <div class="mb-12">
-                            <h2 class="mb-2 display-5">Your sanitary items should be CHEAP enough for you to AFFORD.</h2>
-                            <p class="lead mb-0">Enjoy 50% Discount on each of your Sanitary products all through the year.</p>
+                            <h2 class="mb-2 display-5">Queries</h2>
+                            <p class="lead mb-0">Easy and simple details we will like to know.</p>
                         </div>
                     </div>
                 </div>
