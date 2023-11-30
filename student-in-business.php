@@ -68,7 +68,7 @@
                                 align-items-center">
                                 <div>
                                     <h4 class="mb-1">1</h4>
-                                    <p class="px-lg-7 lead"></p>
+                                    <p class="px-lg-7 lead">What business do you wish to start?</p>
                                 </div>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
@@ -88,7 +88,8 @@
                             <div class="p-5 d-flex justify-content-between
                                 align-items-center">
                                 <div>
-                                    <h4 class="mb-1">Tissue Papers</h4>
+                                    <h4 class="mb-1">2</h4>
+                                    <p class="px-lg-7 lead">What business are you into?</p>
                                 </div>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
@@ -108,7 +109,8 @@
                             <div class="p-5 d-flex justify-content-between
                                 align-items-center">
                                 <div>
-                                    <h4 class="mb-1">Pantie Liners</h4>
+                                    <h4 class="mb-1">3</h4>
+                                    <p class="px-lg-7 lead">How is it going?</p>
                                 </div>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
@@ -128,7 +130,8 @@
                             <div class="p-5 d-flex justify-content-between
                                 align-items-center">
                                 <div>
-                                    <h4 class="mb-1">Panties</h4>
+                                    <h4 class="mb-1">4</h4>
+                                    <p class="px-lg-7 lead">Do you have the resources you need to grow your business?</p>
                                 </div>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24
